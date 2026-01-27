@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "surveyor_vault",
   "name": {
     "da": "Landmåler-hvælv",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "mechanical_components": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/surveyor_vault.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/surveyor_vault.png",
   "updatedAt": "01/13/2026"
 }

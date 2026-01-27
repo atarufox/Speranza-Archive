@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "blue_light_stick_blueprint",
   "name": {
     "da": "Blå lysstav-tegning",
@@ -49,6 +49,6 @@
   "value": 5000,
   "weightKg": 0,
   "stackSize": 1,
-  "imageFilename": "https://cdn.arctracker.io/items/blue_light_stick_blueprint.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/blue_light_stick_blueprint.png",
   "updatedAt": "11/04/2025"
 }

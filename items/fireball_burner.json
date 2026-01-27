@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "fireball_burner",
   "name": {
     "da": "Ildkuglebrænder",
@@ -128,6 +128,6 @@
   "salvagesInto": {
     "arc_alloy": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/fireball_burner.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/fireball_burner.png",
   "updatedAt": "01/13/2026"
 }

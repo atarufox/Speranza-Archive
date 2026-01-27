@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "stitcher_i",
   "name": {
     "da": "Stitcher I",
@@ -178,6 +178,6 @@
   "salvagesInto": {
     "metal_parts": 3
   },
-  "imageFilename": "https://cdn.arctracker.io/items/stitcher.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/stitcher.png",
   "updatedAt": "11/20/2025"
 }

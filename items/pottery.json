@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "pottery",
   "name": {
     "da": "Keramik",
@@ -51,6 +51,6 @@
   "weightKg": 0.3,
   "stackSize": 3,
   "recyclesInto": {},
-  "imageFilename": "https://cdn.arctracker.io/items/pottery.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/pottery.png",
   "updatedAt": "11/03/2025"
 }

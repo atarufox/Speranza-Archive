@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "fine_wristwatch",
   "name": {
     "da": "Fint armbåndsur",
@@ -50,6 +50,6 @@
   "value": 3000,
   "weightKg": 0.2,
   "stackSize": 3,
-  "imageFilename": "https://cdn.arctracker.io/items/fine_wristwatch.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/fine_wristwatch.png",
   "updatedAt": "11/01/2025"
 }

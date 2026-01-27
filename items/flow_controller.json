@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "flow_controller",
   "name": {
     "da": "Strømningskontroller",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "mechanical_components": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/flow_controller.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/flow_controller.png",
   "updatedAt": "01/09/2026"
 }

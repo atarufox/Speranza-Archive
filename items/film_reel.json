@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "film_reel",
   "name": {
     "da": "Filmrulle",
@@ -51,6 +51,6 @@
   "weightKg": 0.2,
   "stackSize": 3,
   "recyclesInto": {},
-  "imageFilename": "https://cdn.arctracker.io/items/film_reel.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/film_reel.png",
   "updatedAt": "11/03/2025"
 }

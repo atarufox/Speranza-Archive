@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "breathtaking_snow_globe",
   "name": {
     "da": "Betagende snekugle",
@@ -50,6 +50,6 @@
   "value": 7000,
   "weightKg": 0.2,
   "stackSize": 1,
-  "imageFilename": "https://cdn.arctracker.io/items/breathtaking_snow_globe.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/breathtaking_snow_globe.png",
   "updatedAt": "01/13/2026"
 }

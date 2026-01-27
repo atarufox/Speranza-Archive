@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "damaged_arc_motion_core",
   "name": {
     "da": "Beskadiget ARC-bevægelseskerne",
@@ -56,6 +56,6 @@
   "salvagesInto": {
     "arc_alloy": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/damaged_arc_motion_core.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/damaged_arc_motion_core.png",
   "updatedAt": "01/20/2026"
 }

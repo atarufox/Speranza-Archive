@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "dam_testing_annex_key",
   "name": {
     "da": "Dæmnings-testanneks-nøgle",
@@ -48,6 +48,6 @@
   "rarity": "Rare",
   "value": 100,
   "weightKg": 0.25,
-  "imageFilename": "https://cdn.arctracker.io/items/dam_testing_annex_key.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/dam_testing_annex_key.png",
   "updatedAt": "10/30/2025"
 }

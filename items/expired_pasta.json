@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "expired_pasta",
   "name": {
     "da": "Udløbet pasta",
@@ -98,6 +98,6 @@
       "zh-TW": "使用時間"
     }
   },
-  "imageFilename": "https://cdn.arctracker.io/items/expired_pasta.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/expired_pasta.png",
   "updatedAt": "10/30/2025"
 }

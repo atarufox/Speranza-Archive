@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "jupiter_blueprint",
   "name": {
     "da": "Jupiter-tegning",
@@ -48,6 +48,6 @@
   "rarity": "Legendary",
   "value": 5000,
   "weightKg": 0,
-  "imageFilename": "https://cdn.arctracker.io/items/jupiter.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/jupiter.png",
   "updatedAt": "11/12/2025"
 }

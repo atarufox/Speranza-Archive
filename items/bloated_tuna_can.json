@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "bloated_tuna_can",
   "name": {
     "da": "Oppustet tunfiskdåse",
@@ -98,6 +98,6 @@
       "zh-TW": "使用時間"
     }
   },
-  "imageFilename": "https://cdn.arctracker.io/items/bloated_tuna_can.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/bloated_tuna_can.png",
   "updatedAt": "01/13/2026"
 }

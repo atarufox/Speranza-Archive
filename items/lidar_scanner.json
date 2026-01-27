@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "lidar_scanner",
   "name": {
     "da": "Lidar-scanner",
@@ -47,6 +47,6 @@
   "type": "Trinket",
   "rarity": "Common",
   "weightKg": 0.25,
-  "imageFilename": "https://cdn.arctracker.io/items/lidar_scanner.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/lidar_scanner.png",
   "updatedAt": "11/17/2025"
 }

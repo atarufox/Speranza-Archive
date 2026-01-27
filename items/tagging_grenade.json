@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "tagging_grenade",
   "name": {
     "da": "Markeringsgranат",
@@ -111,6 +111,6 @@
   "salvagesInto": {
     "sensors": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/tagging_grenade.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/tagging_grenade.png",
   "updatedAt": "11/10/2025"
 }

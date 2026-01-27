@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "bettina_i",
   "name": {
     "da": "Bettina I",
@@ -179,6 +179,6 @@
   "salvagesInto": {
     "advanced_mechanical_components": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/bettina.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/bettina.png",
   "updatedAt": "01/09/2026"
 }

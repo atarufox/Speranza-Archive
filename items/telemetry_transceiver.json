@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "telemetry_transceiver",
   "name": {
     "da": "Telemetri-transceiver",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "electrical_components": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/telemetry_transceiver.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/telemetry_transceiver.png",
   "updatedAt": "01/09/2026"
 }

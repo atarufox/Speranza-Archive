@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "magnetic_accelerator",
   "name": {
     "da": "Magnetisk Accelerator",
@@ -62,6 +62,6 @@
   "salvagesInto": {
     "advanced_mechanical_components": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/magnetic_accelerator.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/magnetic_accelerator.png",
   "updatedAt": "01/13/2026"
 }

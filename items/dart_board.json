@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "dart_board",
   "name": {
     "da": "Dartskive",
@@ -50,6 +50,6 @@
   "value": 2000,
   "weightKg": 1,
   "stackSize": 3,
-  "imageFilename": "https://cdn.arctracker.io/items/dart_board.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/dart_board.png",
   "updatedAt": "01/13/2026"
 }

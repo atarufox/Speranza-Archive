@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "raider_hatch_key",
   "name": {
     "da": "Raider lugenøgle",
@@ -55,6 +55,6 @@
     "sensors": 3
   },
   "recyclesInto": {},
-  "imageFilename": "https://cdn.arctracker.io/items/raider_hatch_key.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/raider_hatch_key.png",
   "updatedAt": "12/07/2025"
 }

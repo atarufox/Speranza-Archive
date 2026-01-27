@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "bobcat_i",
   "name": {
     "da": "Bobcat I",
@@ -318,6 +318,6 @@
   "salvagesInto": {
     "light_gun_parts": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/bobcat.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/bobcat.png",
   "updatedAt": "01/13/2026"
 }

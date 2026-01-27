@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "burletta_blueprint",
   "name": {
     "da": "Burletta-tegning",
@@ -46,6 +46,6 @@
   },
   "type": "Blueprint",
   "rarity": "Legendary",
-  "imageFilename": "https://cdn.arctracker.io/items/burletta.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/burletta.png",
   "updatedAt": "11/12/2025"
 }

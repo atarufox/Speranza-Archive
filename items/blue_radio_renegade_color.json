@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "blue_radio_renegade_color",
   "name": {
     "da": "Blå (Radio Renegade-farve)",
@@ -46,6 +46,6 @@
   },
   "type": "Cosmetic",
   "rarity": "Common",
-  "imageFilename": "https://cdn.arctracker.io/items/blue_radio_renegade_color.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/blue_radio_renegade_color.png",
   "updatedAt": "11/10/2025"
 }

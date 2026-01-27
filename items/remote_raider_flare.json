@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "remote_raider_flare",
   "name": {
     "da": "Fjernbetjent raider-blus",
@@ -61,6 +61,6 @@
   "salvagesInto": {
     "chemicals": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/remote_raider_flare.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/remote_raider_flare.png",
   "updatedAt": "01/13/2026"
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "deadline",
   "name": {
     "da": "Deadline",
@@ -132,6 +132,6 @@
   "salvagesInto": {
     "explosive_compound": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/deadline.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/deadline.png",
   "updatedAt": "01/09/2026"
 }

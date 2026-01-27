@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "projector",
   "name": {
     "da": "Projektor",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "processor": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/projector.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/projector.png",
   "updatedAt": "11/04/2025"
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "light_shield",
   "name": {
     "da": "Let skjold",
@@ -130,7 +130,7 @@
   "salvagesInto": {
     "arc_alloy": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/light_shield.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/light_shield.png",
   "updatedAt": "01/09/2026",
   "damageMitigation": 40,
   "durability": 100,

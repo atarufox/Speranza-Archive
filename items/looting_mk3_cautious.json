@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "looting_mk3_cautious",
   "name": {
     "da": "Plyndring Mk. 3 (Forsigtig)",
@@ -132,6 +132,6 @@
   "salvagesInto": {
     "electrical_components": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/looting_mk3_cautious.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/looting_mk3_cautious.png",
   "updatedAt": "01/20/2026"
 }

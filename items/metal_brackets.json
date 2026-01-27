@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "metal_brackets",
   "name": {
     "da": "Metalbeslag",
@@ -56,6 +56,6 @@
   "salvagesInto": {
     "metal_parts": 4
   },
-  "imageFilename": "https://cdn.arctracker.io/items/metal_brackets.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/metal_brackets.png",
   "updatedAt": "11/10/2025"
 }

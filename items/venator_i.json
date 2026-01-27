@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "venator_i",
   "name": {
     "da": "Venator I",
@@ -203,6 +203,6 @@
   "salvagesInto": {
     "medium_gun_parts": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/venator.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/venator.png",
   "updatedAt": "01/09/2026"
 }

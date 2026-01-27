@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "bombardier_cell",
   "name": {
     "da": "Bombardør-celle",
@@ -54,6 +54,6 @@
     "advanced_mechanical_components": 2,
     "arc_alloy": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/bombardier_cell.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/bombardier_cell.png",
   "updatedAt": "11/01/2025"
 }

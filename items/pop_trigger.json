@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "pop_trigger",
   "name": {
     "da": "Pop-udløser",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "crude_explosives": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/pop_trigger.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/pop_trigger.png",
   "updatedAt": "01/13/2026"
 }

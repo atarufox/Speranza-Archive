@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "looting_mk3_survivor_blueprint",
   "name": {
     "da": "Plyndring Mk. 3 (Survivor) Tegning",
@@ -48,6 +48,6 @@
   "rarity": "Legendary",
   "value": 5000,
   "weightKg": 0,
-  "imageFilename": "https://cdn.arctracker.io/items/looting_mk3_survivor_blueprint.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/looting_mk3_survivor_blueprint.png",
   "updatedAt": "01/13/2026"
 }

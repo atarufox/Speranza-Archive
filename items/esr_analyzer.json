@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "esr_analyzer",
   "name": {
     "da": "ESR-analysator",
@@ -48,6 +48,6 @@
   "rarity": "Common",
   "weightKg": 0.25,
   "questItem": true,
-  "imageFilename": "https://cdn.arctracker.io/items/esr_analyzer.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/esr_analyzer.png",
   "updatedAt": "11/17/2025"
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "hornet_driver",
   "name": {
     "da": "Hvepsedriver",
@@ -128,7 +128,7 @@
   "salvagesInto": {
     "electrical_components": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/hornet_driver.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/hornet_driver.png",
   "updatedAt": "01/13/2026",
   "tip": "The Hornet Driver is a rare item is dropped by Hornets that can be recycled into crafting materials."
 }

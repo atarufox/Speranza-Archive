@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "heavy_gun_parts",
   "name": {
     "da": "Tunge våbendele",
@@ -60,6 +60,6 @@
   "salvagesInto": {
     "simple_gun_parts": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/heavy_gun_parts.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/heavy_gun_parts.png",
   "updatedAt": "01/13/2026"
 }

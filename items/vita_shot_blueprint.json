@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "vita_shot_blueprint",
   "name": {
     "da": "Vita-indsprøjtning Tegning",
@@ -48,6 +48,6 @@
   "rarity": "Legendary",
   "value": 5000,
   "weightKg": 0,
-  "imageFilename": "https://cdn.arctracker.io/items/vita_shot.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/vita_shot.png",
   "updatedAt": "01/13/2026"
 }

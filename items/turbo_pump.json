@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "turbo_pump",
   "name": {
     "da": "Turbopumpe",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "steel_spring": 3
   },
-  "imageFilename": "https://cdn.arctracker.io/items/turbo_pump.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/turbo_pump.png",
   "updatedAt": "01/09/2026"
 }

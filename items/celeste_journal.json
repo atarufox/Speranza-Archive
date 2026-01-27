@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "celeste_journal",
   "name": {
     "da": "Celestes dagbog",
@@ -47,6 +47,6 @@
   "type": "Trinket",
   "rarity": "Common",
   "weightKg": 0.25,
-  "imageFilename": "https://cdn.arctracker.io/items/celestes_journal.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/celestes_journal.png",
   "updatedAt": "11/09/2025"
 }

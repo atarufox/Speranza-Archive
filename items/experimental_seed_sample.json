@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "experimental_seed_sample",
   "name": {
     "da": "Eksperimentel frøprøve",
@@ -47,6 +47,6 @@
   "type": "Trinket",
   "rarity": "Common",
   "weightKg": 0.25,
-  "imageFilename": "https://cdn.arctracker.io/items/experimental_seed_sample.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/experimental_seed_sample.png",
   "updatedAt": "11/17/2025"
 }

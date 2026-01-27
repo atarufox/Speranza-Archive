@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "launcher_ammo",
   "name": {
     "da": "Affyringsammunition",
@@ -56,6 +56,6 @@
     "arc_motion_core": 1,
     "crude_explosives": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/launcher_ammo.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/launcher_ammo.png",
   "updatedAt": "12/07/2025"
 }

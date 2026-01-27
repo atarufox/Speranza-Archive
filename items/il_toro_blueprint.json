@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "il_toro_blueprint",
   "name": {
     "da": "Il Toro-tegning",
@@ -49,6 +49,6 @@
   "value": 5000,
   "weightKg": 0,
   "stackSize": 1,
-  "imageFilename": "https://cdn.arctracker.io/items/il_toro.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/il_toro.png",
   "updatedAt": "01/13/2026"
 }

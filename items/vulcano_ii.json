@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "vulcano_ii",
   "name": {
     "da": "Vulcano II",
@@ -226,7 +226,7 @@
     "advanced_mechanical_components": 1,
     "heavy_gun_parts": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/vulcano.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/vulcano.png",
   "updatedAt": "01/09/2026",
   "agility": 70.7,
   "damage": 58.5,

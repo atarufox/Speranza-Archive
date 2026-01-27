@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "hullcracker_ii",
   "name": {
     "da": "Skrogknuser II",
@@ -202,7 +202,7 @@
     "advanced_mechanical_components": 1,
     "heavy_gun_parts": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/hullcracker.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/hullcracker.png",
   "updatedAt": "11/12/2025",
   "agility": 67.9,
   "damage": 100,

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "binoculars",
   "name": {
     "da": "Kikkert",
@@ -85,6 +85,6 @@
   "salvagesInto": {
     "plastic_parts": 4
   },
-  "imageFilename": "https://cdn.arctracker.io/items/binoculars.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/binoculars.png",
   "updatedAt": "01/09/2026"
 }

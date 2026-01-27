@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "looting_mk3_survivor",
   "name": {
     "da": "Plyndring Mk. 3 (Survivor)",
@@ -133,6 +133,6 @@
   "salvagesInto": {
     "electrical_components": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/looting_mk3_survivor.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/looting_mk3_survivor.png",
   "updatedAt": "01/20/2026"
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "bicycle_pump",
   "name": {
     "da": "Cykelpumpe",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "canister": 3
   },
-  "imageFilename": "https://cdn.arctracker.io/items/bicycle_pump.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/bicycle_pump.png",
   "updatedAt": "11/01/2025"
 }

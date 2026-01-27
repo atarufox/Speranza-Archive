@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "kettle_iii",
   "name": {
     "da": "Kettle III",
@@ -196,6 +196,6 @@
   "salvagesInto": {
     "simple_gun_parts": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/kettle.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/kettle.png",
   "updatedAt": "01/09/2026"
 }

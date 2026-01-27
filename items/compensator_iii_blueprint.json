@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "compensator_iii_blueprint",
   "name": {
     "da": "Kompensator III-tegning",
@@ -48,6 +48,6 @@
   "rarity": "Legendary",
   "value": 5000,
   "weightKg": 0,
-  "imageFilename": "https://cdn.arctracker.io/items/compensator_iii.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/compensator_iii.png",
   "updatedAt": "12/07/2025"
 }

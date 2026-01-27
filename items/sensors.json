@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "sensors",
   "name": {
     "da": "Sensorer",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "wires": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/sensors.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/sensors.png",
   "updatedAt": "01/13/2026"
 }

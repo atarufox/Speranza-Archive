@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "heavy_ammo",
   "name": {
     "da": "Tung ammunition",
@@ -56,6 +56,6 @@
     "chemicals": 2,
     "metal_parts": 3
   },
-  "imageFilename": "https://cdn.arctracker.io/items/heavy_ammo.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/heavy_ammo.png",
   "updatedAt": "12/07/2025"
 }

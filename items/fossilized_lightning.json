@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "fossilized_lightning",
   "name": {
     "da": "Fossiliseret lyn",
@@ -56,6 +56,6 @@
   "salvagesInto": {
     "explosive_compound": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/fossilized_lightning.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/fossilized_lightning.png",
   "updatedAt": "01/09/2026"
 }

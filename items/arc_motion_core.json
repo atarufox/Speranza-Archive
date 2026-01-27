@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "arc_motion_core",
   "name": {
     "da": "ARC-bevægelseskerne",
@@ -60,6 +60,6 @@
   "salvagesInto": {
     "arc_alloy": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/arc_motion_core.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/arc_motion_core.png",
   "updatedAt": "01/13/2026"
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "speaker_component",
   "name": {
     "da": "Højttalerkomponent",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "plastic_parts": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/speaker_component.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/speaker_component.png",
   "updatedAt": "01/13/2026"
 }

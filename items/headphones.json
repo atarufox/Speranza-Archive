@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "headphones",
   "name": {
     "da": "Hovedtelefoner",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "speaker_component": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/headphones.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/headphones.png",
   "updatedAt": "01/09/2026"
 }

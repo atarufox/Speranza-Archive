@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "oil",
   "name": {
     "da": "Olie",
@@ -56,6 +56,6 @@
   "salvagesInto": {
     "chemicals": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/oil.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/oil.png",
   "updatedAt": "01/13/2026"
 }

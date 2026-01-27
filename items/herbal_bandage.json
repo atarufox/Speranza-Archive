@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "herbal_bandage",
   "name": {
     "da": "Urtebandage",
@@ -132,6 +132,6 @@
   "salvagesInto": {
     "fabric": 8
   },
-  "imageFilename": "https://cdn.arctracker.io/items/herbal_bandage.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/herbal_bandage.png",
   "updatedAt": "01/09/2026"
 }

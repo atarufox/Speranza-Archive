@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "radio_renegade",
   "name": {
     "da": "Radiorenegat",
@@ -46,6 +46,6 @@
   },
   "type": "Outfit",
   "rarity": "Common",
-  "imageFilename": "https://cdn.arctracker.io/items/radio_renegade.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/radio_renegade.png",
   "updatedAt": "11/01/2025"
 }

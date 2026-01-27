@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "broken_handheld_radio",
   "name": {
     "da": "Ødelagt håndholdt radio",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "sensors": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/broken_handheld_radio.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/broken_handheld_radio.png",
   "updatedAt": "01/09/2026"
 }

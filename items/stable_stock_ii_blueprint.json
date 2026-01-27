@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "stable_stock_ii_blueprint",
   "name": {
     "da": "Stabil kolbe II-tegning",
@@ -48,6 +48,6 @@
   "rarity": "Legendary",
   "value": 5000,
   "weightKg": 0,
-  "imageFilename": "https://cdn.arctracker.io/items/stable_stock_ii.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/stable_stock_ii.png",
   "updatedAt": "12/07/2025"
 }

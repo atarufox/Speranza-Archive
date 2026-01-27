@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "motor",
   "name": {
     "da": "Motor",
@@ -56,6 +56,6 @@
   "salvagesInto": {
     "oil": 3
   },
-  "imageFilename": "https://cdn.arctracker.io/items/motor.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/motor.png",
   "updatedAt": "12/07/2025"
 }

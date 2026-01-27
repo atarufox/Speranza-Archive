@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "industrial_charger",
   "name": {
     "da": "Industriel Oplader",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "voltage_converter": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/industrial_charger.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/industrial_charger.png",
   "updatedAt": "10/30/2025"
 }

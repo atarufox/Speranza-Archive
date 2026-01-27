@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "il_toro_ii",
   "name": {
     "da": "Il Toro II",
@@ -202,6 +202,6 @@
     "mechanical_components": 3,
     "simple_gun_parts": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/il_toro.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/il_toro.png",
   "updatedAt": "01/09/2026"
 }

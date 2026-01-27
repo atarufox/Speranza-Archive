@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "tactical_mk3_healing_blueprint",
   "name": {
     "da": "Taktisk Mk. 3 (Healing) Tegning",
@@ -48,6 +48,6 @@
   "rarity": "Legendary",
   "value": 5000,
   "weightKg": 0,
-  "imageFilename": "https://cdn.arctracker.io/items/tactical_mk3_healing_blueprint.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/tactical_mk3_healing_blueprint.png",
   "updatedAt": "11/11/2025"
 }

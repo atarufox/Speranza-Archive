@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "free_loadout_augment",
   "name": {
     "da": "Gratis udstyrsforbedring",
@@ -75,6 +75,6 @@
     "Max Loadout Weight": null,
     "Shield Compatibility": null
   },
-  "imageFilename": "https://cdn.arctracker.io/items/free_loadout_augment.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/free_loadout_augment.png",
   "updatedAt": "11/16/2025"
 }

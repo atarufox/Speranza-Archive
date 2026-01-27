@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "photoelectric_cloak",
   "name": {
     "da": "Fotoelektrisk kappe",
@@ -85,6 +85,6 @@
   "salvagesInto": {
     "advanced_electrical_components": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/photoelectric_cloak.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/photoelectric_cloak.png",
   "updatedAt": "11/01/2025"
 }

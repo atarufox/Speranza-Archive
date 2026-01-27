@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "explosive_mine",
   "name": {
     "da": "Sprengmine",
@@ -111,6 +111,6 @@
   "salvagesInto": {
     "oil": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/explosive_mine.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/explosive_mine.png",
   "updatedAt": "01/09/2026"
 }

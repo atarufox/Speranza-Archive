@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "tactical_mk3_defensive_blueprint",
   "name": {
     "da": "Taktisk Mk. 3 (Defensiv) Tegning",
@@ -48,6 +48,6 @@
   "rarity": "Legendary",
   "value": 5000,
   "weightKg": 0,
-  "imageFilename": "https://cdn.arctracker.io/items/tactical_mk3_defensive.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/tactical_mk3_defensive.png",
   "updatedAt": "12/07/2025"
 }

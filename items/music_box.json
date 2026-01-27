@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "music_box",
   "name": {
     "da": "Spilledåse",
@@ -51,6 +51,6 @@
   "weightKg": 0.4,
   "stackSize": 3,
   "recyclesInto": {},
-  "imageFilename": "https://cdn.arctracker.io/items/music_box.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/music_box.png",
   "updatedAt": "12/16/2025"
 }

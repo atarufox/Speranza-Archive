@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "snowball",
   "name": {
     "da": "Snebold",
@@ -51,6 +51,6 @@
   "weightKg": 0.4,
   "stackSize": 5,
   "recyclesInto": {},
-  "imageFilename": "https://cdn.arctracker.io/items/snowball.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/snowball.png",
   "updatedAt": "12/17/2025"
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "adrenaline_shot",
   "name": {
     "da": "Adrenalin-indsprøjtning",
@@ -132,6 +132,6 @@
   "salvagesInto": {
     "chemicals": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/adrenaline_shot.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/adrenaline_shot.png",
   "updatedAt": "11/03/2025"
 }

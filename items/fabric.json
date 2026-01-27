@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "fabric",
   "name": {
     "da": "Stof",
@@ -122,6 +122,6 @@
     }
   },
   "recyclesInto": {},
-  "imageFilename": "https://cdn.arctracker.io/items/fabric.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/fabric.png",
   "updatedAt": "10/30/2025"
 }

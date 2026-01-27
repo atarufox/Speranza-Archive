@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "angled_grip_ii_blueprint",
   "name": {
     "da": "Vinklet greb II-tegning",
@@ -48,6 +48,6 @@
   "rarity": "Legendary",
   "value": 5000,
   "weightKg": 0,
-  "imageFilename": "https://cdn.arctracker.io/items/angled_grip_ii.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/angled_grip_ii.png",
   "updatedAt": "12/07/2025"
 }

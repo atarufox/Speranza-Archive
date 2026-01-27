@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "extended_barrel",
   "name": {
     "da": "Forlænget løb",
@@ -110,6 +110,6 @@
   "salvagesInto": {
     "mechanical_components": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/extended_barrel.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/extended_barrel.png",
   "updatedAt": "01/13/2026"
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "arc_synthetic_resin",
   "name": {
     "da": "ARC-syntetisk harpiks",
@@ -56,6 +56,6 @@
   "salvagesInto": {
     "plastic_parts": 9
   },
-  "imageFilename": "https://cdn.arctracker.io/items/arc_synthetic_resin.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/arc_synthetic_resin.png",
   "updatedAt": "01/09/2026"
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "lure_grenade_blueprint",
   "name": {
     "da": "Lokkegranattegning",
@@ -48,6 +48,6 @@
   "rarity": "Legendary",
   "value": 5000,
   "weightKg": 0,
-  "imageFilename": "https://cdn.arctracker.io/items/lure_grenade.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/lure_grenade.png",
   "updatedAt": "01/13/2026"
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "stable_stock_iii",
   "name": {
     "da": "Stabil kolbe III",
@@ -156,6 +156,6 @@
   "salvagesInto": {
     "mechanical_components": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/stable_stock_iii.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/stable_stock_iii.png",
   "updatedAt": "01/09/2026"
 }

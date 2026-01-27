@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "burgerboy",
   "name": {
     "da": "Burgerboy",
@@ -46,6 +46,6 @@
   },
   "type": "Backpack Charm",
   "rarity": "Common",
-  "imageFilename": "https://cdn.arctracker.io/items/burgerboy.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/burgerboy.png",
   "updatedAt": "11/01/2025"
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "hullcracker_i",
   "name": {
     "da": "Hullcracker I",
@@ -181,6 +181,6 @@
   "salvagesInto": {
     "heavy_gun_parts": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/hullcracker.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/hullcracker.png",
   "updatedAt": "01/09/2026"
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "coolant",
   "name": {
     "da": "Kølevæske",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "oil": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/coolant.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/coolant.png",
   "updatedAt": "11/07/2025"
 }

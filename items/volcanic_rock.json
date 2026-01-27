@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "volcanic_rock",
   "name": {
     "da": "Vulkansk sten",
@@ -76,6 +76,6 @@
     }
   },
   "recyclesInto": {},
-  "imageFilename": "https://cdn.arctracker.io/items/volcanic_rock.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/volcanic_rock.png",
   "updatedAt": "10/30/2025"
 }

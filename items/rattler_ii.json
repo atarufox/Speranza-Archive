@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "rattler_ii",
   "name": {
     "da": "Rattler II",
@@ -177,7 +177,7 @@
   "upgradeCost": {
     "mechanical_components": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/rattler.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/rattler.png",
   "updatedAt": "12/16/2025",
   "agility": 54.8,
   "damage": 9,

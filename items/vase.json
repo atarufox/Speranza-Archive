@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "vase",
   "name": {
     "da": "Vase",
@@ -51,6 +51,6 @@
   "weightKg": 0.3,
   "stackSize": 3,
   "recyclesInto": {},
-  "imageFilename": "https://cdn.arctracker.io/items/vase.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/vase.png",
   "updatedAt": "11/04/2025"
 }

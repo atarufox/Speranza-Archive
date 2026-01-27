@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "arc_coolant",
   "name": {
     "da": "ARC-kølevæske",
@@ -56,6 +56,6 @@
   "salvagesInto": {
     "chemicals": 9
   },
-  "imageFilename": "https://cdn.arctracker.io/items/arc_coolant.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/arc_coolant.png",
   "updatedAt": "01/13/2026"
 }

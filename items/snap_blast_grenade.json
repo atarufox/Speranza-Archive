@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "snap_blast_grenade",
   "name": {
     "da": "Lyneksplosionsgranat",
@@ -109,6 +109,6 @@
   "salvagesInto": {
     "chemicals": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/snap_blast_grenade.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/snap_blast_grenade.png",
   "updatedAt": "01/09/2026"
 }

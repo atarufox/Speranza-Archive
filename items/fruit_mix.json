@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "fruit_mix",
   "name": {
     "da": "Frugtblanding",
@@ -127,6 +127,6 @@
     "lemon": 1,
     "prickly_pear": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/fruit_mix.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/fruit_mix.png",
   "updatedAt": "11/12/2025"
 }

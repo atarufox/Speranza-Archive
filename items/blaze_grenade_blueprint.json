@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "blaze_grenade_blueprint",
   "name": {
     "da": "Flammegranate-tegning",
@@ -48,6 +48,6 @@
   "rarity": "Legendary",
   "value": 5000,
   "weightKg": 0,
-  "imageFilename": "https://cdn.arctracker.io/items/blaze_grenade.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/blaze_grenade.png",
   "updatedAt": "11/13/2025"
 }

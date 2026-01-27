@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "heavy_fuze_grenade",
   "name": {
     "da": "Tung luntetgranat",
@@ -109,6 +109,6 @@
   "salvagesInto": {
     "crude_explosives": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/heavy_fuze_grenade.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/heavy_fuze_grenade.png",
   "updatedAt": "01/09/2026"
 }

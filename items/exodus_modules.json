@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "exodus_modules",
   "name": {
     "da": "Exodus-moduler",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "processor": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/exodus_modules.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/exodus_modules.png",
   "updatedAt": "01/13/2026"
 }

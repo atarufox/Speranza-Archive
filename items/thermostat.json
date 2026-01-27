@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "thermostat",
   "name": {
     "da": "Termostat",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "sensors": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/thermostat.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/thermostat.png",
   "updatedAt": "12/07/2025"
 }

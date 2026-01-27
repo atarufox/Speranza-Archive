@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "deflated_football",
   "name": {
     "da": "Punkteret fodbold",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "rubber_parts": 9
   },
-  "imageFilename": "https://cdn.arctracker.io/items/deflated_football.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/deflated_football.png",
   "updatedAt": "01/09/2026"
 }

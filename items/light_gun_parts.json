@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "light_gun_parts",
   "name": {
     "da": "Lette Våbendele",
@@ -60,6 +60,6 @@
   "salvagesInto": {
     "simple_gun_parts": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/light_gun_parts.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/light_gun_parts.png",
   "updatedAt": "01/09/2026"
 }

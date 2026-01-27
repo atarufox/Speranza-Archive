@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "banana",
   "name": {
     "da": "Banan",
@@ -46,6 +46,6 @@
   },
   "type": "Backpack Charm",
   "rarity": "Common",
-  "imageFilename": "https://cdn.arctracker.io/items/banana.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/banana.png",
   "updatedAt": "10/30/2025"
 }

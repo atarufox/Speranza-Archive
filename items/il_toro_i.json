@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "il_toro_i",
   "name": {
     "da": "Il Toro I",
@@ -179,6 +179,6 @@
   "salvagesInto": {
     "simple_gun_parts": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/il_toro.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/il_toro.png",
   "updatedAt": "01/09/2026"
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "arc_thermo_lining",
   "name": {
     "da": "ARC-termofor",
@@ -56,6 +56,6 @@
   "salvagesInto": {
     "fabric": 9
   },
-  "imageFilename": "https://cdn.arctracker.io/items/arc_thermo_lining.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/arc_thermo_lining.png",
   "updatedAt": "11/03/2025"
 }

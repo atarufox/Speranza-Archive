@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "looting_mk1",
   "name": {
     "da": "Plyndring Mk. 1",
@@ -132,6 +132,6 @@
   "salvagesInto": {
     "plastic_parts": 3
   },
-  "imageFilename": "https://cdn.arctracker.io/items/looting_mk1.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/looting_mk1.png",
   "updatedAt": "01/20/2026"
 }

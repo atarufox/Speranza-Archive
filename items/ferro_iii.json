@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "ferro_iii",
   "name": {
     "da": "Ferro III",
@@ -200,6 +200,6 @@
     "metal_parts": 9,
     "simple_gun_parts": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/ferro.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/ferro.png",
   "updatedAt": "01/09/2026"
 }

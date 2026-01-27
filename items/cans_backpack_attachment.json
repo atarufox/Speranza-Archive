@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "cans_backpack_attachment",
   "name": {
     "da": "Dåser rygsæk-tilbehør",
@@ -46,6 +46,6 @@
   },
   "type": "Cosmetic",
   "rarity": "Common",
-  "imageFilename": "https://cdn.arctracker.io/items/cans.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/cans.png",
   "updatedAt": "11/10/2025"
 }

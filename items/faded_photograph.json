@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "faded_photograph",
   "name": {
     "da": "Falmet fotografi",
@@ -51,6 +51,6 @@
   "weightKg": 0.3,
   "stackSize": 15,
   "recyclesInto": {},
-  "imageFilename": "https://cdn.arctracker.io/items/faded_photograph.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/faded_photograph.png",
   "updatedAt": "01/13/2026"
 }

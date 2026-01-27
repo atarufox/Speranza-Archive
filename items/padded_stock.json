@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "padded_stock",
   "name": {
     "da": "Polstret kolbe",
@@ -201,6 +201,6 @@
   "salvagesInto": {
     "mechanical_components": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/padded_stock.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/padded_stock.png",
   "updatedAt": "01/13/2026"
 }

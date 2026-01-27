@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "canister",
   "name": {
     "da": "Beholder",
@@ -56,6 +56,6 @@
   "salvagesInto": {
     "plastic_parts": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/canister.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/canister.png",
   "updatedAt": "01/13/2026"
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "cracked_bioscanner",
   "name": {
     "da": "Revnet bioskanner",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "battery": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/cracked_bioscanner.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/cracked_bioscanner.png",
   "updatedAt": "01/09/2026"
 }

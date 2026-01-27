@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "plastic_parts",
   "name": {
     "da": "Plastdele",
@@ -51,6 +51,6 @@
   "weightKg": 0.1,
   "stackSize": 50,
   "recyclesInto": {},
-  "imageFilename": "https://cdn.arctracker.io/items/plastic_parts.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/plastic_parts.png",
   "updatedAt": "11/03/2025"
 }

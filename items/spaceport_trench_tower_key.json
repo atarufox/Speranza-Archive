@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "spaceport_trench_tower_key",
   "name": {
     "da": "Rumhavn skyttegravstårn nøgle",
@@ -48,6 +48,6 @@
   "rarity": "Uncommon",
   "value": 100,
   "weightKg": 0.25,
-  "imageFilename": "https://cdn.arctracker.io/items/spaceport_trench_tower_key.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/spaceport_trench_tower_key.png",
   "updatedAt": "11/07/2025"
 }

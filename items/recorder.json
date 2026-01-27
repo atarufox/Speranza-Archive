@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "recorder",
   "name": {
     "da": "Blokfløjte",
@@ -80,6 +80,6 @@
   "salvagesInto": {
     "plastic_parts": 4
   },
-  "imageFilename": "https://cdn.arctracker.io/items/recorder.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/recorder.png",
   "updatedAt": "01/13/2026"
 }

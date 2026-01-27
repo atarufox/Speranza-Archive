@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "mechanical_components",
   "name": {
     "da": "Mekaniske komponenter",
@@ -62,6 +62,6 @@
   "salvagesInto": {
     "metal_parts": 3
   },
-  "imageFilename": "https://cdn.arctracker.io/items/mechanical_components.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/mechanical_components.png",
   "updatedAt": "01/13/2026"
 }

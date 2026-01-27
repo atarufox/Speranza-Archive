@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "music_album",
   "name": {
     "da": "Musikalbum",
@@ -51,6 +51,6 @@
   "weightKg": 0.3,
   "stackSize": 3,
   "recyclesInto": {},
-  "imageFilename": "https://cdn.arctracker.io/items/music_album.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/music_album.png",
   "updatedAt": "11/04/2025"
 }

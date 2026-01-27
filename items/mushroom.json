@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "mushroom",
   "name": {
     "da": "Svamp",
@@ -98,6 +98,6 @@
     }
   },
   "recyclesInto": {},
-  "imageFilename": "https://cdn.arctracker.io/items/mushroom.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/mushroom.png",
   "updatedAt": "10/31/2025"
 }

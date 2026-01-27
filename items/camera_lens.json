@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "camera_lens",
   "name": {
     "da": "Kameraobjektiv",
@@ -56,6 +56,6 @@
   "salvagesInto": {
     "plastic_parts": 4
   },
-  "imageFilename": "https://cdn.arctracker.io/items/camera_lens.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/camera_lens.png",
   "updatedAt": "11/03/2025"
 }

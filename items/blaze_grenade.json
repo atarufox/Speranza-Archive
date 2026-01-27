@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "blaze_grenade",
   "name": {
     "da": "Flammegranate",
@@ -133,6 +133,6 @@
   "salvagesInto": {
     "oil": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/blaze_grenade.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/blaze_grenade.png",
   "updatedAt": "01/09/2026"
 }

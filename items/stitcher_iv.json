@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "stitcher_iv",
   "name": {
     "da": "Stitcher IV",
@@ -223,6 +223,6 @@
     "mechanical_components": 3,
     "simple_gun_parts": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/stitcher.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/stitcher.png",
   "updatedAt": "11/20/2025"
 }

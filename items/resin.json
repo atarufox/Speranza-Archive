@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "resin",
   "name": {
     "da": "Harpiks",
@@ -122,6 +122,6 @@
     }
   },
   "recyclesInto": {},
-  "imageFilename": "https://cdn.arctracker.io/items/resin.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/resin.png",
   "updatedAt": "11/04/2025"
 }

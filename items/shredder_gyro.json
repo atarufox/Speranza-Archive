@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "shredder_gyro",
   "name": {
     "da": "Shredder-gyroskop",
@@ -57,6 +57,6 @@
   "salvagesInto": {
     "mechanical_components": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/shredder_gyro.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/shredder_gyro.png",
   "updatedAt": "01/13/2026"
 }

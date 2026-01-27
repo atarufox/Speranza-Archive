@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "arc_powercell",
   "name": {
     "da": "ARC-kraftcelle",
@@ -122,6 +122,6 @@
     }
   },
   "recyclesInto": {},
-  "imageFilename": "https://cdn.arctracker.io/items/arc_powercell.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/arc_powercell.png",
   "updatedAt": "01/13/2026"
 }

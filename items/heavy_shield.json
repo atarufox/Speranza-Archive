@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "heavy_shield",
   "name": {
     "da": "Tungt skjold",
@@ -154,7 +154,7 @@
   "salvagesInto": {
     "arc_alloy": 4
   },
-  "imageFilename": "https://cdn.arctracker.io/items/heavy_shield.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/heavy_shield.png",
   "updatedAt": "01/09/2026",
   "damageMitigation": 65,
   "durability": 140,

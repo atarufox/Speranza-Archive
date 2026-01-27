@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "vita_shot",
   "name": {
     "da": "Vita-indsprøjtning",
@@ -109,6 +109,6 @@
   "salvagesInto": {
     "syringe": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/vita_shot.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/vita_shot.png",
   "updatedAt": "01/09/2026"
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "silencer_ii",
   "name": {
     "da": "Lyddæmper II",
@@ -86,6 +86,6 @@
   "salvagesInto": {
     "mechanical_components": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/silencer_ii.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/silencer_ii.png",
   "updatedAt": "01/09/2026"
 }

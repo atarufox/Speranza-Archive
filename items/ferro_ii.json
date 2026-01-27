@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "ferro_ii",
   "name": {
     "da": "Ferro II",
@@ -176,6 +176,6 @@
   "upgradeCost": {
     "metal_parts": 7
   },
-  "imageFilename": "https://cdn.arctracker.io/items/ferro.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/ferro.png",
   "updatedAt": "01/09/2026"
 }

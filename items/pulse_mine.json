@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "pulse_mine",
   "name": {
     "da": "Pulsmine",
@@ -87,6 +87,6 @@
   "salvagesInto": {
     "chemicals": 3
   },
-  "imageFilename": "https://cdn.arctracker.io/items/pulse_mine.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/pulse_mine.png",
   "updatedAt": "12/31/2025"
 }

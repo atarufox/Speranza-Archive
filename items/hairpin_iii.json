@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "hairpin_iii",
   "name": {
     "da": "Hårnål III",
@@ -247,6 +247,6 @@
     "metal_parts": 9,
     "simple_gun_parts": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/hairpin_i.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/hairpin_i.png",
   "updatedAt": "11/24/2025"
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "buried_city_town_hall_key",
   "name": {
     "da": "Begravet by rådhus-nøgle",
@@ -50,6 +50,6 @@
   "weightKg": 0.25,
   "stackSize": 1,
   "recyclesInto": {},
-  "imageFilename": "https://cdn.arctracker.io/items/buried_city_town_hall_key.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/buried_city_town_hall_key.png",
   "updatedAt": "01/13/2026"
 }

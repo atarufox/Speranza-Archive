@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "assorted_seeds",
   "name": {
     "da": "Blandede frø",
@@ -51,6 +51,6 @@
   "weightKg": 0.05,
   "stackSize": 100,
   "recyclesInto": {},
-  "imageFilename": "https://cdn.arctracker.io/items/assorted_seeds.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/assorted_seeds.png",
   "updatedAt": "10/30/2025"
 }

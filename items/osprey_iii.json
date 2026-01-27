@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "osprey_iii",
   "name": {
     "da": "Osprey III",
@@ -248,7 +248,7 @@
     "advanced_mechanical_components": 1,
     "medium_gun_parts": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/osprey.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/osprey.png",
   "updatedAt": "01/13/2026",
   "agility": 45.9,
   "damage": 45,

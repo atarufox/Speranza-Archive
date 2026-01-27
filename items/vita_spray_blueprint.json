@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "vita_spray_blueprint",
   "name": {
     "da": "Vita-spray-tegning",
@@ -47,6 +47,6 @@
   "type": "Blueprint",
   "rarity": "Legendary",
   "value": 5000,
-  "imageFilename": "https://cdn.arctracker.io/items/vita_spray.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/vita_spray.png",
   "updatedAt": "11/12/2025"
 }

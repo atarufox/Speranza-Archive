@@ -1,4 +1,4 @@
-{
+﻿{
   "id": "olives",
   "name": {
     "da": "Oliven",
@@ -104,6 +104,6 @@
   "salvagesInto": {
     "assorted_seeds": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/olives.png",
+  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/olives.png",
   "updatedAt": "01/09/2026"
 }
