@@ -1,60 +1,95 @@
 ﻿$files = Get-ChildItem .\*.json
 
 $total = $files.Count
-$perfectMatch = 0
-$caseMismatch = 0
-$totallyDifferent = 0
-$missingId = 0
+$report = @()
 
-Write-Host "--- INIZIO AUDIT COERENZA ID/NOMEFILE ---`n" -ForegroundColor Cyan
+Write-Host "--- INIZIO AUDIT COERENZA (SOLO ERRORI) ---`n" -ForegroundColor Cyan
 
-$report = foreach ($f in $files) {
+foreach ($f in $files) {
     $fileName = $f.BaseName
     
     try {
-        $data = Get-Content $f.FullName -Raw | ConvertFrom-Json
+        $data = Get-Content $f.FullName -Raw -Encoding UTF8 | ConvertFrom-Json
     } catch {
-        Write-Host "[ERRORE] Impossibile leggere $($f.Name)" -ForegroundColor Red
+        Write-Host "[ERRORE CRITICO] Impossibile leggere il file: $($f.Name)" -ForegroundColor Red
         continue
     }
 
-    if (-not $data.id) {
-        Write-Host "[MANCANTE] $($f.Name): Proprietà 'id' non trovata." -ForegroundColor Red
-        $missingId++
+    $jsonId = $data.id
+    # Estraiamo il nome dell'immagine senza estensione
+    $imageRef = if ($data.imageFilename) { [System.IO.Path]::GetFileNameWithoutExtension($data.imageFilename) } else { "MANCANTE" }
+
+    # Confronto Case-Sensitive
+    $idMatch = ($fileName -ceq $jsonId)
+    $imageMatch = ($fileName -ceq $imageRef)
+    $idVsImageMatch = ($jsonId -ceq $imageRef)
+
+    # Determina lo stato
+    $status = "OK"
+    if (-not $idMatch -or -not $imageMatch) {
+        if (-not $idMatch -and -not $imageMatch -and -not $idVsImageMatch) {
+            $status = "CRITICO"
+        } else {
+            $status = "DISCREPANZA"
+        }
     }
-    elseif ($data.id -ceq $fileName) {
-        # Corrispondenza perfetta
-        $perfectMatch++
+
+    # Memorizza i dati per il riepilogo finale
+    $obj = [PSCustomObject]@{
+        File           = $f.Name
+        ID_JSON        = $jsonId
+        Image_Ref      = $imageRef
+        Match_ID       = if ($idMatch) { "SI" } else { "NO" }
+        Match_Image    = if ($imageMatch) { "SI" } else { "NO" }
+        ID_equals_Img  = if ($idVsImageMatch) { "SI" } else { "NO" }
+        Stato          = $status
     }
-    elseif ($data.id -eq $fileName) {
-        # Uguali ma con maiuscole diverse (es. Vase vs vase)
-        Write-Host "[CASE] $($f.Name): File dice '$fileName', JSON dice '$($data.id)'" -ForegroundColor Yellow
-        $caseMismatch++
-    }
-    else {
-        # Nomi proprio diversi
-        Write-Host "[DIVERSO] $($f.Name): File dice '$fileName', JSON dice '$($data.id)'" -ForegroundColor Magenta
-        $totallyDifferent++
+    $report += $obj
+
+    # OUTPUT CONSOLE: Solo se c'è un errore o discrepanza
+    if ($status -ne "OK") {
+        $msgColor = "Yellow"
+        if ($status -eq "CRITICO") { $msgColor = "Red" }
+        
+        Write-Host "[$status] File: $($f.Name)" -ForegroundColor $msgColor
+        if (-not $idMatch) { 
+            Write-Host "   -> ID Errato: '$jsonId' (Dovrebbe essere '$fileName')" -ForegroundColor Gray 
+        }
+        if (-not $imageMatch) { 
+            Write-Host "   -> Immagine Errata: '$imageRef' (Dovrebbe essere '$fileName')" -ForegroundColor Gray 
+        }
+        Write-Host "   ------------------------------------"
     }
 }
 
-# --- Riepilogo Statistico ---
-$errati = $caseMismatch + $totallyDifferent + $missingId
+# --- Riepilogo Finale ---
+$errori = $report | Where-Object { $_.Stato -ne "OK" }
+$countErrori = $errori.Count
 
-Write-Host "`n" + ("="*40) -ForegroundColor White
-Write-Host "RISULTATI AUDIT" -ForegroundColor White
-Write-Host ("="*40) -ForegroundColor White
-Write-Host "File totali analizzati : $total"
-Write-Host "ID Perfetti            : $perfectMatch" -ForegroundColor Green
-Write-Host "ID con Maiuscole Errate: $caseMismatch" -ForegroundColor Yellow
-Write-Host "ID Completamente Diversi: $totallyDifferent" -ForegroundColor Magenta
-Write-Host "ID Mancanti nel JSON   : $missingId" -ForegroundColor Red
-Write-Host ("="*40) -ForegroundColor White
+# Colore del riepilogo (compatibile con PS 5.1)
+$summaryColor = "Green"
+if ($countErrori -gt 0) { $summaryColor = "Yellow" }
 
-if ($errati -eq 0) {
-    Write-Host "TUTTO OK: La tua assunzione è corretta al 100%!" -ForegroundColor Green
+Write-Host "`n" + ("="*60) -ForegroundColor White
+Write-Host "RIEPILOGO FINALE" -ForegroundColor White
+Write-Host ("="*60) -ForegroundColor White
+Write-Host "File analizzati      : $total"
+Write-Host "File OK              : $($total - $countErrori)" -ForegroundColor Green
+Write-Host "File con problemi    : $countErrori" -ForegroundColor $summaryColor
+Write-Host ("="*60) -ForegroundColor White
+
+if ($countErrori -gt 0) {
+    Write-Host "`nCONSIGLI PER IL FIX:" -ForegroundColor Cyan
+    
+    $fixRenameFile = $errori | Where-Object { $_.ID_equals_Img -eq "SI" -and $_.Match_ID -eq "NO" }
+    if ($fixRenameFile) {
+        Write-Host "- In $($fixRenameFile.Count) casi ID e Immagine sono uguali. Ti conviene RINOMINARE IL FILE fisico."
+    }
+
+    $fixJson = $errori | Where-Object { $_.Match_ID -eq "NO" -and $_.Match_Image -eq "SI" }
+    if ($fixJson) {
+        Write-Host "- In $($fixJson.Count) casi il file punta all'immagine corretta. Ti conviene correggere l'ID dentro il JSON."
+    }
 } else {
-    $perc = [math]::Round(($perfectMatch / $total) * 100, 2)
-    Write-Host "ATTENZIONE: Solo il $perc% dei file è coerente." -ForegroundColor Yellow
-    Write-Host "Puoi procedere con lo script di fix per correggere i $errati file problematici."
+    Write-Host "Nessuna azione richiesta. Tutti i file sono coerenti!" -ForegroundColor Green
 }
