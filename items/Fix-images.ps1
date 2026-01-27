@@ -8,73 +8,80 @@ $errors = 0
 
 foreach ($f in $files) {
     $filePath = $f.FullName
-    $expectedId = $f.BaseName 
+    $fileName = $f.BaseName
 
     try {
+        # Carica il JSON come oggetto PowerShell
         $jsonRaw = Get-Content $filePath -Raw -ErrorAction Stop
         $data = $jsonRaw | ConvertFrom-Json
     } catch {
-        Write-Host "[ERRORE] JSON corrotto: $($f.Name)" -ForegroundColor Red
+        Write-Host "[ERRORE] File JSON non valido o illeggibile:" $f.Name -ForegroundColor Red
         $errors++
         continue
     }
 
     $isChanged = $false
+    $skipWrite = $false
 
-    # --- 1) Controllo ID ---
-    if ($data.id -cne $expectedId) {
-        Write-Host "[ID] Correzione: '$($data.id)' -> '$expectedId' in $($f.Name)" -ForegroundColor Cyan
-        $data.id = $expectedId
+    # --- 1) Aggiorna ID ---
+    if ($data.id -ne $fileName) {
+        Write-Host "[CHECK] ID non corrisponde in: $($f.Name). Valore attuale: $($data.id)"
+        $data.id = $fileName
         $isChanged = $true
         $fixedId++
     }
 
-    # --- 2) Controllo imageFilename ---
-    $expectedImage = "images/items/$expectedId.png"
+    # --- 2) Aggiorna imageFilename ---
+    $expectedImage = "images/items/$fileName.png"
+    
+    # Se la proprietà non esiste, la creiamo
     if (-not $data.PSObject.Properties['imageFilename']) {
         $data | Add-Member -MemberType NoteProperty -Name "imageFilename" -Value $expectedImage
         $isChanged = $true
         $fixedImage++
-    } 
-    elseif ($data.imageFilename -cne $expectedImage) {
-        $data.imageFilename = $expectedImage
-        $isChanged = $true
-        $fixedImage++
-    }
-
-    # --- 3) Aggiornamento e riordino (updatedAt sempre ultimo) ---
-    if ($isChanged) {
-        $now = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
-        
-        $newObject = [ordered]@{}
-        $newObject["id"] = $data.id
-        foreach ($prop in $data.PSObject.Properties) {
-            if ($prop.Name -ne "id" -and $prop.Name -ne "updatedAt") {
-                $newObject[$prop.Name] = $prop.Value
+        Write-Host "[AZIONE] Creato imageFilename mancante in: $($f.Name)"
+    } else {
+        # Se esiste, verifichiamo il valore
+        if ($data.imageFilename -ne $expectedImage) {
+            # Logica del tuo script originale: se differisce solo per maiuscole/minuscole correggi, altrimenti salta
+            if ($data.imageFilename.ToLower() -eq $expectedImage.ToLower()) {
+                $data.imageFilename = $expectedImage
+                $isChanged = $true
+                $fixedImage++
+                Write-Host "[AZIONE] Corretta maiuscola in imageFilename: $($f.Name)"
+            } else {
+                Write-Host "[WARNING] imageFilename del tutto diversa in $($f.Name), ignoro il file." -ForegroundColor Yellow
+                $skipWrite = $true
             }
         }
-        $newObject["updatedAt"] = $now
-        $fixedDate++
+    }
 
-        # --- 4) Conversione e FIX UNICODE ---
-        $jsonString = $newObject | ConvertTo-Json -Depth 10 -Compress:($false)
-
-        # Ripristiniamo i caratteri Unicode (Ebraico, Apostrofi, ecc.)
-        # Cerchiamo le sequenze \uXXXX e le trasformiamo nei caratteri reali
-        $jsonString = [regex]::Replace($jsonString, "\\u(?<Value>[a-zA-Z0-9]{4})", {
-            param($m) [char][int]"0x$($m.Groups['Value'].Value)"
-        })
-
-        # --- 5) Scrittura File ---
-        [System.IO.File]::WriteAllText($filePath, $jsonString, [System.Text.Encoding]::UTF8)
+    # --- 3) Aggiorna updatedAt (e forzalo alla fine) ---
+    if (-not $skipWrite) {
+        $now = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
         
-        Write-Host "[OK] File $($f.Name) salvato correttamente." -ForegroundColor Green
+        # Per mettere updatedAt "alla fine", lo rimuoviamo (se esiste) e lo riaggiungiamo
+        if ($data.PSObject.Properties['updatedAt']) {
+            $data.PSObject.Properties.Remove('updatedAt')
+        }
+        $data | Add-Member -MemberType NoteProperty -Name "updatedAt" -Value $now
+        $isChanged = $true
+        $fixedDate++
+    }
+
+    # --- 4) Scrittura file ---
+    if ($isChanged -and -not $skipWrite) {
+        # Converti l'oggetto in stringa JSON (Depth 10 per gestire oggetti annidati)
+        $jsonString = $data | ConvertTo-Json -Depth 10
+        Set-Content -Path $filePath -Value $jsonString -Encoding UTF8
+        Write-Host "[OK] File $($f.Name) aggiornato con successo." -ForegroundColor Green
     }
 }
 
-Write-Host "`nRIEPILOGO FINALE" -ForegroundColor White
-Write-Host "File analizzati : $total"
-Write-Host "ID modificati   : $fixedId"
-Write-Host "IMG modificati  : $fixedImage"
-Write-Host "Date aggiornate : $fixedDate"
-Write-Host "Errori          : $errors"
+# --- Riepilogo finale ---
+Write-Host "`nRIEPILOGO" -ForegroundColor Cyan
+Write-Host "File totali        :" $total
+Write-Host "ID corretti        :" $fixedId
+Write-Host "imageFilename fix  :" $fixedImage
+Write-Host "updatedAt fix      :" $fixedDate
+Write-Host "File con problemi  :" $errors
