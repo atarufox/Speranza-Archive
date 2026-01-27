@@ -6,7 +6,7 @@
                  "en":  "Telemetry Transceiver",
                  "es":  "Transceptor de telemetría",
                  "fr":  "Émetteur-récepteur de Télémétrie",
-                 "he":  "מקמ"ש טלמטריה",
+                 "he":  "מקמ\"ש טלמטריה",
                  "hr":  "Telemetrijski primopredajnik",
                  "it":  "Ricetrasmettitore telemetrico",
                  "ja":  "テレメトリー送受信機",
@@ -58,5 +58,5 @@
                          "electrical_components":  2
                      },
     "imageFilename":  "telemetry_transceiver.png",
-    "lastUpdate":  "2026-01-27 17:44:51"
+    "lastUpdate":  "2026-01-27 17:57:47"
 }

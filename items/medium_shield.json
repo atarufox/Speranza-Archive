@@ -36,8 +36,7 @@
                         "no":  "Et standard skjold som blokkerer en middels del av innkommende skade til en moderat kostnad for mobilitet.",
                         "pl":  "Standardowa tarcza, która blokuje średnią część otrzymywanych obrażeń przy umiarkowanym koszcie mobilności.",
                         "pt":  "Um escudo padrão que bloqueia uma porção média do dano recebido a um custo moderado de mobilidade.",
-                        "pt-BR":  "Escudo padrão que bloqueia uma parte moderada do dano sofrido e sacrifica
-moderadamente a mobilidade.",
+                        "pt-BR":  "Escudo padrão que bloqueia uma parte moderada do dano sofrido e sacrifica\nmoderadamente a mobilidade.",
                         "ru":  "Стандартный щит, блокирующий среднюю часть входящего урона с умеренным снижением мобильности.",
                         "sr":  "Standardni štit koji blokira srednju količinu dolazne štete uz umereno smanjenje pokretljivosti.",
                         "tr":  "Gelen hasarın orta bir kısmını engelleyen standart bir kalkan. Hareketliliği orta düzeyde azaltır.",
@@ -156,5 +155,5 @@ moderadamente a mobilidade.",
     "durability":  100,
     "movementSpeedModifier":  -5,
     "shieldCharge":  70,
-    "lastUpdate":  "2026-01-27 17:44:50"
+    "lastUpdate":  "2026-01-27 17:57:46"
 }

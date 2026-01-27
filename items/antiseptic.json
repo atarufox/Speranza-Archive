@@ -36,8 +36,7 @@
                         "no":  "Brukes til å lage medisinske forsyninger. Kan resirkuleres til kjemikalier. Brukes til å lage: Sterilisert bandasje, Vita-spray, Vita-sprøyte",
                         "pl":  "Używany do wytwarzania zapasów medycznych. Można przetworzyć na chemikalia. Używany do wytworzenia: Sterylny bandaż, Spray Vita, Zastrzyk Vita",
                         "pt":  "Usado para fabricar suprimentos médicos. Pode ser reciclado em produtos químicos. Usado para fabricar: Bandagem esterilizada, Spray Vita, Injeção Vita",
-                        "pt-BR":  "Serve para fabricar suprimentos médicos. Reciclar gera produtos químicos. Usado para fabricar: Atadura
-Esterilizada, Spray Vita, Injeção Vita",
+                        "pt-BR":  "Serve para fabricar suprimentos médicos. Reciclar gera produtos químicos. Usado para fabricar: Atadura\nEsterilizada, Spray Vita, Injeção Vita",
                         "ru":  "Используется для создания медицинских принадлежностей. Можно переработать в химикаты. Используется для крафта: Стерильный бинт, Вита-спрей, Вита-укол",
                         "sr":  "Koristi se za izradu medicinskih potrepština. Može se reciklirati u hemikalije. Koristi se za izradu: Sterilizovani Zavoj, Vita Sprej, Vita Injekcija",
                         "tr":  "Tıbbi malzeme üretmek için kullanılır. Kimyasallara geri dönüştürülebilir. Üretim: Sterilize Bandaj, Vita Spreyi, Vita İğnesi",
@@ -63,5 +62,5 @@ Esterilizada, Spray Vita, Injeção Vita",
                          "chemicals":  5
                      },
     "imageFilename":  "antiseptic.png",
-    "lastUpdate":  "2026-01-27 17:44:50"
+    "lastUpdate":  "2026-01-27 17:57:46"
 }
