@@ -126,6 +126,6 @@
     "gas_grenade": 1,
     "wires": 1
   },
-  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/gas_grenade_trap.png",
+  "imageFilename": "images/items/gas_grenade_trap.png",
   "updatedAt": "01/13/2026"
 }

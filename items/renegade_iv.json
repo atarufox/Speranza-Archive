@@ -225,7 +225,7 @@
     "advanced_mechanical_components": 2,
     "medium_gun_parts": 2
   },
-  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/renegade.png",
+  "imageFilename": "images/items/renegade.png",
   "updatedAt": "01/09/2026",
   "agility": 55.8,
   "damage": 35,

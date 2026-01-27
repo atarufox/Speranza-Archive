@@ -176,6 +176,6 @@
   "upgradeCost": {
     "metal_parts": 7
   },
-  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/ferro.png",
+  "imageFilename": "images/items/ferro.png",
   "updatedAt": "01/09/2026"
 }

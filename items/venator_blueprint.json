@@ -47,6 +47,6 @@
   "type": "Blueprint",
   "rarity": "Legendary",
   "value": 5000,
-  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/venator.png",
+  "imageFilename": "images/items/venator.png",
   "updatedAt": "01/13/2026"
 }

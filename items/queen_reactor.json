@@ -56,7 +56,7 @@
   "salvagesInto": {
     "power_rod": 1
   },
-  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/queen_part.png",
+  "imageFilename": "images/items/queen_part.png",
   "updatedAt": "01/09/2026",
   "tip": "The Queen Reactor is a legendary item only acquired by defeating The Queen that can be recycled into crafting materials."
 }

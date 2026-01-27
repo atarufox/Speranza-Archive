@@ -523,10 +523,10 @@
                     <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </button>
                 <div class="connect-dropdown">
-        <button class="sub-btn" id="pickRaidTheory" onclick="pickRepo('RaidTheory', event)">RaidTheory</button>
+        <button class="sub-btn" id="pickAtaruFox" onclick="pickRepo('AtaruFox', event)">AtaruFox</button>
         <button class="sub-btn" id="pickLocal" onclick="pickRepo('Local', event)">Locale</button>
         <select id="repoSelect" class="sub-btn" style="display:none">
-          <option value="RaidTheory">RaidTheory</option>
+          <option value="AtaruFox">AtaruFox</option>
           <option value="Local">Locale</option>
         </select>
 </div>
@@ -951,7 +951,7 @@
 
     function normalizeHideoutData(sourceData, sourceRepo) {
         let normalized = [];
-        if (sourceRepo === 'RaidTheory') {
+        if (sourceRepo === 'Atarufox') {
             if(Array.isArray(sourceData)) {
                 sourceData.forEach(d => {
                     if (d.levels) {
@@ -978,11 +978,11 @@
         imageMode = 'LOCAL'; updateImageModeBtn();
         dom.loader.style.display = 'flex'; itemsDB = []; hideoutDB = []; 
         
-        const selectedRepo = document.getElementById('repoSelect') ? document.getElementById('repoSelect').value : 'RaidTheory';
+        const selectedRepo = document.getElementById('repoSelect') ? document.getElementById('repoSelect').value : 'AtaruFox';
         
         try {
             dom.loaderText.textContent = "CONNECTING...";
-            const repo = 'RaidTheory/arcraiders-data';
+            const repo = 'atarufox/Speranza-Archives';
             const itemsUrl = `https://api.github.com/repos/${repo}/contents/items`;
             const responseItems = await fetch(itemsUrl);
             if (!responseItems.ok) throw new Error(`GitHub API error (Items): ${responseItems.status}`);
@@ -1006,7 +1006,7 @@
             const loadedHideout = await Promise.all(hideoutPromises);
 
             itemsDB = loadedItems;
-            hideoutDB = normalizeHideoutData(loadedHideout, 'RaidTheory');
+            hideoutDB = normalizeHideoutData(loadedHideout, 'atarufox');
 
             enableUI(); analyzeTypes();
         } catch (error) {
@@ -1039,7 +1039,7 @@
         }
         await Promise.all(tasks);
         
-        hideoutDB = normalizeHideoutData(tempHideoutData, 'RaidTheory');
+        hideoutDB = normalizeHideoutData(tempHideoutData, 'atarufox');
 
         enableUI(); analyzeTypes();
     }

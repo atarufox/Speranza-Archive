@@ -48,6 +48,6 @@
   "rarity": "Common",
   "weightKg": 0.25,
   "questItem": true,
-  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/first_wave_tape.png",
+  "imageFilename": "images/items/first_wave_tape.png",
   "updatedAt": "11/17/2025"
 }

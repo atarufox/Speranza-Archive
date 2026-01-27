@@ -202,7 +202,7 @@
     "advanced_mechanical_components": 1,
     "heavy_gun_parts": 2
   },
-  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/hullcracker.png",
+  "imageFilename": "images/items/hullcracker.png",
   "updatedAt": "11/12/2025",
   "agility": 67.9,
   "damage": 100,

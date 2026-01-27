@@ -202,7 +202,7 @@
     "heavy_gun_parts": 1,
     "mechanical_components": 4
   },
-  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/il_toro.png",
+  "imageFilename": "images/items/il_toro.png",
   "updatedAt": "01/09/2026",
   "agility": 61.1,
   "damage": 67.5,

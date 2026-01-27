@@ -47,6 +47,6 @@
   "type": "Trinket",
   "rarity": "Common",
   "weightKg": 0.25,
-  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/lidar_scanner.png",
+  "imageFilename": "images/items/lidar_scanner.png",
   "updatedAt": "11/17/2025"
 }

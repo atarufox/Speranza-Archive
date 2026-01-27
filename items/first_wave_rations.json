@@ -48,6 +48,6 @@
   "rarity": "Common",
   "weightKg": 0.25,
   "questItem": true,
-  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/first_wave_rations.png",
+  "imageFilename": "images/items/first_wave_rations.png",
   "updatedAt": "11/17/2025"
 }

@@ -57,6 +57,6 @@
   "salvagesInto": {
     "wires": 4
   },
-  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/portable_tv.png",
+  "imageFilename": "images/items/portable_tv.png",
   "updatedAt": "01/09/2026"
 }

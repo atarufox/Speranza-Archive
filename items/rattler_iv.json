@@ -179,7 +179,7 @@
     "mechanical_components": 3,
     "simple_gun_parts": 1
   },
-  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/rattler.png",
+  "imageFilename": "images/items/rattler.png",
   "updatedAt": "12/16/2025",
   "agility": 54.8,
   "damage": 9,

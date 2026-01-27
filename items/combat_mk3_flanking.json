@@ -249,7 +249,7 @@
   "salvagesInto": {
     "electrical_components": 2
   },
-  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/combat_mk3_flanking.png",
+  "imageFilename": "images/items/combat_mk3_flanking.png",
   "updatedAt": "01/20/2026",
   "repairCost": {
     "advanced_electrical_components": 1,

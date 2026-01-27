@@ -56,7 +56,7 @@
   "salvagesInto": {
     "rubber_parts": 1
   },
-  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/wires.png",
+  "imageFilename": "images/items/wires.png",
   "updatedAt": "01/20/2026",
   "tip": "Wires are an uncommon item used to craft weapon mods that can be recycled into crafting materials."
 }

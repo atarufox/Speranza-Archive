@@ -178,7 +178,7 @@
   "salvagesInto": {
     "metal_parts": 2
   },
-  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/ferro.png",
+  "imageFilename": "images/items/ferro.png",
   "updatedAt": "11/03/2025",
   "repairMaterials": {
     "durability_increase": 50,

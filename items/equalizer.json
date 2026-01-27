@@ -158,7 +158,7 @@
   "salvagesInto": {
     "magnetic_accelerator": 1
   },
-  "imageFilename": "https://github.com/atarufox/Speranza-Archives/blob/main/images/equalizer.png",
+  "imageFilename": "images/items/equalizer.png",
   "updatedAt": "01/13/2026",
   "agility": 44.6,
   "damage": 8,
