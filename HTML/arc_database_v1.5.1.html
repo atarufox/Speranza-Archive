@@ -1,9 +1,10 @@
+<!-- START OF FILE arc_database_v1.5.1.html -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARC RAIDERS // DATABASE v1.5.0</title>
+    <title>ARC RAIDERS // DATABASE v1.5.1</title>
     <style>
         /* FONTS */
         @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Teko:wght@300;400;500;600;700&display=swap');
@@ -513,7 +514,7 @@
                 <div class="app-logo">
                     <img src="images/menu/ARC Raiders.png" alt="ARC Raiders">
                 </div>
-                <span class="version-badge">v1.5.0</span>
+                <span class="version-badge">v1.5.1</span>
             </div>
 
             <div class="connect-wrapper">
@@ -522,16 +523,15 @@
                     <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </button>
                 <div class="connect-dropdown">
-        <button class="sub-btn" id="pickRaidTheory" onclick="pickRepo('Speranza', event)">Speranza</button>
-        <button class="sub-btn" id="pickLocal" onclick="pickRepo('Local', event)">Locale</button>
-        <select id="repoSelect" class="sub-btn" style="display:none">
-          <option value="Speranza">Speranza</option>
-          <option value="Local">Locale</option>
-        </select>
-</div>
+                    <!-- CHANGED: REPO SELECTION -->
+                    <button class="sub-btn" id="pickRemote" onclick="pickRepo('Remote', event)">Speranza</button>
+                    <select id="repoSelect" class="sub-btn" style="display:none">
+                      <option value="Remote">Speranza</option>
+                    </select>
+                </div>
             </div>
             
-            <input type="file" id="folderInput" webkitdirectory directory multiple style="display:none">
+            <!-- REMOVED LOCAL FOLDER INPUT -->
 
             <!-- NAV LINKS: SWITCH MAIN SECTION -->
             <div class="nav-links">
@@ -627,6 +627,7 @@
     let bpViewMode = 0; 
     let isModalOpen = false; 
 
+    // CHANGED: NEW REPO URL
     const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/atarufox/Speranza-Archive/main/';
 
     // --- COMPLETE TRANSLATION DICTIONARY ---
@@ -740,7 +741,8 @@
         btnWishlist: document.getElementById('btnWishlist')
     };
 
-    document.getElementById('folderInput').addEventListener('change', loadDataLocal);
+    // REMOVED LOCAL FOLDER LISTENER
+    
     dom.search.addEventListener('input', (e) => { dom.searchClear.style.display = e.target.value ? 'block' : 'none'; render(); });
     document.getElementById('langSelect').addEventListener('change', (e) => { 
         currentLang = e.target.value; 
@@ -950,7 +952,7 @@
 
     function normalizeHideoutData(sourceData, sourceRepo) {
         let normalized = [];
-        if (sourceRepo === 'Speranza' || sourceRepo === 'RaidTheory') {
+        if (sourceRepo === 'RaidTheory') { // Same normalization for now
             if(Array.isArray(sourceData)) {
                 sourceData.forEach(d => {
                     if (d.levels) {
@@ -977,10 +979,12 @@
         imageMode = 'LOCAL'; updateImageModeBtn();
         dom.loader.style.display = 'flex'; itemsDB = []; hideoutDB = []; 
         
-        const selectedRepo = document.getElementById('repoSelect') ? document.getElementById('repoSelect').value : 'Speranza';
+        // CHANGED: REPO NAME
+        const selectedRepo = document.getElementById('repoSelect') ? document.getElementById('repoSelect').value : 'Remote';
         
         try {
             dom.loaderText.textContent = "CONNECTING...";
+            // CHANGED: REPO PATH
             const repo = 'atarufox/Speranza-Archive';
             const itemsUrl = `https://api.github.com/repos/${repo}/contents/items`;
             const responseItems = await fetch(itemsUrl);
@@ -1005,7 +1009,7 @@
             const loadedHideout = await Promise.all(hideoutPromises);
 
             itemsDB = loadedItems;
-            hideoutDB = normalizeHideoutData(loadedHideout, 'Speranza');
+            hideoutDB = normalizeHideoutData(loadedHideout, 'RaidTheory');
 
             enableUI(); analyzeTypes();
         } catch (error) {
@@ -1015,6 +1019,7 @@
     }
 
     async function loadDataLocal(e) {
+        // Function kept for structure but trigger removed
         const files = Array.from(e.target.files);
         if(!files.length) return;
         imageMode = 'LOCAL'; updateImageModeBtn();
@@ -1038,7 +1043,7 @@
         }
         await Promise.all(tasks);
         
-        hideoutDB = normalizeHideoutData(tempHideoutData, 'Speranza');
+        hideoutDB = normalizeHideoutData(tempHideoutData, 'RaidTheory');
 
         enableUI(); analyzeTypes();
     }
@@ -1838,3 +1843,4 @@ window.pickRepo = function(repo, e){
 </script>
 </body>
 </html>
+<!-- END OF FILE arc_database_v1.5.1.html -->
