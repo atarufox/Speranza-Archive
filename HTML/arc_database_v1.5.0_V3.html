@@ -1,0 +1,422 @@
+<!-- --- START OF FILE arc_database_v1.5.0.html --- -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARC RAIDERS // DATABASE v1.5.0</title>
+    <style>
+        /* FONTS */
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Teko:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            /* GAME UI PALETTE */
+            --bg-body: #050505;
+            --bg-overlay: rgba(10, 10, 12, 0.85);
+            --bg-panel: rgba(20, 22, 25, 0.7);
+            --border-tech: rgba(255, 255, 255, 0.15);
+            
+            /* COLORS */
+            --arc-yellow: #ffc400;
+            --arc-white: #e6e6e6;
+            --arc-teal: #00e5ff;   
+            --arc-red: #ff2a2a;
+            
+            /* SIDEBAR COLORS */
+            --sb-inactive-bg: #2b2f3b;
+            --sb-inactive-icon: #7f838d;
+            --sb-active-bg: #f2e8d5;
+            --sb-active-icon: #141619;
+
+            --sb-icon-size: 52px;
+            --sb-gap: 8px;
+            --nav-gap: 5px;          
+            --nav-padding-x: 10px;   
+
+            /* CARD COLORS */
+            --card-bg: #f2e8d5;
+            --card-footer: #dcd0b9;
+            --card-text: #121418;
+            
+            /* RARITY COLORS */
+            --col-common: #7a7a7a;
+            --col-uncommon: #009e48;
+            --col-rare: #0090d4;
+            --col-epic: #a040b0;
+            --col-legendary: #ff9600;
+            --col-material: #0090d4;
+            --col-recycle: #009e48;
+
+            --font-head: 'Teko', sans-serif;
+            --font-ui: 'Rajdhani', sans-serif;
+            --font-body: 'Barlow', sans-serif;
+
+            --header-h: 80px;
+            --logo-h: 30px;
+            --nav-font: 1.5rem;
+            --btn-play-h: 40px;
+            --btn-play-font: 1.4rem;
+            --btn-sys-h: 34px;
+            --search-w: 200px;
+            --sb-w: 70px;
+            --content-pad-left: 130px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1300px) {
+            :root {
+                --header-h: 55px;
+                --nav-font: 1.0rem;
+                --sb-w: 50px;
+                --content-pad-left: 90px;
+            }
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+
+        body {
+            background-color: var(--bg-body);
+            background: radial-gradient(circle at 50% 30%, #1a1f2e 0%, #050505 80%);
+            background-attachment: fixed;
+            color: var(--arc-white);
+            font-family: var(--font-ui);
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+        }
+
+        .layout-container { flex: 1; display: flex; flex-direction: column; padding-top: var(--header-h); }
+
+        header {
+            position: fixed; top: 0; left: 0; right: 0;
+            height: var(--header-h);
+            background: linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 100%);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 20px; z-index: 1000;
+        }
+
+        .header-left { display: flex; align-items: center; gap: 20px; height: 100%; }
+        .logo-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .app-logo { height: var(--logo-h); cursor: pointer; }
+        .app-logo img { height: 100%; filter: drop-shadow(0 0 5px rgba(255, 196, 0, 0.3)); }
+
+        .connect-wrapper { position: relative; height: var(--btn-play-h); display: flex; align-items: center; }
+        .btn-play {
+            background-color: var(--arc-yellow); color: #050505;
+            height: var(--btn-play-h); padding: 0 15px; border-radius: 40px;
+            font-family: var(--font-head); font-weight: 700; font-size: var(--btn-play-font);
+            border: none; cursor: pointer; display: flex; align-items: center; gap: 8px;
+        }
+
+        .connect-dropdown {
+            position: absolute; top: 50%; left: 25px; height: var(--btn-play-h);
+            background: #111; border: 1px solid var(--arc-yellow); border-radius: 0 40px 40px 0;
+            padding-left: 140px; padding-right: 30px;
+            display: flex; align-items: center; gap: 5px;
+            opacity: 0; pointer-events: none; transform: translateY(-50%) translateX(-20px); transition: 0.3s ease;
+        }
+        .connect-wrapper:hover .connect-dropdown { opacity: 1; pointer-events: auto; transform: translateY(-50%) translateX(0); }
+
+        .sub-btn {
+            background: transparent; color: var(--arc-yellow); border: 1px solid rgba(255, 196, 0, 0.3);
+            font-family: var(--font-ui); font-weight: 700; font-size: 0.8rem; padding: 0 8px; height: 70%;
+            border-radius: 4px; cursor: pointer; text-transform: uppercase;
+        }
+        .sub-btn:hover { background: var(--arc-yellow); color: #000; }
+
+        .nav-links { display: flex; gap: var(--nav-gap); margin-left: 10px; opacity: 0.3; pointer-events: none; }
+        body.db-loaded .nav-links { opacity: 1; pointer-events: auto; }
+        .nav-item {
+            font-family: var(--font-head); font-weight: 600; font-size: var(--nav-font); color: #999;
+            text-transform: uppercase; cursor: pointer; padding: 2px var(--nav-padding-x); border: 2px solid transparent; border-radius: 50px;
+        }
+        .nav-item.active { color: #fff; border-color: #f0ebd8; background: rgba(255,255,255,0.05); }
+
+        .header-right { display: flex; align-items: center; gap: 10px; }
+        .search-box {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            padding: 0 12px; color: #fff; width: var(--search-w); height: var(--btn-sys-h); border-radius: 4px; outline: none;
+        }
+
+        .btn-system {
+            height: var(--btn-sys-h); padding: 0 12px; background: transparent; border: 1px solid rgba(255,255,255,0.2);
+            color: #ccc; font-family: var(--font-ui); text-transform: uppercase; border-radius: 20px; cursor: pointer;
+        }
+        .btn-system.active { background: var(--arc-yellow); color: #000; }
+
+        /* SIDEBAR */
+        aside {
+            position: absolute; top: calc(var(--header-h) + 20px); left: 30px; bottom: 20px; 
+            width: var(--sb-w); display: none; flex-direction: column; align-items: center; gap: var(--sb-gap); z-index: 90;
+        }
+        body.db-loaded aside { display: flex; }
+        .filter-circle {
+            width: var(--sb-icon-size); height: var(--sb-icon-size); border-radius: 50%;
+            background-color: var(--sb-inactive-bg); display: flex; justify-content: center; align-items: center;
+            cursor: pointer; transition: 0.2s; border: 2px solid transparent; position: relative;
+        }
+        .filter-circle.active { background-color: var(--sb-active-bg); }
+        .filter-circle img { width: 100%; height: 100%; border-radius: 50%; }
+        .filter-circle .icon-active { display: none; }
+        .filter-circle.active .icon-active { display: block; }
+        .filter-circle.active .icon-inactive { display: none; }
+
+        /* CONTENT */
+        .content-area { flex: 1; padding: 20px 40px; overflow-y: auto; transition: padding-left 0.3s; }
+        body.db-loaded .content-area { padding-left: var(--content-pad-left); }
+        .stash-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; }
+
+        .slot {
+            aspect-ratio: 1; background-color: rgba(15, 15, 15, 0.6); border: 1px solid var(--border-tech);
+            border-radius: 2px; position: relative; display: flex; align-items: center; justify-content: center; cursor: pointer;
+        }
+        .slot:hover { border-color: #fff; transform: scale(1.05); }
+        .slot img { max-width: 85%; max-height: 85%; object-fit: contain; }
+        .slot::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; }
+        .slot.common::after { background: var(--col-common); }
+        .slot.uncommon::after { background: var(--col-uncommon); }
+        .slot.rare::after { background: var(--col-rare); }
+        .slot.epic::after { background: var(--col-epic); }
+        .slot.legendary::after { background: var(--col-legendary); }
+
+        /* TOOLTIP & MODALS */
+        #tooltip { position: fixed; display: none; width: 340px; z-index: 11000; pointer-events: none; }
+        #sidebar-tooltip { position: fixed; display: none; background: #000; color: var(--arc-yellow); padding: 5px 12px; z-index: 12000; border: 1px solid var(--arc-yellow); }
+        #loader { position: fixed; inset: 0; background: #000; display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 20000; }
+    </style>
+</head>
+<body>
+
+<div id="loader">
+    <h2 style="color:white; font-family:var(--font-head);">LOADING DATA...</h2>
+    <div id="loader-text" style="color:var(--arc-yellow);">INITIALIZING</div>
+</div>
+
+<header>
+    <div class="header-left">
+        <div class="app-logo" onclick="location.reload()"><img src="images/menu/ARC Raiders.png"></div>
+        <div class="connect-wrapper">
+            <button class="btn-play">DATABASE</button>
+            <div class="connect-dropdown">
+                <button class="sub-btn" onclick="pickRepo('Speranza')">Speranza</button>
+                <button class="sub-btn" onclick="pickRepo('Local')">Locale</button>
+            </div>
+        </div>
+        <div class="nav-links">
+            <div class="nav-item active" onclick="setSection('INVENTARIO')" data-nav="INVENTARIO">INVENTARIO</div>
+            <div class="nav-item" onclick="setSection('OFFICINA')" data-nav="OFFICINA">OFFICINA</div>
+            <div class="nav-item" onclick="setSection('PROGETTI')" data-nav="PROGETTI">PROGETTI</div>
+        </div>
+    </div>
+    <div class="header-right">
+        <input type="text" class="search-box" id="searchInput" placeholder="CERCA..." disabled oninput="render()">
+        <button id="imgModeBtn" class="btn-system" onclick="toggleImageMode()">IMG: LOCAL</button>
+    </div>
+</header>
+
+<aside id="sidebarPanel"></aside>
+
+<div class="content-area">
+    <div id="grid-container" class="stash-grid">
+        <div style="grid-column: 1/-1; text-align: center; margin-top: 20vh; opacity: 0.5;">
+            <h1>NO SIGNAL</h1>
+            <p>CONNETTI IL DATABASE PER INIZIARE</p>
+        </div>
+    </div>
+</div>
+
+<div id="tooltip"></div>
+<div id="sidebar-tooltip"></div>
+<input type="file" id="folderInput" webkitdirectory directory multiple style="display:none" onchange="loadDataLocal(event)">
+
+<script>
+    let itemsDB = [], hideoutDB = [], allImages = new Map();
+    let currentSection = 'INVENTARIO', currentFilter = 'ALL', currentLang = 'it', imageMode = 'LOCAL';
+    const GITHUB_RAW = 'https://raw.githubusercontent.com/atarufox/Speranza-Archive/main/';
+
+    // CONFIG FILTRI
+    const SIDEBAR_CONFIG = {
+        'INVENTARIO': [
+            { id: 'ALL', img: 'tutto', label: 'TUTTO' },
+            { id: 'ARMI', img: 'armi', label: 'ARMI' },
+            { id: 'MATERIALI', img: 'crafting', label: 'MATERIALI' },
+            { id: 'MUNIZIONI', img: 'munizioni', label: 'MUNIZIONI' },
+            { id: 'USO_RAPIDO', img: 'uso_rapido', label: 'USO RAPIDO' },
+            { id: 'CHIAVI', img: 'chiavi', label: 'CHIAVI' }
+        ],
+        'OFFICINA': [
+            { id: 'ALL', img: 'tutto', label: 'TUTTO' },
+            { targetId: 'workbench', label: 'WORKBENCH' },
+            { targetId: 'weapon_bench', label: 'WEAPON BENCH' },
+            { targetId: 'scrappy', label: 'SCRAPPY' }
+        ],
+        'PROGETTI': [
+            { id: 'ALL', img: 'tutto', label: 'TUTTI I PROGETTI' }
+        ]
+    };
+
+    const dom = {
+        grid: document.getElementById('grid-container'),
+        sidebar: document.getElementById('sidebarPanel'),
+        loader: document.getElementById('loader'),
+        search: document.getElementById('searchInput')
+    };
+
+    function setSection(section) {
+        currentSection = section;
+        currentFilter = 'ALL';
+        document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('active', n.dataset.nav === section));
+        renderSidebar();
+        render();
+    }
+
+    function renderSidebar() {
+        dom.sidebar.innerHTML = "";
+        const config = SIDEBAR_CONFIG[currentSection] || [];
+        const baseUrl = (imageMode === 'REMOTE') ? GITHUB_RAW : '';
+
+        config.forEach(item => {
+            const id = item.targetId || item.id;
+            const div = document.createElement('div');
+            div.className = `filter-circle ${currentFilter === id ? 'active' : ''}`;
+            div.onclick = () => { currentFilter = id; renderSidebar(); render(); };
+            
+            const imgName = item.img || id;
+            div.innerHTML = `
+                <img class="icon-inactive" src="${baseUrl}images/menu/${imgName}_inactive.png" onerror="this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='">
+                <img class="icon-active" src="${baseUrl}images/menu/${imgName}_active.png" onerror="this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='">
+            `;
+            dom.sidebar.appendChild(div);
+        });
+    }
+
+    async function loadDataFromGithub() {
+        dom.loader.style.display = 'flex';
+        imageMode = 'REMOTE';
+        updateImageModeBtn();
+        try {
+            const repo = 'atarufox/Speranza-Archive';
+            const itemsRes = await fetch(`https://api.github.com/repos/${repo}/contents/items`);
+            const itemsFiles = await itemsRes.json();
+            
+            const promises = itemsFiles.filter(f => f.name.endsWith('.json')).map(f => fetch(f.download_url).then(r => r.json()));
+            itemsDB = await Promise.all(promises);
+
+            const hideRes = await fetch(`https://api.github.com/repos/${repo}/contents/hideout`);
+            const hideFiles = await hideRes.json();
+            const hidePromises = hideFiles.filter(f => f.name.endsWith('.json')).map(f => fetch(f.download_url).then(r => r.json()));
+            hideoutDB = await Promise.all(hidePromises);
+
+            enableUI();
+        } catch (e) { alert("Errore caricamento remoto"); dom.loader.style.display = 'none'; }
+    }
+
+    function enableUI() {
+        document.body.classList.add('db-loaded');
+        dom.search.disabled = false;
+        dom.loader.style.display = 'none';
+        setSection('INVENTARIO');
+    }
+
+    function isBlueprint(item) {
+        const type = (item.type || "").toLowerCase();
+        return type.includes('blueprint') || type.includes('schematic');
+    }
+
+    function render() {
+        dom.grid.innerHTML = "";
+        const search = dom.search.value.toLowerCase();
+        const baseUrl = (imageMode === 'REMOTE') ? GITHUB_RAW : '';
+
+        let source = (currentSection === 'OFFICINA') ? hideoutDB : itemsDB;
+
+        let filtered = source.filter(item => {
+            if (!item) return false;
+            const name = (item.name?.[currentLang] || item.id || "").toLowerCase();
+            if (search && !name.includes(search)) return false;
+
+            const type = (item.type || "").toLowerCase();
+            const isBP = isBlueprint(item);
+
+            if (currentSection === 'PROGETTI') return isBP;
+            if (currentSection === 'OFFICINA') {
+                if (currentFilter === 'ALL') return true;
+                return item.id === currentFilter;
+            }
+
+            // --- LOGICA FILTRI INVENTARIO (RIPRISTINATA) ---
+            if (isBP) return false; // Nascondi i progetti dall'inventario
+            if (currentFilter === 'ALL') return true;
+            if (currentFilter === 'ARMI') return type.includes('weapon') || type.includes('rifle') || type.includes('pistol') || type.includes('shotgun');
+            if (currentFilter === 'MATERIALI') return type.includes('material') || type.includes('resource');
+            if (currentFilter === 'MUNIZIONI') return type.includes('ammunition') || type.includes('ammo');
+            if (currentFilter === 'USO_RAPIDO') return type.includes('quick') || type.includes('consumable');
+            if (currentFilter === 'CHIAVI') return type.includes('key');
+
+            return false;
+        });
+
+        filtered.forEach(data => {
+            const slot = document.createElement('div');
+            slot.className = `slot ${(data.rarity || 'common').toLowerCase()}`;
+            
+            let imgUrl = "";
+            if (currentSection === 'OFFICINA') {
+                imgUrl = `${baseUrl}images/menu/${data.id.toLowerCase()}.png`;
+            } else {
+                if (imageMode === 'REMOTE' && data.imageFilename) {
+                    imgUrl = GITHUB_RAW + data.imageFilename.replace(/\\/g, '/');
+                } else {
+                    const localPath = `images/items/${data.id.toLowerCase()}.png`;
+                    imgUrl = allImages.get(localPath) || "";
+                }
+            }
+
+            slot.innerHTML = `<img src="${imgUrl}" onerror="this.style.opacity='0'">`;
+            dom.grid.appendChild(slot);
+        });
+    }
+
+    function pickRepo(mode) {
+        if (mode === 'Speranza') loadDataFromGithub();
+        else document.getElementById('folderInput').click();
+    }
+
+    function toggleImageMode() {
+        imageMode = (imageMode === 'LOCAL') ? 'REMOTE' : 'LOCAL';
+        updateImageModeBtn();
+        renderSidebar();
+        render();
+    }
+
+    function updateImageModeBtn() {
+        document.getElementById('imgModeBtn').innerText = `IMG: ${imageMode}`;
+    }
+
+    async function loadDataLocal(e) {
+        const files = Array.from(e.target.files);
+        imageMode = 'LOCAL';
+        updateImageModeBtn();
+        dom.loader.style.display = 'flex';
+        itemsDB = []; hideoutDB = []; allImages.clear();
+
+        for (const f of files) {
+            if (f.type.startsWith('image/')) {
+                const path = f.webkitRelativePath.split('/').slice(1).join('/').toLowerCase();
+                allImages.set(path, URL.createObjectURL(f));
+            } else if (f.name.endsWith('.json')) {
+                const content = JSON.parse(await f.text());
+                if (f.webkitRelativePath.includes('hideout')) hideoutDB.push(content);
+                else itemsDB.push(content);
+            }
+        }
+        enableUI();
+    }
+</script>
+
+</body>
+</html>
+<!-- VERSIONING: v1.5.0 | REPO: atarufox/Speranza-Archive | UPDATED: Jan 2025 -->
