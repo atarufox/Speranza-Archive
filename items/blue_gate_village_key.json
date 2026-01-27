@@ -30,7 +30,7 @@
                         "fr":  "Une clé pour les zones du village de la porte bleue.",
                         "he":  "מפתח לאזורים בתוך כפר השער הכחול.",
                         "hr":  "Ključ za područja unutar sela plavog portala.",
-                        "it":  "Una chiave per le aree all\u0027interno del villaggio del cancello blu.",
+                        "it":  "Una chiave per le aree all'interno del villaggio del cancello blu.",
                         "ja":  "青い門の村内のエリアへの鍵。",
                         "kr":  "파란 문 마을 내부 구역의 열쇠.",
                         "no":  "En nøkkel til områder innenfor Blå port landsby.",
@@ -50,5 +50,5 @@
     "weightKg":  0.25,
     "stackSize":  1,
     "imageFilename":  "images/items/Blue_gate_village_key.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

@@ -27,10 +27,10 @@
                         "de":  "Eine verbesserte Version des Kampf II-Augments. Fur Flankierungsmanover mit verbesserter Mobilitat entwickelt.",
                         "en":  "An improved version of the Combat II augment. Designed for flanking maneuvers with enhanced mobility.",
                         "es":  "Una version mejorada del aumento Combate II. Disenada para maniobras de flanqueo con movilidad mejorada.",
-                        "fr":  "Une version amelioree de l\u0027augmentation Combat II. Concue pour les manoeuvres de flanquement avec une mobilite amelioree.",
+                        "fr":  "Une version amelioree de l'augmentation Combat II. Concue pour les manoeuvres de flanquement avec une mobilite amelioree.",
                         "he":  "גרסה משופרת של תוסף ה-Combat II. מיועדת לתמרוני איגוף עם ניידות משופרת.",
                         "hr":  "Poboljsana verzija Combat II augmentacije. Dizajnirana za bocne manevre s poboljsanom pokretljivoscu.",
-                        "it":  "Una versione migliorata dell\u0027aumento Combattimento II. Progettato per manovre di fiancheggiamento con mobilita migliorata.",
+                        "it":  "Una versione migliorata dell'aumento Combattimento II. Progettato per manovre di fiancheggiamento con mobilita migliorata.",
                         "ja":  "コンバット II オーグメントの改良版。機動性が向上したフランキング作戦用に設計されています。",
                         "kr":  "전투 II 증강의 개선된 버전입니다. 향상된 기동성으로 측면 기동을 위해 설계되었습니다.",
                         "no":  "En forbedret versjon av Kamp II-forsterkningen. Designet for flankerende manovrer med forbedret mobilitet.",
@@ -80,7 +80,7 @@
                                               "de":  "Granaten-Nutzungsplatze",
                                               "en":  "Grenade Use Slots",
                                               "es":  "Espacios de Uso de Granadas",
-                                              "fr":  "Emplacements d\u0027Utilisation de Grenades",
+                                              "fr":  "Emplacements d'Utilisation de Grenades",
                                               "he":  "חריצי רימונים",
                                               "hr":  "Mjesta za Upotrebu Granata",
                                               "it":  "Slot Uso Granate",
@@ -116,7 +116,7 @@
                                                 "ru":  "Регенерация Здоровья",
                                                 "sr":  "Regeneracija Zdravlja",
                                                 "tr":  "Saglik Yenilemesi",
-                                                "uk":  "Регенерація Здоров\u0027я",
+                                                "uk":  "Регенерація Здоров'я",
                                                 "zh-CN":  "生命再生",
                                                 "zh-TW":  "生命再生"
                                             },
@@ -126,7 +126,7 @@
                                             "de":  "Schnellzugriffsplatze",
                                             "en":  "Quick Use Slots",
                                             "es":  "Espacios de Uso Rapido",
-                                            "fr":  "Emplacements d\u0027Utilisation Rapide",
+                                            "fr":  "Emplacements d'Utilisation Rapide",
                                             "he":  "חריצי שימוש מהיר",
                                             "hr":  "Mjesta za Brzu Upotrebu",
                                             "it":  "Slot Uso Rapido",
@@ -195,7 +195,7 @@
                                          "de":  "Waffenplatze",
                                          "en":  "Weapon Slots",
                                          "es":  "Espacios de Armas",
-                                         "fr":  "Emplacements d\u0027Armes",
+                                         "fr":  "Emplacements d'Armes",
                                          "he":  "חריצי נשק",
                                          "hr":  "Mjesta za Oruzje",
                                          "it":  "Slot Armi",
@@ -255,5 +255,5 @@
                        "processor":  2
                    },
     "repairDurability":  50,
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

@@ -39,7 +39,7 @@
                         "pt-BR":  "Destranca uma porta nos Arquivos em Stella Montis",
                         "ru":  "Открывает дверь в архиве в Стелла Монтис",
                         "sr":  "Откључава врата у Архивима у Стела Монтис",
-                        "tr":  "Stella Montis\u0027teki Arşiv\u0027de bir kapıyı açar",
+                        "tr":  "Stella Montis'teki Arşiv'de bir kapıyı açar",
                         "uk":  "Відмикає двері в архіві у Стелла Монтіс",
                         "zh-CN":  "解锁星山档案室的一扇门",
                         "zh-TW":  "解鎖星山檔案室的一扇門"
@@ -75,5 +75,5 @@
                                                   }
                 },
     "imageFilename":  "images/items/Stella_montis_medical_storage_key.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

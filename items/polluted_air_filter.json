@@ -8,7 +8,7 @@
                  "fr":  "Filtre à Air Pollué",
                  "he":  "מסנן אוויר מזוהם",
                  "hr":  "Filter za Zagađeni Zrak",
-                 "it":  "Filtro dell\u0027aria inquinato",
+                 "it":  "Filtro dell'aria inquinato",
                  "ja":  "汚染されたエアフィルター",
                  "kr":  "오염된 공기 필터",
                  "no":  "Forurenset luftfilter",
@@ -58,5 +58,5 @@
                          "oil":  2
                      },
     "imageFilename":  "images/items/Polluted_air_filter.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

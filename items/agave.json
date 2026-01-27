@@ -27,7 +27,7 @@
                         "de":  "Ein Stück von einem Agavenblatt. Kann zur Regeneration einer kleinen Menge Gesundheit benutzt werden.",
                         "en":  "A piece of an agave leaf. Can be used to regain a small amount of health.",
                         "es":  "Un trozo de hoja de agave. Se puede usar para recuperar una pequeña cantidad de salud.",
-                        "fr":  "Un morceau de feuille d\u0027agave. Peut être utilisé pour récupérer une petite quantité de santé.",
+                        "fr":  "Un morceau de feuille d'agave. Peut être utilisé pour récupérer une petite quantité de santé.",
                         "he":  "חתיכה מעלה של צמח האגבה. ניתן להשתמש בה כדי להחזיר כמות קטנה של בריאות.",
                         "hr":  "Komad lista agave. Može se koristiti za obnovu male količine zdravlja.",
                         "it":  "Un pezzo di foglia di agave. Può essere usato per recuperare una piccola quantità di salute.",
@@ -40,7 +40,7 @@
                         "ru":  "Кусок листа агавы. Можно использовать для восстановления небольшого количества здоровья.",
                         "sr":  "Komad lista agave. Može se koristiti za obnovu male količine zdravlja.",
                         "tr":  "Bir agave yaprağı parçası. Az miktarda can yenilemek için kullanılabilir.",
-                        "uk":  "Шматок листа агави. Можна використати для відновлення невеликої кількості здоров\u0027я.",
+                        "uk":  "Шматок листа агави. Можна використати для відновлення невеликої кількості здоров'я.",
                         "zh-CN":  "一片龙舌兰叶。可用于恢复少量生命值。",
                         "zh-TW":  "一片龍舌蘭葉。可用於恢復少量生命值。"
                     },
@@ -103,10 +103,10 @@
                                      "de":  "Verwendungszeit",
                                      "en":  "Use Time",
                                      "es":  "Tiempo de uso",
-                                     "fr":  "Temps d\u0027utilisation",
+                                     "fr":  "Temps d'utilisation",
                                      "he":  "זמן שימוש",
                                      "hr":  "Vrijeme korištenja",
-                                     "it":  "Tempo d\u0027uso",
+                                     "it":  "Tempo d'uso",
                                      "ja":  "使用時間",
                                      "kr":  "사용 시간",
                                      "no":  "Brukstid",
@@ -128,5 +128,5 @@
                          "assorted_seeds":  2
                      },
     "imageFilename":  "images/items/Agave.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

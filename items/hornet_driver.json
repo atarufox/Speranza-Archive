@@ -57,7 +57,7 @@
                                               "de":  "ARC-Betäubungsdauer",
                                               "en":  "ARC Stun Duration",
                                               "es":  "Duración de aturdimiento ARC",
-                                              "fr":  "Durée d\u0027étourdissement ARC",
+                                              "fr":  "Durée d'étourdissement ARC",
                                               "he":  "משך הלם ARC",
                                               "hr":  "Trajanje ARC Omamljivanja",
                                               "it":  "Durata stordimento ARC",
@@ -103,7 +103,7 @@
                                                  "de":  "Raider-Betäubungsdauer",
                                                  "en":  "Raider Stun Duration",
                                                  "es":  "Duración de aturdimiento de saqueador",
-                                                 "fr":  "Durée d\u0027étourdissement des Raiders",
+                                                 "fr":  "Durée d'étourdissement des Raiders",
                                                  "he":  "משך הלם ריידר",
                                                  "hr":  "Trajanje Omamljivanja Pljačkaša",
                                                  "it":  "Durata stordimento Raider",
@@ -130,5 +130,5 @@
                      },
     "imageFilename":  "images/items/Hornet_driver.png",
     "tip":  "The Hornet Driver is a rare item is dropped by Hornets that can be recycled into crafting materials.",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

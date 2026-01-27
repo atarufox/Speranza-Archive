@@ -79,7 +79,7 @@
                                                   "de":  "ARC-Panzerungsdurchdringung",
                                                   "en":  "ARC Armor Penetration",
                                                   "es":  "Penetración de armadura ARC",
-                                                  "fr":  "Pénétration d\u0027armure ARC",
+                                                  "fr":  "Pénétration d'armure ARC",
                                                   "he":  "חדירת שריון ARC",
                                                   "hr":  "ARC Probijanje Oklopa",
                                                   "it":  "Penetrazione armature ARC",
@@ -247,5 +247,5 @@
                         "metal_parts":  8
                     },
     "imageFilename":  "images/items/Hairpin_II.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

@@ -40,7 +40,7 @@
                         "ru":  "Усиленная аугментация вьючного животного. Большая грузоподъемность и большое пространство рюкзака.",
                         "sr":  "Pojačana augmentacija tovarne životinje. Veliki kapacitet težine i veliki prostor za ranac.",
                         "tr":  "Ağır hizmet tipi yük hayvanı güçlendirmesi. Büyük ağırlık kapasitesi ve büyük sırt çantası alanı.",
-                        "uk":  "Посилена аугментація в\u0027ючної тварини. Велика вантажопідйомність і великий простір рюкзака.",
+                        "uk":  "Посилена аугментація в'ючної тварини. Велика вантажопідйомність і великий простір рюкзака.",
                         "zh-CN":  "重型驮兽增强装备。大载重容量和大背包空间。",
                         "zh-TW":  "重型馱獸增強裝備。大載重容量和大背包空間。"
                     },
@@ -49,5 +49,5 @@
     "value":  5000,
     "weightKg":  0,
     "imageFilename":  "images/items/Looting_mk3_survivor_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

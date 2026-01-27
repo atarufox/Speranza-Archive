@@ -40,7 +40,7 @@
                         "ru":  "Усиление, ориентированное на лечение, добавляющее дополнительные слоты для лечебных предметов. При поднятии из состояния нокдауна выпускает лечебное облако, восстанавливающее 20 здоровья за 10 секунд. Перезарядка 30 секунд.",
                         "sr":  "Nadogradnja fokusirana na lečenje koja dodaje dodatne slotove za predmete lečenja. Kada se oživite nakon obaranja, oslobađa oblak lečenja koji vraća 20 zdravlja tokom 10 sekundi. Ima vreme ponovnog punjenja od 30 sekundi.",
                         "tr":  "İyileştirme öğeleri için ekstra yuva ekleyen iyileştirme odaklı bir güçlendirme. Yere düşmüş haldeyken canlandırıldığında, 10 saniye boyunca 20 can yenileyen bir iyileştirme bulutu salar. 30 saniyelik bekleme süresi vardır.",
-                        "uk":  "Посилення, орієнтоване на лікування, що додає додаткові слоти для лікувальних предметів. При підйомі зі стану нокдауну випускає лікувальну хмару, що відновлює 20 здоров\u0027я за 10 секунд. Перезарядка 30 секунд.",
+                        "uk":  "Посилення, орієнтоване на лікування, що додає додаткові слоти для лікувальних предметів. При підйомі зі стану нокдауну випускає лікувальну хмару, що відновлює 20 здоров'я за 10 секунд. Перезарядка 30 секунд.",
                         "zh-CN":  "专注于治疗的强化装备，增加治疗物品栏位。从倒地状态复活时，释放治疗云雾，在10秒内恢复20点生命值。冷却时间30秒。",
                         "zh-TW":  "專注於治療的強化裝備，增加治療物品欄位。從倒地狀態復活時，釋放治療雲霧，在10秒內恢復20點生命值。冷卻時間30秒。"
                     },
@@ -80,7 +80,7 @@
                                                "de":  "Max. Loadout-Gewicht",
                                                "en":  "Max Loadout Weight",
                                                "es":  "Peso máximo del equipamiento",
-                                               "fr":  "Poids max. de l\u0027équipement",
+                                               "fr":  "Poids max. de l'équipement",
                                                "he":  "משקל ציוד מקסימלי",
                                                "hr":  "Maks. Težina Opreme",
                                                "it":  "Peso massimo equipaggiamento",
@@ -135,5 +135,5 @@
                          "electrical_components":  2
                      },
     "imageFilename":  "images/items/Tactical_mk3_healing.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

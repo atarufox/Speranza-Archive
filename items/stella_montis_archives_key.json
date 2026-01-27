@@ -39,7 +39,7 @@
                         "pt-BR":  "Destranca uma porta na Pesquisa Médica em Stella Montis",
                         "ru":  "Открывает дверь в Медицинских исследованиях в Стелла Монтис",
                         "sr":  "Откључава врата у Медицинским Истраживањима у Стела Монтис",
-                        "tr":  "Stella Montis\u0027teki Tıbbi Araştırma bölümünde bir kapıyı açar",
+                        "tr":  "Stella Montis'teki Tıbbi Araştırma bölümünde bir kapıyı açar",
                         "uk":  "Відмикає двері в Медичних дослідженнях у Стелла Монтіс",
                         "zh-CN":  "解锁星山医学研究区的一扇门",
                         "zh-TW":  "解鎖星山醫學研究區的一扇門"
@@ -75,5 +75,5 @@
                                      }
                 },
     "imageFilename":  "images/items/Stella_montis_archives_key.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

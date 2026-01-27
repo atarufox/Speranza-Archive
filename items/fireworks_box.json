@@ -5,10 +5,10 @@
                  "de":  "Feuerwerkskiste",
                  "en":  "Fireworks Box",
                  "es":  "Caja de fuegos artificiales",
-                 "fr":  "Boîte de feux d\u0027artifice",
+                 "fr":  "Boîte de feux d'artifice",
                  "he":  "קופסת זיקוקים",
                  "hr":  "Kutija vatrometa",
-                 "it":  "Scatola di fuochi d\u0027artificio",
+                 "it":  "Scatola di fuochi d'artificio",
                  "ja":  "花火の箱",
                  "kr":  "폭죽 상자",
                  "no":  "Fyrverkeriboks",
@@ -27,10 +27,10 @@
                         "de":  "Eine ferngesteuerte Anordnung funkelnder Feuerwerkskörper – garantiert ein Spektakel.",
                         "en":  "A remotely triggered arrangement of dazzling fireworks, sure to put on a show.",
                         "es":  "Un conjunto de fuegos artificiales deslumbrantes activados a distancia, perfecto para dar espectáculo.",
-                        "fr":  "Un assortiment de feux d\u0027artifice éblouissants déclenché à distance, parfait pour faire le spectacle.",
+                        "fr":  "Un assortiment de feux d'artifice éblouissants déclenché à distance, parfait pour faire le spectacle.",
                         "he":  "סידור של זיקוקים מרהיבים המופעל מרחוק, שבטוח ייתן הופעה.",
                         "hr":  "Daljinski aktiviran raspored blještavog vatrometa, sigurno će napraviti predstavu.",
-                        "it":  "Un assortimento di fuochi d\u0027artificio abbaglianti attivato a distanza, pronto a mettere in scena uno spettacolo.",
+                        "it":  "Un assortimento di fuochi d'artificio abbaglianti attivato a distanza, pronto a mettere in scena uno spettacolo.",
                         "ja":  "遠隔で起動する、まばゆい花火のセット。きっとショーになる。",
                         "kr":  "원격으로 작동하는 눈부신 폭죽 세트. 확실히 쇼를 보여줍니다.",
                         "no":  "Et fjernutløst oppsett med blendende fyrverkeri – garantert show.",
@@ -63,5 +63,5 @@
                          "explosive_compound":  1
                      },
     "imageFilename":  "images/items/Fireworks_box.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

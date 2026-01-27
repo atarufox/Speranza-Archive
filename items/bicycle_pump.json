@@ -27,7 +27,7 @@
                         "de":  "Kann zu Herstellungsmaterialien recycelt werden.",
                         "en":  "Can be recycled into crafting materials.",
                         "es":  "Puede reciclarse en materiales de fabricación.",
-                        "fr":  "Peut être recyclé en matériaux d\u0027artisanat.",
+                        "fr":  "Peut être recyclé en matériaux d'artisanat.",
                         "he":  "ניתן למיחזור לחומרי יצירה.",
                         "hr":  "Može se reciklirati u materijale za izradu.",
                         "it":  "Si può riciclare in materiali di fabbricazione.",
@@ -58,5 +58,5 @@
                          "canister":  3
                      },
     "imageFilename":  "images/items/Bicycle_pump.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

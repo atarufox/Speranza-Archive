@@ -5,7 +5,7 @@
                  "de":  "Schlüsselkarte für JKV-Angestellte (Begrabene Stadt)",
                  "en":  "Buried City JKV Employee Access Card",
                  "es":  "Tarjeta de acceso de empleado JKV de la ciudad enterrada",
-                 "fr":  "Carte d\u0027accès employé JKV de la ville enfouie",
+                 "fr":  "Carte d'accès employé JKV de la ville enfouie",
                  "he":  "כרטיס גישה לעובדי JKV ב-Buried City",
                  "hr":  "Pristupna kartica zaposlenika JKV-a zakopanog grada",
                  "it":  "Carta di accesso dipendente JKV della città sepolta",
@@ -27,7 +27,7 @@
                         "de":  "Eine Mitarbeiterzugangskarte für JKV-Einrichtungen in der Begrabenen Stadt.",
                         "en":  "An employee access card for JKV facilities in Buried City.",
                         "es":  "Una tarjeta de acceso de empleado para las instalaciones JKV en la ciudad enterrada.",
-                        "fr":  "Une carte d\u0027accès employé pour les installations JKV dans la ville enfouie.",
+                        "fr":  "Une carte d'accès employé pour les installations JKV dans la ville enfouie.",
                         "he":  "כרטיס גישה של עובד למתקני JKV ב-Buried City.",
                         "hr":  "Pristupna kartica zaposlenika za JKV objekte u zakopanom gradu.",
                         "it":  "Una carta di accesso dipendente per le strutture JKV nella città sepolta.",
@@ -39,8 +39,8 @@
                         "pt-BR":  "Um cartão de acesso de funcionário para instalações da JKV na Cidade Soterrada.",
                         "ru":  "Карта доступа сотрудника к объектам JKV в Погребённом городе.",
                         "sr":  "Pristupna kartica zaposlenog za JKV objekte u zakopanom gradu.",
-                        "tr":  "Gömülü Şehir\u0027deki JKV tesisleri için çalışan erişim kartı.",
-                        "uk":  "Карта доступу співробітника до об\u0027єктів JKV у Похованому місті.",
+                        "tr":  "Gömülü Şehir'deki JKV tesisleri için çalışan erişim kartı.",
+                        "uk":  "Карта доступу співробітника до об'єктів JKV у Похованому місті.",
                         "zh-CN":  "埋没之城JKV设施的员工门禁卡。",
                         "zh-TW":  "埋沒之城JKV設施的員工門禁卡。"
                     },
@@ -50,5 +50,5 @@
     "weightKg":  0.25,
     "stackSize":  1,
     "imageFilename":  "images/items/Buried_city_jkv_employee_access_card.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

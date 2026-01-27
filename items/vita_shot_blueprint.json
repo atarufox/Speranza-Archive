@@ -18,7 +18,7 @@
                  "ru":  "Чертёж Вита-инъекции",
                  "sr":  "Nacrt Vita Injekcije",
                  "tr":  "Vita İğnesi Planı",
-                 "uk":  "Креслення Віта-ін\u0027єкції",
+                 "uk":  "Креслення Віта-ін'єкції",
                  "zh-CN":  "活力注射剂蓝图",
                  "zh-TW":  "活力注射劑藍圖"
              },
@@ -40,7 +40,7 @@
                         "ru":  "Медицинский предмет, восстанавливающий большое количество здоровья.",
                         "sr":  "Medicinski predmet koji obnavlja veliku količinu zdravlja.",
                         "tr":  "Büyük miktarda sağlık yenileyen tıbbi bir eşya.",
-                        "uk":  "Медичний предмет, що відновлює велику кількість здоров\u0027я.",
+                        "uk":  "Медичний предмет, що відновлює велику кількість здоров'я.",
                         "zh-CN":  "可恢复大量生命值的医疗物品。",
                         "zh-TW":  "可恢復大量生命值的醫療物品。"
                     },
@@ -49,5 +49,5 @@
     "value":  5000,
     "weightKg":  0,
     "imageFilename":  "images/items/Vita_shot_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

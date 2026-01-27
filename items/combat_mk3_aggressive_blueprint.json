@@ -27,10 +27,10 @@
                         "de":  "Eine verbesserte Version des Kampf II-Augments. Unterstützt mehr Schildtypen und bietet zusätzlichen Platz für Granaten.",
                         "en":  "An improved version of the Combat II augment. Supports more shield types, and comes with extra space for grenades.",
                         "es":  "Una versión mejorada del aumento Combate II. Soporta más tipos de escudos y viene con espacio extra para granadas.",
-                        "fr":  "Une version améliorée de l\u0027augmentation Combat II. Prend en charge plus de types de boucliers et offre un espace supplémentaire pour les grenades.",
+                        "fr":  "Une version améliorée de l'augmentation Combat II. Prend en charge plus de types de boucliers et offre un espace supplémentaire pour les grenades.",
                         "he":  "גרסה משופרת של תוסף ה-Combat II. תומכת בסוגי מגן נוספים, ומגיעה עם מקום נוסף לרימונים.",
                         "hr":  "Poboljšana verzija Combat II augmentacije. Podržava više vrsta štitova i dolazi s dodatnim prostorom pentru granate.",
-                        "it":  "Una versione migliorata dell\u0027aumento Combattimento II. Supporta più tipi di scudi e include spazio extra per le granate.",
+                        "it":  "Una versione migliorata dell'aumento Combattimento II. Supporta più tipi di scudi e include spazio extra per le granate.",
                         "ja":  "コンバット II オーグメントの改良版。より多くのシールドタイプに対応し、グレネード用の追加スペースを備えています。",
                         "kr":  "전투 II 증강의 개선된 버전입니다. 더 많은 실드 유형을 지원하며 수류탄을 위한 추가 공간이 있습니다.",
                         "no":  "En forbedret versjon av Kamp II-forsterkningen. Støtter flere skjoldtyper og kommer med ekstra plass til granater.",
@@ -49,5 +49,5 @@
     "value":  5000,
     "weightKg":  0,
     "imageFilename":  "images/items/Combat_mk3_aggressive_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

@@ -5,7 +5,7 @@
                  "de":  "Bauplan: Equalizer",
                  "en":  "Equalizer Blueprint",
                  "es":  "Plano del Ecualizador",
-                 "fr":  "Schéma de l\u0027Égaliseur",
+                 "fr":  "Schéma de l'Égaliseur",
                  "he":  "שרטוט Equalizer",
                  "hr":  "Nacrt Izjednačivača",
                  "it":  "Progetto Equalizzatore",
@@ -49,5 +49,5 @@
     "value":  5000,
     "weightKg":  0,
     "imageFilename":  "images/items/Equalizer_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

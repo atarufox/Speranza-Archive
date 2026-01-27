@@ -27,7 +27,7 @@
                         "de":  "Schießt explosive Geschosse ab, die erst explodieren, wenn sie ARC treffen.",
                         "en":  "Fires explosive projectiles that only detonate when hitting ARC.",
                         "es":  "Dispara proyectiles explosivos que solo detonan al impactar ARC.",
-                        "fr":  "Tire des projectiles explosifs qui ne détonent qu\u0027en touchant des ARC.",
+                        "fr":  "Tire des projectiles explosifs qui ne détonent qu'en touchant des ARC.",
                         "he":  "יורה קליעים נפיצים שמתפוצצים רק בעת פגיעה ב-ARC.",
                         "hr":  "Ispaljuje eksplozivne projektile koji detoniraju samo kada pogode ARC.",
                         "it":  "Spara proiettili esplosivi che detonano solo colpendo ARC.",
@@ -39,7 +39,7 @@
                         "pt-BR":  "Dispara projéteis explosivos que só detonam ao atingir ARC.",
                         "ru":  "Стреляет разрывными снарядами, которые детонируют только при попадании в ARC.",
                         "sr":  "Ispaljuje eksplozivne projektile koji detoniraju samo kada pogode ARC.",
-                        "tr":  "Sadece ARC\u0027a çarptığında patlayan patlayıcı mermiler atar.",
+                        "tr":  "Sadece ARC'a çarptığında patlayan patlayıcı mermiler atar.",
                         "uk":  "Стріляє вибуховими снарядами, які детонують лише при влучанні в ARC.",
                         "zh-CN":  "发射爆炸性弹药，仅在击中 ARC 时引爆。",
                         "zh-TW":  "發射爆炸性彈藥，僅在擊中 ARC 時引爆。"
@@ -79,7 +79,7 @@
                                                   "de":  "ARC-Panzerungsdurchdringung",
                                                   "en":  "ARC Armor Penetration",
                                                   "es":  "Penetración de Blindaje ARC",
-                                                  "fr":  "Pénétration d\u0027Armure ARC",
+                                                  "fr":  "Pénétration d'Armure ARC",
                                                   "he":  "חדירת שריון ARC",
                                                   "hr":  "ARC Probijanje Oklopa",
                                                   "it":  "Penetrazione armature ARC",
@@ -209,5 +209,5 @@
     "range":  38.9,
     "stability":  97.2,
     "stealth":  1,
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

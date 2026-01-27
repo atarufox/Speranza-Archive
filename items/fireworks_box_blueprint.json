@@ -5,10 +5,10 @@
                  "de":  "Bauplan: Feuerwerkskiste",
                  "en":  "Fireworks Box Blueprint",
                  "es":  "Plano de caja de fuegos artificiales",
-                 "fr":  "Schéma de Boîte de feux d\u0027artifice",
+                 "fr":  "Schéma de Boîte de feux d'artifice",
                  "he":  "שרטוט קופסת זיקוקים",
                  "hr":  "Nacrt Kutije Vatrometa",
-                 "it":  "Progetto scatola di fuochi d\u0027artificio",
+                 "it":  "Progetto scatola di fuochi d'artificio",
                  "ja":  "花火の箱の設計図",
                  "kr":  "폭죽 상자 설계도",
                  "no":  "Fyrverkeribokstegning",
@@ -27,10 +27,10 @@
                         "de":  "Schaltet den Herstellungsbauplan für die Feuerwerkskiste frei.",
                         "en":  "Unlocks the crafting blueprint for the Fireworks Box.",
                         "es":  "Desbloquea el plano de fabricación de la caja de fuegos artificiales.",
-                        "fr":  "Débloque le schéma de fabrication de la Boîte de feux d\u0027artifice.",
+                        "fr":  "Débloque le schéma de fabrication de la Boîte de feux d'artifice.",
                         "he":  "פותח את שרטוט הייצור עבור קופסת זיקוקים.",
                         "hr":  "Otključava nacrt izrade za Kutiju vatrometa.",
-                        "it":  "Sblocca il progetto di creazione per la Scatola di fuochi d\u0027artificio.",
+                        "it":  "Sblocca il progetto di creazione per la Scatola di fuochi d'artificio.",
                         "ja":  "花火箱のクラフト設計図をアンロックする。",
                         "kr":  "폭죽 상자 제작 설계도를 해금합니다.",
                         "no":  "Låser opp oppskriften for Fyrverkeriboksen.",
@@ -49,5 +49,5 @@
     "value":  5000,
     "weightKg":  0,
     "imageFilename":  "images/items/Fireworks_box_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

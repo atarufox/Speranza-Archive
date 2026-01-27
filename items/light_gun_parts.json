@@ -5,7 +5,7 @@
                  "de":  "Teile für Waffe mit leichter Munition",
                  "en":  "Light Gun Parts",
                  "es":  "Piezas de Armas Ligeras",
-                 "fr":  "Pièces d\u0027Arme Légère",
+                 "fr":  "Pièces d'Arme Légère",
                  "he":  "חלקי נשק קל",
                  "hr":  "Dijelovi lakog oružja",
                  "it":  "Parti di Armi Leggere",
@@ -27,7 +27,7 @@
                         "de":  "Verschiedenste Ersatzteile, die in Pistolen und MPs zum Einsatz kommen. Zur Herstellung von: Bobcat, Komplexe Waffenteile",
                         "en":  "Assorted spare parts used for pistols and SMGs. Used to craft: Bobcat, Complex Gun Parts",
                         "es":  "Piezas de repuesto variadas para pistolas y subfusiles. Usado para fabricar: Bobcat, Piezas de Armas Complejas",
-                        "fr":  "Pièces de rechange assorties pour pistolets et mitraillettes. Permet de fabriquer : Bobcat, Pièces d\u0027arme complexes",
+                        "fr":  "Pièces de rechange assorties pour pistolets et mitraillettes. Permet de fabriquer : Bobcat, Pièces d'arme complexes",
                         "he":  "מגוון חלקי חילוף המשמשים לאקדחים ותת-מקלעים. משמש ליצירת: Bobcat, חלקי נשק מורכבים",
                         "hr":  "Razni rezervni dijelovi za pištolje i automatske pištolje. Koristi se za izradu: Bobcat, Složeni dijelovi oružja",
                         "it":  "Parti di ricambio assortite per pistole e mitra. Si usa per creare: Bobcat, Parti di Armi Complesse",
@@ -61,5 +61,5 @@
                          "simple_gun_parts":  1
                      },
     "imageFilename":  "images/items/Light_gun_parts.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

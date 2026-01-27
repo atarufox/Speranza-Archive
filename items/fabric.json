@@ -40,7 +40,7 @@
                         "ru":  "Используется для создания медицинских принадлежностей и щитов. Можно использовать для медленного восстановления небольшого количества здоровья.",
                         "sr":  "Koristi se za izradu medicinskih potrepština i štitova. Može se koristiti za polaganu obnovu malih količina zdravlja.",
                         "tr":  "Tıbbi malzeme ve kalkan üretmek için kullanılır. Küçük miktarda canı yavaşça yenilemek için kullanılabilir.",
-                        "uk":  "Використовується для створення медичних матеріалів та щитів. Можна використовувати для повільного відновлення невеликої кількості здоров\u0027я.",
+                        "uk":  "Використовується для створення медичних матеріалів та щитів. Можна використовувати для повільного відновлення невеликої кількості здоров'я.",
                         "zh-CN":  "用于制作医疗用品和护盾。可用于缓慢恢复少量生命值。",
                         "zh-TW":  "用於製作醫療用品和護盾。可用於緩慢恢復少量生命值。"
                     },
@@ -103,10 +103,10 @@
                                      "de":  "Verwendungszeit",
                                      "en":  "Use Time",
                                      "es":  "Tiempo de uso",
-                                     "fr":  "Temps d\u0027utilisation",
+                                     "fr":  "Temps d'utilisation",
                                      "he":  "זמן שימוש",
                                      "hr":  "Vrijeme Korištenja",
-                                     "it":  "Tempo d\u0027uso",
+                                     "it":  "Tempo d'uso",
                                      "ja":  "使用時間",
                                      "kr":  "사용 시간",
                                      "no":  "Brukstid",
@@ -125,5 +125,5 @@
 
                      },
     "imageFilename":  "images/items/Fabric.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

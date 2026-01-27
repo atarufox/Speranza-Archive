@@ -6,7 +6,7 @@
                  "en":  "Stitcher III",
                  "es":  "Costurero III",
                  "fr":  "Sutureur III",
-                 "he":  "סטיצ\u0027ר III",
+                 "he":  "סטיצ'ר III",
                  "hr":  "Stitcher III",
                  "it":  "Suturante III",
                  "ja":  "スティッチャー III",
@@ -79,7 +79,7 @@
                                                   "de":  "ARC-Panzerdurchschlag",
                                                   "en":  "ARC Armor Penetration",
                                                   "es":  "Penetración de armadura ARC",
-                                                  "fr":  "Pénétration d\u0027armure ARC",
+                                                  "fr":  "Pénétration d'armure ARC",
                                                   "he":  "חדירת שריון ARC",
                                                   "hr":  "ARC probijanje oklopa",
                                                   "it":  "Penetrazione armature ARC",
@@ -224,5 +224,5 @@
                         "simple_gun_parts":  1
                     },
     "imageFilename":  "images/items/Stitcher_III.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

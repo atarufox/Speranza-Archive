@@ -40,7 +40,7 @@
                         "ru":  "Используется для создания медицинских принадлежностей. Используется для создания: Травяной бинт, Стерилизованный бинт",
                         "sr":  "Koristi se za izradu medicinskih potrepština. Koristi se za izradu: Biljni Zavoj, Sterilizovani Zavoj",
                         "tr":  "Tıbbi malzeme üretmek için kullanılır. Üretilebilir: Bitkisel Bandaj, Sterilize Bandaj",
-                        "uk":  "Використовується для створення медичних приладь. Використовується для створення: Трав\u0027яний бинт, Стерилізований бинт",
+                        "uk":  "Використовується для створення медичних приладь. Використовується для створення: Трав'яний бинт, Стерилізований бинт",
                         "zh-CN":  "用于制作医疗用品。可制作：草药绷带、消毒绷带",
                         "zh-TW":  "用於製作醫療用品。可製作：草藥繃帶、消毒繃帶"
                     },
@@ -61,5 +61,5 @@
                          "fabric":  2
                      },
     "imageFilename":  "images/items/Durable_cloth.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

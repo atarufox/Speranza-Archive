@@ -6,7 +6,7 @@
                  "en":  "Shotgun Choke I",
                  "es":  "Estrangulador de escopeta I",
                  "fr":  "Choke de Fusil à Pompe I",
-                 "he":  "צ\u0027וק לרובה ציד I",
+                 "he":  "צ'וק לרובה ציד I",
                  "hr":  "Sačmarski Čok I",
                  "it":  "Strozzatore fucile I",
                  "ja":  "ショットガン・チョーク I",
@@ -85,5 +85,5 @@
                          "metal_parts":  3
                      },
     "imageFilename":  "images/items/Shotgun_choke_I.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

@@ -18,7 +18,7 @@
                  "ru":  "Смятая пластиковая бутылка",
                  "sr":  "Zgužvana plastična flaša",
                  "tr":  "Ezilmiş Plastik Şişe",
-                 "uk":  "М\u0027ята пластикова пляшка",
+                 "uk":  "М'ята пластикова пляшка",
                  "zh-CN":  "压扁的塑料瓶",
                  "zh-TW":  "壓扁的塑膠瓶"
              },
@@ -27,7 +27,7 @@
                         "de":  "Kann zu Herstellungsmaterialien recycelt werden.",
                         "en":  "Can be recycled into crafting materials.",
                         "es":  "Puede reciclarse en materiales de fabricación.",
-                        "fr":  "Peut être recyclé en matériaux d\u0027artisanat.",
+                        "fr":  "Peut être recyclé en matériaux d'artisanat.",
                         "he":  "ניתן למיחזור לחומרי יצירה.",
                         "hr":  "Može se reciklirati u materijale za izradu.",
                         "it":  "Si può riciclare in materiali di fabbricazione.",
@@ -57,5 +57,5 @@
                          "plastic_parts":  1
                      },
     "imageFilename":  "images/items/Crumpled_plastic_bottle.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

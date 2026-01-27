@@ -30,7 +30,7 @@
                         "fr":  "Une option offensive bon marché, mais il faut le recharger deux balles à la fois.",
                         "he":  "רובה סער אוטומטי מלא. אפשרות התקפית זולה, אך נטען ב-2 כדורים בכל פעם.",
                         "hr":  "Jeftina ofenzivna opcija, ali se mora puniti po 2 metka odjednom.",
-                        "it":  "Un\u0027opzione offensiva economica, ma deve essere ricaricata con 2 proiettili alla volta.",
+                        "it":  "Un'opzione offensiva economica, ma deve essere ricaricata con 2 proiettili alla volta.",
                         "ja":  "安価な攻撃手段だが、一度に2発ずつリロードする必要がある。",
                         "kr":  "저렴한 공격 옵션이지만, 한 번에 2발씩 재장전해야 합니다.",
                         "no":  "Et billig offensivt alternativ, men må lades med 2 kuler om gangen.",
@@ -79,7 +79,7 @@
                                                   "de":  "ARC-Panzerungsdurchdringung",
                                                   "en":  "ARC Armor Penetration",
                                                   "es":  "Penetración de armadura ARC",
-                                                  "fr":  "Pénétration d\u0027armure ARC",
+                                                  "fr":  "Pénétration d'armure ARC",
                                                   "he":  "חדירת שריון ARC",
                                                   "hr":  "ARC Probijanje Oklopa",
                                                   "it":  "Penetrazione armature ARC",
@@ -171,7 +171,7 @@
                                               "de":  "Verbesserungsmodifikatoren",
                                               "en":  "Upgrade Modifiers",
                                               "es":  "Modificadores de mejora",
-                                              "fr":  "Modificateurs d\u0027amélioration",
+                                              "fr":  "Modificateurs d'amélioration",
                                               "he":  "תוספי שדרוג",
                                               "hr":  "Modifikatori Nadogradnje",
                                               "it":  "Modificatori di potenziamento",
@@ -203,5 +203,5 @@
                         "simple_gun_parts":  1
                     },
     "imageFilename":  "images/items/Rattler_III.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

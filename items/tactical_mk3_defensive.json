@@ -80,7 +80,7 @@
                                                "de":  "Max. Ausrüstungsgewicht",
                                                "en":  "Max Loadout Weight",
                                                "es":  "Peso máximo del equipamiento",
-                                               "fr":  "Poids max. de l\u0027équipement",
+                                               "fr":  "Poids max. de l'équipement",
                                                "he":  "משקל ציוד מקסימלי",
                                                "hr":  "Maks. Težina Opreme",
                                                "it":  "Peso massimo equipaggiamento",
@@ -135,5 +135,5 @@
                          "electrical_components":  2
                      },
     "imageFilename":  "images/items/Tactical_mk3_defensive.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

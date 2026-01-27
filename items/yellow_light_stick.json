@@ -27,10 +27,10 @@
                         "de":  "Ein werfbares chemisches Licht, das seine Umgebung erhellt.",
                         "en":  "A throwable chemical light that illuminates the area around it.",
                         "es":  "Una luz química arrojadiza que ilumina el área a su alrededor.",
-                        "fr":  "Une lampe chimique jetable qui éclaire la zone qui l\u0027entoure.",
+                        "fr":  "Une lampe chimique jetable qui éclaire la zone qui l'entoure.",
                         "he":  "אור כימי שניתן לזרוק המאיר את האזור סביבו.",
                         "hr":  "Kemijsko svjetlo za bacanje koje osvjetljava područje oko sebe.",
-                        "it":  "Una luce chimica lanciabile che illumina l\u0027area circostante.",
+                        "it":  "Una luce chimica lanciabile che illumina l'area circostante.",
                         "ja":  "投げることができる化学発光体で、周囲のエリアを照らす。",
                         "kr":  "주변 지역을 밝히는 투척 가능한 화학 조명입니다.",
                         "no":  "Et kastbart kjemisk lys som lyser opp området rundt det.",
@@ -79,7 +79,7 @@
                                                 "de":  "Beleuchtungsradius",
                                                 "en":  "Illumination Radius",
                                                 "es":  "Radio de iluminación",
-                                                "fr":  "Rayon d\u0027illumination",
+                                                "fr":  "Rayon d'illumination",
                                                 "he":  "רדיוס תאורה",
                                                 "hr":  "Radijus osvjetljenja",
                                                 "it":  "Raggio di illuminazione",
@@ -109,5 +109,5 @@
                          "chemicals":  1
                      },
     "imageFilename":  "images/items/Yellow_light_stick.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:23Z"
 }

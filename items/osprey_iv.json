@@ -79,7 +79,7 @@
                                                   "de":  "ARC-Rüstungsdurchdringung",
                                                   "en":  "ARC Armor Penetration",
                                                   "es":  "Penetración de armadura ARC",
-                                                  "fr":  "Pénétration d\u0027armure ARC",
+                                                  "fr":  "Pénétration d'armure ARC",
                                                   "he":  "חדירת שריון ARC",
                                                   "hr":  "ARC probijanje oklopa",
                                                   "it":  "Penetrazione armature ARC",
@@ -171,7 +171,7 @@
                                                      "de":  "Reduzierte Repetierzeit",
                                                      "en":  "Reduced Bolt Action Time",
                                                      "es":  "Tiempo de acción del cerrojo reducido",
-                                                     "fr":  "Temps d\u0027action du verrou réduit",
+                                                     "fr":  "Temps d'action du verrou réduit",
                                                      "he":  "זמן דריכה מופחת",
                                                      "hr":  "Smanjeno vrijeme repetiranja",
                                                      "it":  "Tempo di azionamento otturatore ridotto",
@@ -255,5 +255,5 @@
     "range":  80.3,
     "stability":  89.4,
     "stealth":  12,
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

@@ -6,7 +6,7 @@
                  "en":  "Shotgun Choke II",
                  "es":  "Estrangulador de escopeta II",
                  "fr":  "Choke de Fusil à Pompe II",
-                 "he":  "צ\u0027וק לרובה ציד II",
+                 "he":  "צ'וק לרובה ציד II",
                  "hr":  "Sačmarica čok II",
                  "it":  "Strozzatore per fucile II",
                  "ja":  "ショットガン・チョーク II",
@@ -92,5 +92,5 @@
                          "mechanical_components":  1
                      },
     "imageFilename":  "images/items/Shotgun_choke_II.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

@@ -5,7 +5,7 @@
                  "de":  "Energiestab",
                  "en":  "Power Rod",
                  "es":  "Varilla de energía",
-                 "fr":  "Tige d\u0027Alimentation",
+                 "fr":  "Tige d'Alimentation",
                  "he":  "מוט כוח",
                  "hr":  "Energetska Šipka",
                  "it":  "Asta di trasmissione",
@@ -63,5 +63,5 @@
                          "advanced_electrical_components":  1
                      },
     "imageFilename":  "images/items/Power_rod.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

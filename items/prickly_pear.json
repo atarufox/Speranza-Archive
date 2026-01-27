@@ -8,7 +8,7 @@
                  "fr":  "Figue de Barbarie",
                  "he":  "סברס",
                  "hr":  "Opuncija",
-                 "it":  "Fico d\u0027India",
+                 "it":  "Fico d'India",
                  "ja":  "トゥナ",
                  "kr":  "선인장 열매",
                  "no":  "Figenkaktus",
@@ -27,7 +27,7 @@
                         "de":  "Kann zum Gewinn einer kleinen Menge Ausdauer verzehrt werden.",
                         "en":  "Can be consumed for a small amount of stamina.",
                         "es":  "Puede consumirse para recuperar un poco de aguante.",
-                        "fr":  "Peut être consommé pour une petite quantité d\u0027endurance.",
+                        "fr":  "Peut être consommé pour une petite quantité d'endurance.",
                         "he":  "ניתן לצריכה לקבלת כמות קטנה של סיבולת.",
                         "hr":  "Može se konzumirati za malu količinu izdržljivosti.",
                         "it":  "Può essere consumato per una piccola quantità di stamina.",
@@ -56,5 +56,5 @@
                          "assorted_seeds":  2
                      },
     "imageFilename":  "images/items/Prickly_pear.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

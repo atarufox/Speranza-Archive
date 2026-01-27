@@ -27,7 +27,7 @@
                         "de":  "Erhältlich von ARC-Gegnern oder durch Aktivitäten. Wird zur Herstellung von Komponenten verwendet. Kann zu ARC-Legierung recycelt werden. Zur Herstellung von: Mittlerer Schild, Deadline, Energiestab",
                         "en":  "Obtained from ARC enemies or activities. Used to craft components. Can be recycled into ARC Alloy. Used to craft: Medium Shield, Power Rod",
                         "es":  "Obtenido de enemigos ARC o actividades. Se usa para fabricar componentes. Puede reciclarse en aleación ARC. Se usa para fabricar: Escudo medio, Vara de poder",
-                        "fr":  "Obtenu auprès d\u0027ennemis ARC ou d\u0027activités. Permet de fabriquer des composants. Peut être recyclé en alliage ARC. Permet de fabriquer : Bouclier moyen, Bâton d\u0027énergie",
+                        "fr":  "Obtenu auprès d'ennemis ARC ou d'activités. Permet de fabriquer des composants. Peut être recyclé en alliage ARC. Permet de fabriquer : Bouclier moyen, Bâton d'énergie",
                         "he":  "ניתן להשגה מאויבי ARC או מפעילויות. משמש ליצירת רכיבים. ניתן למחזר ל-סגסוגת ARC. משמש ליצירת: מגן בינוני, מוט כוח",
                         "hr":  "Dobiva se od ARC neprijatelja ili aktivnosti. Koristi se za izradu komponenti. Može se reciklirati u ARC Leguru. Koristi se za izradu: Srednji Štit, Energetska Šipka",
                         "it":  "Ottenuto da nemici ARC o attività. Si usa per creare componenti. Si può riciclare in lega ARC. Si usa per creare: Scudo medio, Asta energetica",
@@ -61,5 +61,5 @@
                          "arc_alloy":  1
                      },
     "imageFilename":  "images/items/Arc_circuitry.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

@@ -6,7 +6,7 @@
                  "en":  "Shotgun Choke III",
                  "es":  "Estrangulador de escopeta III",
                  "fr":  "Choke de Fusil à Pompe III",
-                 "he":  "צ\u0027וק לרובה ציד III",
+                 "he":  "צ'וק לרובה ציד III",
                  "hr":  "Sačmarica Prigušnica III",
                  "it":  "Strozzatore fucile III",
                  "ja":  "ショットガン・チョーク III",
@@ -134,5 +134,5 @@
                          "mechanical_components":  2
                      },
     "imageFilename":  "images/items/Shotgun_choke_III.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

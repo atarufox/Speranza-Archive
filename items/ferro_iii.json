@@ -79,7 +79,7 @@
                                                   "de":  "ARC-Panzerungsdurchdringung",
                                                   "en":  "ARC Armor Penetration",
                                                   "es":  "Penetración de armadura ARC",
-                                                  "fr":  "Pénétration d\u0027armure ARC",
+                                                  "fr":  "Pénétration d'armure ARC",
                                                   "he":  "חדירת שריון ARC",
                                                   "hr":  "ARC probijanje oklopa",
                                                   "it":  "Penetrazione armature ARC",
@@ -171,7 +171,7 @@
                                               "de":  "Upgrade-Modifikatoren",
                                               "en":  "Upgrade Modifiers",
                                               "es":  "Modificadores de mejora",
-                                              "fr":  "Modificateurs d\u0027amélioration",
+                                              "fr":  "Modificateurs d'amélioration",
                                               "he":  "משתני שדרוג",
                                               "hr":  "Modifikatori nadogradnje",
                                               "it":  "Modificatori di potenziamento",
@@ -201,5 +201,5 @@
                         "simple_gun_parts":  1
                     },
     "imageFilename":  "images/items/Ferro_III.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

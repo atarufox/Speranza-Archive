@@ -27,10 +27,10 @@
                         "de":  "Ein Gadget, mit dem der Benutzer sich vor ARC verstecken kann.",
                         "en":  "A gadget that allows the user to conceal themselves from ARC.",
                         "es":  "Un dispositivo que permite al usuario ocultarse de ARC.",
-                        "fr":  "Un gadget qui permet d\u0027échapper à la vigilance de l\u0027ARC.",
-                        "he":  "גאדג\u0027ט המאפשר למשתמש להסתיר את עצמו מ-ARC.",
+                        "fr":  "Un gadget qui permet d'échapper à la vigilance de l'ARC.",
+                        "he":  "גאדג'ט המאפשר למשתמש להסתיר את עצמו מ-ARC.",
                         "hr":  "Naprava koja omogućuje korisniku da se sakrije od ARC-a.",
-                        "it":  "Un dispositivo che consente all\u0027utente di nascondersi da ARC.",
+                        "it":  "Un dispositivo che consente all'utente di nascondersi da ARC.",
                         "ja":  "ARCから身を隠すことができるガジェット。",
                         "kr":  "사용자가 아크로부터 자신을 숨길 수 있는 장치입니다.",
                         "no":  "En gadget som lar brukeren skjule seg fra ARC.",
@@ -39,7 +39,7 @@
                         "pt-BR":  "Acessório que permite que o usuário se esconda da ARC.",
                         "ru":  "Гаджет, позволяющий пользователю скрыться от ARC.",
                         "sr":  "Naprava koja omogućava korisniku da se sakrije od ARC-a.",
-                        "tr":  "Kullanıcının kendini ARC\u0027den gizlemesini sağlayan bir alet.",
+                        "tr":  "Kullanıcının kendini ARC'den gizlemesini sağlayan bir alet.",
                         "uk":  "Гаджет, що дозволяє користувачу сховатися від ARC.",
                         "zh-CN":  "能让使用者躲避ARC的装置。",
                         "zh-TW":  "能讓使用者躲避ARC的裝置。"
@@ -86,5 +86,5 @@
                          "advanced_electrical_components":  1
                      },
     "imageFilename":  "images/items/Photoelectric_cloak.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

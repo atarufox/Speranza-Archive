@@ -3,7 +3,7 @@
     "name":  {
                  "da":  "Celestes dagbog",
                  "de":  "Celestes Tagebuch",
-                 "en":  "Celeste\u0027s Journal",
+                 "en":  "Celeste's Journal",
                  "es":  "Diario de Celeste",
                  "fr":  "Journal de Celeste",
                  "he":  "היומן של סלסט",
@@ -17,7 +17,7 @@
                  "pt-BR":  "Diário de Celeste",
                  "ru":  "Дневник Селесты",
                  "sr":  "Celestin dnevnik",
-                 "tr":  "Celeste\u0027nin Günlüğü",
+                 "tr":  "Celeste'nin Günlüğü",
                  "uk":  "Щоденник Селести",
                  "zh-CN":  "塞莱斯特的日记",
                  "zh-TW":  "賽勒斯特的日記"
@@ -48,5 +48,5 @@
     "rarity":  "Common",
     "weightKg":  0.25,
     "imageFilename":  "images/items/Celeste_journal.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

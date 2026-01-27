@@ -27,7 +27,7 @@
                         "de":  "Eine kryogen eingefrorene Forschungsprobe einer experimentellen Nutzpflanze.",
                         "en":  "A cryogenically frozen research sample of an experimental crop.",
                         "es":  "Una muestra de investigación congelada criogénicamente de un cultivo experimental.",
-                        "fr":  "Un échantillon de recherche cryogéniquement congelé d\u0027une culture expérimentale.",
+                        "fr":  "Un échantillon de recherche cryogéniquement congelé d'une culture expérimentale.",
                         "he":  "דגימת מחקר של יבול ניסיוני שהוקפאה בהקפאה קריוגנית.",
                         "hr":  "Kriogenski zamrznuti istraživački uzorak eksperimentalne kulture.",
                         "it":  "Un campione di ricerca criogenicamente congelato di una coltura sperimentale.",
@@ -48,5 +48,5 @@
     "rarity":  "Common",
     "weightKg":  0.25,
     "imageFilename":  "images/items/Experimental_seed_sample.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

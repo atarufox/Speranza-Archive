@@ -25,9 +25,9 @@
     "description":  {
                         "da":  "Den presser hvidløg, oliven og sandsynligvis mange andre ting.",
                         "de":  "Hiermit kann man Knoblauch, Oliven und wahrscheinlich noch andere Dinge pressen.",
-                        "en":  "It\u0027ll press garlic, olives, and probably many other things.",
+                        "en":  "It'll press garlic, olives, and probably many other things.",
                         "es":  "Prensará ajo, aceitunas y probablemente muchas otras cosas.",
-                        "fr":  "Presse l\u0027ail, les olives et probablement bien d\u0027autres choses.",
+                        "fr":  "Presse l'ail, les olives et probablement bien d'autres choses.",
                         "he":  "זה יכתוש שום, זיתים, וכנראה עוד הרבה דברים אחרים.",
                         "hr":  "Prešat će češnjak, masline i vjerojatno mnoge druge stvari.",
                         "it":  "Sprema aglio, olive e probabilmente molte altre cose.",
@@ -57,5 +57,5 @@
                          "metal_parts":  7
                      },
     "imageFilename":  "images/items/Garlic_press.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

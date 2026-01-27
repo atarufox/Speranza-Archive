@@ -25,9 +25,9 @@
     "description":  {
                         "da":  "Hvis du står tæt på og knuger øjnene sammen, er det som om verden aldrig styrtede sammen.",
                         "de":  "Wenn du ganz nah rangehst und die Augen zusammenkneifst, ist es fast, als on die Welt nie untergegangen wäre.",
-                        "en":  "If you stand close and squint your eyes, it\u0027s like the world never came crumbling down.",
+                        "en":  "If you stand close and squint your eyes, it's like the world never came crumbling down.",
                         "es":  "Si te acercas y entrecierras los ojos, es como si el mundo nunca se hubiera derrumbado.",
-                        "fr":  "Si vous vous tenez près et plissez les yeux, c\u0027est comme si le monde ne s\u0027était jamais effondré.",
+                        "fr":  "Si vous vous tenez près et plissez les yeux, c'est comme si le monde ne s'était jamais effondré.",
                         "he":  "אם עומדים קרוב ומכווצים את העיניים, זה נראה כאילו העולם מעולם לא התמוטט.",
                         "hr":  "Ako stojite blizu i prižmirite oči, kao da se svijet nikada nije srušio.",
                         "it":  "Se ti avvicini e socchiudi gli occhi, è come se il mondo non fosse mai crollato.",
@@ -51,5 +51,5 @@
     "weightKg":  0.3,
     "stackSize":  3,
     "imageFilename":  "images/items/Poster_of_natural_wonders.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

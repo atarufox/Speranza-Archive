@@ -27,7 +27,7 @@
                         "de":  "Wird zur Herstellung verschiedenster Gegenstände verwendet. Zur Herstellung von: Hairpin, Leichter Schild, Beute-Marke 1, Leichte Aufschlaggranate, Erweitertes Schrotflintenmagazin I",
                         "en":  "Used to craft a wide range of items. Used to craft: Hairpin, Light Shield, Looting Mk. 1, Light Impact Grenade, Extended Shotgun Mag I",
                         "es":  "Se usa para fabricar una amplia gama de objetos. Se usa para fabricar: Horquilla, Escudo ligero, Saqueo Ver.1, Granada de impacto ligera, Cargador de escopeta extendido I",
-                        "fr":  "Permet de fabriquer une large gamme d\u0027objets. Permet de fabriquer : Épingle à cheveux, Bouclier léger, Butin 1, Grenade à choc léger, Chargeur de fusil à pompe étendu I",
+                        "fr":  "Permet de fabriquer une large gamme d'objets. Permet de fabriquer : Épingle à cheveux, Bouclier léger, Butin 1, Grenade à choc léger, Chargeur de fusil à pompe étendu I",
                         "he":  "משמש ליצירת מגוון רחב של פריטים. משמש ליצירת: סיכת ראש, מגן קל, Looting Mk. 1, רימון הדף קל, מחסנית שוטגאן מורחבת I",
                         "hr":  "Koristi se za izradu širokog spektra predmeta. Koristi se za izradu: Ukosnica, Laki štit, Pljačkanje Mk. 1, Laka udarna granata, Produženi šaržer za sačmaru I",
                         "it":  "Si usa per creare una vasta gamma di oggetti. Si usa per creare: Tornante, Scudo leggero, Saccheggio Mk. 1, Granata a impatto leggera, Caricatore esteso fucile I",
@@ -54,5 +54,5 @@
 
                      },
     "imageFilename":  "images/items/Plastic_parts.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

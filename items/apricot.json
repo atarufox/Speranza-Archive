@@ -27,10 +27,10 @@
                         "de":  "Eine sonnengereifte Aprikose. Kann zum Gewinn einer kleinen Menge Ausdauer verzehrt werden.",
                         "en":  "A sun ripe apricot. Can be consumed for a small amount of stamina.",
                         "es":  "Un albaricoque maduro al sol. Puede consumirse para obtener una pequeña cantidad de resistencia.",
-                        "fr":  "Un abricot mûri au soleil. Peut être consommé pour une petite quantité d\u0027endurance.",
+                        "fr":  "Un abricot mûri au soleil. Peut être consommé pour une petite quantité d'endurance.",
                         "he":  "משמש שהבשיל בשמש. ניתן לאכילה עבור כמות קטנה של סיבולת.",
                         "hr":  "Suncem dozrela marelica. Može se konzumirati za malu količinu izdržljivosti.",
-                        "it":  "Un\u0027albicocca maturata al sole. Può essere consumata per una piccola quantità di stamina.",
+                        "it":  "Un'albicocca maturata al sole. Può essere consumata per una piccola quantità di stamina.",
                         "ja":  "太陽で熟したアプリコット。消費すると少量のスタミナを回復できる。",
                         "kr":  "햇볕에 익은 살구. 섭취하면 소량의 스태미나를 회복할 수 있습니다.",
                         "no":  "En solmoden aprikos. Kan konsumeres for en liten mengde utholdenhet.",
@@ -80,10 +80,10 @@
                                      "de":  "Verwendungszeit",
                                      "en":  "Use Time",
                                      "es":  "Tiempo de uso",
-                                     "fr":  "Temps d\u0027utilisation",
+                                     "fr":  "Temps d'utilisation",
                                      "he":  "זמן שימוש",
                                      "hr":  "Vrijeme Korištenja",
-                                     "it":  "Tempo d\u0027uso",
+                                     "it":  "Tempo d'uso",
                                      "ja":  "使用時間",
                                      "kr":  "사용 시간",
                                      "no":  "Brukstid",
@@ -105,5 +105,5 @@
                          "assorted_seeds":  2
                      },
     "imageFilename":  "images/items/Apricot.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

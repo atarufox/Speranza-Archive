@@ -5,10 +5,10 @@
                  "de":  "Testanbauschlüssel (Damm)",
                  "en":  "Dam Testing Annex Key",
                  "es":  "Llave del anexo de pruebas de la presa",
-                 "fr":  "Clé de l\u0027annexe d\u0027essai du barrage",
+                 "fr":  "Clé de l'annexe d'essai du barrage",
                  "he":  "מפתח אגף הבדיקות בסכר",
                  "hr":  "Ključ za testni aneks brane",
-                 "it":  "Chiave dell\u0027annesso di test della diga",
+                 "it":  "Chiave dell'annesso di test della diga",
                  "ja":  "ダムのテスティング・アネックスの鍵",
                  "kr":  "댐 테스트 별관 열쇠",
                  "no":  "Damtestanneks-nøkkel",
@@ -27,10 +27,10 @@
                         "de":  "Öffnet eine Tür im Testanbau an den Damm-Schlachtfeldern.",
                         "en":  "Unlocks a door in the Testing Annex on Dam Battlegrounds.",
                         "es":  "Desbloquea una puerta en el anexo de pruebas en el campo de batalla de la presa.",
-                        "fr":  "Déverrouille une porte de l\u0027annexe d\u0027Essai au Champ de Bataille du Barrage.",
+                        "fr":  "Déverrouille une porte de l'annexe d'Essai au Champ de Bataille du Barrage.",
                         "he":  "פותח דלת באגף הבדיקות במפת Dam Battlegrounds.",
                         "hr":  "Otključava vrata u testnom aneksu na bojnom polju brane.",
-                        "it":  "Sblocca una porta nell\u0027annesso di test su Dam Battlegrounds.",
+                        "it":  "Sblocca una porta nell'annesso di test su Dam Battlegrounds.",
                         "ja":  "ダム戦場の試験棟のドアを開錠する。",
                         "kr":  "댐 전장의 테스트 별관에 있는 문을 엽니다.",
                         "no":  "Låser opp en dør i testannekset på Dam Battlegrounds.",
@@ -39,7 +39,7 @@
                         "pt-BR":  "Destranca uma porta no Anexo de Testes no Campo de Batalha da Represa.",
                         "ru":  "Открывает дверь в испытательной пристройке на поле боя «Плотина».",
                         "sr":  "Otključava vrata u testnom aneksu na bojnom polju brane.",
-                        "tr":  "Baraj Savaş Alanı\u0027ndaki Test Eki\u0027nde bir kapıyı açar.",
+                        "tr":  "Baraj Savaş Alanı'ndaki Test Eki'nde bir kapıyı açar.",
                         "uk":  "Відкриває двері у випробувальній прибудові на полі бою «Дамба».",
                         "zh-CN":  "解锁大坝战场测试附属建筑中的一扇门。",
                         "zh-TW":  "解鎖水壩戰場測試附屬建築中的一扇門。"
@@ -49,5 +49,5 @@
     "value":  100,
     "weightKg":  0.25,
     "imageFilename":  "images/items/Dam_testing_annex_key.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

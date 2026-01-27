@@ -40,7 +40,7 @@
                         "ru":  "Можно использовать для постепенного восстановления небольшого количества здоровья со временем.",
                         "sr":  "Može se koristiti za postepeno obnavljanje male količine zdravlja tokom vremena.",
                         "tr":  "Zamanla yavaş yavaş az miktarda can yenilemek için kullanılabilir.",
-                        "uk":  "Можна використати для поступового відновлення невеликої кількості здоров\u0027я з часом.",
+                        "uk":  "Можна використати для поступового відновлення невеликої кількості здоров'я з часом.",
                         "zh-CN":  "可用于随时间逐渐恢复少量生命值。",
                         "zh-TW":  "可用於隨時間逐漸恢復少量生命值。"
                     },
@@ -103,10 +103,10 @@
                                      "de":  "Verwendungszeit",
                                      "en":  "Use Time",
                                      "es":  "Tiempo de uso",
-                                     "fr":  "Temps d\u0027utilisation",
+                                     "fr":  "Temps d'utilisation",
                                      "he":  "זמן שימוש",
                                      "hr":  "Vrijeme Korištenja",
-                                     "it":  "Tempo d\u0027uso",
+                                     "it":  "Tempo d'uso",
                                      "ja":  "使用時間",
                                      "kr":  "사용 시간",
                                      "no":  "Brukstid",
@@ -125,5 +125,5 @@
 
                      },
     "imageFilename":  "images/items/Resin.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

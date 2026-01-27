@@ -27,10 +27,10 @@
                         "de":  "Eine billige Option für offensive Zwecke - muss aber jedes Mal um 2 Geschosse nachgeladen werden.",
                         "en":  "Fully automatic assault rifle. A cheap offensive option, but has to be reloaded 2 bullets at a time.",
                         "es":  "Rifle de asalto totalmente automático. Una opción ofensiva económica, pero debe recargarse de 2 balas a la vez.",
-                        "fr":  "Fusil d\u0027assaut entièrement automatique. Une option offensive bon marché, mais doit être rechargé 2 balles à la fois.",
+                        "fr":  "Fusil d'assaut entièrement automatique. Une option offensive bon marché, mais doit être rechargé 2 balles à la fois.",
                         "he":  "רובה סער אוטומטי מלא. אפשרות תקיפה זולה, אך נדרשת טעינה של 2 כדורים בכל פעם.",
                         "hr":  "Potpuno automatska jurišna puška. Jeftina ofenzivna opcija, ali se mora puniti po 2 metka odjednom.",
-                        "it":  "Fucile d\u0027assalto completamente automatico. Un\u0027opzione offensiva economica, ma deve essere ricaricato 2 proiettili alla volta.",
+                        "it":  "Fucile d'assalto completamente automatico. Un'opzione offensiva economica, ma deve essere ricaricato 2 proiettili alla volta.",
                         "ja":  "フルオート式アサルトライフル。安価な攻撃オプションだが、一度に2発ずつリロードする必要がある。",
                         "kr":  "완전 자동 돌격 소총. 저렴한 공격 옵션이지만, 한 번에 2발씩 재장전해야 합니다.",
                         "no":  "Helautomatisk assault rifle. Et billig offensivt alternativ, men må lades med 2 kuler om gangen.",
@@ -79,7 +79,7 @@
                                                   "de":  "ARC-Panzerungsdurchdringung",
                                                   "en":  "ARC Armor Penetration",
                                                   "es":  "Penetración de Armadura ARC",
-                                                  "fr":  "Pénétration d\u0027Armure ARC",
+                                                  "fr":  "Pénétration d'Armure ARC",
                                                   "he":  "חדירת שריון ARC",
                                                   "hr":  "ARC Probijanje Oklopa",
                                                   "it":  "Penetrazione armature ARC",
@@ -186,5 +186,5 @@
     "range":  56.2,
     "stability":  72.2,
     "stealth":  14,
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

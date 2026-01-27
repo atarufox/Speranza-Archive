@@ -27,7 +27,7 @@
                         "de":  "Von ARC-Gegnern oder -Aktivitäten erhalten. Kann zu Gummi recycelt werden.",
                         "en":  "Obtained from ARC enemies or activities. Can be recycled into rubber.",
                         "es":  "Obtenido de enemigos o actividades ARC. Se puede reciclar en goma.",
-                        "fr":  "Obtenu auprès d\u0027ennemis ou d\u0027activités ARC. Peut être recyclé en caoutchouc.",
+                        "fr":  "Obtenu auprès d'ennemis ou d'activités ARC. Peut être recyclé en caoutchouc.",
                         "he":  "מתקבל מאויבי ARC או מפעילויות. ניתן למיחזור לגומי.",
                         "hr":  "Dobiva se od ARC neprijatelja ili aktivnosti. Može se reciklirati u gumu.",
                         "it":  "Ottenuto da nemici o attività ARC. Si può riciclare in gomma.",
@@ -57,5 +57,5 @@
                          "rubber_parts":  5
                      },
     "imageFilename":  "images/items/Degraded_arc_rubber.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

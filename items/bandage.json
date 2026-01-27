@@ -40,7 +40,7 @@
                         "ru":  "Медицинский предмет, постепенно восстанавливающий здоровье со временем.",
                         "sr":  "Medicinski predmet koji postepeno obnavlja zdravlje tokom vremena.",
                         "tr":  "Zamanla yavaş yavaş can yenileyen tıbbi bir eşya.",
-                        "uk":  "Медичний предмет, що поступово відновлює здоров\u0027я з часом.",
+                        "uk":  "Медичний предмет, що поступово відновлює здоров'я з часом.",
                         "zh-CN":  "一种医疗物品，能随时间逐渐恢复生命值。",
                         "zh-TW":  "一種醫療物品，能隨時間逐漸恢復生命值。"
                     },
@@ -102,7 +102,7 @@
                                      "de":  "Verwendungszeit",
                                      "en":  "Use Time",
                                      "es":  "Tiempo de uso",
-                                     "fr":  "Temps d\u0027utilisation",
+                                     "fr":  "Temps d'utilisation",
                                      "he":  "זמן שימוש",
                                      "hr":  "Vrijeme Korištenja",
                                      "it":  "Tempo di utilizzo",
@@ -134,5 +134,5 @@
                          "fabric":  1
                      },
     "imageFilename":  "images/items/Bandage.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

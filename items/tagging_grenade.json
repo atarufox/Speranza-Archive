@@ -30,7 +30,7 @@
                         "fr":  "Une grenade qui explose après un délai, marquant les Raiders et les ennemis ARC dans une zone, vous permettant de suivre brièvement leur position.",
                         "he":  "רימון שמתפוצץ לאחר השהייה, מסמן ריידרים ואויבי ARC באזור ומאפשר לעקוב אחר מיקומם לזמן קצר.",
                         "hr":  "Granata koja detonira nakon odgode, označavajući Razbojnike i ARC neprijatelje u području, omogućujući vam da kratko pratite njihovu lokaciju.",
-                        "it":  "Una granata che detona dopo un ritardo, marcando i predoni e i nemici ARC in un\u0027area, permettendoti di tracciare brevemente la loro posizione.",
+                        "it":  "Una granata che detona dopo un ritardo, marcando i predoni e i nemici ARC in un'area, permettendoti di tracciare brevemente la loro posizione.",
                         "ja":  "遅延後に爆発し、エリア内のレイダーとARC敵をタグ付けして、一時的に位置を追跡できるようにする手榴弾。",
                         "kr":  "지연 후 폭발하여 지역 내의 레이더와 아크을 태그하여 잠시 동안 위치를 추적할 수 있게 하는 수류탄입니다.",
                         "no":  "En granат som detonerer etter en forsinkelse, merker Raiders og ARC-fiender i et område, slik at du kan spore deres posisjon kort.",
@@ -112,5 +112,5 @@
                          "sensors":  1
                      },
     "imageFilename":  "images/items/Tagging_grenade.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

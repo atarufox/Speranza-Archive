@@ -5,7 +5,7 @@
                  "de":  "Bauplan: Teile für Waffe mit schwerer Munition",
                  "en":  "Heavy Gun Parts Blueprint",
                  "es":  "Plano de piezas de arma pesada",
-                 "fr":  "Schéma de Pièces d\u0027Arme Lourde",
+                 "fr":  "Schéma de Pièces d'Arme Lourde",
                  "he":  "תרשים לחלקי נשק כבדים",
                  "hr":  "Nacrt za dijelove teškog oružja",
                  "it":  "Progetto di parti di arma pesante",
@@ -50,5 +50,5 @@
     "weightKg":  0,
     "stackSize":  1,
     "imageFilename":  "images/items/Heavy_gun_parts_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

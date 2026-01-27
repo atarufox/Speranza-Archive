@@ -27,7 +27,7 @@
                         "de":  "Kann zu Metallteilen recycelt werden.",
                         "en":  "A set of tools, rusted but still usable for crafting.",
                         "es":  "Un conjunto de herramientas, oxidadas pero aún utilizables para fabricar.",
-                        "fr":  "Un ensemble d\u0027outils, rouillés mais encore utilisables pour la fabrication.",
+                        "fr":  "Un ensemble d'outils, rouillés mais encore utilisables pour la fabrication.",
                         "he":  "סט כלי עבודה, חלוד אך עדיין שמיש ליצירה.",
                         "hr":  "Komplet alata, zahrđalih ali još uvijek upotrebljivih za izradu.",
                         "it":  "Un set di attrezzi, arrugginiti ma ancora utilizzabili per il crafting.",
@@ -57,5 +57,5 @@
                          "metal_parts":  7
                      },
     "imageFilename":  "images/items/Rusted_tools.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

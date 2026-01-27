@@ -56,7 +56,7 @@
                                               "de":  "ARC-Betäubungsdauer",
                                               "en":  "ARC Stun Duration",
                                               "es":  "Duración de aturdimiento ARC",
-                                              "fr":  "Durée d\u0027étourdissement ARC",
+                                              "fr":  "Durée d'étourdissement ARC",
                                               "he":  "משך הלם ARC",
                                               "hr":  "Trajanje ARC Omamljivanja",
                                               "it":  "Durata stordimento ARC",
@@ -102,7 +102,7 @@
                                                  "de":  "Raider-Betäubungsdauer",
                                                  "en":  "Raider Stun Duration",
                                                  "es":  "Duración de aturdimiento de saqueador",
-                                                 "fr":  "Durée d\u0027étourdissement Raider",
+                                                 "fr":  "Durée d'étourdissement Raider",
                                                  "he":  "משך הלם ריידר",
                                                  "hr":  "Trajanje Omamljivanja Pljačkaša",
                                                  "it":  "Durata stordimento Raider",
@@ -133,5 +133,5 @@
                          "battery":  1
                      },
     "imageFilename":  "images/items/Jolt_mine.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

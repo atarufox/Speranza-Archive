@@ -27,10 +27,10 @@
                         "de":  "Ein Sperrmechanismus, der an großen Metalltüren platziert werden kann, um den Zugang einzuschränken.",
                         "en":  "A locking mechanism that can be placed on large metal doors to limit access.",
                         "es":  "Un mecanismo de bloqueo que se puede colocar en puertas metálicas grandes para limitar el acceso.",
-                        "fr":  "Un mécanisme de verrouillage à placer sur les grandes portes métalliques pour en limiter l\u0027accès.",
+                        "fr":  "Un mécanisme de verrouillage à placer sur les grandes portes métalliques pour en limiter l'accès.",
                         "he":  "מנגנון נעילה שניתן להציב על דלתות מתכת גדולות כדי להגביל גישה.",
                         "hr":  "Mehanizam za zaključavanje koji se može postaviti na velika metalna vrata kako bi se ograničio pristup.",
-                        "it":  "Un meccanismo di chiusura che può essere collocato su porte metalliche di grandi dimensioni per limitarne l\u0027accesso.",
+                        "it":  "Un meccanismo di chiusura che può essere collocato su porte metalliche di grandi dimensioni per limitarne l'accesso.",
                         "ja":  "大型の金属製ドアに設置してアクセスを制限できるロック機構。",
                         "kr":  "대형 금속 문에 설치하여 접근을 제한할 수 있는 잠금 장치.",
                         "no":  "En låsemekanisme som kan plasseres på store metalldører for å begrense tilgang.",
@@ -61,5 +61,5 @@
                          "metal_parts":  1
                      },
     "imageFilename":  "images/items/Door_blocker.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

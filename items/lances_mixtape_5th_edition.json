@@ -3,7 +3,7 @@
     "name":  {
                  "da":  "Lances Mixtape (5. udgave)",
                  "de":  "Lances Mixtape (5. Auflage)",
-                 "en":  "Lance\u0027s Mixtape (5th Edition)",
+                 "en":  "Lance's Mixtape (5th Edition)",
                  "es":  "Mixtape de Lance (5ª edición)",
                  "fr":  "Mixtape de Lance (5e édition)",
                  "he":  "המיקסטייפ של Lance (מהדורה חמישית)",
@@ -12,12 +12,12 @@
                  "ja":  "ランスのミックステープ（第5版）",
                  "kr":  "랜스의 믹스테이프 (5판)",
                  "no":  "Lances Mixtape (5. utgave)",
-                 "pl":  "Mixtape Lance\u0027a (5. edycja)",
+                 "pl":  "Mixtape Lance'a (5. edycja)",
                  "pt":  "Mixtape do Lance (5ª edição)",
                  "pt-BR":  "Mixtape do Lance (5ª Edição)",
                  "ru":  "Микстейп Лэнса (5-е издание)",
                  "sr":  "Lensova Mešavina (5. Izdanje)",
-                 "tr":  "Lance\u0027in Karışık Kaseti (5. Baskı)",
+                 "tr":  "Lance'in Karışık Kaseti (5. Baskı)",
                  "uk":  "Мікстейп Ленса (5-е видання)",
                  "zh-CN":  "兰斯的混音带（第5版）",
                  "zh-TW":  "蘭斯的混音帶（第5版）"
@@ -39,7 +39,7 @@
                         "pt-BR":  "Lance plantou pessoalmente várias destas ao redor do Cinturão da Ferrugem, por algum motivo.",
                         "ru":  "Лэнс лично разместил несколько таких по всему Ржавому Поясу, по какой-то причине.",
                         "sr":  "Lens je lično rasporedio nekoliko ovih po Pojasu Hrđe, iz nekog razloga.",
-                        "tr":  "Lance, bir nedenden dolayı bunlardan bir dizi tanesini Pas Kuşağı\u0027nın etrafına bizzat yerleştirmiş.",
+                        "tr":  "Lance, bir nedenden dolayı bunlardan bir dizi tanesini Pas Kuşağı'nın etrafına bizzat yerleştirmiş.",
                         "uk":  "Ленс особисто розмістив декілька таких по всьому Іржавому Поясу, з якоїсь причини.",
                         "zh-CN":  "兰斯出于某种原因，亲自在锈带各处放置了许多这些东西。",
                         "zh-TW":  "蘭斯出於某種原因，親自在鏽帶各處放置了許多這些東西。"
@@ -51,5 +51,5 @@
     "weightKg":  0.2,
     "stackSize":  3,
     "imageFilename":  "images/items/Lances_mixtape_5th_edition.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

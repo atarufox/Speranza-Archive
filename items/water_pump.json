@@ -13,8 +13,8 @@
                  "kr":  "물 펌프",
                  "no":  "Vannpumpe",
                  "pl":  "Pompa wodna",
-                 "pt":  "Bomba d\u0027água",
-                 "pt-BR":  "Bomba d\u0027Água",
+                 "pt":  "Bomba d'água",
+                 "pt-BR":  "Bomba d'Água",
                  "ru":  "Водяной насос",
                  "sr":  "Vodena Pumpa",
                  "tr":  "Su Pompası",
@@ -27,7 +27,7 @@
                         "de":  "Kann zu Herstellungsmaterialien recycelt werden.",
                         "en":  "Can be recycled into crafting materials.",
                         "es":  "Se puede reciclar en materiales de fabricación.",
-                        "fr":  "Peut être recyclée en matériaux d\u0027artisanat.",
+                        "fr":  "Peut être recyclée en matériaux d'artisanat.",
                         "he":  "ניתן למחזור לחומרי יצירה.",
                         "hr":  "Može se reciklirati u materijale za izradu.",
                         "it":  "Si può riciclare in materiali da creazione.",
@@ -58,5 +58,5 @@
                          "oil":  2
                      },
     "imageFilename":  "images/items/Water_pump.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:23Z"
 }

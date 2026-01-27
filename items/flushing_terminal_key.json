@@ -27,7 +27,7 @@
                         "de":  "Dieser Schlüssel wird für die Quest \"The Stench of Corruption\" verwendet, um das Flushing Terminal zu aktivieren",
                         "en":  "This key is used for the quest The Stench of Corruption to activate the Flushing Terminal",
                         "es":  "Esta llave se usa para la misión \"The Stench of Corruption\" para activar el Terminal de Flushing",
-                        "fr":  "Cette clé est utilisée pour la quête \"The Stench of Corruption\" afin d\u0027activer le terminal de purge",
+                        "fr":  "Cette clé est utilisée pour la quête \"The Stench of Corruption\" afin d'activer le terminal de purge",
                         "he":  "מפתח זה משמש למשימה צחנת השחיתות כדי להפעיל את מסוף השטיפה",
                         "hr":  "Ovaj se ključ koristi u zadatku \"The Stench of Corruption\" za aktiviranje Flushing Terminala",
                         "it":  "Questa chiave viene usata nella missione \"The Stench of Corruption\" per attivare il Terminale Flushing",
@@ -50,5 +50,5 @@
     "weightKg":  0.25,
     "stackSize":  1,
     "imageFilename":  "images/items/Flushing_terminal_key.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

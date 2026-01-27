@@ -27,7 +27,7 @@
                         "de":  "Eine Mine, die bei Annäherung explodiert und dabei alles beschädigt, was sich in ihrem Radius befindet.",
                         "en":  "A proximity-triggered explosive device that detonates when enemies approach.",
                         "es":  "Un dispositivo explosivo activado por proximidad que detona cuando los enemigos se acercan.",
-                        "fr":  "Un dispositif explosif a declenchement de proximite qui detone a l\u0027approche des ennemis.",
+                        "fr":  "Un dispositif explosif a declenchement de proximite qui detone a l'approche des ennemis.",
                         "he":  "מוקש נפיץ המופעל בקרבה ומתפוצץ כאשר אויבים מתקרבים.",
                         "hr":  "Eksplozivni uredaj aktiviran blizinom koji detonira kada se neprijatelji priblize.",
                         "it":  "Un dispositivo esplosivo attivato dalla prossimita che detona quando i nemici si avvicinano.",
@@ -50,5 +50,5 @@
     "weightKg":  0,
     "stackSize":  1,
     "imageFilename":  "images/items/Explosive_mine_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

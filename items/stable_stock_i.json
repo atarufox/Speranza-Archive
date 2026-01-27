@@ -25,7 +25,7 @@
     "description":  {
                         "da":  "Forbedrer lidt spredning og rekylgendannelsestid.",
                         "de":  "Verringert die Zeit, in der du dich von Streuung und Rückstoß erholst, geringfügig.",
-                        "en":  "Slightly improves dispersion \u0026 recoil recovery time.",
+                        "en":  "Slightly improves dispersion & recoil recovery time.",
                         "es":  "Mejora ligeramente la dispersión y el tiempo de recuperación del retroceso.",
                         "fr":  "Améliore légèrement la dispersion et le temps de récupération du recul.",
                         "he":  "משפרת קלות את הפיזור ואת זמן ההתאוששות מהרתע.",
@@ -115,5 +115,5 @@
                          "rubber_parts":  3
                      },
     "imageFilename":  "images/items/Stable_stock_I.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

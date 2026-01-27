@@ -39,7 +39,7 @@
                         "pt-BR":  "Destranca uma porta no Posto de Segurança em Stella Montis",
                         "ru":  "Открывает дверь на контрольно-пропускном пункте в Стелла Монтис",
                         "sr":  "Otključava vrata na bezbednosnoj kontrolnoj tački u Stella Montis",
-                        "tr":  "Stella Montis\u0027teki Güvenlik Kontrol Noktasında bir kapıyı açar",
+                        "tr":  "Stella Montis'teki Güvenlik Kontrol Noktasında bir kapıyı açar",
                         "uk":  "Відкриває двері на контрольно-перепускному пункті в Стелла Монтіс",
                         "zh-CN":  "解锁星山安全检查站的一扇门",
                         "zh-TW":  "解鎖星山安全檢查站的一扇門"
@@ -49,5 +49,5 @@
     "value":  100,
     "weightKg":  0.25,
     "imageFilename":  "images/items/Stella_montis_security_checkpoint_key.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

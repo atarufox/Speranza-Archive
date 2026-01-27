@@ -25,12 +25,12 @@
     "description":  {
                         "da":  "Perfekt til at fortælle tiden og vise, at du er en yderst værdig person.",
                         "de":  "Perfekt, um zu sehen, wie spät es ist - und um zu zeigen, wie vornehm du bist.",
-                        "en":  "Perfect for telling the time, and showcasing that you\u0027re an exceedingly dignified person.",
+                        "en":  "Perfect for telling the time, and showcasing that you're an exceedingly dignified person.",
                         "es":  "Perfecto para decir la hora y demostrar que eres una persona extremadamente digna.",
-                        "fr":  "Parfait pour donner l\u0027heure et montrer que vous êtes une personne extrêmement digne.",
+                        "fr":  "Parfait pour donner l'heure et montrer que vous êtes une personne extrêmement digne.",
                         "he":  "מושלם לקריאת השעה, ולהראות שאתה אדם מכובד ביותר.",
                         "hr":  "Savršen za očitavanje vremena i pokazivanje da ste iznimno dostojanstvena osoba.",
-                        "it":  "Perfetto per dire l\u0027ora e mostrare che sei una persona estremamente dignitosa.",
+                        "it":  "Perfetto per dire l'ora e mostrare che sei una persona estremamente dignitosa.",
                         "ja":  "時間を確認するのに最適で、あなたが非常に品格のある人物であることを示せる。",
                         "kr":  "시간을 확인하고 당신이 매우 품위 있는 사람임을 보여주기에 완벽합니다.",
                         "no":  "Perfekt for å fortelle tiden, og vise at du er en ekstremt verdig person.",
@@ -51,5 +51,5 @@
     "weightKg":  0.2,
     "stackSize":  3,
     "imageFilename":  "images/items/Fine_wristwatch.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

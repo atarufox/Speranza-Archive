@@ -27,10 +27,10 @@
                         "de":  "Ein Schlüssel für den Versorgungszugang im Damm.",
                         "en":  "A key for utility access in The Dam.",
                         "es":  "Una llave para acceso de servicios en la presa.",
-                        "fr":  "Une clé pour l\u0027accès aux services dans le barrage.",
+                        "fr":  "Une clé pour l'accès aux services dans le barrage.",
                         "he":  "מפתח לגישת שירות בסכר.",
                         "hr":  "Ključ za pristup pomoćnim prostorijama u brani.",
-                        "it":  "Una chiave per l\u0027accesso ai servizi nella diga.",
+                        "it":  "Una chiave per l'accesso ai servizi nella diga.",
                         "ja":  "ダムの施設へのアクセス用の鍵。",
                         "kr":  "댐의 시설 접근용 열쇠.",
                         "no":  "En nøkkel for verktøytilgang i dammen.",
@@ -39,7 +39,7 @@
                         "pt-BR":  "Uma chave para acesso de serviços na Represa.",
                         "ru":  "Ключ для доступа к подсобным помещениям в Дамбе.",
                         "sr":  "Ključ za pristup pomoćnim prostorijama u brani.",
-                        "tr":  "Baraj\u0027daki tesis erişimi için bir anahtar.",
+                        "tr":  "Baraj'daki tesis erişimi için bir anahtar.",
                         "uk":  "Ключ для доступу до підсобних приміщень у Дамбі.",
                         "zh-CN":  "水坝设施通道的钥匙。",
                         "zh-TW":  "水壩設施通道的鑰匙。"
@@ -50,5 +50,5 @@
     "weightKg":  0.25,
     "stackSize":  1,
     "imageFilename":  "images/items/Dam_utility_key.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

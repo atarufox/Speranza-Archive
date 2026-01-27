@@ -39,7 +39,7 @@
                         "pt-BR":  "Uma chave para o porão no Portão Azul.",
                         "ru":  "Ключ к подвалу в Синих Вратах.",
                         "sr":  "Ključ za podrum u plavom portalu.",
-                        "tr":  "Mavi Kapı\u0027daki mahzen anahtarı.",
+                        "tr":  "Mavi Kapı'daki mahzen anahtarı.",
                         "uk":  "Ключ до підвалу в Синіх Воротах.",
                         "zh-CN":  "蓝门地窖的钥匙。",
                         "zh-TW":  "藍門地窖的鑰匙。"
@@ -50,5 +50,5 @@
     "weightKg":  0.25,
     "stackSize":  1,
     "imageFilename":  "images/items/Blue_gate_cellar_key.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

@@ -5,7 +5,7 @@
                  "de":  "Schlüssel zur Montageverwaltung in Stella Montis",
                  "en":  "Stella Montis Assembly Admin Key",
                  "es":  "Llave de Administrador del Ensamblaje de Stella Montis",
-                 "fr":  "Clé de l\u0027administration du site d\u0027assemblage de Stella Montis",
+                 "fr":  "Clé de l'administration du site d'assemblage de Stella Montis",
                  "he":  "מפתח למנהלת ההרכבה בסטלה מונטיס",
                  "hr":  "Administratorski Ključ Montaže Stella Montis",
                  "it":  "Chiave Amministratore Montaggio di Stella Montis",
@@ -27,7 +27,7 @@
                         "de":  "Öffnet eine Tür in der Montagestätte in Stella Montis",
                         "en":  "Unlocks a door in Assembly in Stella Montis",
                         "es":  "Desbloquea una puerta en el Ensamblaje en Stella Montis",
-                        "fr":  "Déverrouille une porte dans le site d\u0027assemblage de Stella Montis.",
+                        "fr":  "Déverrouille une porte dans le site d'assemblage de Stella Montis.",
                         "he":  "פותח דלת באזור ההרכבה בסטלה מונטיס",
                         "hr":  "Otključava vrata u Montaži u Stella Montis",
                         "it":  "Sblocca una porta nel montaggio a Stella Montis",
@@ -39,7 +39,7 @@
                         "pt-BR":  "Destranca uma porta na Montagem em Stella Montis",
                         "ru":  "Открывает дверь в Сборочном Цехе в Стелла Монтис",
                         "sr":  "Откључава врата у Монтажи у Стела Монтис",
-                        "tr":  "Stella Montis\u0027teki Montaj bölümünde bir kapıyı açar",
+                        "tr":  "Stella Montis'teki Montaj bölümünde bir kapıyı açar",
                         "uk":  "Відмикає двері у Складальному Цеху в Стелла Монтіс",
                         "zh-CN":  "解锁星山组装区的一扇门",
                         "zh-TW":  "解鎖星山組裝區的一扇門"
@@ -49,5 +49,5 @@
     "value":  100,
     "weightKg":  0.25,
     "imageFilename":  "images/items/Stella_montis_assembly_admin_key.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

@@ -27,7 +27,7 @@
                         "de":  "Wird zur Herstellung verschiedenster Gegenstände verwendet. Kann zu Plastik recycelt werden. Zur Herstellung von: Bettina, Schwere Zündgranate, Rauchgranate, Vita-Spray",
                         "en":  "Used to craft a wide range of items. Can be recycled into plastic. Used to craft: Bettina, Vita Spray, Heavy Fuze Grenade, Smoke Grenade",
                         "es":  "Usado para fabricar una amplia gama de objetos. Puede reciclarse en plástico. Usado para fabricar: Bettina, Aerosol Vita, Granada de espoleta pesada, Granada de humo",
-                        "fr":  "Permet de fabriquer une large gamme d\u0027objets. Peut être recyclé en plastique. Permet de fabriquer : Bettina, Spray Vita, Grenade à fusée lourde, Grenade fumigène",
+                        "fr":  "Permet de fabriquer une large gamme d'objets. Peut être recyclé en plastique. Permet de fabriquer : Bettina, Spray Vita, Grenade à fusée lourde, Grenade fumigène",
                         "he":  "משמש ליצירת מגוון רחב של פריטים. ניתן למחזור לפלסטיק. משמש ליצירת: בטינה, תרסיס ויטה, רימון מרעום כבד, רימון עשן",
                         "hr":  "Koristi se za izradu širokog spektra predmeta. Može se reciklirati u plastiku. Koristi se za izradu: Bettina, Vita Spray, Heavy Fuze Grenade, Smoke Grenade",
                         "it":  "Si usa per creare una vasta gamma di oggetti. Si può riciclare in plastica. Si usa per creare: Bettina, Spray Vita, Granata a miccia pesante, Granata fumogena",
@@ -57,5 +57,5 @@
                          "plastic_parts":  1
                      },
     "imageFilename":  "images/items/Canister.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

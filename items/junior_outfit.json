@@ -6,7 +6,7 @@
                  "en":  "Junior Outfit",
                  "es":  "Atuendo junior",
                  "fr":  "Tenue junior",
-                 "he":  "תלבושת ג\u0027וניור",
+                 "he":  "תלבושת ג'וניור",
                  "hr":  "Junior Odijelo",
                  "it":  "Completo junior",
                  "ja":  "ジュニア服",
@@ -47,5 +47,5 @@
     "type":  "Cosmetic",
     "rarity":  "Common",
     "imageFilename":  "images/items/Junior_outfit.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

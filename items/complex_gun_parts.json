@@ -5,7 +5,7 @@
                  "de":  "Komplexe Waffenteile",
                  "en":  "Complex Gun Parts",
                  "es":  "Piezas de arma complejas",
-                 "fr":  "Pièces d\u0027Arme Complexes",
+                 "fr":  "Pièces d'Arme Complexes",
                  "he":  "חלקי נשק מורכבים",
                  "hr":  "Složeni Dijelovi Oružja",
                  "it":  "Parti di armi complesse",
@@ -63,5 +63,5 @@
                          "simple_gun_parts":  2
                      },
     "imageFilename":  "images/items/Complex_gun_parts.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

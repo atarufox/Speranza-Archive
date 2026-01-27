@@ -25,9 +25,9 @@
     "description":  {
                         "da":  "Noget fortæller dig, at du ikke vil åbne dette... Kan (modvilligt) indtages for at genoprette små mængder udholdenhed.",
                         "de":  "Etwas sagt dir, dass du das nicht öffnen willst... Kann (widerwillig) konsumiert werden, um kleine Mengen Ausdauer wiederherzustellen.",
-                        "en":  "Something tells you that you don\u0027t want to open this... Can (reluctantly) be consumed to restore small amounts of stamina.",
+                        "en":  "Something tells you that you don't want to open this... Can (reluctantly) be consumed to restore small amounts of stamina.",
                         "es":  "Algo te dice que no quieres abrir esto... Se puede consumir (a regañadientes) para restaurar pequeñas cantidades de resistencia.",
-                        "fr":  "Quelque chose vous dit que vous ne voulez pas ouvrir ceci... Peut (à contrecœur) être consommé pour restaurer de petites quantités d\u0027endurance.",
+                        "fr":  "Quelque chose vous dit que vous ne voulez pas ouvrir ceci... Peut (à contrecœur) être consommé pour restaurer de petites quantités d'endurance.",
                         "he":  "משהו אומר לך שאתה לא רוצה לפתוח את זה... ניתן (בחוסר רצון) לצריכה כדי להשיב כמות קטנה של סיבולת.",
                         "hr":  "Nešto ti govori da ne želiš otvoriti ovo... Može se (nevoljko) konzumirati za obnovu male količine izdržljivosti.",
                         "it":  "Qualcosa ti dice che non vuoi aprire questo... Può (riluttantemente) essere consumato per ripristinare piccole quantità di stamina.",
@@ -80,10 +80,10 @@
                                      "de":  "Verwendungszeit",
                                      "en":  "Use Time",
                                      "es":  "Tiempo de uso",
-                                     "fr":  "Temps d\u0027utilisation",
+                                     "fr":  "Temps d'utilisation",
                                      "he":  "זמן שימוש",
                                      "hr":  "Vrijeme korištenja",
-                                     "it":  "Tempo d\u0027uso",
+                                     "it":  "Tempo d'uso",
                                      "ja":  "使用時間",
                                      "kr":  "사용 시간",
                                      "no":  "Brukstid",
@@ -99,5 +99,5 @@
                                  }
                 },
     "imageFilename":  "images/items/Bloated_tuna_can.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

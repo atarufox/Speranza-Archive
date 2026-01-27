@@ -27,10 +27,10 @@
                         "de":  "Ein Gadget, mit dem der Benutzer Gebäude erklimmen und große Entfernungen zurücklegen kann.",
                         "en":  "A gadget that allows the user to scale structures and cover large distances.",
                         "es":  "Un artilugio que permite al usuario escalar estructuras, edificios y recorrer grandes distancias.",
-                        "fr":  "Un gadget qui permet à l\u0027utilisateur d\u0027escalader des structures et de couvrir de grandes distances.",
-                        "he":  "גאדג\u0027ט המאפשר למשתמש לטפס על מבנים ולעבור מרחקים גדולים.",
+                        "fr":  "Un gadget qui permet à l'utilisateur d'escalader des structures et de couvrir de grandes distances.",
+                        "he":  "גאדג'ט המאפשר למשתמש לטפס על מבנים ולעבור מרחקים גדולים.",
                         "hr":  "Naprava koja korisniku omogućuje penjanje po strukturama i prelaženje velikih udaljenosti.",
-                        "it":  "Un dispositivo che permette all\u0027utente di scalare strutture e coprire grandi distanze.",
+                        "it":  "Un dispositivo che permette all'utente di scalare strutture e coprire grandi distanze.",
                         "ja":  "構造物を登ったり、長距離を移動したりできるガジェット。",
                         "kr":  "사용자가 구조물을 오르고 먼 거리를 이동할 수 있게 해주는 장치.",
                         "no":  "En gjenstand som lar brukeren klatre på strukturer og dekke store avstander.",
@@ -49,5 +49,5 @@
     "value":  5000,
     "weightKg":  0,
     "imageFilename":  "images/items/Snap_hook_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

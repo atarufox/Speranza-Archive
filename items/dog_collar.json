@@ -30,7 +30,7 @@
                         "fr":  "Après tout ce temps, vous pouvez encore sentir la bonté.",
                         "he":  "אחרי כל הזמן הזה, עדיין אפשר להריח את הטוב.",
                         "hr":  "Nakon svog ovog vremena, još uvijek možeš osjetiti dobrotu.",
-                        "it":  "Dopo tutto questo tempo, puoi ancora sentire l\u0027odore della bontà.",
+                        "it":  "Dopo tutto questo tempo, puoi ancora sentire l'odore della bontà.",
                         "ja":  "これほど時間が経っても、まだ優しさの匂いがする。",
                         "kr":  "이 모든 시간이 지났지만, 여전히 좋은 냄새가 납니다.",
                         "no":  "Etter all denne tiden kan du fortsatt lukte godheten.",
@@ -58,5 +58,5 @@
                          "fabric":  5
                      },
     "imageFilename":  "images/items/Dog_collar.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

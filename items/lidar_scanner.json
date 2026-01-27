@@ -25,7 +25,7 @@
     "description":  {
                         "da":  "En laserbaseret scanner, der bruges til at opdage de mindste ændringer på jordens overflade",
                         "de":  "Ein laserbasierter Scanner zur Erkennung feinster Veränderungen der Erdoberfläche",
-                        "en":  "A laser-based scanner used to detect the subtlest changes to the Earth\u0027s surface",
+                        "en":  "A laser-based scanner used to detect the subtlest changes to the Earth's surface",
                         "es":  "Un escáner láser utilizado para detectar los cambios más sutiles en la superficie terrestre",
                         "fr":  "Un scanner laser utilisé pour détecter les changements les plus subtils de la surface terrestre",
                         "he":  "סורק מבוסס לייזר המשמש לזיהוי השינויים העדינים ביותר על פני כדור הארץ",
@@ -48,5 +48,5 @@
     "rarity":  "Common",
     "weightKg":  0.25,
     "imageFilename":  "images/items/Lidar_scanner.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

@@ -25,7 +25,7 @@
     "description":  {
                         "da":  "Forbedrer ADS- og trækningshastighed moderat. Kompatibel med: Arpeggio, Kettle, Ferro, Renegade, Hullcracker",
                         "de":  "Verbessert ADS- und Ziehgeschwindigkeit mäßig. Kompatibel mit: Arpeggio, Kettle, Ferro, Renegade, Hullcracker",
-                        "en":  "Moderately improves ADS \u0026 draw speed. Compatible with: Arpeggio, Kettle, Ferro, Renegade, Hullcracker",
+                        "en":  "Moderately improves ADS & draw speed. Compatible with: Arpeggio, Kettle, Ferro, Renegade, Hullcracker",
                         "es":  "Mejora moderadamente la velocidad de apuntado y desenfunde. Compatible con: Arpeggio, Caldero, Ferro, Renegado, Partecascos",
                         "fr":  "Améliore modérément la vitesse de visée et de dégainage. Compatible avec : Arpège, Fondoir, Ferro, Renégat, Brise-fuselage",
                         "he":  "משפר במתינות את מהירות הכניסה לכוונת (ADS) והשליפה. תואם ל: Arpeggio, Kettle, Ferro, Renegade, Hullcracker",
@@ -124,7 +124,7 @@
                                                "de":  "Reduzierte Ausrüstungszeit",
                                                "en":  "Reduced Equip Time",
                                                "es":  "Tiempo de equipamiento reducido",
-                                               "fr":  "Temps d\u0027équipement réduit",
+                                               "fr":  "Temps d'équipement réduit",
                                                "he":  "זמן הצטיידות מופחת",
                                                "hr":  "Smanjeno Vrijeme Opremanja",
                                                "it":  "Tempo di equipaggiamento ridotto",
@@ -178,5 +178,5 @@
                          "mechanical_components":  2
                      },
     "imageFilename":  "images/items/Lightweight_stock.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

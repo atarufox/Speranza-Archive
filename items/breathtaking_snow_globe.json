@@ -27,10 +27,10 @@
                         "de":  "Darum würde dich jeder Speranzer beneiden. Ein Beweis dafür, dass diese Welt einst blühend und magisch war.",
                         "en":  "The envy of every Speranzan. Proof that this world was once thriving and magical.",
                         "es":  "La envidia de todo esperanzano. Prueba de que este mundo fue alguna vez próspero y mágico.",
-                        "fr":  "L\u0027envie de tous les Speranzans. Preuve que ce monde était autrefois prospère et magique.",
+                        "fr":  "L'envie de tous les Speranzans. Preuve que ce monde était autrefois prospère et magique.",
                         "he":  "מושא הקנאה של כל ספראנזני. הוכחה שהעולם הזה היה פעם משגשג וקסום.",
                         "hr":  "Zavist svakog Speranzanca. Dokaz da je ovaj svijet nekada bio živahan i čaroban.",
-                        "it":  "L\u0027invidia di ogni Speranzano. Prova che questo mondo era un tempo prospero e magico.",
+                        "it":  "L'invidia di ogni Speranzano. Prova che questo mondo era un tempo prospero e magico.",
                         "ja":  "すべてのスペランザンの羨望の的。この世界がかつて繁栄し、魔法に満ちていた証。",
                         "kr":  "모든 스페란잔의 부러움. 이 세계가 한때 번영하고 마법으로 가득했다는 증거.",
                         "no":  "Misunnelsen til enhver Speranzan. Bevis på at denne verden en gang var blomstrende og magisk.",
@@ -51,5 +51,5 @@
     "weightKg":  0.2,
     "stackSize":  1,
     "imageFilename":  "images/items/Breathtaking_snow_globe.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

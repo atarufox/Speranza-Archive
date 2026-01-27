@@ -5,7 +5,7 @@
                  "de":  "Energieclip",
                  "en":  "Energy Clip",
                  "es":  "Clip de energía",
-                 "fr":  "Clip d\u0027Énergie",
+                 "fr":  "Clip d'Énergie",
                  "he":  "מחסנית אנרגיה",
                  "hr":  "Energetska kopča",
                  "it":  "Clip energetica",
@@ -60,5 +60,5 @@
                    "battery":  2
                },
     "imageFilename":  "images/items/Energy_clip.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

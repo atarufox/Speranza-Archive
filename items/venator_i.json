@@ -79,7 +79,7 @@
                                                   "de":  "ARC-Rüstungsdurchdringung",
                                                   "en":  "ARC Armor Penetration",
                                                   "es":  "Penetración de armadura ARC",
-                                                  "fr":  "Pénétration d\u0027armure ARC",
+                                                  "fr":  "Pénétration d'armure ARC",
                                                   "he":  "חדירת שריון ARC",
                                                   "hr":  "ARC Probijanje Oklopa",
                                                   "it":  "Penetrazione armature ARC",
@@ -204,5 +204,5 @@
                          "medium_gun_parts":  2
                      },
     "imageFilename":  "images/items/Venator_I.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

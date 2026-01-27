@@ -8,7 +8,7 @@
                  "fr":  "Clé de Voiture de Patrouille",
                  "he":  "מפתח לניידת סיור",
                  "hr":  "Ključ Patrolnog Automobila",
-                 "it":  "Chiave dell\u0027auto di pattuglia",
+                 "it":  "Chiave dell'auto di pattuglia",
                  "ja":  "パトロールカーの鍵",
                  "kr":  "순찰차 열쇠",
                  "no":  "Patruljebilnøkkel",
@@ -30,7 +30,7 @@
                         "fr":  "Une clé de voiture de patrouille.",
                         "he":  "מפתח לניידת סיור.",
                         "hr":  "Ključ patrolnog automobila.",
-                        "it":  "Una chiave per un\u0027auto di pattuglia.",
+                        "it":  "Una chiave per un'auto di pattuglia.",
                         "ja":  "パトカーの鍵。",
                         "kr":  "순찰차의 열쇠.",
                         "no":  "En nøkkel til en patruljebil.",
@@ -51,5 +51,5 @@
     "weightKg":  0.01,
     "stackSize":  1,
     "imageFilename":  "images/items/Patrol_car_key.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

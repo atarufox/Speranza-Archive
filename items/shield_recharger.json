@@ -102,7 +102,7 @@
                                      "de":  "Verwendungszeit",
                                      "en":  "Use Time",
                                      "es":  "Tiempo de uso",
-                                     "fr":  "Temps d\u0027utilisation",
+                                     "fr":  "Temps d'utilisation",
                                      "he":  "זמן שימוש",
                                      "hr":  "Vrijeme korištenja",
                                      "it":  "Tempo di utilizzo",
@@ -136,5 +136,5 @@
                          "rubber_parts":  3
                      },
     "imageFilename":  "images/items/Shield_recharger.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

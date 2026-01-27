@@ -25,7 +25,7 @@
     "description":  {
                         "da":  "Forbedrer markant spredning og rekylgendannelsestid.",
                         "de":  "Verbessert deutlich die Streuung und Rückstoßerholungszeit.",
-                        "en":  "Significantly improves dispersion \u0026 recoil recovery time.",
+                        "en":  "Significantly improves dispersion & recoil recovery time.",
                         "es":  "Mejora significativamente la dispersión y el tiempo de recuperación del retroceso.",
                         "fr":  "Améliore considérablement la dispersion et le temps de récupération du recul.",
                         "he":  "משפרת משמעותית את הפיזור ואת זמן ההתאוששות מהרתע.",
@@ -56,7 +56,7 @@
                                                      "de":  "20% erhöhte Ausrüstungszeit",
                                                      "en":  "20% Increased Equip Time",
                                                      "es":  "Tiempo de equipamiento aumentado en un 20%",
-                                                     "fr":  "Temps d\u0027équipement augmenté de 20%",
+                                                     "fr":  "Temps d'équipement augmenté de 20%",
                                                      "he":  "זמן הצטיידות מוגדל ב-20%",
                                                      "hr":  "20% Povećano Vrijeme Opremanja",
                                                      "it":  "Tempo di equipaggiamento aumentato del 20%",
@@ -157,5 +157,5 @@
                          "mechanical_components":  2
                      },
     "imageFilename":  "images/items/Stable_stock_III.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

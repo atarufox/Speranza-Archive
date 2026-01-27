@@ -27,7 +27,7 @@
                         "de":  "Schaltet die Möglichkeit frei, Deadline-Minen an der Sprengstoffwerkbank herzustellen.",
                         "en":  "Unlocks the ability to craft Deadline mines at the explosives bench.",
                         "es":  "Desbloquea la fabricación de minas Deadline en el banco de explosivos.",
-                        "fr":  "Déverrouille la fabrication des mines Deadline à l\u0027établi d\u0027explosifs.",
+                        "fr":  "Déverrouille la fabrication des mines Deadline à l'établi d'explosifs.",
                         "he":  "פותח את האפשרות לייצר מוקשי דדליין בעמדת החבלה.",
                         "hr":  "Otključava mogućnost izrade mina Deadline na klupi za eksplozive.",
                         "it":  "Sblocca la possibilità di creare mine Deadline al banco esplosivi.",
@@ -50,5 +50,5 @@
     "weightKg":  0,
     "stackSize":  1,
     "imageFilename":  "images/items/Deadline_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

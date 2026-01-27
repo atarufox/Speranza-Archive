@@ -8,7 +8,7 @@
                  "fr":  "Service de Cuillères à Café en Argent",
                  "he":  "סט כפיות כסף",
                  "hr":  "Set Srebrnih Žličica",
-                 "it":  "Set di cucchiaini d\u0027argento",
+                 "it":  "Set di cucchiaini d'argento",
                  "ja":  "シルバーティースプーンセット",
                  "kr":  "은 티스푼 세트",
                  "no":  "Sølv teskje-sett",
@@ -27,7 +27,7 @@
                         "de":  "Ein glänzendes, schimmerndes Set voller Raffinesse und Eleganz.",
                         "en":  "A shining, shimmering set of refinement and elegance.",
                         "es":  "Un conjunto brillante y reluciente de refinamiento y elegancia.",
-                        "fr":  "Un ensemble brillant et scintillant de raffinement et d\u0027élégance.",
+                        "fr":  "Un ensemble brillant et scintillant de raffinement et d'élégance.",
                         "he":  "סט נוצץ ובוהק של עידון ואלגנטיות.",
                         "hr":  "Blistav, svjetlucav set profinjenosti i elegancije.",
                         "it":  "Un set lucente e scintillante di raffinatezza ed eleganza.",
@@ -54,5 +54,5 @@
 
                      },
     "imageFilename":  "images/items/Silver_teaspoon_set.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

@@ -18,7 +18,7 @@
                  "ru":  "Травяной бинт",
                  "sr":  "Biljni zavoj",
                  "tr":  "Bitkisel Bandaj",
-                 "uk":  "Трав\u0027яна пов\u0027язка",
+                 "uk":  "Трав'яна пов'язка",
                  "zh-CN":  "草药绷带",
                  "zh-TW":  "草藥繃帶"
              },
@@ -40,7 +40,7 @@
                         "ru":  "Импровизированный медицинский предмет, который постепенно восстанавливает здоровье со временем.",
                         "sr":  "Improvizovana medicinska stavka koja postepeno obnavlja zdravlje tokom vremena.",
                         "tr":  "Zamanla yavaş yavaş sağlık yenileyen doğaçlama bir tıbbi eşya.",
-                        "uk":  "Імпровізований медичний предмет, який поступово відновлює здоров\u0027я з часом.",
+                        "uk":  "Імпровізований медичний предмет, який поступово відновлює здоров'я з часом.",
                         "zh-CN":  "一种临时医疗物品，可随时间逐渐恢复生命值。",
                         "zh-TW":  "一種臨時醫療物品，可隨時間逐漸恢復生命值。"
                     },
@@ -102,7 +102,7 @@
                                      "de":  "Verwendungszeit",
                                      "en":  "Use Time",
                                      "es":  "Tiempo de uso",
-                                     "fr":  "Temps d\u0027utilisation",
+                                     "fr":  "Temps d'utilisation",
                                      "he":  "זמן שימוש",
                                      "hr":  "Vrijeme korištenja",
                                      "it":  "Tempo di utilizzo",
@@ -133,5 +133,5 @@
                          "fabric":  8
                      },
     "imageFilename":  "images/items/Herbal_bandage.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

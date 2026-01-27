@@ -40,7 +40,7 @@
                         "ru":  "Можно употребить для восстановления небольшого количества здоровья.",
                         "sr":  "Može se konzumirati za povrat male količine zdravlja.",
                         "tr":  "Az miktarda can kazanmak için tüketilebilir.",
-                        "uk":  "Можна вжити для відновлення невеликої кількості здоров\u0027я.",
+                        "uk":  "Можна вжити для відновлення невеликої кількості здоров'я.",
                         "zh-CN":  "可以食用以恢复少量生命值。",
                         "zh-TW":  "可以食用以恢復少量生命值。"
                     },
@@ -79,10 +79,10 @@
                                      "de":  "Verwendungszeit",
                                      "en":  "Use Time",
                                      "es":  "Tiempo de uso",
-                                     "fr":  "Temps d\u0027utilisation",
+                                     "fr":  "Temps d'utilisation",
                                      "he":  "זמן שימוש",
                                      "hr":  "Vrijeme Korištenja",
-                                     "it":  "Tempo d\u0027uso",
+                                     "it":  "Tempo d'uso",
                                      "ja":  "使用時間",
                                      "kr":  "사용 시간",
                                      "no":  "Brukstid",
@@ -101,5 +101,5 @@
 
                      },
     "imageFilename":  "images/items/Mushroom.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

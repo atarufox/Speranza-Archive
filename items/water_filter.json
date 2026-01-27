@@ -8,7 +8,7 @@
                  "fr":  "Filtre à Eau",
                  "he":  "מסנן מים",
                  "hr":  "Filter za Vodu",
-                 "it":  "Filtro per l\u0027acqua",
+                 "it":  "Filtro per l'acqua",
                  "ja":  "浄水器",
                  "kr":  "물 필터",
                  "no":  "Vannfilter",
@@ -27,10 +27,10 @@
                         "de":  "Ein tragbares Filtrationsgerät zur Wasserreinigung.",
                         "en":  "A portable filtration device for purifying water.",
                         "es":  "Un dispositivo de filtración portátil para purificar agua.",
-                        "fr":  "Un dispositif de filtration portable pour purifier l\u0027eau.",
+                        "fr":  "Un dispositif de filtration portable pour purifier l'eau.",
                         "he":  "מכשיר סינון נייד לטיהור מים.",
                         "hr":  "Prijenosni uređaj za filtriranje i pročišćavanje vode.",
-                        "it":  "Un dispositivo di filtrazione portatile per purificare l\u0027acqua.",
+                        "it":  "Un dispositivo di filtrazione portatile per purificare l'acqua.",
                         "ja":  "水を浄化するための携帯用ろ過装置。",
                         "kr":  "물을 정화하기 위한 휴대용 여과 장치입니다.",
                         "no":  "En bærbar filtreringsenhet for rensing av vann.",
@@ -58,5 +58,5 @@
                          "canister":  2
                      },
     "imageFilename":  "images/items/Water_filter.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:23Z"
 }

@@ -39,7 +39,7 @@
                         "pt-BR":  "Destranca uma porta na Torre de Controle A6 no Espaçoporto",
                         "ru":  "Открывает дверь в диспетчерской башне A6 в космопорту",
                         "sr":  "Otključava vrata u Kontrolnom Tornju A6 u Svemirskoj Luci",
-                        "tr":  "Uzay Limanı\u0027ndaki Kontrol Kulesi A6\u0027daki bir kapıyı açar",
+                        "tr":  "Uzay Limanı'ndaki Kontrol Kulesi A6'daki bir kapıyı açar",
                         "uk":  "Відкриває двері в диспетчерській вежі A6 у космопорту",
                         "zh-CN":  "解锁太空港控制塔A6的门",
                         "zh-TW":  "解鎖太空港控制塔A6的門"
@@ -49,5 +49,5 @@
     "value":  100,
     "weightKg":  0.25,
     "imageFilename":  "images/items/Spaceport_control_tower_key.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

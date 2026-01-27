@@ -5,7 +5,7 @@
                  "de":  "Bauplan: Leichte Waffenteile",
                  "en":  "Light Gun Parts Blueprint",
                  "es":  "Plano de piezas de armas ligeras",
-                 "fr":  "Schéma de Pièces d\u0027Arme Légère",
+                 "fr":  "Schéma de Pièces d'Arme Légère",
                  "he":  "שרטוט חלקי נשק קל",
                  "hr":  "Nacrt za lake dijelove oružja",
                  "it":  "Progetto parti di armi leggere",
@@ -50,5 +50,5 @@
     "weightKg":  0,
     "stackSize":  1,
     "imageFilename":  "images/items/Light_gun_parts_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

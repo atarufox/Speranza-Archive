@@ -5,7 +5,7 @@
                  "de":  "Teile für Waffe mit schwerer Munition",
                  "en":  "Heavy Gun Parts",
                  "es":  "Piezas de arma pesada",
-                 "fr":  "Pièces d\u0027Arme Lourde",
+                 "fr":  "Pièces d'Arme Lourde",
                  "he":  "חלקי נשק כבדים",
                  "hr":  "Dijelovi teškog oružja",
                  "it":  "Parti di arma pesante",
@@ -27,7 +27,7 @@
                         "de":  "Wird zur Herstellung von Waffen verwendet. Zur Herstellung von: Vulcano, Hüllenbrecher, Bettina, Komplexe Waffenteile",
                         "en":  "Used to craft weapons. Used to craft: Vulcano, Hullcracker, Bettina, Complex Gun Parts",
                         "es":  "Se usan para fabricar armas. Se usan para fabricar: Vulcano, Partecascos, Bettina, Piezas de arma complejas",
-                        "fr":  "Utilisées pour fabriquer des armes. Utilisées pour fabriquer : Vulcano, Brise-fuselage, Bettina, Pièces d\u0027arme complexes",
+                        "fr":  "Utilisées pour fabriquer des armes. Utilisées pour fabriquer : Vulcano, Brise-fuselage, Bettina, Pièces d'arme complexes",
                         "he":  "משמש ליצירת כלי נשק. משמש ליצירת: Vulcano, Hullcracker, Bettina, חלקי נשק מורכבים",
                         "hr":  "Koristi se za izradu oružja. Koristi se za izradu: Vulcano, Hullcracker, Bettina, Složeni dijelovi oružja",
                         "it":  "Usate per creare armi. Usate per creare: Vulcano, Hullcracker, Bettina, Parti di arma complesse",
@@ -61,5 +61,5 @@
                          "simple_gun_parts":  1
                      },
     "imageFilename":  "images/items/Heavy_gun_parts.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

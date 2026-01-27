@@ -57,7 +57,7 @@
                                               "de":  "ARC-Betäubungsdauer",
                                               "en":  "ARC Stun Duration",
                                               "es":  "Duración de aturdimiento ARC",
-                                              "fr":  "Durée d\u0027étourdissement ARC",
+                                              "fr":  "Durée d'étourdissement ARC",
                                               "he":  "משך הלם ל-ARC",
                                               "hr":  "Trajanje ARC Omamljivanja",
                                               "it":  "Durata stordimento ARC",
@@ -103,7 +103,7 @@
                                                  "de":  "Raider-Betäubungsdauer",
                                                  "en":  "Raider Stun Duration",
                                                  "es":  "Duración de aturdimiento de saqueador",
-                                                 "fr":  "Durée d\u0027étourdissement des Raiders",
+                                                 "fr":  "Durée d'étourdissement des Raiders",
                                                  "he":  "משך הלם לריידר",
                                                  "hr":  "Trajanje Raider Omamljivanja",
                                                  "it":  "Durata stordimento Raider",
@@ -135,5 +135,5 @@
                          "battery":  2
                      },
     "imageFilename":  "images/items/Showstopper.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

@@ -27,7 +27,7 @@
                         "de":  "Wird zur Herstellung verschiedenster Gegenstände verwendet. Kann zu Herstellungsmaterialien recycelt werden.",
                         "en":  "Used to craft a wide range of items. Can be recycled into crafting materials.",
                         "es":  "Usado para fabricar una amplia gama de objetos. Puede reciclarse en materiales de fabricación.",
-                        "fr":  "Permet de fabriquer une large gamme d\u0027objets. Peut être recyclé en matériaux d\u0027artisanat.",
+                        "fr":  "Permet de fabriquer une large gamme d'objets. Peut être recyclé en matériaux d'artisanat.",
                         "he":  "משמש ליצירת מגוון רחב של פריטים. ניתן למחזר לחומרי יצירה.",
                         "hr":  "Koristi se za izradu širokog spektra predmeta. Može se reciklirati u materijale za izradu.",
                         "it":  "Si usa per creare una vasta gamma di oggetti. Si può riciclare in materiali di fabbricazione.",
@@ -57,5 +57,5 @@
                          "metal_parts":  1
                      },
     "imageFilename":  "images/items/Magnet.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

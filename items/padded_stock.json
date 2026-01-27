@@ -18,7 +18,7 @@
                  "ru":  "Мягкий приклад",
                  "sr":  "Podstavljeno kundak",
                  "tr":  "Yastıklı Dipçik",
-                 "uk":  "М\u0027який приклад",
+                 "uk":  "М'який приклад",
                  "zh-CN":  "软垫枪托",
                  "zh-TW":  "軟墊槍托"
              },
@@ -55,7 +55,7 @@
                                                  "de":  "Erhöhte Ausrüstungszeit",
                                                  "en":  "Increased Equip Time",
                                                  "es":  "Tiempo de equipamiento aumentado",
-                                                 "fr":  "Temps d\u0027équipement augmenté",
+                                                 "fr":  "Temps d'équipement augmenté",
                                                  "he":  "זמן שליפה מוגבר",
                                                  "hr":  "Povećano vrijeme opremanja",
                                                  "it":  "Tempo di equipaggiamento aumentato",
@@ -202,5 +202,5 @@
                          "mechanical_components":  2
                      },
     "imageFilename":  "images/items/Padded_stock.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

@@ -27,7 +27,7 @@
                         "de":  "Eine Granate, die eine Spur aus brennbarem Gas hinterlässt und bei der Zündung eine explosive Kettenreaktion auslöst.",
                         "en":  "A grenade that emits a trail of flammable gas along its path, causing an explosive chain reaction when it ignites.",
                         "es":  "Una granada que emite un rastro de gas inflamable a lo largo de su trayectoria, causando una reacción en cadena explosiva cuando se enciende.",
-                        "fr":  "Une grenade qui laisse une traînée de gaz enflammable sur sa trajectoire, provoquant une réaction en chaîne explosive lorsqu\u0027elle s\u0027enflamme.",
+                        "fr":  "Une grenade qui laisse une traînée de gaz enflammable sur sa trajectoire, provoquant une réaction en chaîne explosive lorsqu'elle s'enflamme.",
                         "he":  "רימון שפולט שובל של גז דליק לאורך נתיבו, וגורם לתגובת שרשרת נפיצה כשהוא ניצת.",
                         "hr":  "Granata koja emitira trag zapaljivog plina duž svoje putanje, uzrokujući eksplozivnu lančanu reakciju kada se zapali.",
                         "it":  "Una granata che emette una scia di gas infiammabile lungo il suo percorso, causando una reazione esplosiva a catena quando si accende.",
@@ -110,5 +110,5 @@
                          "crude_explosives":  1
                      },
     "imageFilename":  "images/items/Trailblazer.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

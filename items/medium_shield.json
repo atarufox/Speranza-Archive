@@ -27,7 +27,7 @@
                         "de":  "Ein Standardschild, der einen mittleren Teil des eingehenden Schadens abwehrt, worunter allerdings auch die Mobilität moderat leidet.",
                         "en":  "A standard shield that blocks a medium portion of incoming damage at a moderate cost to mobility.",
                         "es":  "Un escudo estándar que bloquea una porción media del daño entrante a un coste moderado de movilidad.",
-                        "fr":  "Un bouclier standard qui bloque une portion moyenne des dégâts entrants au prix d\u0027un coût modéré en mobilité.",
+                        "fr":  "Un bouclier standard qui bloque une portion moyenne des dégâts entrants au prix d'un coût modéré en mobilité.",
                         "he":  "מגן סטנדרטי החוסם חלק בינוני מהנזק הנכנס במחיר מתון לניידות.",
                         "hr":  "Standardni štit koji blokira srednju količinu dolazne štete uz umjereno smanjenje pokretljivosti.",
                         "it":  "Uno scudo standard che blocca una porzione media del Danni in arrivo a un costo moderato per la mobilità.",
@@ -155,5 +155,5 @@
     "durability":  100,
     "movementSpeedModifier":  -5,
     "shieldCharge":  70,
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

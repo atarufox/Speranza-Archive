@@ -6,7 +6,7 @@
                  "en":  "Shotgun Choke II Blueprint",
                  "es":  "Plano de Estrangulador de escopeta II",
                  "fr":  "Schema Choke de Fusil a Pompe II",
-                 "he":  "שרטוט צ\u0027וק לרובה ציד II",
+                 "he":  "שרטוט צ'וק לרובה ציד II",
                  "hr":  "Sacmarica cok II Nacrt",
                  "it":  "Progetto Strozzatore per fucile II",
                  "ja":  "ショットガン・チョーク II 設計図",
@@ -49,5 +49,5 @@
     "value":  5000,
     "weightKg":  0,
     "imageFilename":  "images/items/Shotgun_choke_II_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

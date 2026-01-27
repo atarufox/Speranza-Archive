@@ -27,10 +27,10 @@
                         "de":  "Technische Modifikation für den Amboss, die seine Kugeln durch solche ersetzt, die sich in 4 schwächere Projektile aufteilen.",
                         "en":  "Tech mod for the Anvil that replaces its bullets with ones that split into 4 weaker projectiles.",
                         "es":  "Modificación técnica para el Yunque que reemplaza sus balas por otras que se dividen en 4 proyectiles más débiles.",
-                        "fr":  "Modification technique pour l\u0027Enclume qui remplace ses balles par des projectiles qui se divisent en 4 projectiles plus faibles.",
+                        "fr":  "Modification technique pour l'Enclume qui remplace ses balles par des projectiles qui se divisent en 4 projectiles plus faibles.",
                         "he":  "מוד טכני עבור ה-אנוויל שמחליף את הקליעים שלו בכאלו המתפצלים ל-4 קליעים חלשים יותר.",
                         "hr":  "Tehnički mod za Nakovanj koji zamjenjuje njegove metke onima koji se dijele na 4 slabija projektila.",
-                        "it":  "Modifica tecnica per l\u0027Anvil che sostituisce i suoi proiettili con altri che si dividono in 4 proiettili più deboli.",
+                        "it":  "Modifica tecnica per l'Anvil che sostituisce i suoi proiettili con altri che si dividono in 4 proiettili più deboli.",
                         "ja":  "アンビルのテクニカルモッドで、弾丸を4つの弱い発射体に分裂するものに置き換えます。",
                         "kr":  "앤빌용 기술 모드로, 총알을 4개의 약한 발사체로 분열되는 것으로 교체합니다.",
                         "no":  "Teknisk modifikasjon for Anvil som erstatter kulene med noen som deler seg i 4 svakere prosjektiler.",
@@ -104,5 +104,5 @@
                          "mechanical_components":  2
                      },
     "imageFilename":  "images/items/Anvil_splitter.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

@@ -27,10 +27,10 @@
                         "de":  "Eine Zielsuchgranate, die auf einzelne ARC in der Nähe abzielt und beim Aufprall Explosionsschaden verursacht.",
                         "en":  "A homing grenade that targets a single nearby ARC dealing explosive damage on impact.",
                         "es":  "Una granada guiada que apunta a un único ARC cercano e inflige daño explosivo al impactar.",
-                        "fr":  "Une grenade à tête chercheuse qui cible un ARC à proximité et inflige des dégâts explosifs à l\u0027impact.",
+                        "fr":  "Une grenade à tête chercheuse qui cible un ARC à proximité et inflige des dégâts explosifs à l'impact.",
                         "he":  "רימון מתביית המתמקד באויב ARC יחיד בקרבת מקום וגורם נזק פיצוץ בעת הפגיעה.",
                         "hr":  "Granata s navođenjem koja cilja jedan obližnji ARC i nanosi eksplozivnu štetu pri udaru.",
-                        "it":  "Una granata a ricerca che prende di mira un singolo ARC nelle vicinanze infliggendo danni esplosivi all\u0027impatto.",
+                        "it":  "Una granata a ricerca che prende di mira un singolo ARC nelle vicinanze infliggendo danni esplosivi all'impatto.",
                         "ja":  "近くの単一のARCを標的とし、着弾時に爆発ダメージを与える誘導グレネード。",
                         "kr":  "근처의 단일 아크를 추적하여 충돌 시 폭발 피해를 입히는 유도 수류탄.",
                         "no":  "En målsøkende granat som retter seg mot en enkelt ARC i nærheten og gjør eksplosiv skade ved treff.",
@@ -39,7 +39,7 @@
                         "pt-BR":  "Uma granada guiada que mira num único ARC próximo causando dano explosivo no impacto.",
                         "ru":  "Самонаводящаяся граната, которая нацеливается на одного ближайшего ARC и наносит взрывной урон при попадании.",
                         "sr":  "Granata sa navođenjem koja cilja jedan obližnji ARC i nanosi eksplozivnu štetu pri udaru.",
-                        "tr":  "Yakındaki tek bir ARC\u0027yi hedef alan ve çarpma anında patlayıcı hasar veren güdümlü bomba.",
+                        "tr":  "Yakındaki tek bir ARC'yi hedef alan ve çarpma anında patlayıcı hasar veren güdümlü bomba.",
                         "uk":  "Самонавідна граната, яка наводиться на одного найближчого ARC і завдає вибухової шкоди при влученні.",
                         "zh-CN":  "一种追踪手榴弹，锁定附近单个ARC并在撞击时造成爆炸伤害。",
                         "zh-TW":  "一種追蹤手榴彈，鎖定附近單個ARC並在撞擊時造成爆炸傷害。"
@@ -111,5 +111,5 @@
                          "chemicals":  3
                      },
     "imageFilename":  "images/items/Seeker_grenade.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

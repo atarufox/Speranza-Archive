@@ -39,7 +39,7 @@
                         "pt-BR":  "Uma chave mestra para áreas residenciais na Cidade Soterrada.",
                         "ru":  "Главный ключ от жилых районов Погребённого города.",
                         "sr":  "Glavni ključ za stambena područja u Zakopanom Gradu.",
-                        "tr":  "Gömülü Şehir\u0027deki konut bölgeleri için ana anahtar.",
+                        "tr":  "Gömülü Şehir'deki konut bölgeleri için ana anahtar.",
                         "uk":  "Головний ключ від житлових районів Похованого міста.",
                         "zh-CN":  "埋没之城住宅区的万能钥匙。",
                         "zh-TW":  "埋沒之城住宅區的萬能鑰匙。"
@@ -50,5 +50,5 @@
     "weightKg":  0.25,
     "stackSize":  1,
     "imageFilename":  "images/items/Buried_city_residential_master_key.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

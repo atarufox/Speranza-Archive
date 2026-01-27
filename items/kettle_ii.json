@@ -27,7 +27,7 @@
                         "de":  "Es ist schnell und präzise, doch die Kugeln fliegen recht langsam und das Nachladen dauert lange.",
                         "en":  "Semi-automatic assault rifle. Quick and accurate, but has low bullet velocity and takes a long time reload.",
                         "es":  "Rifle de asalto semiautomático. Rápido y preciso, pero tiene baja velocidad de bala y tarda mucho en recargar.",
-                        "fr":  "Fusil d\u0027assaut semi-automatique. Rapide et précis, mais a une faible vélocité des balles et prend beaucoup de temps à recharger.",
+                        "fr":  "Fusil d'assaut semi-automatique. Rapide et précis, mais a une faible vélocité des balles et prend beaucoup de temps à recharger.",
                         "he":  "רובה סער חצי-אוטומטי. מהיר ומדויק, אך בעל מהירות קליע נמוכה וזמן טעינה ארוך.",
                         "hr":  "Poluautomatska jurišna puška. Brza i precizna, ali ima nisku brzinu metka i dugo traje punjenje.",
                         "it":  "È rapido e preciso, ma ha una velocità dei proiettili ridotta e richiede molto tempo per essere ricaricato.",
@@ -57,5 +57,5 @@
                          "metal_parts":  6
                      },
     "imageFilename":  "images/items/Kettle_II.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

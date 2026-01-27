@@ -25,12 +25,12 @@
     "description":  {
                         "da":  "Et rytmisk instrument brugt til at tiltrække ARCs opmærksomhed og imponere andre Raiders.",
                         "de":  "Ein rhythmisches Instrument, das die Aufmerksamkeit von ARC anzieht und andere Raiders beeindruckt.",
-                        "en":  "A rhythmic instrument used to attract ARC\u0027s attention, and impress other Raiders.",
+                        "en":  "A rhythmic instrument used to attract ARC's attention, and impress other Raiders.",
                         "es":  "Un instrumento rítmico usado para atraer la atención de ARC e impresionar a otros Raiders.",
-                        "fr":  "Un instrument rythmique utilisé pour attirer l\u0027attention d\u0027ARC et impressionner les autres Raiders.",
+                        "fr":  "Un instrument rythmique utilisé pour attirer l'attention d'ARC et impressionner les autres Raiders.",
                         "he":  "כלי קצב המשמש למשיכת תשומת הלב של ARC, ולהרשים ריידרים אחרים.",
                         "hr":  "Ritmički instrument koji se koristi za privlačenje pažnje ARC-a i impresioniranje drugih Raidera.",
-                        "it":  "Uno strumento ritmico usato per attirare l\u0027attenzione di ARC e impressionare altri Raiders.",
+                        "it":  "Uno strumento ritmico usato per attirare l'attenzione di ARC e impressionare altri Raiders.",
                         "ja":  "ARCの注意を引き、他のレイダーを感心させるためのリズム楽器。",
                         "kr":  "ARC의 주의를 끌고 다른 레이더들에게 깊은 인상을 주기 위해 사용되는 리듬 악기.",
                         "no":  "Et rytmisk instrument brukt for å tiltrekke ARCs oppmerksomhet og imponere andre Raiders.",
@@ -39,7 +39,7 @@
                         "pt-BR":  "Um instrumento rítmico usado para atrair a atenção da ARC e impressionar outros Raiders.",
                         "ru":  "Ритмичный инструмент, используемый для привлечения внимания ARC и впечатления других Рейдеров.",
                         "sr":  "Ritmički instrument koji se koristi za privlačenje pažnje ARC-a i impresioniranje drugih Raidera.",
-                        "tr":  "ARC\u0027nin dikkatini çekmek ve diğer Akıncıları etkilemek için kullanılan ritmik bir enstrüman.",
+                        "tr":  "ARC'nin dikkatini çekmek ve diğer Akıncıları etkilemek için kullanılan ritmik bir enstrüman.",
                         "uk":  "Ритмічний інструмент, який використовується для привернення уваги ARC та враження інших Рейдерів.",
                         "zh-CN":  "一种节奏乐器，用于吸引ARC的注意并给其他掠夺者留下深刻印象。",
                         "zh-TW":  "一種節奏樂器，用於吸引ARC的注意並給其他掠奪者留下深刻印象。"
@@ -57,5 +57,5 @@
                          "plastic_parts":  4
                      },
     "imageFilename":  "images/items/Shaker.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

@@ -5,7 +5,7 @@
                  "de":  "Rathausschlüssel (Begrabene Stadt)",
                  "en":  "Buried City Town Hall Key",
                  "es":  "Llave del ayuntamiento de la ciudad enterrada",
-                 "fr":  "Clé de l\u0027hôtel de ville de la ville enfouie",
+                 "fr":  "Clé de l'hôtel de ville de la ville enfouie",
                  "he":  "מפתח בית העירייה של העיר הקבורה",
                  "hr":  "Ključ Gradske Vijećnice Zakopanog Grada",
                  "it":  "Chiave del municipio della città sepolta",
@@ -27,7 +27,7 @@
                         "de":  "Öffnet die Tür zum Rathaus in der Begrabenen Stadt",
                         "en":  "Unlocks the door to the Town Hall in Buried City",
                         "es":  "Desbloquea la puerta del ayuntamiento en la ciudad enterrada",
-                        "fr":  "Déverrouille la porte de l\u0027hôtel de ville dans la cité enfouie",
+                        "fr":  "Déverrouille la porte de l'hôtel de ville dans la cité enfouie",
                         "he":  "פותח את הדלת לבית העירייה בעיר הקבורה",
                         "hr":  "Otključava vrata Gradske Vijećnice u Zakopanom Gradu",
                         "it":  "Sblocca la porta del municipio nella città sepolta",
@@ -39,7 +39,7 @@
                         "pt-BR":  "Desbloqueia a porta da Prefeitura na Cidade Soterrada",
                         "ru":  "Открывает дверь в ратушу Погребённого города",
                         "sr":  "Otključava vrata Gradske Većnice u Zakopanom Gradu",
-                        "tr":  "Gömülü Şehir\u0027deki Belediye Binası kapısını açar",
+                        "tr":  "Gömülü Şehir'deki Belediye Binası kapısını açar",
                         "uk":  "Відкриває двері до ратуші Похованого міста",
                         "zh-CN":  "开启埋没之城市政厅的门",
                         "zh-TW":  "開啟埋沒之城市政廳的門"
@@ -53,5 +53,5 @@
 
                      },
     "imageFilename":  "images/items/Buried_city_town_hall_key.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

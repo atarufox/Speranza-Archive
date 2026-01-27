@@ -3,7 +3,7 @@
     "name":  {
                  "da":  "Major Aivas emblem",
                  "de":  "Major Aivas Abzeichen",
-                 "en":  "Major Aiva\u0027s Patch",
+                 "en":  "Major Aiva's Patch",
                  "es":  "Parche del Mayor Aiva",
                  "fr":  "Écusson du Major Aiva",
                  "he":  "הטלאי של Major Aiva",
@@ -17,7 +17,7 @@
                  "pt-BR":  "Emblema da Major Aiva",
                  "ru":  "Нашивка майора Айвы",
                  "sr":  "Oznaka majora Aive",
-                 "tr":  "Binbaşı Aiva\u0027nın Arması",
+                 "tr":  "Binbaşı Aiva'nın Arması",
                  "uk":  "Нашивка майора Айви",
                  "zh-CN":  "艾娃少校的臂章",
                  "zh-TW":  "艾娃少校的臂章"
@@ -73,5 +73,5 @@
                                           }
                 },
     "imageFilename":  "images/items/Major_aivas_patch.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

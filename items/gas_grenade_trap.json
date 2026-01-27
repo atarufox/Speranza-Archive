@@ -102,7 +102,7 @@
                                           "de":  "Ausdauerabzug",
                                           "en":  "Stamina Drain",
                                           "es":  "Drenaje de resistencia",
-                                          "fr":  "Drain d\u0027endurance",
+                                          "fr":  "Drain d'endurance",
                                           "he":  "דלדול סיבולת",
                                           "hr":  "Iscrpljivanje Izdržljivosti",
                                           "it":  "Drenaggio stamina",
@@ -127,5 +127,5 @@
                    "wires":  1
                },
     "imageFilename":  "images/items/Gas_grenade_trap.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

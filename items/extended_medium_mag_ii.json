@@ -28,7 +28,7 @@
                         "en":  "Moderately extends the ammo capacity of compatible weapons that use medium ammo. Compatible with: Arpeggio, Renegade, Venator, Tempest, Torrente",
                         "es":  "Extiende moderadamente la capacidad de munición de armas compatibles que usan munición mediana. Compatible con: Arpeggio, Renegado, Venator, Tempestad, Torrente",
                         "fr":  "Augmente modérément la capacité de munitions des armes compatibles utilisant des munitions moyennes. Compatible avec : Arpège, Renégat, Venator, Tempête, Torrente",
-                        "he":  "מגדיל באופן מתון את קיבולת התחמושת של נשקים תואמים המשתמשים בתחמושת בינונית. תואם ל: ארפג\u0027יו, רנגייד, ונטור, טמפסט, טורנטה",
+                        "he":  "מגדיל באופן מתון את קיבולת התחמושת של נשקים תואמים המשתמשים בתחמושת בינונית. תואם ל: ארפג'יו, רנגייד, ונטור, טמפסט, טורנטה",
                         "hr":  "Umjereno povećava kapacitet streljiva kompatibilnog oružja koje koristi srednje streljivo. Kompatibilno s: Arpeggio, Renegade, Venator, Tempest, Torrente",
                         "it":  "Aumenta moderatamente la capienza delle armi compatibili che utiilizzano munizioni medie. Compatibile con: Arpeggio, Renegade, Torrente, Venator, Falco pescatore",
                         "ja":  "中弾薬を使用する対応武器の弾薬容量を適度に拡張します。対応武器：Arpeggio、Renegade、Venator、Tempest、Torrente",
@@ -86,5 +86,5 @@
                          "mechanical_components":  1
                      },
     "imageFilename":  "images/items/Extended_medium_mag_II.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

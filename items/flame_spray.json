@@ -30,7 +30,7 @@
                         "fr":  "Une arme de fortune classique qui laissera certainement des traces de brûlure.",
                         "he":  "נשק מאולתר קלאסי, בטוח שישאיר סימני חריכה.",
                         "hr":  "Klasično improvizovano oružje, sigurno će ostaviti tragove opeklina.",
-                        "it":  "Un\u0027arma improvvisata classica che lascerà sicuramente segni di bruciatura.",
+                        "it":  "Un'arma improvvisata classica che lascerà sicuramente segni di bruciatura.",
                         "ja":  "古典的な即席武器で、焦げ跡を残すこと間違いなし。",
                         "kr":  "그을린 자국을 남길 것이 확실한 고전적인 즉석 무기.",
                         "no":  "Et klassisk provisorisk våpen som garantert etterlater svimerker.",
@@ -109,5 +109,5 @@
                          "fireball_burner":  1
                      },
     "imageFilename":  "images/items/Flame_spray.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

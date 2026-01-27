@@ -18,7 +18,7 @@
                  "ru":  "Витаминная сыворотка",
                  "sr":  "Vita Injekcija",
                  "tr":  "Vita İğnesi",
-                 "uk":  "Віта-ін\u0027єкція",
+                 "uk":  "Віта-ін'єкція",
                  "zh-CN":  "活力注射剂",
                  "zh-TW":  "活力注射劑"
              },
@@ -40,7 +40,7 @@
                         "ru":  "Медицинский предмет, восстанавливающий большое количество здоровья.",
                         "sr":  "Medicinski predmet koji obnavlja veliku količinu zdravlja.",
                         "tr":  "Büyük miktarda sağlık yenileyen tıbbi bir eşya.",
-                        "uk":  "Медичний предмет, що відновлює велику кількість здоров\u0027я.",
+                        "uk":  "Медичний предмет, що відновлює велику кількість здоров'я.",
                         "zh-CN":  "可恢复大量生命值的医疗物品。",
                         "zh-TW":  "可恢復大量生命值的醫療物品。"
                     },
@@ -79,10 +79,10 @@
                                      "de":  "Verwendungszeit",
                                      "en":  "Use Time",
                                      "es":  "Tiempo de uso",
-                                     "fr":  "Temps d\u0027utilisation",
+                                     "fr":  "Temps d'utilisation",
                                      "he":  "זמן שימוש",
                                      "hr":  "Vrijeme Korištenja",
-                                     "it":  "Tempo d\u0027uso",
+                                     "it":  "Tempo d'uso",
                                      "ja":  "使用時間",
                                      "kr":  "사용 시간",
                                      "no":  "Brukstid",
@@ -110,5 +110,5 @@
                          "syringe":  1
                      },
     "imageFilename":  "images/items/Vita_shot.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

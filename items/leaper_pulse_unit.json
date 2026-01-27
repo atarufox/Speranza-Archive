@@ -27,7 +27,7 @@
                         "de":  "Kann zu Herstellungsmaterialien recycelt werden. Kann geworfen werden, um eine brutale Singularität zu erzeugen.",
                         "en":  "Can be recycled into crafting materials. Can be thrown to create a violent singularity.",
                         "es":  "Se puede reciclar para obtener materiales de fabricación. Se puede lanzar para crear una singularidad violenta.",
-                        "fr":  "Peut être recyclé en matériaux d\u0027artisanat. Peut être lancé pour créer une singularité violente.",
+                        "fr":  "Peut être recyclé en matériaux d'artisanat. Peut être lancé pour créer une singularité violente.",
                         "he":  "ניתן למחזור לחומרי יצירה. ניתן לזריקה ליצירת סינגולריות אלימה.",
                         "hr":  "Može se reciklirati u materijale za izradu. Može se baciti kako bi se stvorila nasilna singularnost.",
                         "it":  "Si può riciclare in materiali da creazione. Si può lanciare per creare una singolarità violenta",
@@ -106,5 +106,5 @@
                          "mechanical_components":  2
                      },
     "imageFilename":  "images/items/Leaper_pulse_unit.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

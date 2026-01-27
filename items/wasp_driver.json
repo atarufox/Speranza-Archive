@@ -27,7 +27,7 @@
                         "de":  "Kann zu ARC-Legierung recycelt werden. Kann geworfen werden; explodiert, wenn abgeschossen.",
                         "en":  "Can be recycled into ARC Alloy. Can be thrown, and will explode if shot.",
                         "es":  "Puede reciclarse en aleación ARC. Puede lanzarse y explotará si se dispara.",
-                        "fr":  "Peut être recyclé en alliage ARC. Peut être lancé et explosera s\u0027il est touché.",
+                        "fr":  "Peut être recyclé en alliage ARC. Peut être lancé et explosera s'il est touché.",
                         "he":  "ניתן למחזור ל-סגסוגת ARC. ניתן לזריקה, ויתפוצץ אם יורים עליו.",
                         "hr":  "Može se reciklirati u ARC leguru. Može se baciti i eksplodirat će ako se pogodi.",
                         "it":  "Si può riciclare in leghe ARC. Si può lanciare ed esplode se gli si spara.",
@@ -107,5 +107,5 @@
                      },
     "imageFilename":  "images/items/Wasp_driver.png",
     "tip":  "The Wasp Driver is a rare item is dropped by Wasps that can be recycled into crafting materials.",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

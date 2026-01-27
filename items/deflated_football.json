@@ -18,7 +18,7 @@
                  "ru":  "Сдутый футбольный мяч",
                  "sr":  "Ispuhana Fudbalska Lopta",
                  "tr":  "İnmiş Futbol Topu",
-                 "uk":  "Здутий футбольний м\u0027яч",
+                 "uk":  "Здутий футбольний м'яч",
                  "zh-CN":  "泄气的足球",
                  "zh-TW":  "洩氣的足球"
              },
@@ -27,10 +27,10 @@
                         "de":  "Beim Anblick dessen fühlst auch du dich etwas schlapp.",
                         "en":  "Just by looking at this, you too start to feel slightly deflated.",
                         "es":  "Solo con mirar esto, tú también empiezas a sentirte un poco desinflado.",
-                        "fr":  "Rien qu\u0027en regardant cela, vous commencez vous aussi à vous sentir légèrement dégonflé.",
+                        "fr":  "Rien qu'en regardant cela, vous commencez vous aussi à vous sentir légèrement dégonflé.",
                         "he":  "רק מלהביט בו, גם אתה מתחיל להרגיש מעט מרוקן.",
                         "hr":  "Samo gledajući ovo, i ti se počneš osjećati pomalo ispuhano.",
-                        "it":  "Solo guardandolo, anche tu inizi a sentirti un po\u0027 sgonfio.",
+                        "it":  "Solo guardandolo, anche tu inizi a sentirti un po' sgonfio.",
                         "ja":  "これを見ているだけで、あなたも少し気が抜けてくる。",
                         "kr":  "이것을 보는 것만으로도 당신도 약간 기운이 빠지기 시작합니다.",
                         "no":  "Bare ved å se på dette, begynner du også å føle deg litt punktert.",
@@ -58,5 +58,5 @@
                          "rubber_parts":  9
                      },
     "imageFilename":  "images/items/Deflated_football.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

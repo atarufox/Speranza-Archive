@@ -27,10 +27,10 @@
                         "de":  "Verursacht ordentlichen Schaden bei annehmbarer Genauigkeit.",
                         "en":  "A blueprint to craft the Burletta weapon.",
                         "es":  "Un plano para fabricar el arma Burletta.",
-                        "fr":  "Un schéma pour fabriquer l\u0027arme Burletta.",
+                        "fr":  "Un schéma pour fabriquer l'arme Burletta.",
                         "he":  "שרטוט לייצור נשק הבורלטה.",
                         "hr":  "Nacrt za izradu Burletta oružja.",
-                        "it":  "Un progetto per creare l\u0027arma Burletta.",
+                        "it":  "Un progetto per creare l'arma Burletta.",
                         "ja":  "バーレッタ武器を製作するための設計図。",
                         "kr":  "부를레타 무기를 제작하기 위한 설계도입니다.",
                         "no":  "En tegning for å lage Burletta-våpenet.",
@@ -47,5 +47,5 @@
     "type":  "Blueprint",
     "rarity":  "Legendary",
     "imageFilename":  "images/items/Burletta_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

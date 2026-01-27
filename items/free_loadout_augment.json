@@ -27,10 +27,10 @@
                         "de":  "Basis-Augment für Raider-Neulinge, mit etwas mehr Platz im Rucksack und Tragekapazität.",
                         "en":  "Basic augment for rookie Raiders, offering slightly more backpack space and carry capacity.",
                         "es":  "Aumento básico para Raiders novatos, ofrece un poco más de espacio en la mochila y capacidad de carga.",
-                        "fr":  "Amélioration basique pour les Raiders débutants, offrant un peu plus d\u0027espace de sac à dos et de capacité de transport.",
+                        "fr":  "Amélioration basique pour les Raiders débutants, offrant un peu plus d'espace de sac à dos et de capacité de transport.",
                         "he":  "שדרוג בסיסי לריידרים מתחילים, המציע מעט יותר מקום בתיק וקיבולת נשיאה.",
                         "hr":  "Osnovno poboljšanje za početničke Raidere, nudi malo više prostora u ruksaku i nosivosti.",
-                        "it":  "Potenziamento base per Raiders principianti, offre un po\u0027 più di spazio nello zaino e capacità di carico.",
+                        "it":  "Potenziamento base per Raiders principianti, offre un po' più di spazio nello zaino e capacità di carico.",
                         "ja":  "初心者レイダー向けの基本強化で、バックパックスペースと運搬容量がわずかに増加します。",
                         "kr":  "초보 레이더를 위한 기본 강화로, 배낭 공간과 운반 용량이 약간 증가합니다.",
                         "no":  "Grunnleggende forsterkning for nybegynnere Raiders, gir litt mer sekkeplassplass og bærekapasitet.",
@@ -76,5 +76,5 @@
                     "Shield Compatibility":  null
                 },
     "imageFilename":  "images/items/Free_loadout_augment.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

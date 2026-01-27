@@ -3,7 +3,7 @@
     "name":  {
                  "da":  "Lille røggranat",
                  "de":  "Mini-Rauchgranate",
-                 "en":  "Li\u0027l Smoke Grenade",
+                 "en":  "Li'l Smoke Grenade",
                  "es":  "Pequeña granada de humo",
                  "fr":  "Petite Grenade Fumigène",
                  "he":  "רימון עשן קטנטן",
@@ -27,10 +27,10 @@
                         "de":  "Eine Granate, die beim Aufprall eine dichte, aber kleine Rauchwolke entstehen lässt, die die Sicht von ARC und anderen Raidern einschränkt.",
                         "en":  "A grenade that pops a thick but small smoke cloud on impact, blocking visibility from ARC and other Raiders.",
                         "es":  "Una granada que genera una nube de humo espesa pero pequeña al impactar, bloqueando la visibilidad de ARC y otros Raiders.",
-                        "fr":  "Une grenade qui produit un nuage de fumée épais mais petit à l\u0027impact, bloquant la visibilité des ARC et autres Raiders.",
+                        "fr":  "Une grenade qui produit un nuage de fumée épais mais petit à l'impact, bloquant la visibilité des ARC et autres Raiders.",
                         "he":  "רימון שיוצר ענן עשן סמיך אך קטן בעת הפגיעה, וחוסם את שדה הראייה של ARC ושל ריידרים אחרים.",
                         "hr":  "Granata koja stvara gust ali mali oblak dima pri udaru, blokirajući vidljivost od ARC-a i drugih Raidersa.",
-                        "it":  "Una granata che crea una nuvola di fumo densa ma piccola all\u0027impatto, bloccando la visibilità di ARC e altri Raiders.",
+                        "it":  "Una granata che crea una nuvola di fumo densa ma piccola all'impatto, bloccando la visibilità di ARC e altri Raiders.",
                         "ja":  "着弾時に濃密だが小さな煙幕を発生させ、ARCや他のレイダーからの視界を遮る手榴弾。",
                         "kr":  "충돌 시 짙지만 작은 연막을 생성하여 아크와 다른 레이더의 시야를 차단하는 수류탄입니다.",
                         "no":  "En granat som lager en tykk, men liten røyksky ved treff, som blokkerer sikt fra ARC og andre Raiders.",
@@ -110,5 +110,5 @@
                          "chemicals":  2
                      },
     "imageFilename":  "images/items/Lil_smoke_grenade.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

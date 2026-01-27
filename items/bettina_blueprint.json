@@ -30,7 +30,7 @@
                         "fr":  "A une cadence de tir lente et une production de dégâts élevée.",
                         "he":  "בעל קצב אש איטי ונזק גבוה.",
                         "hr":  "Ima sporu brzinu paljbe i visoku štetu.",
-                        "it":  "Ha una cadenza di fuoco lenta e un\u0027alta produzione di danni.",
+                        "it":  "Ha una cadenza di fuoco lenta e un'alta produzione di danni.",
                         "ja":  "低い発射速度と高いダメージ出力を持つ。",
                         "kr":  "느린 발사 속도와 높은 피해량을 가지고 있습니다.",
                         "no":  "Har lav skuddfrekvens og høy skadeproduksjon.",
@@ -49,5 +49,5 @@
     "value":  5000,
     "weightKg":  0,
     "imageFilename":  "images/items/Bettina_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

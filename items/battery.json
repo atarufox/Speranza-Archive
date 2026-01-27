@@ -27,7 +27,7 @@
                         "de":  "Wird zur Herstellung verschiedenster Gegenstände verwendet. Kann zu Metallschrott recycelt werden. Zur Herstellung von: Energieclip, Mittlerer Schild, Schockmine",
                         "en":  "Used to craft a wide range of items. Can be recycled into scrap metal. Used to craft: Energy Clip, Medium Shield, Jolt Mine",
                         "es":  "Usado para fabricar una amplia gama de objetos. Puede reciclarse en chatarra. Usado para fabricar: Cargador de energía, Escudo mediano, Mina de descarga",
-                        "fr":  "Permet de fabriquer une large gamme d\u0027objets. Peut être recyclé en ferraille. Permet de fabriquer : Chargeur d\u0027énergie, Bouclier moyen, Mine électrique",
+                        "fr":  "Permet de fabriquer une large gamme d'objets. Peut être recyclé en ferraille. Permet de fabriquer : Chargeur d'énergie, Bouclier moyen, Mine électrique",
                         "he":  "משמש ליצירת מגוון רחב של פריטים. ניתן למיחזור לגרוטאות מתכת. משמש ליצירת: מחסנית אנרגיה, מגן בינוני, מוקש הלם",
                         "hr":  "Koristi se za izradu širokog spektra predmeta. Može se reciklirati u otpadni metal. Koristi se za izradu: Energetski Okvir, Srednji Štit, Električna Mina",
                         "it":  "Si usa per creare una vasta gamma di oggetti. Si può riciclare in componenti metallici. Si usa per creare: Clip energetica, Scudo medio, Mina a scossa",
@@ -57,5 +57,5 @@
                          "metal_parts":  1
                      },
     "imageFilename":  "images/items/Battery.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

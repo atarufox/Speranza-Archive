@@ -30,7 +30,7 @@
                         "fr":  "Une vieille cassette trouvée dans un vieux caméscope abîmé.",
                         "he":  "קלטת ישנה שנמצאה בתוך מצלמת וידאו ישנה וחבוטה.",
                         "hr":  "Stara traka pronađena unutar oštećene stare kamere.",
-                        "it":  "Un vecchio nastro trovato all\u0027interno di una vecchia videocamera malconcia.",
+                        "it":  "Un vecchio nastro trovato all'interno di una vecchia videocamera malconcia.",
                         "ja":  "ボロボロの古いビデオカメラの中で見つかった古いテープ。",
                         "kr":  "낡고 망가진 캠코더 안에서 발견된 오래된 테이프.",
                         "no":  "Et gammelt bånd funnet inne i et ramponert gammelt videokamera.",
@@ -49,5 +49,5 @@
     "weightKg":  0.25,
     "questItem":  true,
     "imageFilename":  "images/items/First_wave_tape.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

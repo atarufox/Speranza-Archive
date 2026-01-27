@@ -5,7 +5,7 @@
                  "de":  "Sprungmine: Ausdauerverlust über Zeit",
                  "en":  "Gas Mine",
                  "es":  "Mina de gas",
-                 "fr":  "Mine Bondissance : Dégâts d\u0027Endurance sur la Durée",
+                 "fr":  "Mine Bondissance : Dégâts d'Endurance sur la Durée",
                  "he":  "מוקש גז",
                  "hr":  "Plinska mina",
                  "it":  "Mina a gas",
@@ -27,7 +27,7 @@
                         "de":  "Eine Mine, die bei Annäherung explodiert und dabei eine Gaswolke erzeugt, welche schnell Ausdauer absaugt.",
                         "en":  "A proximity-triggered mine that pops up and deploys a gas cloud that rapidly drains stamina.",
                         "es":  "Una mina activada por proximidad que emerge y despliega una nube de gas que drena rápidamente la resistencia.",
-                        "fr":  "Une mine à déclenchement de proximité qui surgit et déploie un nuage de gaz qui draine rapidement l\u0027endurance.",
+                        "fr":  "Une mine à déclenchement de proximité qui surgit et déploie un nuage de gaz qui draine rapidement l'endurance.",
                         "he":  "מוקש המופעל בקרבה, הקופץ מעלה ומפזר ענן גז המדלדל את הסיבולת במהירות.",
                         "hr":  "Mina aktivirana blizinom koja iskoči i oslobađa oblak plina koji brzo iscrpljuje izdržljivost.",
                         "it":  "Una mina attivata dalla prossimità che emerge e rilascia una nube di gas che drena rapidamente la resistenza.",
@@ -103,7 +103,7 @@
                                           "de":  "Ausdauerverbrauch",
                                           "en":  "Stamina Drain",
                                           "es":  "Drenaje de resistencia",
-                                          "fr":  "Drain d\u0027endurance",
+                                          "fr":  "Drain d'endurance",
                                           "he":  "דלדול סיבולת",
                                           "hr":  "Iscrpljivanje izdržljivosti",
                                           "it":  "Drenaggio resistenza",
@@ -135,5 +135,5 @@
                          "chemicals":  2
                      },
     "imageFilename":  "images/items/Gas_mine.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

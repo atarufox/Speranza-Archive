@@ -80,7 +80,7 @@
                                                   "de":  "ARC-Rustungsdurchdringung",
                                                   "en":  "ARC Armor Penetration",
                                                   "es":  "Penetracion de armadura ARC",
-                                                  "fr":  "Penetration d\u0027armure ARC",
+                                                  "fr":  "Penetration d'armure ARC",
                                                   "he":  "חדירת שריון ARC",
                                                   "hr":  "ARC probijanje oklopa",
                                                   "it":  "Penetrazione armature ARC",
@@ -159,5 +159,5 @@
                          "magnetic_accelerator":  1
                      },
     "imageFilename":  "images/items/Aphelion.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

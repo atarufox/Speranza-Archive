@@ -5,7 +5,7 @@
                  "de":  "Bauplan: Teile für Waffe mit mittlerer Munition",
                  "en":  "Medium Gun Parts Blueprint",
                  "es":  "Plano de piezas de arma medianas",
-                 "fr":  "Schéma de Pièces d\u0027Arme Moyennes",
+                 "fr":  "Schéma de Pièces d'Arme Moyennes",
                  "he":  "שרטוט חלקי נשק בינוניים",
                  "hr":  "Nacrt za srednje dijelove oružja",
                  "it":  "Progetto parti arma medie",
@@ -49,5 +49,5 @@
     "value":  5000,
     "weightKg":  0,
     "imageFilename":  "images/items/Medium_gun_parts_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

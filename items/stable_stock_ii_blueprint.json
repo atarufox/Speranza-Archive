@@ -25,7 +25,7 @@
     "description":  {
                         "da":  "Forbedrer moderat spredning og rekylophelsningstid.",
                         "de":  "Verringert die Zeit, in der du dich von Streuung und Ruckstoss erholst, moderat.",
-                        "en":  "Moderately improves dispersion \u0026 recoil recovery time.",
+                        "en":  "Moderately improves dispersion & recoil recovery time.",
                         "es":  "Mejora moderadamente la dispersion y el tiempo de recuperacion del retroceso.",
                         "fr":  "Ameliore moderement la dispersion et le temps de recuperation du recul.",
                         "he":  "משפר באופן מתון את הפיזור וזמן ההתאוששות מהרתע.",
@@ -49,5 +49,5 @@
     "value":  5000,
     "weightKg":  0,
     "imageFilename":  "images/items/Stable_stock_II_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

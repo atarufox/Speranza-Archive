@@ -27,7 +27,7 @@
                         "de":  "Wird zur Herstellung von Waffen verwendet. Zur Herstellung von: Il Toro, Burletta, Anvil, Arpeggio, Teile für Waffe mit schwerer Munition",
                         "en":  "Used to craft weapons. Used to craft: Il Toro, Burletta, Anvil, Arpeggio, Heavy Gun Parts",
                         "es":  "Usado para fabricar armas. Usado para fabricar: Il Toro, Burletta, Yunque, Arpeggio, Piezas de armas pesadas",
-                        "fr":  "Permet de fabriquer des armes. Permet de fabriquer : Il Toro, Burletta, Enclume, Arpège, Pièces d\u0027arme lourdes",
+                        "fr":  "Permet de fabriquer des armes. Permet de fabriquer : Il Toro, Burletta, Enclume, Arpège, Pièces d'arme lourdes",
                         "he":  "משמש ליצירת נשקים. משמש ליצירת: Il Toro, Burletta, Anvil, Arpeggio, חלקי נשק כבדים",
                         "hr":  "Koristi se za izradu oružja. Koristi se za izradu: Il Toro, Burletta, Anvil, Arpeggio, Heavy Gun Parts",
                         "it":  "Usato per fabbricare armi. Si usa per creare: Il Toro, Burletta, Anvil, Arpeggio, Parti di armi pesanti",
@@ -57,5 +57,5 @@
                          "metal_parts":  1
                      },
     "imageFilename":  "images/items/Simple_gun_parts.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

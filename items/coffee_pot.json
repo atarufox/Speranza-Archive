@@ -27,7 +27,7 @@
                         "de":  "Kraft für einen neuen Tag - Tasse für Tasse.",
                         "en":  "The power to face a new day, one cup at a time.",
                         "es":  "El poder para enfrentar un nuevo día, una taza a la vez.",
-                        "fr":  "Le pouvoir d\u0027affronter un nouveau jour, une tasse à la fois.",
+                        "fr":  "Le pouvoir d'affronter un nouveau jour, une tasse à la fois.",
                         "he":  "הכוח להתמודד עם יום חדש, כוס אחת בכל פעם.",
                         "hr":  "Snaga za suočavanje s novim danom, šalica po šalica.",
                         "it":  "Il potere di affrontare un nuovo giorno, una tazza alla volta.",
@@ -54,5 +54,5 @@
 
                      },
     "imageFilename":  "images/items/Coffee_pot.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

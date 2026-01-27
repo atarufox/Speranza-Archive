@@ -5,7 +5,7 @@
                  "de":  "Bauplan: Il Toro",
                  "en":  "Il Toro Blueprint",
                  "es":  "Plano de Il Toro",
-                 "fr":  "Schéma d\u0027Il Toro",
+                 "fr":  "Schéma d'Il Toro",
                  "he":  "שרטוט Il Toro",
                  "hr":  "Nacrt za Il Toro",
                  "it":  "Progetto Il Toro",
@@ -30,7 +30,7 @@
                         "fr":  "A une large dispersion des balles, une chute brutale et des dégâts élevés.",
                         "he":  "בעל פיזור קליעים רחב, דעיכה חדה ונזק גבוה.",
                         "hr":  "Ima veliko rasipanje metaka, oštar pad štete i visoku izlaznu štetu.",
-                        "it":  "Ha un\u0027ampia dispersione dei proiettili, caduta netta e alto Danni.",
+                        "it":  "Ha un'ampia dispersione dei proiettili, caduta netta e alto Danni.",
                         "ja":  "弾丸の拡散が大きく、急激な減衰と高いダメージ出力を持つ。",
                         "kr":  "넓은 탄 퍼짐, 급격한 감쇠, 높은 데미지를 가지고 있습니다.",
                         "no":  "Har stor kulespredning, kraftig falloff og høy skadeeffekt.",
@@ -50,5 +50,5 @@
     "weightKg":  0,
     "stackSize":  1,
     "imageFilename":  "images/items/Il_toro_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

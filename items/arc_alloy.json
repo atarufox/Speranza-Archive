@@ -27,7 +27,7 @@
                         "de":  "Erhältlich von ARC-Gegnern, durch Aktivitäten oder durch das Recyceln bestimmter ARC-Teile. Wird zur Herstellung von Komponenten verwendet. Zur Herstellung von: Leichter Schild, Suchgranate, ARC-Bewegungskern, ARC-Schaltkreise",
                         "en":  "Obtained from ARC enemies or activities, or by recycling certain ARC parts. Used to craft components. Used to craft: Light Shield, ARC Motion Core, ARC Circuitry",
                         "es":  "Se obtiene de enemigos ARC o actividades, o reciclando ciertas piezas ARC. Se usa para fabricar componentes. Se usa para fabricar: Escudo ligero, Núcleo de movimiento ARC, Circuitos ARC",
-                        "fr":  "Obtenu auprès d\u0027ennemis ARC ou d\u0027activités, ou en recyclant certaines pièces ARC. Permet de fabriquer des composants. Permet de fabriquer : Bouclier léger, Processeur de mobilité ARC, Câblage ARC",
+                        "fr":  "Obtenu auprès d'ennemis ARC ou d'activités, ou en recyclant certaines pièces ARC. Permet de fabriquer des composants. Permet de fabriquer : Bouclier léger, Processeur de mobilité ARC, Câblage ARC",
                         "he":  "ניתן להשגה מאויבי ARC או מפעילויות, או על ידי מיחזור חלקי ARC מסוימים. משמש ליצירת רכיבים. משמש ליצירת: מגן קל, ליבת תנועה של ARC, מעגלי ARC",
                         "hr":  "Dobiva se od ARC neprijatelja ili aktivnosti, ili recikliranjem određenih ARC dijelova. Koristi se za izradu komponenti. Koristi se za izradu: Lagani štit, ARC jezgra pokreta, ARC sklopovi",
                         "it":  "Ottenuta da nemici ARC o attività, o riciclando certe parti ARC. Usata per creare componenti. Usata per creare: Scudo leggero, Nucleo di movimento ARC, Circuiti ARC",
@@ -57,5 +57,5 @@
                          "metal_parts":  1
                      },
     "imageFilename":  "images/items/Arc_alloy.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

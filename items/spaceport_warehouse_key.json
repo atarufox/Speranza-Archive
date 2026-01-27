@@ -5,7 +5,7 @@
                  "de":  "Lagerhausschlüssel (Raumhafen)",
                  "en":  "Spaceport Warehouse Key",
                  "es":  "Llave del almacén del espaciopuerto",
-                 "fr":  "Clé de l\u0027entrepôt du port spatial",
+                 "fr":  "Clé de l'entrepôt du port spatial",
                  "he":  "מפתח המחסן בנמל החלל",
                  "hr":  "Ključ Skladišta Svemirske Luke",
                  "it":  "Chiave del magazzino dello spazioporto",
@@ -27,7 +27,7 @@
                         "de":  "Öffnet eine Tür im Versandlager im Raumhafen.",
                         "en":  "A key to a warehouse in the Spaceport.",
                         "es":  "Una llave de un almacén en el espaciopuerto.",
-                        "fr":  "Déverrouille une porte de l\u0027entrepôt d\u0027expédition dans le port spatial.",
+                        "fr":  "Déverrouille une porte de l'entrepôt d'expédition dans le port spatial.",
                         "he":  "מפתח למחסן בנמל החלל.",
                         "hr":  "Ključ skladišta u Svemirskoj Luci.",
                         "it":  "Una chiave per un magazzino nello spazioporto.",
@@ -39,7 +39,7 @@
                         "pt-BR":  "Uma chave para um armazém no Espaçoporto.",
                         "ru":  "Ключ от склада в космопорту.",
                         "sr":  "Ključ skladišta u Svemirskoj Luci.",
-                        "tr":  "Uzay Limanı\u0027ndaki bir depo için anahtar.",
+                        "tr":  "Uzay Limanı'ndaki bir depo için anahtar.",
                         "uk":  "Ключ від складу в космопорту.",
                         "zh-CN":  "太空港仓库的钥匙。",
                         "zh-TW":  "太空港倉庫的鑰匙。"
@@ -49,5 +49,5 @@
     "value":  100,
     "weightKg":  0.25,
     "imageFilename":  "images/items/Spaceport_warehouse_key.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

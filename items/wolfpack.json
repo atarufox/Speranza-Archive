@@ -27,10 +27,10 @@
                         "de":  "Eine Granate, die sich in mehrere zielsuchende Raketen spaltet, welche auf ARC zufliegen und beim Aufprall Explosionsschaden verursachen.",
                         "en":  "A grenade that scatters into multiple homing missiles, each one targeting ARC and dealing explosive damage on impact.",
                         "es":  "Una granada que se dispersa en múltiples misiles teledirigidos, cada uno apuntando a ARC y causando daño explosivo al impactar.",
-                        "fr":  "Une grenade qui se disperse en plusieurs missiles à tête chercheuse, chacun ciblant les machines ARC et infligeant des dégâts explosifs à l\u0027impact.",
+                        "fr":  "Une grenade qui se disperse en plusieurs missiles à tête chercheuse, chacun ciblant les machines ARC et infligeant des dégâts explosifs à l'impact.",
                         "he":  "רימון שמתפצל למספר טילים מתבייתים, כאשר כל אחד מהם מתמקד ב-ARC וגורם נזק פיצוץ בפגיעה.",
                         "hr":  "Granata koja se raspršuje u više samonavođenih projektila, od kojih svaki cilja ARC i nanosi eksplozivnu štetu pri udaru.",
-                        "it":  "Una granata che si disperde in più missili guidati, ognuno dei quali ha come bersaglio l\u0027ARC e infligge danni esplosivi all\u0027impatto.",
+                        "it":  "Una granata che si disperde in più missili guidati, ognuno dei quali ha come bersaglio l'ARC e infligge danni esplosivi all'impatto.",
                         "ja":  "複数の追尾ミサイルに分散するグレネード。各ミサイルはARCを標的とし、着弾時に爆発ダメージを与える。",
                         "kr":  "여러 개의 유도 미사일로 흩어지는 수류탄. 각 미사일은 아크를 표적으로 삼아 충격 시 폭발 피해를 입힙니다.",
                         "no":  "En granat som sprer seg til flere målsøkende missiler, hver rettet mot ARC og gir eksplosiv skade ved treff.",
@@ -39,7 +39,7 @@
                         "pt-BR":  "Granada que se espalha em vários mísseis teleguiados direcionados à ARC, causando dano explosivo no impacto.",
                         "ru":  "Граната, распадающаяся на несколько самонаводящихся ракет, каждая из которых нацеливается на ARC и наносит взрывной урон при попадании.",
                         "sr":  "Granata koja se raspršuje u više samonavođenih projektila, od kojih svaki cilja ARC i nanosi eksplozivnu štetu pri udaru.",
-                        "tr":  "Birden fazla güdümlü füzeye dağılan bomba, her biri ARC\u0027yi hedef alır ve çarpma anında patlayıcı hasar verir.",
+                        "tr":  "Birden fazla güdümlü füzeye dağılan bomba, her biri ARC'yi hedef alır ve çarpma anında patlayıcı hasar verir.",
                         "uk":  "Граната, що розпадається на кілька самонавідних ракет, кожна з яких націлюється на ARC і завдає вибухової шкоди при влученні.",
                         "zh-CN":  "一种散开成多枚追踪导弹的手榴弹，每枚导弹都会锁定ARC并在撞击时造成爆炸伤害。",
                         "zh-TW":  "一種散開成多枚追蹤飛彈的手榴彈，每枚飛彈都會鎖定ARC並在撞擊時造成爆炸傷害。"
@@ -110,5 +110,5 @@
                          "explosive_compound":  2
                      },
     "imageFilename":  "images/items/Wolfpack.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:23Z"
 }

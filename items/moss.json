@@ -40,7 +40,7 @@
                         "ru":  "Можно использовать для восстановления небольшого количества здоровья.",
                         "sr":  "Može se koristiti za obnavljanje male količine zdravlja.",
                         "tr":  "Az miktarda can yenilemek için kullanılabilir.",
-                        "uk":  "Можна використати для відновлення невеликої кількості здоров\u0027я.",
+                        "uk":  "Можна використати для відновлення невеликої кількості здоров'я.",
                         "zh-CN":  "可用于恢复少量生命值。",
                         "zh-TW":  "可用於恢復少量生命值。"
                     },
@@ -103,7 +103,7 @@
                                      "de":  "Verwendungszeit",
                                      "en":  "Use Time",
                                      "es":  "Tiempo de uso",
-                                     "fr":  "Temps d\u0027utilisation",
+                                     "fr":  "Temps d'utilisation",
                                      "he":  "זמן שימוש",
                                      "hr":  "Vrijeme Korištenja",
                                      "it":  "Tempo di utilizzo",
@@ -128,5 +128,5 @@
                          "assorted_seeds":  2
                      },
     "imageFilename":  "images/items/Moss.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

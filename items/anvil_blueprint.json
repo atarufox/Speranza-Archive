@@ -5,7 +5,7 @@
                  "de":  "Bauplan: Anvil",
                  "en":  "Anvil Blueprint",
                  "es":  "Plano de Yunque",
-                 "fr":  "Schéma d\u0027Enclume",
+                 "fr":  "Schéma d'Enclume",
                  "he":  "שרטוט Anvil",
                  "hr":  "Anvil Nacrt",
                  "it":  "Progetto Anvil",
@@ -49,5 +49,5 @@
     "value":  5000,
     "weightKg":  0,
     "imageFilename":  "images/items/Anvil_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

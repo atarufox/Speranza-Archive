@@ -30,7 +30,7 @@
                         "fr":  "A une grande dispersion des balles, une chute brutale et des dégâts élevés.",
                         "he":  "רובה ציד Pump-action עם פיזור כדורים רחב, דעיכה חדה למרחק ונזק גבוה.",
                         "hr":  "Ima veliko raspršenje metaka, nagli pad štete i visoku izlaznu štetu.",
-                        "it":  "Ha un\u0027ampia dispersione dei proiettili, caduta netta e alto Danni.",
+                        "it":  "Ha un'ampia dispersione dei proiettili, caduta netta e alto Danni.",
                         "ja":  "弾の拡散が大きく、急激な減衰があり、高いダメージを与えます。",
                         "kr":  "넓은 탄 퍼짐, 급격한 감쇠, 높은 피해량을 가지고 있습니다.",
                         "no":  "Har stor kulespredning, kraftig falloff og høy skadeeffekt.",
@@ -79,7 +79,7 @@
                                                   "de":  "ARC-Panzerungsdurchdringung",
                                                   "en":  "ARC Armor Penetration",
                                                   "es":  "Penetración de armadura ARC",
-                                                  "fr":  "Pénétration d\u0027armure ARC",
+                                                  "fr":  "Pénétration d'armure ARC",
                                                   "he":  "חדירת שריון ARC",
                                                   "hr":  "ARC probijanje oklopa",
                                                   "it":  "Penetrazione armature ARC",
@@ -180,5 +180,5 @@
                          "simple_gun_parts":  2
                      },
     "imageFilename":  "images/items/Il_toro_I.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

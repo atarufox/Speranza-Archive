@@ -6,7 +6,7 @@
                  "en":  "Shotgun Choke III Blueprint",
                  "es":  "Plano de Estrangulador de escopeta III",
                  "fr":  "Schema Choke de Fusil a Pompe III",
-                 "he":  "שרטוט צ\u0027וק לרובה ציד III",
+                 "he":  "שרטוט צ'וק לרובה ציד III",
                  "hr":  "Sacmarica Prigusnica III Nacrt",
                  "it":  "Progetto Strozzatore fucile III",
                  "ja":  "ショットガン・チョーク III 設計図",
@@ -49,5 +49,5 @@
     "value":  5000,
     "weightKg":  0,
     "imageFilename":  "images/items/Shotgun_choke_III_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

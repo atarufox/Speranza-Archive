@@ -27,7 +27,7 @@
                         "de":  "Ein Lebensmittel, das Gesundheit und Ausdauer moderat erhöht.",
                         "en":  "A food item that moderately increases both health and stamina.",
                         "es":  "Un alimento que aumenta moderadamente tanto la salud como la resistencia.",
-                        "fr":  "Un aliment qui augmente modérément la santé et l\u0027endurance.",
+                        "fr":  "Un aliment qui augmente modérément la santé et l'endurance.",
                         "he":  "פריט מזון המגדיל במידה בינונית את הבריאות והסיבולת.",
                         "hr":  "Hrana koja umjereno povećava i zdravlje i izdržljivost.",
                         "it":  "Un alimento che aumenta moderatamente sia la salute che la resistenza.",
@@ -40,7 +40,7 @@
                         "ru":  "Еда, которая умеренно увеличивает здоровье и выносливость.",
                         "sr":  "Храна која умерено повећава и здравље и издржљивост.",
                         "tr":  "Hem sağlığı hem de dayanıklılığı orta düzeyde artıran bir yiyecek.",
-                        "uk":  "Їжа, яка помірно збільшує здоров\u0027я та витривалість.",
+                        "uk":  "Їжа, яка помірно збільшує здоров'я та витривалість.",
                         "zh-CN":  "一种能适度增加生命值和耐力的食物。",
                         "zh-TW":  "一種能適度增加生命值和耐力的食物。"
                     },
@@ -103,10 +103,10 @@
                                      "de":  "Verwendungszeit",
                                      "en":  "Use Time",
                                      "es":  "Tiempo de Uso",
-                                     "fr":  "Temps d\u0027Utilisation",
+                                     "fr":  "Temps d'Utilisation",
                                      "he":  "זמן שימוש",
                                      "hr":  "Vrijeme uporabe",
-                                     "it":  "Tempo d\u0027Uso",
+                                     "it":  "Tempo d'Uso",
                                      "ja":  "使用時間",
                                      "kr":  "사용 시간",
                                      "no":  "Brukstid",
@@ -128,5 +128,5 @@
                    "prickly_pear":  1
                },
     "imageFilename":  "images/items/Fruit_mix.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

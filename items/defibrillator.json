@@ -30,7 +30,7 @@
                         "fr":  "Une injection qui permet de réanimer rapidement les Raiders à terre et de leur redonner quelques points de santé.",
                         "he":  "זריקה המקימה במהירות ריידרים מנוטרלים ומשיבה מעט בריאות.",
                         "hr":  "Injekcija koja brzo oživljava oborene pljačkaše i obnavlja dio zdravlja.",
-                        "it":  "Un\u0027iniezione che riporta rapidamente in vita i predoni abbattuti e ripristina un po\u0027 di salute.",
+                        "it":  "Un'iniezione che riporta rapidamente in vita i predoni abbattuti e ripristina un po' di salute.",
                         "ja":  "倒れたレイダーを素早く蘇生し、体力を回復する注射。",
                         "kr":  "쓰러진 레이더를 빠르게 소생시키고 일부 체력을 회복시키는 주사제.",
                         "no":  "En injeksjon som raskt gjenoppliver nedkjempede raidere og gjenoppretter litt helse.",
@@ -40,7 +40,7 @@
                         "ru":  "Инъекция, которая быстро поднимает упавших рейдеров и восстанавливает часть здоровья.",
                         "sr":  "Injekcija koja brzo oživljava oborene pljačkaše i obnavlja deo zdravlja.",
                         "tr":  "Yere düşmüş akıncıları hızlıca canlandıran ve biraz sağlık kazandıran bir enjeksiyon.",
-                        "uk":  "Ін\u0027єкція, яка швидко піднімає збитих рейдерів і відновлює частину здоров\u0027я.",
+                        "uk":  "Ін'єкція, яка швидко піднімає збитих рейдерів і відновлює частину здоров'я.",
                         "zh-CN":  "能快速复苏倒地的掠夺者并恢复部分生命值的注射剂。",
                         "zh-TW":  "能快速復甦倒地的掠奪者並恢復部分生命值的注射劑。"
                     },
@@ -79,10 +79,10 @@
                                      "de":  "Verwendungszeit",
                                      "en":  "Use Time",
                                      "es":  "Tiempo de uso",
-                                     "fr":  "Temps d\u0027utilisation",
+                                     "fr":  "Temps d'utilisation",
                                      "he":  "זמן שימוש",
                                      "hr":  "Vrijeme Korištenja",
-                                     "it":  "Tempo d\u0027uso",
+                                     "it":  "Tempo d'uso",
                                      "ja":  "使用時間",
                                      "kr":  "사용 시간",
                                      "no":  "Brukstid",
@@ -110,5 +110,5 @@
                          "chemicals":  2
                      },
     "imageFilename":  "images/items/Defibrillator.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

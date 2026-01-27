@@ -5,7 +5,7 @@
                  "de":  "Fortschrittliche ARC-Energiezelle",
                  "en":  "Advanced ARC Powercell",
                  "es":  "Celda de energía ARC avanzada",
-                 "fr":  "Cellule d\u0027Énergie ARC Avancée",
+                 "fr":  "Cellule d'Énergie ARC Avancée",
                  "he":  "תא כוח ARC מתקדם",
                  "hr":  "Napredna ARC energetska ćelija",
                  "it":  "Cellula ARC ARC avanzata",
@@ -57,5 +57,5 @@
                          "arc_powercell":  1
                      },
     "imageFilename":  "images/items/Advanced_arc_powercell.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

@@ -27,10 +27,10 @@
                         "de":  "Eine Granate, die beim Aufprall eine Rauchwolke zurücklässt, die die Sicht von ARC und anderen Raidern einschränkt.",
                         "en":  "A grenade that creates a lingering smoke cloud on impact, blocking visibility from ARC and other Raiders.",
                         "es":  "Una granada que crea una nube de humo persistente al impactar, bloqueando la visibilidad de ARC y otros Saqueadores.",
-                        "fr":  "Une grenade qui génère un nuage de fumée persistant à l\u0027impact, obstruant la visibilité des machines ARC et des autres Raiders.",
+                        "fr":  "Une grenade qui génère un nuage de fumée persistant à l'impact, obstruant la visibilité des machines ARC et des autres Raiders.",
                         "he":  "רימון שיוצר ענן עשן מתמשך בעת הפגיעה, וחוסם את הראות של ARC ו-Raiders אחרים.",
                         "hr":  "Granata koja stvara dugotrajan oblak dima pri udaru, blokirajući vidljivost ARC-u i drugim Raiderima.",
-                        "it":  "Una granata che crea una nuvola di fumo persistente all\u0027impatto, bloccando la visibilità di ARC e altri Predoni.",
+                        "it":  "Una granata che crea una nuvola di fumo persistente all'impatto, bloccando la visibilità di ARC e altri Predoni.",
                         "ja":  "着弾時に持続する煙幕を発生させ、ARCや他のレイダーの視界を遮る手榴弾。",
                         "kr":  "충격 시 지속되는 연막을 생성하여 아크와 다른 레이더의 시야를 차단하는 수류탄입니다.",
                         "no":  "En granat som skaper en vedvarende røyksky ved treff, og blokkerer sikt fra ARC og andre Raiders.",
@@ -112,5 +112,5 @@
                          "chemicals":  3
                      },
     "imageFilename":  "images/items/Smoke_grenade.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

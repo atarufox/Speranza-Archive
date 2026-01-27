@@ -5,7 +5,7 @@
                  "de":  "Raketenkanoniertreiber",
                  "en":  "Rocketeer Driver",
                  "es":  "Controlador de cohetero",
-                 "fr":  "Pilote d\u0027Artificier",
+                 "fr":  "Pilote d'Artificier",
                  "he":  "דרייבר Rocketeer",
                  "hr":  "Raketni pogon",
                  "it":  "Driver di lanciarazzi",
@@ -27,7 +27,7 @@
                         "de":  "Kann zu Herstellungsmaterialien recycelt werden.",
                         "en":  "Can be recycled into crafting materials.",
                         "es":  "Se puede reciclar en materiales de fabricación.",
-                        "fr":  "Peut être recyclé en matériaux d\u0027artisanat.",
+                        "fr":  "Peut être recyclé en matériaux d'artisanat.",
                         "he":  "ניתן למחזור עבור חומרי יצירה.",
                         "hr":  "Može se reciklirati u materijale za izradu.",
                         "it":  "Si può riciclare in materiali da creazione.",
@@ -58,5 +58,5 @@
                          "arc_circuitry":  2
                      },
     "imageFilename":  "images/items/Rocketeer_driver.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

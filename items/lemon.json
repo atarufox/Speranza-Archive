@@ -27,7 +27,7 @@
                         "de":  "Kann zum Gewinn einer kleinen Menge Ausdauer verzehrt werden.",
                         "en":  "Can be consumed for a small amount of stamina.",
                         "es":  "Puede consumirse para obtener una pequeña cantidad de resistencia.",
-                        "fr":  "Peut être consommé pour une petite quantité d\u0027endurance.",
+                        "fr":  "Peut être consommé pour une petite quantité d'endurance.",
                         "he":  "ניתן לצריכה לקבלת כמות קטנה של סיבולת.",
                         "hr":  "Može se konzumirati za malu količinu izdržljivosti.",
                         "it":  "Può essere consumato per una piccola quantità di stamina.",
@@ -80,10 +80,10 @@
                                      "de":  "Verwendungszeit",
                                      "en":  "Use Time",
                                      "es":  "Tiempo de uso",
-                                     "fr":  "Temps d\u0027utilisation",
+                                     "fr":  "Temps d'utilisation",
                                      "he":  "זמן שימוש",
                                      "hr":  "Vrijeme Korištenja",
-                                     "it":  "Tempo d\u0027uso",
+                                     "it":  "Tempo d'uso",
                                      "ja":  "使用時間",
                                      "kr":  "사용 시간",
                                      "no":  "Brukstid",
@@ -105,5 +105,5 @@
                          "assorted_seeds":  2
                      },
     "imageFilename":  "images/items/Lemon.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

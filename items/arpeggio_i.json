@@ -6,7 +6,7 @@
                  "en":  "Arpeggio I",
                  "es":  "Arpegio I",
                  "fr":  "Arpège I",
-                 "he":  "ארפג\u0027יו I",
+                 "he":  "ארפג'יו I",
                  "hr":  "Arpeđo I",
                  "it":  "Arpeggio I",
                  "ja":  "アルペジオ I",
@@ -79,7 +79,7 @@
                                                   "de":  "ARC-Panzerungsdurchdringung",
                                                   "en":  "ARC Armor Penetration",
                                                   "es":  "Penetración de blindaje ARC",
-                                                  "fr":  "Pénétration d\u0027armure ARC",
+                                                  "fr":  "Pénétration d'armure ARC",
                                                   "he":  "חדירת שריון ARC",
                                                   "hr":  "ARC Probijanje Oklopa",
                                                   "it":  "Penetrazione corazza ARC",
@@ -179,5 +179,5 @@
                          "simple_gun_parts":  2
                      },
     "imageFilename":  "images/items/Arpeggio_I.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

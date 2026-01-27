@@ -27,7 +27,7 @@
                         "de":  "Wird zur Herstellung verschiedenster Gegenstände verwendet. Kann zu Herstellungsmaterialien recycelt werden. Zur Herstellung von: Il Toro, Burletta, Anvil, Mündungsbremse II, Erweitertes mittelschweres Magazin II",
                         "en":  "Used to craft a wide range of items. Can be recycled into crafting materials. Used to craft: Il Toro, Burletta, Anvil, Muzzle Brake II, Extended Medium Mag II",
                         "es":  "Usado para fabricar una amplia gama de objetos. Puede reciclarse en materiales de fabricación. Usado para fabricar: Il Toro, Burletta, Yunque, Freno de boca II, Cargador mediano extendido II",
-                        "fr":  "Permet de fabriquer une large gamme d\u0027objets. Peut être recyclé en matériaux d\u0027artisanat. Permet de fabriquer : Il Toro, Burletta, Enclume, Frein de bouche II, Chargeur moyen étendu II",
+                        "fr":  "Permet de fabriquer une large gamme d'objets. Peut être recyclé en matériaux d'artisanat. Permet de fabriquer : Il Toro, Burletta, Enclume, Frein de bouche II, Chargeur moyen étendu II",
                         "he":  "משמש ליצירת מגוון רחב של פריטים. ניתן למחזר לחומרי יצירה. משמש ליצירת: Il Toro, Burletta, Anvil, Muzzle Brake II, Extended Medium Mag II",
                         "hr":  "Koristi se za izradu širokog spektra predmeta. Može se reciklirati u materijale za izradu. Koristi se za izradu: Il Toro, Burletta, Anvil, Muzzle Brake II, Extended Medium Mag II",
                         "it":  "Si usa per creare una vasta gamma di oggetti. Si può riciclare in materiali da creazione. Si usa per creare: Il Toro, Burletta, Incudine, Freno di bocca II, Caricatore medio esteso II",
@@ -63,5 +63,5 @@
                          "metal_parts":  3
                      },
     "imageFilename":  "images/items/Mechanical_components.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

@@ -27,7 +27,7 @@
                         "de":  "Eine einsetzbare Deckung, die Schaden abfängt, bis sie zerstört wird.",
                         "en":  "A deployable cover that can block incoming damage until it breaks.",
                         "es":  "Una cobertura desplegable que puede bloquear el daño entrante hasta que se rompa.",
-                        "fr":  "Un abri déployable qui bloque les dégâts jusqu\u0027à sa destruction.",
+                        "fr":  "Un abri déployable qui bloque les dégâts jusqu'à sa destruction.",
                         "he":  "מחסה שניתן לפריסה שיכול לחסום נזק נכנס עד שהוא נשבר.",
                         "hr":  "Pokretni zaklon koji može blokirati dolaznu štetu dok se ne slomi.",
                         "it":  "Una copertura schierabile che può bloccare i danni in arrivo finché non si rompe.",
@@ -49,5 +49,5 @@
     "value":  5000,
     "weightKg":  0,
     "imageFilename":  "images/items/Barricade_kit_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

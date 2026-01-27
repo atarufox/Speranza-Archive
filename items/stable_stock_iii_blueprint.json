@@ -25,7 +25,7 @@
     "description":  {
                         "da":  "Forbedrer markant spredning og rekylgendannelsestid.",
                         "de":  "Verbessert deutlich die Streuung und Ruckstosserholungszeit.",
-                        "en":  "Significantly improves dispersion \u0026 recoil recovery time.",
+                        "en":  "Significantly improves dispersion & recoil recovery time.",
                         "es":  "Mejora significativamente la dispersion y el tiempo de recuperacion del retroceso.",
                         "fr":  "Ameliore considerablement la dispersion et le temps de recuperation du recul.",
                         "he":  "משפר משמעותית את הפיזור וזמן ההתאוששות מהרתע.",
@@ -49,5 +49,5 @@
     "value":  5000,
     "weightKg":  0,
     "imageFilename":  "images/items/Stable_stock_III_blueprint.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

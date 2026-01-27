@@ -27,7 +27,7 @@
                         "de":  "Wird bei der Herstellung verwendet. Zur Herstellung von: Sprengmine, Raider-Lukenschlüssel, Markierungsgranate",
                         "en":  "Used in crafting. Used to craft: Wolfpack, Explosive Mine, Raider Hatch Key, Tagging Grenade",
                         "es":  "Usado en fabricación. Usado para fabricar: Manada de lobos, Mina explosiva, Llave de trampilla de raider, Granada de marcaje",
-                        "fr":  "Utilisé pour la fabrication. Permet de fabriquer : Meute de loups, Mine explosive, Clé d\u0027écoutille de Raider, Grenade de marquage",
+                        "fr":  "Utilisé pour la fabrication. Permet de fabriquer : Meute de loups, Mine explosive, Clé d'écoutille de Raider, Grenade de marquage",
                         "he":  "משמש ליצירה. משמש ליצירת: Wolfpack, מוקש נפיץ, מפתח צוהר ריידר, רימון סימון",
                         "hr":  "Koristi se za izradu. Koristi se za izradu: Wolfpack, Eksplozivna mina, Ključ za Raider otvor, Granata za označavanje",
                         "it":  "Usato per la fabbricazione. Si usa per creare: Branco di lupi, Mina esplosiva, Chiave del portello del predone, Granata marcatrice",
@@ -58,5 +58,5 @@
                          "wires":  1
                      },
     "imageFilename":  "images/items/Sensors.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

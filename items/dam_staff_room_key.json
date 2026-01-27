@@ -39,7 +39,7 @@
                         "pt-BR":  "Uma chave para a sala dos funcionários na Represa.",
                         "ru":  "Ключ от комнаты персонала на дамбе.",
                         "sr":  "Ključ za sobu osoblja u Brani.",
-                        "tr":  "Baraj\u0027daki personel odasının anahtarı.",
+                        "tr":  "Baraj'daki personel odasının anahtarı.",
                         "uk":  "Ключ від кімнати персоналу на дамбі.",
                         "zh-CN":  "水坝员工室的钥匙。",
                         "zh-TW":  "水壩員工室的鑰匙。"
@@ -50,5 +50,5 @@
     "weightKg":  0.25,
     "stackSize":  1,
     "imageFilename":  "images/items/Dam_staff_room_key.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

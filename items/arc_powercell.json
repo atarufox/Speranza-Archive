@@ -5,7 +5,7 @@
                  "de":  "ARC-Energiezelle",
                  "en":  "ARC Powercell",
                  "es":  "Celda de energía ARC",
-                 "fr":  "Cellule d\u0027Énergie ARC",
+                 "fr":  "Cellule d'Énergie ARC",
                  "he":  "תא כוח ARC",
                  "hr":  "ARC Energetska Ćelija",
                  "it":  "Cella di energia ARC",
@@ -103,7 +103,7 @@
                                      "de":  "Verwendungszeit",
                                      "en":  "Use Time",
                                      "es":  "Tiempo de uso",
-                                     "fr":  "Temps d\u0027utilisation",
+                                     "fr":  "Temps d'utilisation",
                                      "he":  "זמן שימוש",
                                      "hr":  "Vrijeme Korištenja",
                                      "it":  "Tempo di utilizzo",
@@ -125,5 +125,5 @@
 
                      },
     "imageFilename":  "images/items/Arc_powercell.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

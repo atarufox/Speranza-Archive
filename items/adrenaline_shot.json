@@ -5,7 +5,7 @@
                  "de":  "Adrenalinspritze",
                  "en":  "Adrenaline Shot",
                  "es":  "Inyección de adrenalina",
-                 "fr":  "Dose d\u0027Adrénaline",
+                 "fr":  "Dose d'Adrénaline",
                  "he":  "זריקת אדרנלין",
                  "hr":  "Injekcija adrenalina",
                  "it":  "Iniezione di adrenalina",
@@ -18,7 +18,7 @@
                  "ru":  "Инъекция адреналина",
                  "sr":  "Injekcija adrenalina",
                  "tr":  "Adrenalin İğnesi",
-                 "uk":  "Ін\u0027єкція адреналіну",
+                 "uk":  "Ін'єкція адреналіну",
                  "zh-CN":  "肾上腺素针剂",
                  "zh-TW":  "腎上腺素注射劑"
              },
@@ -27,7 +27,7 @@
                         "de":  "Ein Serum, das deine Ausdauer vollständig wiederherstellt und deine Ausdauerregeneration vorübergehend erhöht.",
                         "en":  "A serum that fully restores stamina and temporarily increases stamina regeneration.",
                         "es":  "Un suero que restaura completamente la resistencia y aumenta temporalmente la regeneración de resistencia.",
-                        "fr":  "Un sérum qui restaure intégralement l\u0027endurance et augmente temporairement sa régénération.",
+                        "fr":  "Un sérum qui restaure intégralement l'endurance et augmente temporairement sa régénération.",
                         "he":  "סרום שממלא את הסיבולת במלואה ומגביר זמנית את קצב התאוששות הסיבולת.",
                         "hr":  "Serum koji potpuno obnavlja izdržljivost i privremeno povećava regeneraciju izdržljivosti.",
                         "it":  "Un siero che ripristina completamente la resistenza e aumenta temporaneamente la rigenerazione della resistenza.",
@@ -79,7 +79,7 @@
                                                  "de":  "Ausdauerregeneration",
                                                  "en":  "Stamina Regeneration",
                                                  "es":  "Regeneración de resistencia",
-                                                 "fr":  "Régénération d\u0027endurance",
+                                                 "fr":  "Régénération d'endurance",
                                                  "he":  "התאוששות סיבולת",
                                                  "hr":  "Regeneracija izdržljivosti",
                                                  "it":  "Rigenerazione resistenza",
@@ -102,10 +102,10 @@
                                      "de":  "Verwendungszeit",
                                      "en":  "Use Time",
                                      "es":  "Tiempo de uso",
-                                     "fr":  "Temps d\u0027utilisation",
+                                     "fr":  "Temps d'utilisation",
                                      "he":  "זמן שימוש",
                                      "hr":  "Vrijeme korištenja",
-                                     "it":  "Tempo d\u0027uso",
+                                     "it":  "Tempo d'uso",
                                      "ja":  "使用時間",
                                      "kr":  "사용 시간",
                                      "no":  "Brukstid",
@@ -133,5 +133,5 @@
                          "chemicals":  1
                      },
     "imageFilename":  "images/items/Adrenaline_shot.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

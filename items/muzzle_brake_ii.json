@@ -25,7 +25,7 @@
     "description":  {
                         "da":  "Reducerer moderat både vertikal og horisontal rekyl. Kompatibel med: Tempest, Arpeggio, Kettle, Ferro, Renegade",
                         "de":  "Verringert den vertikalen und horizontalen Rückstoß moderat. Kompatibel mit: Tempest, Arpeggio, Kettle, Ferro, Renegade",
-                        "en":  "Moderately reduces both vertical recoil \u0026 horizontal recoil. Compatible with: Tempest, Arpeggio, Kettle, Ferro, Renegade",
+                        "en":  "Moderately reduces both vertical recoil & horizontal recoil. Compatible with: Tempest, Arpeggio, Kettle, Ferro, Renegade",
                         "es":  "Reduce moderadamente tanto el retroceso vertical como el horizontal. Compatible con: Tempestad, Arpeggio, Caldero, Ferro, Renegado",
                         "fr":  "Réduit modérément le recul vertical et horizontal. Compatible avec : Tempête, Arpège, Fondoir, Ferro, Renégat",
                         "he":  "מפחית במידה בינונית את הרתע האנכי והאופקי. תואם ל: Tempest, Arpeggio, Kettle, Ferro, Renegade",
@@ -116,5 +116,5 @@
                          "mechanical_components":  1
                      },
     "imageFilename":  "images/items/Muzzle_brake_II.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

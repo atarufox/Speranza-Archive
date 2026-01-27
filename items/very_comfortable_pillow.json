@@ -27,10 +27,10 @@
                         "de":  "Macht jeden Raider neidisch. Darauf schläfst du wie auf einer besonders ergonomischen Wolke.",
                         "en":  "The envy of every Raider. Like sleeping on an especially ergonomic cloud.",
                         "es":  "La envidia de todos los saqueadores. Como dormir en una nube especialmente ergonómica.",
-                        "fr":  "Envié par tous les Raiders. Il donne l\u0027impression de dormir sur un nuage particulièrement ergonomique.",
+                        "fr":  "Envié par tous les Raiders. Il donne l'impression de dormir sur un nuage particulièrement ergonomique.",
                         "he":  "מושא הקנאה של כל ריידר. כמו לישון על ענן ארגונומי במיוחד.",
                         "hr":  "Zavist svakog pljačkaša. Kao spavanje na posebno ergonomskom oblaku.",
-                        "it":  "L\u0027invidia di ogni Razziatore. Come dormire su una nuvola particolarmente ergonomica.",
+                        "it":  "L'invidia di ogni Razziatore. Come dormire su una nuvola particolarmente ergonomica.",
                         "ja":  "すべてのレイダーの羨望の的。特に人間工学的な雲の上で眠るような感じ。",
                         "kr":  "모든 레이더의 부러움. 특히 인체공학적인 구름 위에서 자는 것 같습니다.",
                         "no":  "Misunnelsen til hver Raider. Som å sove på en spesielt ergonomisk sky.",
@@ -51,5 +51,5 @@
     "weightKg":  0.3,
     "stackSize":  3,
     "imageFilename":  "images/items/Very_comfortable_pillow.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

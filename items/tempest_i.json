@@ -27,10 +27,10 @@
                         "de":  "Vollautomatisches Sturmgewehr mit mittlerer Feuerrate und Genauigkeit.",
                         "en":  "Fully automatic assault rifle with moderate fire rate and accuracy.",
                         "es":  "Rifle de asalto totalmente automático con una cadencia de fuego y precisión moderadas.",
-                        "fr":  "Fusil d\u0027assaut entièrement automatique avec cadence de tir et précision modérées.",
+                        "fr":  "Fusil d'assaut entièrement automatique avec cadence de tir et précision modérées.",
                         "he":  "רובה סער אוטומטי מלא בעל קצב אש ודיוק בינוניים.",
                         "hr":  "Potpuno automatska jurišna puška s umjerenom brzinom paljbe i preciznošću.",
-                        "it":  "Fucile d\u0027assalto completamente automatico con cadenza di fuoco e precisione moderate.",
+                        "it":  "Fucile d'assalto completamente automatico con cadenza di fuoco e precisione moderate.",
                         "ja":  "完全自動のアサルトライフル。連射速度と精度は中程度。",
                         "kr":  "완전 자동 돌격소총으로, 발사 속도와 정확도가 보통입니다.",
                         "no":  "Helautomatisk angrepsrifle med moderat skuddtakt og presisjon.",
@@ -80,7 +80,7 @@
                                                   "de":  "ARC-Rüstungsdurchdringung",
                                                   "en":  "ARC Armor Penetration",
                                                   "es":  "Penetración de armadura ARC",
-                                                  "fr":  "Pénétration d\u0027armure ARC",
+                                                  "fr":  "Pénétration d'armure ARC",
                                                   "he":  "חדירת שריון ARC",
                                                   "hr":  "ARC Probijanje Oklopa",
                                                   "it":  "Penetrazione armature ARC",
@@ -182,5 +182,5 @@
                          "medium_gun_parts":  2
                      },
     "imageFilename":  "images/items/Tempest_I.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

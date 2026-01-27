@@ -27,7 +27,7 @@
                         "de":  "Wird zur Herstellung verschiedenster Gegenstände verwendet. Kann zu Herstellungsmaterialien recycelt werden. Zur Herstellung von: Taktisch-Marke 3 (Defensiv), Kampf-Marke 3 (Flankierend), Kampf-Marke 3 (Aggressiv), Beute-Marke 3 (Vorsichtig), Taktisch-Marke 3 (Heilung)",
                         "en":  "Used to craft a wide range of items. Can be recycled into crafting materials. Used to craft: Tactical Mk. 3 (Defensive), Combat Mk. 3 (Flanking), Combat Mk. 3 (Aggressive), Looting Mk. 3 (Cautious), Tactical Mk. 3 (Healing)",
                         "es":  "Se usan para fabricar una amplia gama de objetos. Se pueden reciclar en materiales de fabricación. Se usan para fabricar: Táctico Ver. 3 (Defensivo), Combate Ver. 3 (Flanqueo), Combate Ver. 3 (Agresivo), Saqueo Ver. 3 (Cauteloso), Táctico Ver. 3 (Curación)",
-                        "fr":  "Utilisés pour fabriquer une large gamme d\u0027objets. Peuvent être recyclés en matériaux de fabrication. Utilisés pour fabriquer : Tactique 3 (défense), Combat 3 (contournement), Combat 3 (agression), Butin 3 (prudence), Tactique 3 (soins)",
+                        "fr":  "Utilisés pour fabriquer une large gamme d'objets. Peuvent être recyclés en matériaux de fabrication. Utilisés pour fabriquer : Tactique 3 (défense), Combat 3 (contournement), Combat 3 (agression), Butin 3 (prudence), Tactique 3 (soins)",
                         "he":  "משמש ליצירת מגוון רחב של פריטים. ניתן למיחזור לחומרי יצירה. משמש ליצירת: טקטי Mk. 3 (הגנתי), קרבי Mk. 3 (איגוף), קרבי Mk. 3 (אגרסיבי), איסוף Mk. 3 (זהיר), טקטי Mk. 3 (ריפוי)",
                         "hr":  "Koristi se za izradu širokog spektra predmeta. Može se reciklirati u materijale za izradu. Koristi se za izradu: Tactical Mk. 3 (Defensive), Combat Mk. 3 (Flanking), Combat Mk. 3 (Aggressive), Looting Mk. 3 (Cautious), Tactical Mk. 3 (Healing)",
                         "it":  "Si usa per creare una vasta gamma di oggetti. Si può riciclare in materiali da creazione. Si usa per creare: Tattico Mk. 3 (Difensivo), Combattimento Mk. 3 (Fiancheggiamento), Combattimento Mk. 3 (Aggressivo), Saccheggio Mk. 3 (Cauto), Tattico Mk. 3 (Guarigione)",
@@ -63,5 +63,5 @@
                          "electrical_components":  1
                      },
     "imageFilename":  "images/items/Advanced_electrical_components.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

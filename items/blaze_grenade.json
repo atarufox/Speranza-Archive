@@ -27,10 +27,10 @@
                         "de":  "Eine Granate, die beim Aufprall explodiert und einen großen Bereich mit Feuer bedeckt, um Schaden über Zeit zu verursachen.",
                         "en":  "A grenade that detonates on impact, covering an area in fire that deals damage over time.",
                         "es":  "Una granada que detona al impacto, cubriendo un área con fuego que causa daño con el tiempo.",
-                        "fr":  "Une grenade qui explose à l\u0027impact et recouvre la zone de flammes qui infligent des dégâts au fil du temps.",
+                        "fr":  "Une grenade qui explose à l'impact et recouvre la zone de flammes qui infligent des dégâts au fil du temps.",
                         "he":  "רימון המתפוצץ בעת פגיעה, מכסה שטח באש הגורמת נזק לאורך זמן.",
                         "hr":  "Granata koja eksplodira pri udaru, prekrivajući područje vatrom koja nanosi štetu tijekom vremena.",
-                        "it":  "Una granata che detona all\u0027impatto, coprendo un\u0027area di fuoco che infligge danni nel tempo.",
+                        "it":  "Una granata che detona all'impatto, coprendo un'area di fuoco che infligge danni nel tempo.",
                         "ja":  "着弾時に爆発し、範囲を炎で覆って継続ダメージを与える手榴弾。",
                         "kr":  "충격 시 폭발하여 지속 피해를 주는 화염으로 지역을 뒤덮는 수류탄입니다.",
                         "no":  "En granate som detonerer ved treff, dekker et område med ild som påfører skade over tid.",
@@ -134,5 +134,5 @@
                          "oil":  1
                      },
     "imageFilename":  "images/items/Blaze_grenade.png",
-    "updatedAt":  "2026-01-27T10:54:44Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

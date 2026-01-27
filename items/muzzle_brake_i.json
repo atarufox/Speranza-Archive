@@ -25,7 +25,7 @@
     "description":  {
                         "da":  "Reducerer både lodret og vandret rekyl lidt. Kompatibel med: Rattler, Ferro, Burletta, Stitcher, Tempest",
                         "de":  "Verringert den vertikalen und horizontalen Rückstoß geringfügig. Kompatibel mit: Rattler, Ferro, Burletta, Stitcher, Tempest",
-                        "en":  "Slightly reduces both vertical recoil \u0026 horizontal recoil. Compatible with: Rattler, Ferro, Burletta, Stitcher, Tempest",
+                        "en":  "Slightly reduces both vertical recoil & horizontal recoil. Compatible with: Rattler, Ferro, Burletta, Stitcher, Tempest",
                         "es":  "Reduce ligeramente tanto el retroceso vertical como el horizontal. Compatible con: Crótalo, Ferro, Burletta, Costurero, Tempestad",
                         "fr":  "Réduit légèrement le recul vertical et horizontal. Compatible avec : Crotale, Ferro, Burletta, Sutureur, Tempête",
                         "he":  "מפחית מעט את הרתע האנכי והאופקי. תואם ל: Rattler, Ferro, Burletta, Stitcher, Tempest",
@@ -108,5 +108,5 @@
                          "metal_parts":  3
                      },
     "imageFilename":  "images/items/Muzzle_brake_I.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

@@ -27,10 +27,10 @@
                         "de":  "Ein Foto von der alten Welt, durch Sonnenlicht und Alter längst verblichen.",
                         "en":  "A snapshot of the world before, faded by sunlight and time.",
                         "es":  "Una instantánea del mundo de antes, descolorida por la luz del sol y el tiempo.",
-                        "fr":  "Un instantané du monde d\u0027avant, fané par la lumière du soleil et le temps.",
+                        "fr":  "Un instantané du monde d'avant, fané par la lumière du soleil et le temps.",
                         "he":  "תצלום מהעולם שלפני, שדהה בשל אור השמש והזמן.",
                         "hr":  "Snimak svijeta od prije, izblijedio od sunčeve svjetlosti i vremena.",
-                        "it":  "Un\u0027istantanea del mondo di prima, sbiadita dalla luce del sole e dal tempo.",
+                        "it":  "Un'istantanea del mondo di prima, sbiadita dalla luce del sole e dal tempo.",
                         "ja":  "かつての世界のスナップショット。日光と時間によって色褪せている。",
                         "kr":  "햇빛과 시간에 바랜 과거 세계의 스냅샷.",
                         "no":  "Et øyeblikksbilde av verden før, falmet av sollys og tid.",
@@ -54,5 +54,5 @@
 
                      },
     "imageFilename":  "images/items/Faded_photograph.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:20Z"
 }

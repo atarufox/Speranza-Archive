@@ -30,7 +30,7 @@
                         "fr":  "Dispose d’une grande capacité de munitions, mais n’est précis qu’en position accroupie.",
                         "he":  "בעל קיבולת תחמושת גדולה, אך מדויק רק במצב כריעה",
                         "hr":  "Ima veliki kapacitet streljiva, ali je precizno samo dok ste u čučnju.",
-                        "it":  "Ha un\u0027ampia capacità di munizioni, ma è precisa solo quando si è accucciati.",
+                        "it":  "Ha un'ampia capacità di munizioni, ma è precisa solo quando si è accucciati.",
                         "ja":  "弾薬容量は大きいが、しゃがんでいる時しか正確に当たらない。",
                         "kr":  "탄약 용량이 크지만, 웅크렸을 때만 정확합니다.",
                         "no":  "Har stor ammunisjonskapasitet, men er kun nøyaktig når du sitter på huk.",
@@ -79,7 +79,7 @@
                                                   "de":  "ARC-Rüstungsdurchdringung",
                                                   "en":  "ARC Armor Penetration",
                                                   "es":  "Penetración de armadura ARC",
-                                                  "fr":  "Pénétration d\u0027armure ARC",
+                                                  "fr":  "Pénétration d'armure ARC",
                                                   "he":  "חדירת שריון ARC",
                                                   "hr":  "ARC probijanje oklopa",
                                                   "it":  "Penetrazione armature ARC",
@@ -180,5 +180,5 @@
                          "medium_gun_parts":  2
                      },
     "imageFilename":  "images/items/Torrente_I.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }

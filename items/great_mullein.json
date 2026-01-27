@@ -18,7 +18,7 @@
                  "ru":  "Коровяк",
                  "sr":  "Divizma",
                  "tr":  "Sığırkuyruğu",
-                 "uk":  "Коров\u0027як звичайний",
+                 "uk":  "Коров'як звичайний",
                  "zh-CN":  "毛蕊花",
                  "zh-TW":  "毛蕊花"
              },
@@ -40,7 +40,7 @@
                         "ru":  "Используется для создания медицинских принадлежностей. Используется для создания: Травяной бинт, Антисептик",
                         "sr":  "Koristi se za izradu medicinskih potrepština. Koristi se za izradu: Biljni zavoj, Antiseptik",
                         "tr":  "Tıbbi malzeme üretmek için kullanılır. Üretilebilir: Bitkisel Bandaj, Antiseptik",
-                        "uk":  "Використовується для створення медичних матеріалів. Використовується для створення: Трав\u0027яний бинт, Антисептик",
+                        "uk":  "Використовується для створення медичних матеріалів. Використовується для створення: Трав'яний бинт, Антисептик",
                         "zh-CN":  "用于制作医疗用品。可制作：草药绷带、消毒剂",
                         "zh-TW":  "用於製作醫療用品。可製作：草藥繃帶、消毒劑"
                     },
@@ -57,5 +57,5 @@
                          "assorted_seeds":  1
                      },
     "imageFilename":  "images/items/Great_mullein.png",
-    "updatedAt":  "2026-01-27T10:54:45Z"
+    "updatedAt":  "2026-01-27T12:21:21Z"
 }

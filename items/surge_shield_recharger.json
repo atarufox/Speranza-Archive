@@ -5,7 +5,7 @@
                  "de":  "Sturm-Schildauflader",
                  "en":  "Surge Shield Recharger",
                  "es":  "Cargador de escudos de sobrecarga",
-                 "fr":  "Chargeur de Bouclier d\u0027Impulsion",
+                 "fr":  "Chargeur de Bouclier d'Impulsion",
                  "he":  "מטען מגן נחשול",
                  "hr":  "Punjač Surge Štita",
                  "it":  "Caricascudi rapido",
@@ -30,7 +30,7 @@
                         "fr":  "Un kit portatif qui recharge un bouclier.",
                         "he":  "ערכה ידנית המטעינה את המגן בעת השימוש.",
                         "hr":  "Ručni komplet koji puni štit pri korištenju.",
-                        "it":  "Un kit di riparazione portatile che ricarica uno scudo durante l\u0027uso.",
+                        "it":  "Un kit di riparazione portatile che ricarica uno scudo durante l'uso.",
                         "ja":  "使用時にシールドを充電する携帯キット。",
                         "kr":  "사용 시 실드를 충전하는 휴대용 키트.",
                         "no":  "Et håndholdt sett som lader opp et skjold ved bruk.",
@@ -79,7 +79,7 @@
                                      "de":  "Verwendungszeit",
                                      "en":  "Use Time",
                                      "es":  "Tiempo de uso",
-                                     "fr":  "Temps d\u0027utilisation",
+                                     "fr":  "Temps d'utilisation",
                                      "he":  "זמן שימוש",
                                      "hr":  "Vrijeme Korištenja",
                                      "it":  "Tempo di utilizzo",
@@ -109,5 +109,5 @@
                          "plastic_parts":  5
                      },
     "imageFilename":  "images/items/Surge_shield_recharger.png",
-    "updatedAt":  "2026-01-27T10:54:46Z"
+    "updatedAt":  "2026-01-27T12:21:22Z"
 }
