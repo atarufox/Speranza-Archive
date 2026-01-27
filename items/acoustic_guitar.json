@@ -50,11 +50,11 @@
     "weightKg":  1,
     "stackSize":  1,
     "recyclesInto":  {
-                         "metal_parts":  4,
-                         "wires":  6
+                         "Metal_parts":  4,
+                         "Wires":  6
                      },
     "salvagesInto":  {
-                         "wires":  3
+                         "Wires":  3
                      },
     "imageFilename":  "images/items/Acoustic_guitar.png",
     "updatedAt":  "2026-01-27T12:21:20Z"
