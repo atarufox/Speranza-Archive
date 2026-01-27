@@ -178,7 +178,7 @@
     "salvagesInto":  {
                          "simple_gun_parts":  2
                      },
-    "imageFilename":  "main/images/items/burletta_i.png",
+    "imageFilename":  "images/items/burletta_i.png",
     "durability":  100,
-    "lastUpdate":  "2026-01-27 18:01:24"
+    "lastUpdate":  "2026-01-27 18:07:39"
 }

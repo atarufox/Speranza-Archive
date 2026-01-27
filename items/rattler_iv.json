@@ -179,12 +179,12 @@
                         "mechanical_components":  3,
                         "simple_gun_parts":  1
                     },
-    "imageFilename":  "main/images/items/rattler_iv.png",
+    "imageFilename":  "images/items/rattler_iv.png",
     "agility":  54.8,
     "damage":  9,
     "fireRate":  33.3,
     "range":  56.2,
     "stability":  72.2,
     "stealth":  14,
-    "lastUpdate":  "2026-01-27 18:01:25"
+    "lastUpdate":  "2026-01-27 18:07:40"
 }

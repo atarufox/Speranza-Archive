@@ -176,6 +176,6 @@
     "upgradeCost":  {
                         "metal_parts":  7
                     },
-    "imageFilename":  "main/images/items/ferro_ii.png",
-    "lastUpdate":  "2026-01-27 18:01:24"
+    "imageFilename":  "images/items/ferro_ii.png",
+    "lastUpdate":  "2026-01-27 18:07:40"
 }

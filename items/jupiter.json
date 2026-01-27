@@ -181,7 +181,7 @@
     "salvagesInto":  {
                          "advanced_mechanical_components":  3
                      },
-    "imageFilename":  "main/images/items/jupiter.png",
+    "imageFilename":  "images/items/jupiter.png",
     "agility":  39.2,
     "damage":  60,
     "fireRate":  7.67,
@@ -192,5 +192,5 @@
                    },
     "stability":  73.5,
     "stealth":  5,
-    "lastUpdate":  "2026-01-27 18:01:24"
+    "lastUpdate":  "2026-01-27 18:07:40"
 }

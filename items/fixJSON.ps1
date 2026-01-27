@@ -16,7 +16,7 @@ foreach ($f in $files) {
         if ($data.imageFilename) {
             $extension = [System.IO.Path]::GetExtension($data.imageFilename)
             if (-not $extension) { $extension = ".png" }
-            $data.imageFilename =  "main/images/items/" + $currentId + $extension
+            $data.imageFilename =  "images/items/" + $currentId + $extension
         }
 
         # 4. RICOSTRUZIONE OGGETTO (per ordine campi)

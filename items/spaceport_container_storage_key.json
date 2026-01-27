@@ -49,7 +49,7 @@
     "value":  100,
     "weightKg":  0.25,
     "stackSize":  1,
-    "imageFilename":  "main/images/items/spaceport_container_storage_key.png",
+    "imageFilename":  "images/items/spaceport_container_storage_key.png",
     "_note":  "not_in_serverslam",
-    "lastUpdate":  "2026-01-27 18:01:25"
+    "lastUpdate":  "2026-01-27 18:07:40"
 }

@@ -226,7 +226,7 @@
                         "advanced_mechanical_components":  1,
                         "heavy_gun_parts":  2
                     },
-    "imageFilename":  "main/images/items/vulcano_ii.png",
+    "imageFilename":  "images/items/vulcano_ii.png",
     "agility":  70.7,
     "damage":  58.5,
     "fireRate":  14.3,
@@ -236,5 +236,5 @@
     "reducedReloadTime":  26,
     "stability":  70.3,
     "stealth":  15,
-    "lastUpdate":  "2026-01-27 18:01:25"
+    "lastUpdate":  "2026-01-27 18:07:40"
 }

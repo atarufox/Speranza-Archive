@@ -105,7 +105,7 @@
     "salvagesInto":  {
                          "electrical_components":  1
                      },
-    "imageFilename":  "main/images/items/wasp_driver.png",
+    "imageFilename":  "images/items/wasp_driver.png",
     "tip":  "The Wasp Driver is a rare item is dropped by Wasps that can be recycled into crafting materials.",
-    "lastUpdate":  "2026-01-27 18:01:25"
+    "lastUpdate":  "2026-01-27 18:07:41"
 }

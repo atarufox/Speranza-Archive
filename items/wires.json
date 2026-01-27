@@ -56,7 +56,7 @@
     "salvagesInto":  {
                          "rubber_parts":  1
                      },
-    "imageFilename":  "main/images/items/wires.png",
+    "imageFilename":  "images/items/wires.png",
     "tip":  "Wires are an uncommon item used to craft weapon mods that can be recycled into crafting materials.",
-    "lastUpdate":  "2026-01-27 18:01:25"
+    "lastUpdate":  "2026-01-27 18:07:41"
 }

@@ -150,10 +150,10 @@
     "recyclesInto":  {
                          "arc_circuitry":  1
                      },
-    "imageFilename":  "main/images/items/medium_shield.png",
+    "imageFilename":  "images/items/medium_shield.png",
     "damageMitigation":  42.5,
     "durability":  100,
     "movementSpeedModifier":  -5,
     "shieldCharge":  70,
-    "lastUpdate":  "2026-01-27 18:01:25"
+    "lastUpdate":  "2026-01-27 18:07:40"
 }

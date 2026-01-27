@@ -108,6 +108,6 @@
     "salvagesInto":  {
                          "fireball_burner":  1
                      },
-    "imageFilename":  "main/images/items/flame_spray.png",
-    "lastUpdate":  "2026-01-27 18:01:24"
+    "imageFilename":  "images/items/flame_spray.png",
+    "lastUpdate":  "2026-01-27 18:07:40"
 }

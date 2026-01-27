@@ -249,11 +249,11 @@
     "salvagesInto":  {
                          "electrical_components":  2
                      },
-    "imageFilename":  "main/images/items/combat_mk3_aggressive.png",
+    "imageFilename":  "images/items/combat_mk3_aggressive.png",
     "repairCost":  {
                        "advanced_electrical_components":  1,
                        "processor":  2
                    },
     "repairDurability":  50,
-    "lastUpdate":  "2026-01-27 18:01:24"
+    "lastUpdate":  "2026-01-27 18:07:40"
 }

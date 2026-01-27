@@ -50,6 +50,6 @@
     "value":  1000,
     "weightKg":  0.2,
     "stackSize":  5,
-    "imageFilename":  "main/images/items/empty_wine_bottle.png",
-    "lastUpdate":  "2026-01-27 18:01:24"
+    "imageFilename":  "images/items/empty_wine_bottle.png",
+    "lastUpdate":  "2026-01-27 18:07:40"
 }

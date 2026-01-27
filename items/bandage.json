@@ -133,6 +133,6 @@
     "salvagesInto":  {
                          "fabric":  1
                      },
-    "imageFilename":  "main/images/items/bandage.png",
-    "lastUpdate":  "2026-01-27 18:01:24"
+    "imageFilename":  "images/items/bandage.png",
+    "lastUpdate":  "2026-01-27 18:07:39"
 }

@@ -202,12 +202,12 @@
                         "advanced_mechanical_components":  1,
                         "heavy_gun_parts":  2
                     },
-    "imageFilename":  "main/images/items/hullcracker_ii.png",
+    "imageFilename":  "images/items/hullcracker_ii.png",
     "agility":  67.9,
     "damage":  100,
     "fireRate":  20.3,
     "range":  38.9,
     "stability":  97.2,
     "stealth":  1,
-    "lastUpdate":  "2026-01-27 18:01:24"
+    "lastUpdate":  "2026-01-27 18:07:40"
 }

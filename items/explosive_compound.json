@@ -61,6 +61,6 @@
     "salvagesInto":  {
                          "crude_explosives":  1
                      },
-    "imageFilename":  "main/images/items/explosive_compound.png",
-    "lastUpdate":  "2026-01-27 18:01:24"
+    "imageFilename":  "images/items/explosive_compound.png",
+    "lastUpdate":  "2026-01-27 18:07:40"
 }
