@@ -58,6 +58,6 @@
                    "arc_motion_core":  1,
                    "crude_explosives":  2
                },
-    "imageFilename":  "launcher_ammo.png",
-    "lastUpdate":  "2026-01-27 17:57:46"
+    "imageFilename":  "main/images/items/launcher_ammo.png",
+    "lastUpdate":  "2026-01-27 18:01:24"
 }

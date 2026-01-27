@@ -248,12 +248,12 @@
                         "advanced_mechanical_components":  2,
                         "medium_gun_parts":  2
                     },
-    "imageFilename":  "osprey_iv.png",
+    "imageFilename":  "main/images/items/osprey_iv.png",
     "agility":  45.9,
     "damage":  45,
     "fireRate":  17.7,
     "range":  80.3,
     "stability":  89.4,
     "stealth":  12,
-    "lastUpdate":  "2026-01-27 17:57:46"
+    "lastUpdate":  "2026-01-27 18:01:25"
 }

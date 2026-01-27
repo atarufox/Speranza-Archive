@@ -103,6 +103,6 @@
                    "smoke_grenade":  1,
                    "wires":  1
                },
-    "imageFilename":  "smoke_grenade_trap.png",
-    "lastUpdate":  "2026-01-27 17:57:47"
+    "imageFilename":  "main/images/items/smoke_grenade_trap.png",
+    "lastUpdate":  "2026-01-27 18:01:25"
 }

@@ -132,6 +132,6 @@
     "salvagesInto":  {
                          "durable_cloth":  1
                      },
-    "imageFilename":  "sterilized_bandage.png",
-    "lastUpdate":  "2026-01-27 17:57:47"
+    "imageFilename":  "main/images/items/sterilized_bandage.png",
+    "lastUpdate":  "2026-01-27 18:01:25"
 }

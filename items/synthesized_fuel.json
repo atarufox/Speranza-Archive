@@ -57,6 +57,6 @@
     "salvagesInto":  {
                          "oil":  1
                      },
-    "imageFilename":  "synthesized_fuel.png",
-    "lastUpdate":  "2026-01-27 17:57:47"
+    "imageFilename":  "main/images/items/synthesized_fuel.png",
+    "lastUpdate":  "2026-01-27 18:01:25"
 }

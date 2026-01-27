@@ -177,12 +177,12 @@
     "upgradeCost":  {
                         "mechanical_components":  2
                     },
-    "imageFilename":  "rattler_ii.png",
+    "imageFilename":  "main/images/items/rattler_ii.png",
     "agility":  54.8,
     "damage":  9,
     "fireRate":  33.3,
     "range":  56.2,
     "stability":  72.2,
     "stealth":  14,
-    "lastUpdate":  "2026-01-27 17:57:46"
+    "lastUpdate":  "2026-01-27 18:01:25"
 }

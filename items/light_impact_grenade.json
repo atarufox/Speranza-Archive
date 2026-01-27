@@ -112,6 +112,6 @@
     "salvagesInto":  {
                          "chemicals":  1
                      },
-    "imageFilename":  "light_impact_grenade.png",
-    "lastUpdate":  "2026-01-27 17:57:46"
+    "imageFilename":  "main/images/items/light_impact_grenade.png",
+    "lastUpdate":  "2026-01-27 18:01:25"
 }

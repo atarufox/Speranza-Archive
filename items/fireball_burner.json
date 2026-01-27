@@ -128,6 +128,6 @@
     "salvagesInto":  {
                          "arc_alloy":  1
                      },
-    "imageFilename":  "fireball_burner.png",
-    "lastUpdate":  "2026-01-27 17:57:46"
+    "imageFilename":  "main/images/items/fireball_burner.png",
+    "lastUpdate":  "2026-01-27 18:01:24"
 }

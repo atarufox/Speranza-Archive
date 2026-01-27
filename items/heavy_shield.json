@@ -154,10 +154,10 @@
     "salvagesInto":  {
                          "arc_alloy":  4
                      },
-    "imageFilename":  "heavy_shield.png",
+    "imageFilename":  "main/images/items/heavy_shield.png",
     "damageMitigation":  65,
     "durability":  140,
     "movementSpeedModifier":  -15,
     "shieldCharge":  120,
-    "lastUpdate":  "2026-01-27 17:57:46"
+    "lastUpdate":  "2026-01-27 18:01:24"
 }

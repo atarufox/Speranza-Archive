@@ -128,7 +128,7 @@
     "salvagesInto":  {
                          "electrical_components":  2
                      },
-    "imageFilename":  "hornet_driver.png",
+    "imageFilename":  "main/images/items/hornet_driver.png",
     "tip":  "The Hornet Driver is a rare item is dropped by Hornets that can be recycled into crafting materials.",
-    "lastUpdate":  "2026-01-27 17:57:46"
+    "lastUpdate":  "2026-01-27 18:01:24"
 }

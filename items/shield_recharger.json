@@ -135,6 +135,6 @@
     "salvagesInto":  {
                          "rubber_parts":  3
                      },
-    "imageFilename":  "shield_recharger.png",
-    "lastUpdate":  "2026-01-27 17:57:47"
+    "imageFilename":  "main/images/items/shield_recharger.png",
+    "lastUpdate":  "2026-01-27 18:01:25"
 }

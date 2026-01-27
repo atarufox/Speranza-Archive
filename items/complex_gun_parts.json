@@ -62,6 +62,6 @@
     "salvagesInto":  {
                          "simple_gun_parts":  2
                      },
-    "imageFilename":  "complex_gun_parts.png",
-    "lastUpdate":  "2026-01-27 17:57:46"
+    "imageFilename":  "main/images/items/complex_gun_parts.png",
+    "lastUpdate":  "2026-01-27 18:01:24"
 }

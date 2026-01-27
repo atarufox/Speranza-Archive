@@ -56,6 +56,6 @@
     "salvagesInto":  {
                          "simple_gun_parts":  3
                      },
-    "imageFilename":  "unusable_weapon.png",
-    "lastUpdate":  "2026-01-27 17:57:47"
+    "imageFilename":  "main/images/items/unusable_weapon.png",
+    "lastUpdate":  "2026-01-27 18:01:25"
 }

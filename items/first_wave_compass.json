@@ -48,6 +48,6 @@
     "rarity":  "Common",
     "weightKg":  0.25,
     "questItem":  true,
-    "imageFilename":  "first_wave_compass.png",
-    "lastUpdate":  "2026-01-27 17:57:46"
+    "imageFilename":  "main/images/items/first_wave_compass.png",
+    "lastUpdate":  "2026-01-27 18:01:24"
 }

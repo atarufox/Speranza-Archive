@@ -111,6 +111,6 @@
     "salvagesInto":  {
                          "chemicals":  3
                      },
-    "imageFilename":  "smoke_grenade.png",
-    "lastUpdate":  "2026-01-27 17:57:47"
+    "imageFilename":  "main/images/items/smoke_grenade.png",
+    "lastUpdate":  "2026-01-27 18:01:25"
 }

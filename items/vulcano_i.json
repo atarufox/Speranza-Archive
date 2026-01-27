@@ -181,7 +181,7 @@
     "salvagesInto":  {
                          "heavy_gun_parts":  2
                      },
-    "imageFilename":  "vulcano_i.png",
+    "imageFilename":  "main/images/items/vulcano_i.png",
     "agility":  70.7,
     "damage":  58.5,
     "fireRate":  8.3,
@@ -191,5 +191,5 @@
     "reducedReloadTime":  13,
     "stability":  70.3,
     "stealth":  15,
-    "lastUpdate":  "2026-01-27 17:57:47"
+    "lastUpdate":  "2026-01-27 18:01:25"
 }

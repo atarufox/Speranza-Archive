@@ -200,11 +200,11 @@
                         "mechanical_components":  1,
                         "simple_gun_parts":  1
                     },
-    "imageFilename":  "ferro_iv.png",
+    "imageFilename":  "main/images/items/ferro_iv.png",
     "durability":  130,
     "repairMaterials":  {
                             "durability_increase":  50,
                             "materials":  null
                         },
-    "lastUpdate":  "2026-01-27 17:57:46"
+    "lastUpdate":  "2026-01-27 18:01:24"
 }

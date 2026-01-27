@@ -126,6 +126,6 @@
                    "gas_grenade":  1,
                    "wires":  1
                },
-    "imageFilename":  "gas_grenade_trap.png",
-    "lastUpdate":  "2026-01-27 17:57:46"
+    "imageFilename":  "main/images/items/gas_grenade_trap.png",
+    "lastUpdate":  "2026-01-27 18:01:24"
 }

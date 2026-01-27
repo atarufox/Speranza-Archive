@@ -57,6 +57,6 @@
     "salvagesInto":  {
                          "crude_explosives":  1
                      },
-    "imageFilename":  "pop_trigger.png",
-    "lastUpdate":  "2026-01-27 17:57:46"
+    "imageFilename":  "main/images/items/pop_trigger.png",
+    "lastUpdate":  "2026-01-27 18:01:25"
 }

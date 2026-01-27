@@ -57,6 +57,6 @@
     "salvagesInto":  {
                          "wires":  4
                      },
-    "imageFilename":  "portable_tv.png",
-    "lastUpdate":  "2026-01-27 17:57:46"
+    "imageFilename":  "main/images/items/portable_tv.png",
+    "lastUpdate":  "2026-01-27 18:01:25"
 }

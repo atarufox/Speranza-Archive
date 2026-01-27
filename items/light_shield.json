@@ -133,10 +133,10 @@
     "salvagesInto":  {
                          "arc_alloy":  1
                      },
-    "imageFilename":  "light_shield.png",
+    "imageFilename":  "main/images/items/light_shield.png",
     "damageMitigation":  40,
     "durability":  100,
     "movementSpeedModifier":  0,
     "shieldCharge":  40,
-    "lastUpdate":  "2026-01-27 17:57:46"
+    "lastUpdate":  "2026-01-27 18:01:25"
 }

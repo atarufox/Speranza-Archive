@@ -62,6 +62,6 @@
     "salvagesInto":  {
                          "advanced_electrical_components":  1
                      },
-    "imageFilename":  "power_rod.png",
-    "lastUpdate":  "2026-01-27 17:57:46"
+    "imageFilename":  "main/images/items/power_rod.png",
+    "lastUpdate":  "2026-01-27 18:01:25"
 }

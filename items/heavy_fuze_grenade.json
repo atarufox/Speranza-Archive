@@ -109,6 +109,6 @@
     "salvagesInto":  {
                          "crude_explosives":  1
                      },
-    "imageFilename":  "heavy_fuze_grenade.png",
-    "lastUpdate":  "2026-01-27 17:57:46"
+    "imageFilename":  "main/images/items/heavy_fuze_grenade.png",
+    "lastUpdate":  "2026-01-27 18:01:24"
 }

@@ -225,12 +225,12 @@
                         "advanced_mechanical_components":  2,
                         "medium_gun_parts":  2
                     },
-    "imageFilename":  "renegade_iv.png",
+    "imageFilename":  "main/images/items/renegade_iv.png",
     "agility":  55.8,
     "damage":  35,
     "fireRate":  21,
     "range":  68.8,
     "stability":  85.7,
     "stealth":  16,
-    "lastUpdate":  "2026-01-27 17:57:47"
+    "lastUpdate":  "2026-01-27 18:01:25"
 }
