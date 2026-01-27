@@ -1,10 +1,10 @@
-<!-- START OF FILE arc_database_v1.3.6.html -->
+<!-- START OF FILE arc_database_v1.5.0.html -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARC RAIDERS // DATABASE v1.3.6</title>
+    <title>ARC RAIDERS // DATABASE v1.5.0</title>
     <style>
         /* FONTS */
         @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Teko:wght@300;400;500;600;700&display=swap');
@@ -232,6 +232,10 @@
         .img-toggle-btn.mode-remote { border-color: var(--arc-teal); color: var(--arc-teal); background: rgba(0, 229, 255, 0.1); }
         .btn-icon { width: var(--btn-sys-h); height: var(--btn-sys-h); padding: 0; border-radius: 50%; }
 
+        /* FIX DROPDOWN COLOR */
+        select option { background-color: #111; color: #fff; }
+        #langSelect { background-color: rgba(255,255,255,0.05); color: #fff; }
+
         /* --- SIDEBAR --- */
         aside {
             position: absolute; 
@@ -260,6 +264,7 @@
             display: flex; justify-content: center; align-items: center;
             cursor: pointer; transition: all 0.2s; flex-shrink: 0; 
             border: 2px solid transparent; 
+            position: relative;
         }
         .filter-circle:hover { transform: scale(1.05); border-color: #555; }
         .filter-circle.active { background-color: var(--sb-active-bg); border-color: var(--sb-active-bg); box-shadow: 0 0 15px rgba(242, 232, 213, 0.2); }
@@ -339,6 +344,21 @@
             border-radius: 4px; overflow: hidden; border: none; 
         }
         #tooltip.interactive { pointer-events: auto !important; }
+
+        /* --- SIDEBAR TOOLTIP (CUSTOM) --- */
+        #sidebar-tooltip {
+            position: fixed; display: none; 
+            background: rgba(10, 10, 10, 0.95); 
+            color: var(--arc-yellow);
+            border: 1px solid var(--arc-yellow);
+            padding: 5px 12px; 
+            font-family: var(--font-ui); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+            font-size: 0.9rem;
+            z-index: 12000; pointer-events: none;
+            border-radius: 0 8px 8px 8px;
+            white-space: nowrap;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
 
         .tt-header { display: flex; height: 26px; background: transparent; }
         .tt-tag { padding: 0 10px; font-family: var(--font-head); font-weight: 600; font-size: 1.1rem; color: white; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; justify-content: center; gap: 5px; height: 100%; }
@@ -481,6 +501,9 @@
 
 <div id="modalBackdrop" onclick="closeInfoModal()"></div>
 
+<!-- CUSTOM SIDEBAR TOOLTIP -->
+<div id="sidebar-tooltip"></div>
+
 <!-- SIDEBAR -->
 <aside id="sidebarPanel"></aside>
 
@@ -491,7 +514,7 @@
                 <div class="app-logo">
                     <img src="images/menu/ARC Raiders.png" alt="ARC Raiders">
                 </div>
-                <span class="version-badge">v1.3.6</span>
+                <span class="version-badge">v1.5.0</span>
             </div>
 
             <div class="connect-wrapper">
@@ -513,12 +536,12 @@
 
             <!-- NAV LINKS: SWITCH MAIN SECTION -->
             <div class="nav-links">
-                <div class="nav-item active" onclick="setSection('INVENTARIO')">INVENTARIO</div>
-                <div class="nav-item" onclick="setSection('OFFICINA')">OFFICINA</div>
-                <div class="nav-item" onclick="setSection('PROGETTI')">PROGETTI</div>
-                <div class="nav-item" onclick="setSection('MERCANTI')">MERCANTI</div>
-                <div class="nav-item" onclick="setSection('NEGOZIO')">NEGOZIO</div>
-                <div class="nav-item" onclick="setSection('MISSIONI')">MISSIONI</div>
+                <div class="nav-item active" onclick="setSection('INVENTARIO')" data-nav="INVENTARIO">INVENTARIO</div>
+                <div class="nav-item" onclick="setSection('OFFICINA')" data-nav="OFFICINA">OFFICINA</div>
+                <div class="nav-item" onclick="setSection('PROGETTI')" data-nav="PROGETTI">PROGETTI</div>
+                <div class="nav-item" onclick="setSection('MERCANTI')" data-nav="MERCANTI">MERCANTI</div>
+                <div class="nav-item" onclick="setSection('NEGOZIO')" data-nav="NEGOZIO">NEGOZIO</div>
+                <div class="nav-item" onclick="setSection('MISSIONI')" data-nav="MISSIONI">MISSIONI</div>
             </div>
         </div>
 
@@ -536,6 +559,23 @@
             <select id="langSelect" class="btn-system" style="width: auto;">
                 <option value="it">ITA</option>
                 <option value="en">ENG</option>
+                <option value="da">DAN</option>
+                <option value="de">DEU</option>
+                <option value="es">ESP</option>
+                <option value="fr">FRA</option>
+                <option value="he">HEB</option>
+                <option value="hr">HRV</option>
+                <option value="ja">JPN</option>
+                <option value="ko">KOR</option>
+                <option value="no">NOR</option>
+                <option value="pl">POL</option>
+                <option value="pt">POR</option>
+                <option value="pt-BR">BRA</option>
+                <option value="ru">RUS</option>
+                <option value="tr">TUR</option>
+                <option value="uk">UKR</option>
+                <option value="zh-CN">CHN</option>
+                <option value="zh-TW">TWN</option>
             </select>
             
             <button id="imgModeBtn" class="btn-system img-toggle-btn" onclick="toggleImageMode()">IMG: LOCAL</button>
@@ -588,49 +628,99 @@
     let bpViewMode = 0; 
     let isModalOpen = false; 
 
-    const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/RaidTheory/arcraiders-data/main/';
+    const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/atarufox/Speranza-Archives/main/';
+
+    // --- COMPLETE TRANSLATION DICTIONARY ---
+    const TRANSLATIONS = {
+        it: {
+            ui: { crafting: "RICETTA", bench: "BANCO", ingredient: "INGREDIENTE", qty: "QTA", recycle: "RICICLA IN", item: "OGGETTO", val_u: "VAL/U", tot: "TOT", tot_recycle: "TOTALE RICICLO", sell_val: "VALORE VENDITA", no_recycle: "NON RICICLABILE", used_for: "USATO PER", no_usage: "NESSUN UTILIZZO TROVATO", my_blueprints: "I MIEI PROGETTI", what_i_need: "COSA MI SERVE", have: "CE L'HO", missing: "MANCA", upgrades: "POTENZIAMENTI", level: "LIVELLO", track: "SEGUI", added: "AGGIUNTO", obtained_recycling: "SI OTTIENE RICICLANDO", all: "TUTTI", search: "CERCA" },
+            nav: { INVENTARIO: "INVENTARIO", OFFICINA: "OFFICINA", PROGETTI: "PROGETTI", MERCANTI: "MERCANTI", NEGOZIO: "NEGOZIO", MISSIONI: "MISSIONI" },
+            filters: { ALL: "TUTTO", POTENZIAMENTI: "POTENZIAMENTI", SCUDI: "SCUDI", ARMI: "ARMI", MUNIZIONI: "MUNIZIONI", MOD: "MOD", USO_RAPIDO: "USO RAPIDO", CHIAVI: "CHIAVI", MATERIALI: "MATERIALI", VARIE: "VARIE", COSMETICS: "COSMETICS" },
+            types: { "Material": "MATERIALE", "Weapon": "ARMA", "Ammunition": "MUNIZIONI", "Consumable": "CONSUMABILE", "Quick Use": "USO RAPIDO", "Medical": "MEDICO", "Grenade": "GRANATA", "Gadget": "GADGET", "Augment": "POTENZIAMENTO", "Shield": "SCUDO", "Armor": "ARMATURA", "Currency": "VALUTA", "Key": "CHIAVE", "Recyclable": "RICICLABILE", "Refined Material": "MATERIALE RAFFINATO", "Topside Material": "MATERIALE SUPERFICIE", "Basic Material": "MATERIALE BASE", "Upgrade Station": "STAZIONE POTENZIAMENTO" }
+        },
+        en: {
+            ui: { crafting: "CRAFTING RECIPE", bench: "BENCH", ingredient: "INGREDIENT", qty: "QTY", recycle: "RECYCLES INTO", item: "ITEM", val_u: "VAL/U", tot: "TOT", tot_recycle: "TOTAL SCRAP VALUE", sell_val: "SELL VALUE", no_recycle: "NOT RECYCLABLE", used_for: "USED FOR", no_usage: "NO USAGE FOUND", my_blueprints: "MY BLUEPRINTS", what_i_need: "WHAT I NEED", have: "OWNED", missing: "MISSING", upgrades: "UPGRADES", level: "LEVEL", track: "TRACK", added: "ADDED", obtained_recycling: "OBTAINED BY RECYCLING", all: "ALL", search: "SEARCH" },
+            nav: { INVENTARIO: "INVENTORY", OFFICINA: "HIDEOUT", PROGETTI: "BLUEPRINTS", MERCANTI: "TRADERS", NEGOZIO: "STORE", MISSIONI: "QUESTS" },
+            filters: { ALL: "ALL", POTENZIAMENTI: "AUGMENTS", SCUDI: "SHIELDS", ARMI: "WEAPONS", MUNIZIONI: "AMMO", MOD: "MODS", USO_RAPIDO: "QUICK USE", CHIAVI: "KEYS", MATERIALI: "MATERIALS", VARIE: "MISC", COSMETICS: "COSMETICS" },
+            types: { "Material": "MATERIAL", "Weapon": "WEAPON", "Ammunition": "AMMUNITION", "Consumable": "CONSUMABLE", "Quick Use": "QUICK USE", "Medical": "MEDICAL", "Grenade": "GRENADE", "Gadget": "GADGET", "Augment": "AUGMENT", "Shield": "SHIELD", "Armor": "ARMOR", "Currency": "CURRENCY", "Key": "KEY", "Recyclable": "RECYCLABLE", "Refined Material": "REFINED MATERIAL", "Topside Material": "TOPSIDE MATERIAL", "Basic Material": "BASIC MATERIAL", "Upgrade Station": "UPGRADE STATION" }
+        },
+        // OTHER LANGUAGES (Partial or Fallback to EN logic for types)
+        fr: { ui: { all: "TOUT", search: "CHERCHER", crafting: "RECETTE", upgrades: "AMÉLIORATIONS", used_for: "UTILISÉ POUR", recycle: "RECYCLER" }, nav: { INVENTARIO: "INVENTAIRE", OFFICINA: "PLANQUE", PROGETTI: "PLANS" }, filters: { ALL: "TOUT", ARMI: "ARMES", MATERIALI: "MATÉRIAUX" } },
+        de: { ui: { all: "ALLES", search: "SUCHE", crafting: "REZEPT", upgrades: "UPGRADES", used_for: "VERWENDET FÜR", recycle: "RECYCELN" }, nav: { INVENTARIO: "INVENTAR", OFFICINA: "VERSTECK", PROGETTI: "BLAUPAUSEN" }, filters: { ALL: "ALLES", ARMI: "WAFFEN", MATERIALI: "MATERIALIEN" } },
+        es: { ui: { all: "TODO", search: "BUSCAR", crafting: "RECETA", upgrades: "MEJORAS", used_for: "USADO PARA", recycle: "RECICLAR" }, nav: { INVENTARIO: "INVENTARIO", OFFICINA: "ESCONDITE", PROGETTI: "PLANOS" }, filters: { ALL: "TODO", ARMI: "ARMAS", MATERIALI: "MATERIALES" } },
+        pt: { ui: { all: "TUDO", search: "BUSCA" }, nav: { INVENTARIO: "INVENTÁRIO", OFFICINA: "ESCONDERIJO" }, filters: { ALL: "TUDO" } },
+        'pt-BR': { ui: { all: "TUDO", search: "BUSCA" }, nav: { INVENTARIO: "INVENTÁRIO", OFFICINA: "ESCONDERIJO" }, filters: { ALL: "TUDO" } },
+        ru: { ui: { all: "ВСЕ", search: "ПОИСК" }, nav: { INVENTARIO: "ИНВЕНТАРЬ", OFFICINA: "УБЕЖИЩЕ" }, filters: { ALL: "ВСЕ" } },
+        ja: { ui: { all: "すべて", search: "検索" }, nav: { INVENTARIO: "インベントリ", OFFICINA: "隠れ家" }, filters: { ALL: "すべて" } },
+        ko: { ui: { all: "전체", search: "검색" }, nav: { INVENTARIO: "인벤토리", OFFICINA: "은신처" }, filters: { ALL: "전체" } },
+        'zh-CN': { ui: { all: "全部", search: "搜索" }, nav: { INVENTARIO: "库存", OFFICINA: "藏身处" }, filters: { ALL: "全部" } }
+    };
+
+    function getUI(key) {
+        if (TRANSLATIONS[currentLang] && TRANSLATIONS[currentLang].ui && TRANSLATIONS[currentLang].ui[key]) return TRANSLATIONS[currentLang].ui[key];
+        if (TRANSLATIONS['en'].ui[key]) return TRANSLATIONS['en'].ui[key];
+        return key; 
+    }
+    
+    function getNav(key) {
+        if (TRANSLATIONS[currentLang] && TRANSLATIONS[currentLang].nav && TRANSLATIONS[currentLang].nav[key]) return TRANSLATIONS[currentLang].nav[key];
+        return TRANSLATIONS['en'].nav[key] || key;
+    }
+    
+    function getFilter(key) {
+        if (TRANSLATIONS[currentLang] && TRANSLATIONS[currentLang].filters && TRANSLATIONS[currentLang].filters[key]) return TRANSLATIONS[currentLang].filters[key];
+        return TRANSLATIONS['en'].filters[key] || key;
+    }
+
+    function translateType(rawType) {
+        if(!rawType) return "";
+        // Normalize: remove generic terms if needed, handle "item"
+        if(rawType.toLowerCase() === 'item') return "ITEM";
+        
+        // Try direct lookup
+        if (TRANSLATIONS[currentLang] && TRANSLATIONS[currentLang].types && TRANSLATIONS[currentLang].types[rawType]) return TRANSLATIONS[currentLang].types[rawType];
+        
+        // Fallback to EN or return uppercase
+        if (TRANSLATIONS['en'].types[rawType]) return TRANSLATIONS['en'].types[rawType];
+        return rawType.toUpperCase();
+    }
 
     // --- CONFIGURAZIONE FILTRI SIDEBAR ---
     const SIDEBAR_CONFIG = {
         'INVENTARIO': [
-            { id: 'ALL', img: 'tutto', type: 'img', title: 'TUTTO' }, 
-            { id: 'POTENZIAMENTI', img: 'potenziamenti', type: 'img', title: 'POTENZIAMENTI' },
-            { id: 'SCUDI', img: 'scudi', type: 'img', title: 'SCUDI' },
-            { id: 'ARMI', img: 'armi', type: 'img', title: 'ARMI' },
-            { id: 'MUNIZIONI', img: 'munizioni', type: 'img', title: 'MUNIZIONI' },
-            { id: 'MOD', img: 'mod', type: 'img', title: 'MOD' },
-            { id: 'USO_RAPIDO', img: 'uso_rapido', type: 'img', title: 'USO RAPIDO' },
-            { id: 'CHIAVI', img: 'chiavi', type: 'img', title: 'CHIAVI' },
-            { id: 'MATERIALI', img: 'crafting', type: 'img', title: 'MATERIALI' },
-            { id: 'VARIE', img: 'varie', type: 'img', title: 'VARIE' },
-            { id: 'COSMETICS', icon: 'icon-cosmetic', type: 'svg', title: 'COSMETICS' }
+            { id: 'ALL', img: 'tutto', type: 'img', labelKey: 'ALL' }, 
+            { id: 'POTENZIAMENTI', img: 'potenziamenti', type: 'img', labelKey: 'POTENZIAMENTI' },
+            { id: 'SCUDI', img: 'scudi', type: 'img', labelKey: 'SCUDI' },
+            { id: 'ARMI', img: 'armi', type: 'img', labelKey: 'ARMI' },
+            { id: 'MUNIZIONI', img: 'munizioni', type: 'img', labelKey: 'MUNIZIONI' },
+            { id: 'MOD', img: 'mod', type: 'img', labelKey: 'MOD' },
+            { id: 'USO_RAPIDO', img: 'uso_rapido', type: 'img', labelKey: 'USO_RAPIDO' },
+            { id: 'CHIAVI', img: 'chiavi', type: 'img', labelKey: 'CHIAVI' },
+            { id: 'MATERIALI', img: 'crafting', type: 'img', labelKey: 'MATERIALI' },
+            { id: 'VARIE', img: 'varie', type: 'img', labelKey: 'VARIE' },
+            { id: 'COSMETICS', icon: 'icon-cosmetic', type: 'svg', labelKey: 'COSMETICS' }
         ],
         'PROGETTI': [
-            { id: 'ALL', icon: 'icon-all', type: 'svg', title: 'TUTTI I PROGETTI' },
-            { id: 'ARMI', img: 'armi', type: 'img', title: 'PROGETTI ARMI' },
-            { id: 'MOD', img: 'mod', type: 'img', title: 'PROGETTI GADGET' },
-            { id: 'USO_RAPIDO', img: 'uso_rapido', type: 'img', title: 'PROGETTI CONSUMABILI' },
-            { id: 'MATERIALI', img: 'crafting', type: 'img', title: 'PROGETTI MATERIALI' }
+            { id: 'ALL', icon: 'icon-all', type: 'svg', labelKey: 'ALL' }, 
+            { id: 'ARMI', img: 'armi', type: 'img', labelKey: 'ARMI' },
+            { id: 'MOD', img: 'mod', type: 'img', labelKey: 'MOD' },
+            { id: 'USO_RAPIDO', img: 'uso_rapido', type: 'img', labelKey: 'USO_RAPIDO' },
+            { id: 'MATERIALI', img: 'crafting', type: 'img', labelKey: 'MATERIALI' }
         ],
         'OFFICINA': [
-            { id: 'ALL', img: 'tutto', type: 'img', title: 'TUTTO' },
-            { id: 'STASH', img: 'scartino', type: 'img', title: 'SCARTINO' },
-            { id: 'WORKBENCH', img: 'bancodalavoro', type: 'img', title: 'BANCO DA LAVORO' },
-            { id: 'WEAPON', img: 'bancodellearmi', type: 'img', title: 'BANCO DELLE ARMI' },
-            { id: 'GEAR', img: "bancodellequipaggiamento", type: 'img', title: 'BANCO EQUIPAGGIAMENTO' },
-            { id: 'EXPLOSIVES', img: 'postazionedegliesplosivi', type: 'img', title: 'POSTAZIONE ESPLOSIVI' },
-            { id: 'REFINER', img: 'rifinitore', type: 'img', title: 'RIFINITORE' },
-            { id: 'MEDICAL', img: 'laboratoriomedico', type: 'img', title: 'LABORATORIO MEDICO' },
-            { id: 'UTILITY', img: 'postazionedifunzionalità', type: 'img', title: 'POSTAZIONE FUNZIONALITÀ' }
+            { id: 'ALL', img: 'tutto', type: 'img', labelKey: 'ALL' },
+            { targetId: 'scrappy' },
+            { targetId: 'workbench' },
+            { targetId: 'weapon_bench' },
+            { targetId: 'equipment_bench' },
+            { targetId: 'explosives_bench' },
+            { targetId: 'refiner' },
+            { targetId: 'med_station' },
+            { targetId: 'utility_bench' }
         ], 
         'MERCANTI': [], 
         'NEGOZIO': [],
         'MISSIONI': []
-    };
-
-    const uiLabels = {
-        it: { crafting: "RICETTA", bench: "BANCO", ingredient: "INGREDIENTE", qty: "QTA", recycle: "RICICLA IN", item: "OGGETTO", val_u: "VAL/U", tot: "TOT", tot_recycle: "TOTALE RICICLO", sell_val: "VALORE VENDITA", no_recycle: "NON RICICLABILE", used_for: "USATO PER", no_usage: "NESSUN UTILIZZO TROVATO", my_blueprints: "I MIEI PROGETTI", what_i_need: "COSA MI SERVE", have: "CE L'HO", missing: "MANCA", upgrades: "POTENZIAMENTI", level: "LIVELLO", track: "SEGUI", added: "AGGIUNTO", obtained_recycling: "SI OTTIENE RICICLANDO" },
-        en: { crafting: "CRAFTING RECIPE", bench: "BENCH", ingredient: "INGREDIENT", qty: "QTY", recycle: "RECYCLES INTO", item: "ITEM", val_u: "VAL/U", tot: "TOT", tot_recycle: "TOTAL SCRAP VALUE", sell_val: "SELL VALUE", no_recycle: "NOT RECYCLABLE", used_for: "USED FOR", no_usage: "NO USAGE FOUND", my_blueprints: "MY BLUEPRINTS", what_i_need: "WHAT I NEED", have: "OWNED", missing: "MISSING", upgrades: "UPGRADES", level: "LEVEL", track: "TRACK", added: "ADDED", obtained_recycling: "OBTAINED BY RECYCLING" }
     };
 
     const dom = {
@@ -641,6 +731,7 @@
         searchClear: document.getElementById('searchClear'),
         tt: document.getElementById('tooltip'),
         sidebar: document.getElementById('sidebarPanel'),
+        sbTooltip: document.getElementById('sidebar-tooltip'),
         imgBtn: document.getElementById('imgModeBtn'),
         wlCounter: document.getElementById('wlCounter'),
         infoModal: document.getElementById('infoModal'),
@@ -652,8 +743,25 @@
 
     document.getElementById('folderInput').addEventListener('change', loadDataLocal);
     dom.search.addEventListener('input', (e) => { dom.searchClear.style.display = e.target.value ? 'block' : 'none'; render(); });
-    document.getElementById('langSelect').addEventListener('change', (e) => { currentLang = e.target.value; updateUI(); render(); });
+    document.getElementById('langSelect').addEventListener('change', (e) => { 
+        currentLang = e.target.value; 
+        updateStaticText();
+        updateUI(); 
+        render(); 
+        renderSidebar(); 
+    });
     
+    function updateStaticText() {
+        // Update Search Placeholder
+        dom.search.placeholder = getUI('search');
+        
+        // Update Nav Links
+        document.querySelectorAll('.nav-item').forEach(el => {
+            const key = el.getAttribute('data-nav');
+            if(key) el.innerText = getNav(key);
+        });
+    }
+
     // Modal controls
     window.closeInfoModal = function() { 
         dom.infoModal.style.display = 'none'; 
@@ -672,8 +780,12 @@
 
     function setSection(sectionName) {
         currentSection = sectionName;
+        // Map UI text back to internal ID if needed, but safer to use click handler
+        // Actually, sectionName passed here is usually the Key from HTML onclick="setSection('INVENTARIO')"
+        // But the displayed text might change. Let's rely on the Key passed in HTML.
+        
         document.querySelectorAll('.nav-item').forEach(el => {
-            el.classList.toggle('active', el.innerText === sectionName);
+            el.classList.toggle('active', el.getAttribute('data-nav') === sectionName);
         });
         
         if(sectionName === 'PROGETTI') {
@@ -711,23 +823,71 @@
                 dom.sidebar.appendChild(sep);
                 return;
             }
+            
+            let realItem = null;
+            let displayTitle = "";
+
+            if (currentSection === 'OFFICINA' && item.targetId) {
+                realItem = hideoutDB.find(x => x.id === item.targetId);
+                if (realItem) {
+                    displayTitle = getLoc(realItem.name);
+                } else {
+                    displayTitle = item.targetId;
+                }
+            } else {
+                displayTitle = getFilter(item.labelKey);
+            }
+
             const div = document.createElement('div');
-            div.className = 'filter-circle' + (item.hasImage ? ' has-image' : '');
-            if(item.id === currentFilter) div.classList.add('active');
-            div.title = item.title;
-            div.onclick = () => setFilter(item.id);
-            div.dataset.filter = item.id;
+            div.className = 'filter-circle';
+            
+            div.onmouseenter = (e) => showSidebarTooltip(e, displayTitle);
+            div.onmouseleave = hideSidebarTooltip;
+
+            let isActive = false;
+            if (currentSection === 'OFFICINA') {
+                if (item.id === 'ALL' && currentFilter === 'ALL') isActive = true;
+                if (item.targetId && currentFilter === item.targetId) isActive = true;
+            } else {
+                if (item.id === currentFilter) isActive = true;
+            }
+            if(isActive) div.classList.add('active');
+
+            if (currentSection === 'OFFICINA' && item.targetId) {
+                div.onclick = () => setFilter(item.targetId);
+                div.dataset.filter = item.targetId;
+            } else {
+                div.onclick = () => setFilter(item.id);
+                div.dataset.filter = item.id;
+            }
+
             if(item.type === 'svg') {
                 div.innerHTML = `<svg><use href="#${item.icon}"></use></svg>`;
-            } else if (item.type === 'img') {
+            } else {
                 div.classList.add('has-image');
+                let imgName = item.img; 
+                if (currentSection === 'OFFICINA' && item.targetId) imgName = item.targetId;
+                
                 div.innerHTML = `
-                    <img class="icon-inactive" src="images/menu/${item.img}_inactive.png" onerror="this.style.display='none'" alt="${item.title}">
-                    <img class="icon-active" src="images/menu/${item.img}_active.png" onerror="this.style.display='none'" alt="${item.title}">
+                    <img class="icon-inactive" src="images/menu/${imgName}_inactive.png" onerror="this.style.display='none'" alt="">
+                    <img class="icon-active" src="images/menu/${imgName}_active.png" onerror="this.style.display='none'" alt="">
                 `;
             }
             dom.sidebar.appendChild(div);
         });
+    }
+
+    function showSidebarTooltip(e, text) {
+        if(!text) return;
+        const rect = e.currentTarget.getBoundingClientRect();
+        dom.sbTooltip.innerText = text;
+        dom.sbTooltip.style.display = 'block';
+        dom.sbTooltip.style.left = (rect.right + 10) + 'px';
+        dom.sbTooltip.style.top = (rect.top + (rect.height / 2) - (dom.sbTooltip.offsetHeight / 2)) + 'px';
+    }
+
+    function hideSidebarTooltip() {
+        dom.sbTooltip.style.display = 'none';
     }
 
     function setFilter(f) {
@@ -737,10 +897,7 @@
              isWishlistView = false; 
              dom.btnWishlist.classList.remove('active');
         }
-        const buttons = dom.sidebar.querySelectorAll('.filter-circle');
-        buttons.forEach(b => b.classList.remove('active'));
-        const active = dom.sidebar.querySelector(`.filter-circle[data-filter="${f}"]`);
-        if(active) active.classList.add('active');
+        renderSidebar();
         render();
     }
 
@@ -762,23 +919,22 @@
     }
 
     function updateUI() {
-        const lbl = uiLabels[currentLang];
         if (currentSection === 'PROGETTI') {
              dom.btnWishlist.classList.remove('active', 'bp-filter-owned', 'bp-filter-missing');
              document.getElementById('iconWishlist').style.display = 'none';
              dom.wlCounter.style.display = 'none';
              if(bpViewMode === 0) {
-                 dom.btnWishlistText.innerText = "FILTRO: TUTTI";
+                 dom.btnWishlistText.innerText = `${getUI('all')}`;
              } else if(bpViewMode === 1) {
-                 dom.btnWishlistText.innerText = "FILTRO: POSSEDUTI";
+                 dom.btnWishlistText.innerText = `${getUI('have')}`;
                  dom.btnWishlist.classList.add('bp-filter-owned');
              } else if(bpViewMode === 2) {
-                 dom.btnWishlistText.innerText = "FILTRO: MANCANTI";
+                 dom.btnWishlistText.innerText = `${getUI('missing')}`;
                  dom.btnWishlist.classList.add('bp-filter-missing');
              }
         } else {
              document.getElementById('iconWishlist').style.display = 'block';
-             dom.btnWishlistText.innerText = lbl.what_i_need;
+             dom.btnWishlistText.innerText = getUI('what_i_need');
              dom.btnWishlist.classList.remove('bp-filter-owned', 'bp-filter-missing');
              updateWishlistCounter();
         }
@@ -793,10 +949,8 @@
         setFilter('ALL');
     }
 
-    // --- NORMALIZATION: UNIFY DATA STRUCTURE FROM DIFFERENT REPOS ---
     function normalizeHideoutData(sourceData, sourceRepo) {
         let normalized = [];
-        
         if (sourceRepo === 'RaidTheory') {
             if(Array.isArray(sourceData)) {
                 sourceData.forEach(d => {
@@ -817,7 +971,6 @@
                 });
             }
         }
-        
         return normalized;
     }
 
@@ -829,10 +982,7 @@
         
         try {
             dom.loaderText.textContent = "CONNECTING...";
-            
-            // --- RAIDTHEORY LOGIC (DEFAULT) ---
             const repo = 'RaidTheory/arcraiders-data';
-            
             const itemsUrl = `https://api.github.com/repos/${repo}/contents/items`;
             const responseItems = await fetch(itemsUrl);
             if (!responseItems.ok) throw new Error(`GitHub API error (Items): ${responseItems.status}`);
@@ -956,7 +1106,6 @@
 
     function getItem(id) { 
         let base = itemsDB.find(x => x.id === id);
-        // NEW: Search in Hideout DB as well for links
         if (!base) base = hideoutDB.find(x => x.id === id);
         
         if(!base) return null;
@@ -1065,7 +1214,7 @@
             });
             saveUserData();
             btn.classList.add('added');
-            btn.innerText = uiLabels[currentLang].added;
+            btn.innerText = getUI('added');
         } catch(e) { console.error(e); }
     };
 
@@ -1114,15 +1263,14 @@
                 if(search && !(getLoc(x.name)||x.id).toLowerCase().includes(search)) return false;
                 const id = x.id.toUpperCase();
                 
+                // EXCLUDE STASH
+                if (x.id === 'stash') return false;
+
+                // DYNAMIC FILTERING (ID-BASED)
                 if(currentFilter === 'ALL') return true;
-                if(currentFilter === 'STASH' && (id.includes('STASH') || id.includes('SCARTINO') || id.includes('SCRAPPY'))) return true;
-                if(currentFilter === 'WORKBENCH' && (id.includes('CRAFTING') || id.includes('WORKBENCH'))) return true;
-                if(currentFilter === 'WEAPON' && id.includes('WEAPON')) return true;
-                if(currentFilter === 'GEAR' && (id.includes('ARMOR') || id.includes('GEAR') || id.includes('EQUIPMENT'))) return true;
-                if(currentFilter === 'EXPLOSIVES' && id.includes('EXPLOSIVE')) return true;
-                if(currentFilter === 'REFINER' && (id.includes('REFINER') || id.includes('MATERIAL'))) return true;
-                if(currentFilter === 'MEDICAL' && (id.includes('MEDICAL') || id.includes('CHEMISTRY'))) return true;
-                if(currentFilter === 'UTILITY' && (id.includes('GADGET') || id.includes('UTILITY'))) return true;
+                
+                // Exact Match
+                if(currentFilter === x.id) return true;
                 
                 return false;
             });
@@ -1181,12 +1329,12 @@
         }
 
         source.forEach(data => {
-            const isItem = !isBlueprint(data) && currentSection !== 'OFFICINA';
+            const isItem = !isBlueprint(data) && (currentSection !== 'OFFICINA' || isWishlistView);
+            
             const rarity = (data.rarity||'common').toLowerCase();
             let imgUrl = getImg(data);
             
-            if (currentSection === 'OFFICINA') {
-                 // UPDATED: Use simple {item_id}.png convention for hideout images
+            if (currentSection === 'OFFICINA' && !isWishlistView) {
                  imgUrl = `images/menu/${data.id.toLowerCase()}.png`; 
             }
 
@@ -1352,15 +1500,19 @@
         const desc = getLoc(data.description);
         const rarity = (data.rarity || 'common').toUpperCase();
         let type = (data.type || 'ITEM').toUpperCase();
-        if(data.levels) type = "UPGRADE STATION"; // Fix per officina
         
+        // Translate type using the dictionary
+        if(data.levels) type = getUI('upgrades'); 
+        else type = translateType(data.type) || type;
+
         let tagColor = 'var(--col-common)';
-        if(type.includes('MATERIAL')) tagColor = 'var(--col-material)';
+        // Check using translated string (or original logic if consistent)
+        if(data.type && data.type.toLowerCase().includes('material')) tagColor = 'var(--col-material)';
         if(data.recyclesInto) tagColor = 'var(--col-recycle)'; 
         let rarColor = `var(--col-${rarity.toLowerCase()})`;
         
         const weight = (data.weightKg || 0).toString().replace('.', ',');
-        const val = (data.value || 0).toLocaleString('it-IT');
+        const val = (data.value || 0).toLocaleString(currentLang);
         const stack = `${data.stackSize || 1}/${data.stackSize || 1}`;
         const pesoKey = 'images/menu/peso.png';
         const monetaKey = 'images/menu/moneta.png';
@@ -1368,12 +1520,12 @@
         const monetaIconUrl = allImages.has(monetaKey) ? allImages.get(monetaKey) : monetaKey;
 
         let ecoHtml = "";
-        if(data.foundIn) ecoHtml += `<div class="tt-found"><div class="tt-found-label">${currentLang==='it'?'SI TROVA IN:':'FOUND IN:'}</div><div class="tt-found-val"><svg><use href="#icon-arc"></use></svg> ${getLoc(data.foundIn)}</div></div>`;
+        if(data.foundIn) ecoHtml += `<div class="tt-found"><div class="tt-found-label">${getUI('obtained_recycling').replace('RICICLANDO','')} :</div><div class="tt-found-val"><svg><use href="#icon-arc"></use></svg> ${getLoc(data.foundIn)}</div></div>`;
 
         return `
             <div style="background:var(--card-bg); color:var(--card-text);">
                 <div class="tt-header">
-                    <div class="tt-tag" style="background:${tagColor}"><svg style="width:16px;height:16px;fill:white;margin-right:4px;"><use href="#icon-wrench"></use></svg>${type.includes('MATERIAL') && currentLang==='it' ? 'MATERIALE' : (data.recyclesInto && currentLang==='it' ? 'RICICLABILE' : type)}</div>
+                    <div class="tt-tag" style="background:${tagColor}"><svg style="width:16px;height:16px;fill:white;margin-right:4px;"><use href="#icon-wrench"></use></svg>${type}</div>
                     <div class="tt-tag" style="background:${rarColor}; margin-left:1px;">${rarity}</div>
                 </div>
                 <div class="tt-body">
@@ -1416,16 +1568,15 @@
         isModalOpen = true;
 
         const modal = dom.infoModal;
-        const lbl = uiLabels[currentLang]; 
         
         let craftHtml = '';
         let craftList = normalizeReqs(data.recipe); 
         if (craftList.length > 0 || data.craftBench) {
-            craftHtml += `<div class="info-section"><div class="info-title">${lbl.crafting}</div>`;
+            craftHtml += `<div class="info-section"><div class="info-title">${getUI('crafting')}</div>`;
             if (data.craftBench) {
                 let rawBench = String(data.craftBench); 
                 let benchName = rawBench.replace(/_/g, ' ').toUpperCase();
-                craftHtml += `<div style="margin-bottom:10px; color:#aaa; font-size:0.9rem;"><span style="color:#fff; font-weight:700;">${lbl.bench}:</span> ${benchName}</div>`;
+                craftHtml += `<div style="margin-bottom:10px; color:#aaa; font-size:0.9rem;"><span style="color:#fff; font-weight:700;">${getUI('bench')}:</span> ${benchName}</div>`;
             }
             if (craftList.length > 0) {
                 let rows = craftList.map(r => {
@@ -1449,14 +1600,14 @@
                     
                     return `<tr><td ${clickAttr}>${imgHtml}${name}</td><td style="text-align:right; font-weight:700; color:var(--arc-yellow);">x${r.count}</td></tr>`;
                 }).join('');
-                craftHtml += `<table class="info-table" style="margin-top:5px;"><thead><tr><th>${lbl.ingredient}</th><th style="text-align:right;">${lbl.qty}</th></tr></thead><tbody>${rows}</tbody></table>`;
+                craftHtml += `<table class="info-table" style="margin-top:5px;"><thead><tr><th>${getUI('ingredient')}</th><th style="text-align:right;">${getUI('qty')}</th></tr></thead><tbody>${rows}</tbody></table>`;
             }
             craftHtml += `</div>`;
         }
         
         let upgradesHtml = '';
         if (data.levels && Array.isArray(data.levels)) {
-            upgradesHtml += `<div class="info-section"><div class="info-title">${lbl.upgrades}</div>`;
+            upgradesHtml += `<div class="info-section"><div class="info-title">${getUI('upgrades')}</div>`;
             data.levels.sort((a,b) => a.level - b.level).forEach(lvl => {
                 const reqs = lvl.requirements;
                 let rows = reqs.map(r => {
@@ -1489,9 +1640,9 @@
                 upgradesHtml += `
                 <details class="upgrade-level">
                     <summary>
-                        <span>${lbl.level} ${lvl.level}</span>
+                        <span>${getUI('level')} ${lvl.level}</span>
                         <button class="btn-track" onclick="event.preventDefault(); addReqsToWishlist('${reqsString}', this)">
-                           <svg style="width:14px;height:14px;fill:currentColor; margin-right:5px;"><use href="#icon-plus"></use></svg> ${lbl.track}
+                           <svg style="width:14px;height:14px;fill:currentColor; margin-right:5px;"><use href="#icon-plus"></use></svg> ${getUI('track')}
                         </button>
                     </summary>
                     <div style="padding:10px;">${rows || '<div style="color:#666">No data</div>'}</div>
@@ -1505,7 +1656,7 @@
         let recycleHtml = '';
         
         if (recycleList.length > 0) {
-            recycleHtml += `<div class="info-section"><div class="info-title">${lbl.recycle}</div>`;
+            recycleHtml += `<div class="info-section"><div class="info-title">${getUI('recycle')}</div>`;
             let totalRecycleVal = 0;
             let rows = recycleList.map(r => {
                 const ing = getItem(r.item);
@@ -1534,10 +1685,10 @@
             const diffClass = totalRecycleVal > (data.value||0) ? 'val-better' : (totalRecycleVal < (data.value||0) ? 'val-worse' : 'val-neutral');
             
             recycleHtml += `<table class="info-table">
-                <thead><tr><th>${lbl.item}</th><th>${lbl.qty}</th><th>${lbl.val_u}</th><th>${lbl.tot}</th></tr></thead>
+                <thead><tr><th>${getUI('item')}</th><th>${getUI('qty')}</th><th>${getUI('val_u')}</th><th>${getUI('tot')}</th></tr></thead>
                 <tbody>${rows}</tbody>
-                <tfoot><tr><td colspan="3" style="text-align:right;">${lbl.tot_recycle}:</td><td class="val-total ${diffClass}">${totalRecycleVal}</td></tr>
-                <tr><td colspan="3" style="text-align:right;">${lbl.sell_val}:</td><td class="val-total">${data.value||0}</td></tr></tfoot>
+                <tfoot><tr><td colspan="3" style="text-align:right;">${getUI('tot_recycle')}:</td><td class="val-total ${diffClass}">${totalRecycleVal}</td></tr>
+                <tr><td colspan="3" style="text-align:right;">${getUI('sell_val')}:</td><td class="val-total">${data.value||0}</td></tr></tfoot>
             </table></div>`;
         }
         
@@ -1550,7 +1701,7 @@
         });
         
         if (sourceItems.length > 0) {
-            reverseRecycleHtml += `<div class="info-section"><div class="info-title">${lbl.obtained_recycling}</div>`;
+            reverseRecycleHtml += `<div class="info-section"><div class="info-title">${getUI('obtained_recycling')}</div>`;
             let rrRows = sourceItems.map(src => {
                 const ing = src.item;
                 const name = ing ? getLoc(ing.name) : 'Unknown';
@@ -1573,7 +1724,7 @@
 
         let usedInHtml = '';
         if (!data.levels && !data.requirements) {
-            usedInHtml += `<div class="info-section"><div class="info-title">${lbl.used_for}</div>`;
+            usedInHtml += `<div class="info-section"><div class="info-title">${getUI('used_for')}</div>`;
             let usages = [];
             itemsDB.forEach(i => {
                 if(i.recipe) {
@@ -1642,7 +1793,7 @@
                     </div>`;
                 });
             } else {
-                usedInHtml += `<div style="color:#666; padding:10px;">${lbl.no_usage}</div>`;
+                usedInHtml += `<div style="color:#666; padding:10px;">${getUI('no_usage')}</div>`;
             }
             usedInHtml += `</div>`;
         }
@@ -1688,4 +1839,4 @@ window.pickRepo = function(repo, e){
 </script>
 </body>
 </html>
-<!-- END OF FILE arc_database_v1.3.6.html -->
+<!-- END OF FILE arc_database_v1.5.0.html -->
