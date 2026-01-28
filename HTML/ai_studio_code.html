@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<style>
+    /* CONTENITORE DELLO SFONDO */
+    .intro-screen-css {
+        position: fixed;
+        inset: 0;
+        background-color: #050505;
+        z-index: 0; /* Va dietro al contenuto */
+        overflow: hidden;
+    }
+
+    /* EFFETTO NEVE (NOISE) */
+    .tv-static {
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        opacity: 0.12; /* Regola l'intensità della neve */
+        background-image: repeating-radial-gradient(circle at 17% 32%, white, black 0.00085px);
+        background-size: 250px 250px; /* Granulosità */
+        animation: tv-static-anim 0.3s infinite linear;
+    }
+
+    /* EFFETTO SCANLINES (RIGHE ORIZZONTALI) */
+    .scanlines {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0) 50%,
+            rgba(0, 0, 0, 0.4) 50%,
+            rgba(0, 0, 0, 0.4)
+        );
+        background-size: 100% 4px; /* Spessore righe */
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    /* EFFETTO "FLICKER" (SFARFALLIO LEGGERO) */
+    .flicker-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.1);
+        opacity: 0;
+        animation: flicker-anim 0.15s infinite;
+        pointer-events: none;
+        z-index: 3;
+    }
+
+    /* BANDONE CHE SCORRE (ROLLING BAR) */
+    .rolling-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0.05) 50%, rgba(0,0,0,0) 100%);
+        animation: roll-anim 8s linear infinite;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    /* VIGNETTATURA (Bordi scuri stile CRT) */
+    .vignette {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,0.8) 100%);
+        z-index: 4;
+        pointer-events: none;
+    }
+
+    /* ANIMAZIONI */
+    @keyframes tv-static-anim {
+        0% { transform: translate(0,0); }
+        10% { transform: translate(-5%,-5%); }
+        20% { transform: translate(-10%,5%); }
+        30% { transform: translate(5%,-10%); }
+        40% { transform: translate(-5%,15%); }
+        50% { transform: translate(-10%,5%); }
+        60% { transform: translate(15%,0); }
+        70% { transform: translate(0,10%); }
+        80% { transform: translate(-15%,0); }
+        90% { transform: translate(10%,5%); }
+        100% { transform: translate(5%,0); }
+    }
+
+    @keyframes flicker-anim {
+        0% { opacity: 0.02; }
+        50% { opacity: 0.05; }
+        100% { opacity: 0.02; }
+    }
+
+    @keyframes roll-anim {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100vh); }
+    }
+</style>
+</head>
+<body style="margin:0; background:#000;">
+
+    <!-- COPIA QUESTO BLOCCO NEL TUO CODICE AL POSTO DEL VIDEO -->
+    <div class="intro-screen-css">
+        <div class="tv-static"></div>
+        <div class="scanlines"></div>
+        <div class="rolling-bar"></div>
+        <div class="flicker-overlay"></div>
+        <div class="vignette"></div>
+    </div>
+    <!-- FINE BLOCCO -->
+
+    <!-- Qui ci andrebbe il tuo contenuto (logo e bottone) -->
+    <div style="position:relative; z-index:10; display:flex; justify-content:center; align-items:center; height:100vh; color:#ffc400; font-family:sans-serif; flex-direction:column;">
+        <h1 style="font-size:3rem; margin:0;">LOGO</h1>
+        <button style="margin-top:20px; padding:10px 20px; border:2px solid #ffc400; background:rgba(0,0,0,0.5); color:#ffc400; font-weight:bold; cursor:pointer;">CONNECT TO SPERANZA</button>
+    </div>
+
+</body>
+</html>
