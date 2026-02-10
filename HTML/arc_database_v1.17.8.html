@@ -1,0 +1,509 @@
+<!-- START OF FILE arc_database_v1.17.8.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARC RAIDERS // DATABASE v1.17.8</title>
+    <style>
+        /* FONTS */
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Teko:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --bg-body: #050505;
+            --arc-yellow: #ffc400;
+            --arc-white: #e6e6e6;
+            --arc-teal: #00e5ff;   
+            --arc-red: #ff2a2a;
+            --arc-green: #00ff66;
+            --arc-gray: #555555;
+            --sb-inactive-bg: #2b2f3b;
+            --sb-inactive-icon: #7f838d;
+            --sb-active-bg: #f2e8d5;
+            --sb-active-icon: #141619;
+            --card-bg: #f2e8d5;
+            --card-footer: #dcd0b9;
+            --card-text: #121418;
+            --col-common: #7a7a7a;
+            --col-uncommon: #009e48;
+            --col-rare: #0090d4;
+            --col-epic: #a040b0;
+            --col-legendary: #ff9600;
+            --font-head: 'Teko', sans-serif;
+            --font-ui: 'Rajdhani', sans-serif;
+            --font-body: 'Barlow', sans-serif;
+            --header-h: 80px;
+            --logo-h: 30px;
+            --sb-w: 70px;
+            --content-pad-left: 130px;
+        }
+
+        @media (max-width: 1600px) { :root { --header-h: 65px; --logo-h: 24px; --sb-w: 60px; --content-pad-left: 110px; } }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+
+        body {
+            background-color: var(--bg-body);
+            background: radial-gradient(circle at 50% 30%, #1a1f2e 0%, #050505 80%);
+            color: var(--arc-white);
+            font-family: var(--font-ui);
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+        }
+
+        /* --- LOADER FIX --- */
+        #loader { 
+            position: fixed; inset: 0; display: none; align-items: center; justify-content: center; 
+            flex-direction: column; background: rgba(0,0,0,0.9); z-index: 20000; 
+        }
+        .loader-custom { width: 100px; height: 100px; animation: arcspin 2s linear infinite; }
+        @keyframes arcspin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        /* --- INTRO SCREEN --- */
+        .intro-screen {
+            position: fixed; inset: 0; z-index: 500; background: #000;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            animation: turn-on 2.5s linear forwards;
+        }
+        body.db-loaded .intro-screen { display: none; }
+
+        /* --- GRID & SLOTS --- */
+        .stash-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; padding-bottom: 100px; }
+        .slot {
+            aspect-ratio: 1; background-color: rgba(15, 15, 15, 0.6);
+            border: 1px solid rgba(255,255,255,0.1); position: relative; 
+            display: flex; align-items: center; justify-content: center; transition: 0.2s;
+        }
+        .slot:hover { border-color: #fff; background-color: rgba(40, 40, 45, 0.8); cursor: pointer; z-index: 10; }
+        .slot img { max-width: 80%; max-height: 80%; object-fit: contain; pointer-events: none; }
+        
+        /* --- SLOT CONTROLS (FIXED HOVER) --- */
+        .slot-controls { 
+            position: absolute; bottom: 0; left: 0; right: 0; height: 26px; 
+            display: none; background: rgba(0,0,0,0.9); z-index: 20; 
+        }
+        .slot:hover .slot-controls { display: flex; }
+        .wl-btn { 
+            flex: 1; background: transparent; color: #aaa; border: none; 
+            cursor: pointer; font-weight: 700; font-size: 1.2rem; 
+        }
+        .wl-btn:hover { color: #fff; background: rgba(255,255,255,0.2); }
+        .wishlist-badge { 
+            position: absolute; top: 4px; right: 4px; background: var(--arc-yellow); 
+            color: #000; font-weight: 800; font-size: 0.8rem; padding: 2px 5px; border-radius: 2px; 
+        }
+
+        /* --- HEADER & NAV --- */
+        header {
+            position: fixed; top: 0; left: 0; right: 0; height: var(--header-h);
+            background: rgba(0,0,0,0.9); border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex; align-items: center; justify-content: space-between; padding: 0 20px; z-index: 1000;
+        }
+        .nav-links { display: flex; gap: 10px; }
+        .nav-item { 
+            font-family: var(--font-head); font-size: 1.4rem; color: #888; 
+            cursor: pointer; text-transform: uppercase; padding: 0 10px; 
+        }
+        .nav-item.active { color: #fff; border-bottom: 2px solid var(--arc-yellow); }
+
+        /* --- SIDEBAR --- */
+        aside {
+            position: absolute; top: var(--header-h); left: 20px; bottom: 20px; width: var(--sb-w);
+            display: none; flex-direction: column; align-items: center; gap: 10px; padding-top: 20px;
+        }
+        body.db-loaded aside { display: flex; }
+        .filter-circle {
+            width: 50px; height: 50px; border-radius: 50%; background: #222;
+            display: flex; align-items: center; justify-content: center; cursor: pointer;
+        }
+        .filter-circle.active { background: var(--arc-yellow); }
+        .filter-circle img { width: 60%; height: 60%; }
+
+        /* --- CONTENT AREA --- */
+        .content-area { flex: 1; padding: 20px; margin-top: var(--header-h); margin-left: var(--sb-w); overflow-y: auto; }
+        body.section-map .content-area { margin-left: 0; padding: 0; }
+
+        /* --- MAP STYLES --- */
+        #map-container { position: absolute; inset: 0; background: #000; display: none; }
+        #map-wrapper { position: relative; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; }
+        .map-bg { max-width: 100%; max-height: 100%; opacity: 0.4; }
+        .map-marker { position: absolute; transform: translate(-50%, -50%); width: 18px; height: 18px; border-radius: 50%; border: 2px solid #fff; z-index: 100; }
+        .map-marker.status-active { background: var(--arc-green); box-shadow: 0 0 15px var(--arc-green); }
+        .map-marker.status-upcoming { background: var(--arc-teal); }
+        .map-marker.status-none { background: #444; width: 10px; height: 10px; }
+        .marker-label { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.8); padding: 2px 8px; border-radius: 4px; white-space: nowrap; font-size: 0.8rem; border: 1px solid #444; }
+
+        /* --- MISSION CONTROL DASHBOARD --- */
+        .mission-control { position: absolute; top: 20px; left: 20px; bottom: 20px; width: 350px; z-index: 200; pointer-events: none; display: flex; flex-direction: column; gap: 10px; }
+        .mc-panel { background: rgba(10,10,10,0.9); border: 1px solid #333; padding: 15px; pointer-events: auto; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; }
+        .mc-scroll-area { overflow-y: auto; flex: 1; }
+        .ev-card { background: rgba(255,255,255,0.05); padding: 10px; margin-bottom: 5px; border-left: 3px solid #444; }
+        .ev-card.active { border-left-color: var(--arc-green); }
+        .ev-card.upcoming { border-left-color: var(--arc-teal); }
+        .mc-clock { position: absolute; top: 10px; right: 20px; background: #000; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; color: var(--arc-yellow); }
+
+        /* --- TOOLTIP & MODAL --- */
+        #tooltip { position: fixed; display: none; width: 300px; background: var(--card-bg); color: #000; z-index: 10000; pointer-events: none; padding: 15px; border-radius: 4px; }
+        .overlay-container { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #111; width: 450px; max-height: 80vh; z-index: 15000; display: none; flex-direction: column; border: 1px solid var(--arc-yellow); }
+        .overlay-header { padding: 15px; background: #222; display: flex; justify-content: space-between; align-items: center; }
+        .overlay-scrollable-content { padding: 15px; overflow-y: auto; }
+        #modalBackdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 14000; display: none; }
+    </style>
+</head>
+<body>
+
+<div id="loader">
+    <svg class="loader-custom" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" fill="none" stroke="white" stroke-width="5" stroke-dasharray="150 100" />
+    </svg>
+    <h2 style="margin-top:20px">LOADING DATA...</h2>
+</div>
+
+<div id="introScreen" class="intro-screen">
+    <img src="https://raw.githubusercontent.com/atarufox/Speranza-Archive/main/images/menu/logo.png" width="300" style="margin-bottom:30px">
+    <button class="btn-connect-big" onclick="connectToDatabase()">CONNECT TO DATABASE</button>
+</div>
+
+<div id="modalBackdrop" onclick="closeInfoModal()"></div>
+<aside id="sidebarPanel"></aside>
+
+<div class="layout-container">
+    <header>
+        <div style="display:flex; align-items:center; gap:20px">
+            <div class="app-logo" onclick="location.reload()"><img src="https://raw.githubusercontent.com/atarufox/Speranza-Archive/main/images/menu/logo.png" height="30"></div>
+            <div class="nav-links">
+                <div class="nav-item active" onclick="setSection('INVENTARIO')" data-nav="INVENTARIO">INVENTARIO</div>
+                <div class="nav-item" onclick="setSection('OFFICINA')" data-nav="OFFICINA">OFFICINA</div>
+                <div class="nav-item" onclick="setSection('PROGETTI')" data-nav="PROGETTI">PROGETTI</div>
+                <div class="nav-item" onclick="setSection('MAPPA')" data-nav="MAPPA">MAPPA</div>
+                <div class="nav-item" onclick="setSection('MERCANTI')" data-nav="MERCANTI">MERCANTI</div>
+            </div>
+        </div>
+        <div style="display:flex; gap:10px; align-items:center">
+            <input type="text" id="searchInput" placeholder="SEARCH..." style="background:#222; border:1px solid #444; color:#fff; padding:5px 10px">
+            <select id="langSelect" onchange="loadLanguage(this.value)" style="background:#222; color:#fff; border:1px solid #444; padding:5px">
+                <option value="it">ITA</option>
+                <option value="en">ENG</option>
+                <option value="es">ESP</option>
+                <option value="fr">FRA</option>
+            </select>
+            <button id="btnAdmin" onclick="toggleAdminMode()" style="background:transparent; border:none; color:#555; cursor:pointer">⚙️</button>
+        </div>
+    </header>
+
+    <div class="content-area">
+        <div id="grid-container" class="stash-grid"></div>
+        <div id="map-container"></div>
+    </div>
+</div>
+
+<div id="tooltip"></div>
+<div id="infoModal" class="overlay-container"></div>
+<div id="adminModal" class="overlay-container"></div>
+
+<script>
+    const GITHUB_RAW = 'https://raw.githubusercontent.com/atarufox/Speranza-Archive/main/';
+    const MAP_COORDINATES = {
+        "dam-battleground": { x: 75, y: 30 },
+        "buried-city": { x: 25, y: 70 },
+        "the-spaceport": { x: 80, y: 80 },
+        "blue-gate": { x: 45, y: 20 },
+        "stella-montis": { x: 20, y: 30 },
+        "default": { x: 50, y: 50 } 
+    };
+
+    let itemsDB = [], hideoutDB = [], scheduleData = null, wishlist = new Map(), ownedBlueprints = new Set();
+    let currentSection = 'INVENTARIO', currentFilter = 'ALL', currentLang = 'it', adminMode = false, isModalOpen = false;
+    let activeTranslation = {}, mapTicker = null, lastSignature = "";
+
+    const dom = {
+        grid: document.getElementById('grid-container'),
+        map: document.getElementById('map-container'),
+        loader: document.getElementById('loader'),
+        search: document.getElementById('searchInput'),
+        langSelect: document.getElementById('langSelect'),
+        tt: document.getElementById('tooltip'),
+        sidebar: document.getElementById('sidebarPanel'),
+        infoModal: document.getElementById('infoModal'),
+        modalBackdrop: document.getElementById('modalBackdrop')
+    };
+
+    // --- GLOBAL FUNCTIONS (FIXED) ---
+    window.modWishlist = function(id, delta, e) {
+        if(e) e.stopPropagation();
+        let val = (wishlist.get(id) || 0) + delta;
+        if(val <= 0) wishlist.delete(id); else wishlist.set(id, val);
+        render();
+    };
+
+    window.closeInfoModal = function() {
+        dom.infoModal.style.display = 'none';
+        dom.modalBackdrop.style.display = 'none';
+        isModalOpen = false;
+    };
+
+    window.addReqsToWishlist = function(json, btn) {
+        const reqs = JSON.parse(decodeURIComponent(json));
+        reqs.forEach(r => {
+            let id = r.item || r.itemId;
+            wishlist.set(id, (wishlist.get(id) || 0) + (r.count || r.quantity));
+        });
+        btn.innerText = "ADDED!";
+        btn.style.background = "var(--arc-green)";
+    };
+
+    // --- INIT & DATA ---
+    async function initApp() {
+        await loadLanguage('it');
+    }
+
+    async function loadLanguage(lang) {
+        dom.loader.style.display = 'flex';
+        try {
+            const res = await fetch(`${GITHUB_RAW}languages/${lang}.json`);
+            activeTranslation = await res.json();
+            currentLang = lang;
+            if(document.body.classList.contains('db-loaded')) render();
+        } catch(e) { console.error("Lang error", e); }
+        dom.loader.style.display = 'none';
+    }
+
+    async function connectToDatabase() {
+        dom.loader.style.display = 'flex';
+        try {
+            // Items
+            const listRes = await fetch(`https://api.github.com/repos/atarufox/Speranza-Archive/contents/items`);
+            const files = await listRes.json();
+            const promises = files.filter(f => f.name.endsWith('.json')).map(f => fetch(f.download_url).then(r => r.json()));
+            itemsDB = await Promise.all(promises);
+
+            // Hideout
+            const hFiles = ['gunsmith.json', 'scrappy.json', 'workbench.json', 'gear_bench.json', 'medical_lab.json', 'refiner.json', 'utility_station.json', 'explosives_station.json'];
+            const hPromises = hFiles.map(f => fetch(`${GITHUB_RAW}hideout/${f}`).then(r => r.ok ? r.json() : null));
+            hideoutDB = (await Promise.all(hPromises)).filter(Boolean);
+
+            // Map
+            const mRes = await fetch(`${GITHUB_RAW}map-events/map-events.json`);
+            if(mRes.ok) scheduleData = await mRes.json();
+
+            document.body.classList.add('db-loaded');
+            setSection('INVENTARIO');
+        } catch(e) { alert("Connection Error. Check Console."); }
+        dom.loader.style.display = 'none';
+    }
+
+    function getLoc(obj) { if(!obj) return ""; return typeof obj === 'string' ? obj : (obj[currentLang] || obj['en'] || ""); }
+    function getImg(data) { 
+        if(!data || !data.imageFilename) return ""; 
+        return data.imageFilename.startsWith('http') ? data.imageFilename : GITHUB_RAW + data.imageFilename.replace(/^[\\\/]/, ''); 
+    }
+    function getItem(id) { return itemsDB.find(x => x.id === id) || hideoutDB.find(x => x.id === id); }
+
+    // --- RENDER LOGIC ---
+    function setSection(s) {
+        currentSection = s;
+        document.querySelectorAll('.nav-item').forEach(i => i.classList.toggle('active', i.dataset.nav === s));
+        document.body.classList.toggle('section-map', s === 'MAPPA');
+        
+        if(s === 'MAPPA') {
+            dom.grid.style.display = 'none';
+            dom.map.style.display = 'block';
+            renderMap();
+        } else {
+            dom.grid.style.display = 'grid';
+            dom.map.style.display = 'none';
+            if(mapTicker) clearInterval(mapTicker);
+            renderSidebar();
+            render();
+        }
+    }
+
+    function setFilter(f) { currentFilter = f; renderSidebar(); render(); }
+
+    function renderSidebar() {
+        const config = SIDEBAR_CONFIG[currentSection] || [];
+        dom.sidebar.innerHTML = "";
+        config.forEach(c => {
+            const div = document.createElement('div');
+            div.className = `filter-circle ${currentFilter === (c.targetId || c.id) ? 'active' : ''}`;
+            div.onclick = () => setFilter(c.targetId || c.id);
+            if(c.img) div.innerHTML = `<img src="${GITHUB_RAW}images/menu/${c.img}_inactive.png">`;
+            else if(c.targetId) div.innerHTML = `<img src="${GITHUB_RAW}images/menu/${c.targetId}.png">`;
+            dom.sidebar.appendChild(div);
+        });
+    }
+
+    function render() {
+        dom.grid.innerHTML = "";
+        const search = dom.search.value.toLowerCase();
+        let source = [];
+
+        if(currentSection === 'OFFICINA') {
+            source = normalizeHideoutData(hideoutDB).filter(x => !search || getLoc(x.name).toLowerCase().includes(search));
+        } else {
+            source = itemsDB.filter(item => {
+                if(search && !getLoc(item.name).toLowerCase().includes(search)) return false;
+                const t = (item.type || "").toLowerCase();
+                if(currentFilter === 'ALL') return !t.includes('blueprint');
+                if(currentFilter === 'ARMI') return (t.includes('assault') || t.includes('smg') || t.includes('pistol') || t.includes('rifle') || t.includes('shotgun') || t.includes('hand cannon') || t.includes('lmg') || t.includes('special'));
+                if(currentFilter === 'MATERIALI') return t.includes('material') || t.includes('nature');
+                if(currentFilter === 'POTENZIAMENTI') return t.includes('augment');
+                if(currentFilter === 'SCUDI') return t.includes('shield');
+                if(currentFilter === 'VARIE') return t.includes('misc') || t.includes('trinket') || t.includes('valuable');
+                return false;
+            });
+        }
+
+        source.forEach(data => {
+            const rarity = (data.rarity || 'common').toLowerCase();
+            const slot = document.createElement('div');
+            slot.className = `slot ${rarity}`;
+            
+            let img = getImg(data);
+            if(currentSection === 'OFFICINA') img = `${GITHUB_RAW}images/menu/${data.id.toLowerCase()}.png`;
+
+            slot.innerHTML = `
+                <img src="${img}" onerror="this.style.opacity=0.2">
+                <div class="slot-controls">
+                    <button class="wl-btn" onclick="modWishlist('${data.id}', 1, event)">+</button>
+                    <button class="wl-btn" onclick="modWishlist('${data.id}', -1, event)">-</button>
+                </div>
+                ${wishlist.has(data.id) ? `<div class="wishlist-badge">${wishlist.get(data.id)}</div>` : ''}
+            `;
+
+            slot.onmouseenter = (e) => showTooltip(data, e);
+            slot.onmouseleave = hideTooltip;
+            slot.onclick = () => openInfoModal(data);
+            dom.grid.appendChild(slot);
+        });
+    }
+
+    // --- MAP & DASHBOARD ---
+    function renderMap() {
+        dom.map.innerHTML = `
+            <div id="map-wrapper">
+                <img src="${GITHUB_RAW}images/maps/main.png" class="map-bg">
+                <div class="mc-clock" id="mcClock"></div>
+                <div class="mission-control" id="missionControl"></div>
+            </div>
+        `;
+        lastSignature = "";
+        updateMapEvents();
+        if(mapTicker) clearInterval(mapTicker);
+        mapTicker = setInterval(updateMapEvents, 1000);
+    }
+
+    function updateMapEvents() {
+        if(!scheduleData) return;
+        const now = new Date();
+        const nowTs = now.getTime();
+        const wrapper = document.getElementById('map-wrapper');
+        const dashboard = document.getElementById('missionControl');
+        const clock = document.getElementById('mcClock');
+
+        if(clock) clock.innerText = `UTC: ${now.toISOString().substring(11,16)} | LOCAL: ${now.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}`;
+
+        let active = [], upcoming = [], handled = new Set();
+        const types = scheduleData.eventTypes || {};
+
+        Object.entries(scheduleData.schedule).forEach(([mapId, sched]) => {
+            Object.values(sched).forEach(cat => {
+                Object.entries(cat).forEach(([hour, typeId]) => {
+                    const def = types[typeId];
+                    const start = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), parseInt(hour)));
+                    const end = new Date(start.getTime() + (def.duration || 60) * 60000);
+                    
+                    if(nowTs >= start.getTime() && nowTs < end.getTime()) {
+                        active.push({ mapId, name: def.name, timeLeft: Math.floor((end - nowTs)/1000) });
+                        handled.add(mapId);
+                    } else if (start.getTime() > nowTs && (start - nowTs) < 43200000) {
+                        upcoming.push({ mapId, name: def.name, timeLeft: Math.floor((start - nowTs)/1000) });
+                    }
+                });
+            });
+        });
+
+        upcoming.sort((a,b) => a.timeLeft - b.timeLeft);
+        const signature = active.length + "-" + upcoming.length + (active[0]?.timeLeft || 0);
+
+        // Update Dashboard
+        let html = `<div class="mc-panel"><h3>ACTIVE NOW</h3><div class="mc-scroll-area">`;
+        active.forEach(e => {
+            html += `<div class="ev-card active"><b>${getLocLocation(e.name)}</b><br><small>${getLocLocation(e.mapId)}</small><br><span style="color:var(--arc-green)">${Math.floor(e.timeLeft/60)}m ${e.timeLeft%60}s</span></div>`;
+        });
+        html += `</div></div><div class="mc-panel" style="flex:1"><h3>UPCOMING</h3><div class="mc-scroll-area">`;
+        upcoming.forEach(e => {
+            html += `<div class="ev-card upcoming"><b>${getLocLocation(e.name)}</b><br><small>${getLocLocation(e.mapId)}</small><br><span>${Math.floor(e.timeLeft/3600)}h ${Math.floor((e.timeLeft%3600)/60)}m</span></div>`;
+        });
+        html += `</div></div>`;
+        
+        if(signature !== lastSignature) {
+            dashboard.innerHTML = html;
+            lastSignature = signature;
+            // Update Markers
+            wrapper.querySelectorAll('.map-marker').forEach(m => m.remove());
+            Object.keys(MAP_COORDINATES).forEach(mId => {
+                if(mId === 'default') return;
+                const coords = MAP_COORDINATES[mId];
+                const marker = document.createElement('div');
+                const isAct = active.find(a => a.mapId === mId);
+                const isSoon = upcoming.find(u => u.mapId === mId && u.timeLeft < 3600);
+                
+                marker.className = `map-marker ${isAct ? 'status-active' : (isSoon ? 'status-upcoming' : 'status-none')}`;
+                marker.style.left = coords.x + '%'; marker.style.top = coords.y + '%';
+                marker.innerHTML = `<div class="marker-label">${isAct ? 'ACTIVE' : (isSoon ? 'SOON' : 'NONE')}</div>`;
+                wrapper.appendChild(marker);
+            });
+        }
+    }
+
+    // --- HELPERS ---
+    function normalizeHideoutData(data) {
+        return data.map(d => ({
+            id: d.id, name: d.name,
+            levels: (d.levels || []).map(l => ({
+                level: l.level,
+                requirements: (l.requirementItemIds || l.requirements || []).map(r => ({ item: r.itemId || r.item, count: r.quantity || r.count }))
+            }))
+        }));
+    }
+
+    function showTooltip(data, e) {
+        dom.tt.style.display = 'block';
+        dom.tt.innerHTML = `<h3>${getLoc(data.name)}</h3><p>${getLoc(data.description) || ''}</p><hr><small>VALUE: ${data.value || 0}</small>`;
+        dom.tt.style.left = (e.clientX + 20) + 'px';
+        dom.tt.style.top = (e.clientY + 20) + 'px';
+    }
+    function hideTooltip() { dom.tt.style.display = 'none'; }
+    function getLocLocation(id) { return activeTranslation.locations?.[id] || id; }
+
+    function openInfoModal(data) {
+        isModalOpen = true;
+        let content = '';
+        if(data.levels) {
+            data.levels.forEach(l => {
+                const reqs = JSON.stringify(l.requirements);
+                content += `<div style="background:#222; padding:10px; margin-bottom:10px">
+                    <h4>LEVEL ${l.level} <button onclick="addReqsToWishlist('${encodeURIComponent(reqs)}', this)" style="float:right; background:var(--arc-yellow); border:none; padding:2px 10px; cursor:pointer">TRACK</button></h4>
+                    ${l.requirements.map(r => `<div>${getLoc(getItem(r.item)?.name) || r.item} x${r.count}</div>`).join('')}
+                </div>`;
+            });
+        } else {
+            content = `<p>${getLoc(data.description)}</p>`;
+        }
+        dom.infoModal.innerHTML = `<div class="overlay-header"><h2>${getLoc(data.name)}</h2><button onclick="closeInfoModal()" style="background:none; border:none; color:#fff; font-size:2rem; cursor:pointer">&times;</button></div><div class="overlay-scrollable-content">${content}</div>`;
+        dom.infoModal.style.display = 'flex';
+        dom.modalBackdrop.style.display = 'block';
+    }
+
+    const SIDEBAR_CONFIG = {
+        'INVENTARIO': [{id:'ALL', img:'all'}, {id:'ARMI', img:'weapons'}, {id:'MATERIALI', img:'crafting_materials'}, {id:'POTENZIAMENTI', img:'augments'}, {id:'SCUDI', img:'shields'}, {id:'VARIE', img:'misc'}],
+        'OFFICINA': [{id:'ALL', img:'all'}, {targetId:'gunsmith'}, {targetId:'scrappy'}, {targetId:'workbench'}, {targetId:'gear_bench'}]
+    };
+
+    initApp();
+</script>
+</body>
+</html>
+<!-- END OF FILE arc_database_v1.17.8.html -->
