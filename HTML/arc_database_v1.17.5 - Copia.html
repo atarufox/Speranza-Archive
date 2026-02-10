@@ -1209,8 +1209,7 @@
         if (itemsDB.length === 0 && hideoutDB.length === 0 && !isWishlistView && wishlist.size === 0) {
              return;
         }
-                    //alert("Siamo in " + currentSection);
-
+        
         if(currentSection !== 'INVENTARIO' && currentSection !== 'PROGETTI' && currentSection !== 'OFFICINA' && !isWishlistView) {
              grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; margin-top: 100px; color: #666;"><h3 style="font-family: var(--font-head); font-size: 3rem; color: #aaa;">SEZIONE ${currentSection}</h3><p style="color:var(--arc-yellow)">WORK IN PROGRESS</p></div>`;
             return;
