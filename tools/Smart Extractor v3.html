@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arc Smart Extractor (Vanilla)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script async src="https://docs.opencv.org/4.5.4/opencv.js" onload="onCvLoaded()"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #111827; color: #f3f4f6; overflow: hidden; }
+        .checkerboard {
+            background-image:
+                linear-gradient(45deg, #374151 25%, transparent 25%),
+                linear-gradient(-45deg, #374151 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #374151 75%),
+                linear-gradient(-45deg, transparent 75%, #374151 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+        input[type=range] {
+            -webkit-appearance: none; width: 100%; background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%; background: #3b82f6; cursor: pointer; margin-top: -6px;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%; height: 4px; cursor: pointer; background: #4b5563; border-radius: 2px;
+        }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; margin: 0; 
+        }
+        input[type=number] { -moz-appearance: textfield; }
+        input[type=color] {
+            -webkit-appearance: none; border: none; width: 100%; height: 2rem; cursor: pointer; background: none;
+        }
+        input[type=color]::-webkit-color-swatch-wrapper { padding: 0; }
+        input[type=color]::-webkit-color-swatch { border: 1px solid #4b5563; border-radius: 0.25rem; }
+        
+        .scroll-custom::-webkit-scrollbar { width: 6px; }
+        .scroll-custom::-webkit-scrollbar-track { background: #1f2937; }
+        .scroll-custom::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 3px; }
+        select {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem;
+            -webkit-print-color-adjust: exact;
+        }
+    </style>
+</head>
+<body class="flex h-screen">
+
+    <!-- Sidebar -->
+    <aside class="w-80 bg-gray-800 border-r border-gray-700 flex flex-col z-10 shadow-xl">
+        <div class="p-5 border-b border-gray-700">
+            <h1 class="text-xl font-bold text-blue-400">Smart Extractor</h1>
+            <p id="status" class="text-xs text-yellow-500 mt-1">Loading OpenCV...</p>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-5 space-y-6 scroll-custom">
+            <!-- Upload -->
+            <div class="space-y-2">
+                <label class="text-xs font-semibold text-gray-400 uppercase">Input Image</label>
+                <div class="relative group">
+                    <input type="file" id="fileInput" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
+                    <div class="border-2 border-dashed border-gray-600 rounded-lg p-4 text-center hover:border-blue-500 hover:bg-gray-700/50 transition-all">
+                        <p class="text-sm text-gray-300">Click to Upload</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Detection -->
+            <div class="bg-gray-700/30 p-3 rounded-lg border border-gray-700">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="text-sm font-semibold text-white flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-blue-500"></span> 1. Item Detection
+                    </h3>
+                    <button onclick="resetDetection()" class="text-[10px] bg-gray-600 hover:bg-gray-500 px-2 py-0.5 rounded text-white transition-colors">Reset</button>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-xs text-gray-400">Edge Threshold</span>
+                        <input type="number" id="num-threshold" value="50" class="w-12 bg-gray-900 border border-gray-700 rounded px-1 text-right text-xs text-blue-400 focus:outline-none focus:border-blue-500">
+                    </div>
+                    <input type="range" id="rng-threshold" min="0" max="255" value="50">
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-xs text-gray-400">Min Size (px)</span>
+                        <input type="number" id="num-minArea" value="80" class="w-12 bg-gray-900 border border-gray-700 rounded px-1 text-right text-xs text-blue-400 focus:outline-none focus:border-blue-500">
+                    </div>
+                    <input type="range" id="rng-minArea" min="10" max="200" value="80">
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-xs text-gray-400">Max Size (px)</span>
+                        <input type="number" id="num-maxArea" value="300" class="w-12 bg-gray-900 border border-gray-700 rounded px-1 text-right text-xs text-blue-400 focus:outline-none focus:border-blue-500">
+                    </div>
+                    <input type="range" id="rng-maxArea" min="50" max="600" value="300">
+                </div>
+                <label class="flex items-center gap-2 text-xs text-gray-300 cursor-pointer">
+                    <input type="checkbox" id="showDebug" checked class="rounded bg-gray-700 border-gray-600 text-blue-500">
+                    Show Detection Lines
+                </label>
+            </div>
+
+            <!-- Cleanup -->
+            <div class="bg-gray-700/30 p-3 rounded-lg border border-gray-700">
+                <div class="flex justify-between items-center mb-3">
+                    <h3 class="text-sm font-semibold text-white flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-purple-500"></span> 2. Smart Cleanup
+                    </h3>
+                    <button onclick="resetCleanup()" class="text-[10px] bg-gray-600 hover:bg-gray-500 px-2 py-0.5 rounded text-white transition-colors">Reset</button>
+                </div>
+                
+                <!-- Text Removal -->
+                <div class="mb-4 pt-2 border-t border-gray-600/50">
+                    <span class="text-[10px] text-gray-400 uppercase font-bold mb-2 block">Remove Numbers (Bottom-Right)</span>
+                    
+                    <div class="grid grid-cols-2 gap-2 mb-3">
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-[10px] text-gray-400">Width %</span>
+                                <input type="number" id="num-maskWidth" value="50" class="w-10 bg-gray-900 border border-gray-700 rounded px-1 text-right text-[10px] text-purple-400 focus:outline-none focus:border-purple-500">
+                            </div>
+                            <input type="range" id="rng-maskWidth" min="20" max="90" value="50">
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-[10px] text-gray-400">Height %</span>
+                                <input type="number" id="num-maskHeight" value="30" class="w-10 bg-gray-900 border border-gray-700 rounded px-1 text-right text-[10px] text-purple-400 focus:outline-none focus:border-purple-500">
+                            </div>
+                            <input type="range" id="rng-maskHeight" min="10" max="100" value="30">
+                        </div>
+                    </div>
+
+                    <!-- Offsets -->
+                    <div class="grid grid-cols-2 gap-2 mb-3">
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-[10px] text-gray-400">Offset X %</span>
+                                <input type="number" id="num-offsetX" value="0" class="w-10 bg-gray-900 border border-gray-700 rounded px-1 text-right text-[10px] text-purple-400 focus:outline-none focus:border-purple-500">
+                            </div>
+                            <input type="range" id="rng-offsetX" min="-50" max="50" value="0">
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-[10px] text-gray-400">Offset Y %</span>
+                                <input type="number" id="num-offsetY" value="0" class="w-10 bg-gray-900 border border-gray-700 rounded px-1 text-right text-[10px] text-purple-400 focus:outline-none focus:border-purple-500">
+                            </div>
+                            <input type="range" id="rng-offsetY" min="-50" max="50" value="0">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs text-gray-400">Text Brightness</span>
+                            <input type="number" id="num-cleanThresh" value="180" class="w-12 bg-gray-900 border border-gray-700 rounded px-1 text-right text-xs text-purple-400 focus:outline-none focus:border-purple-500">
+                        </div>
+                        <input type="range" id="rng-cleanThresh" min="100" max="255" value="180">
+                    </div>
+
+                    <div class="mb-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs text-gray-400">Max Blob Size %</span>
+                            <input type="number" id="num-maxBlob" value="30" class="w-12 bg-gray-900 border border-gray-700 rounded px-1 text-right text-xs text-purple-400 focus:outline-none focus:border-purple-500">
+                        </div>
+                        <input type="range" id="rng-maxBlob" min="5" max="100" value="30">
+                        <p class="text-[9px] text-gray-500 mt-1">Prevents erasing the main item.</p>
+                    </div>
+                </div>
+
+                <!-- Borders & Background -->
+                <div class="mb-2 pt-2 border-t border-gray-600/50">
+                    <span class="text-[10px] text-gray-400 uppercase font-bold mb-2 block">Background Mask</span>
+                    
+                    <div class="mb-3">
+                        <label class="text-xs text-gray-400 mb-1 block">Masking Mode</label>
+                        <select id="maskMode" class="w-full bg-gray-800 border border-gray-600 text-gray-200 text-xs rounded p-1.5 focus:border-blue-500 outline-none appearance-none">
+                            <option value="none">None (Original)</option>
+                            <option value="auto" selected>Auto (Convex Hull)</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-2">
+                        <label class="text-xs text-gray-400 mb-1 block">Background Fill</label>
+                        <select id="bgFill" class="w-full bg-gray-800 border border-gray-600 text-gray-200 text-xs rounded p-1.5 focus:border-blue-500 outline-none appearance-none mb-2">
+                            <option value="transparent">Transparent</option>
+                            <option value="black" selected>Black</option>
+                            <option value="white">White</option>
+                            <option value="custom">Custom Color</option>
+                        </select>
+                        <div id="customColorContainer" style="display:none;">
+                            <input type="color" id="customColor" value="#000000">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="p-4 border-t border-gray-700 text-center text-[10px] text-gray-500">
+            Time: <span id="perfTime">0</span>ms
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col relative">
+        <!-- Header -->
+        <header class="h-14 bg-gray-800 border-b border-gray-700 flex items-center justify-between px-6 z-20">
+            <div class="text-sm text-gray-300">
+                Found <span id="countDisplay" class="font-bold text-white">0</span> items
+            </div>
+            <button id="downloadBtn" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-1.5 rounded text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2">
+                Download ZIP
+            </button>
+        </header>
+
+        <!-- Workspace -->
+        <div class="flex-1 overflow-auto p-6 scroll-custom">
+            
+            <!-- Debug View -->
+            <div class="mb-8">
+                <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Detection View</h4>
+                <div class="bg-gray-900 rounded-lg border border-gray-700 overflow-hidden relative checkerboard min-h-[150px] flex justify-center">
+                    <canvas id="debugCanvas" class="max-w-full block"></canvas>
+                    <div id="placeholder" class="absolute inset-0 flex items-center justify-center text-gray-500 text-sm pointer-events-none">
+                        Upload an image to start
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Grid -->
+            <div>
+                <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Extracted Assets</h4>
+                <div id="grid" class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Zoom Modal -->
+    <div id="zoomModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/95 hidden backdrop-blur-sm opacity-0 transition-opacity duration-200" onclick="closeZoom()">
+        <div class="relative w-full h-full flex flex-col items-center justify-center overflow-hidden" onclick="event.stopPropagation()">
+            
+            <!-- Pan/Zoom Container -->
+            <div id="zoomContainer" class="relative w-full h-full flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing">
+                 <img id="zoomImage" class="max-w-[90%] max-h-[85vh] object-contain rounded-lg shadow-2xl checkerboard border border-gray-700 transition-transform duration-75 origin-center will-change-transform">
+            </div>
+            
+            <!-- Controls -->
+            <div class="absolute bottom-8 flex gap-4 bg-gray-800/80 backdrop-blur px-6 py-3 rounded-full border border-gray-700 shadow-xl z-10">
+                <div class="text-white text-sm font-medium flex items-center px-2 border-r border-gray-600 mr-2">
+                    <span id="zoomLabel">Item</span>
+                </div>
+                <button onclick="downloadZoomed()" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-full text-sm font-medium transition-colors flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Download
+                </button>
+                <button onclick="closeZoom()" class="bg-gray-700 hover:bg-gray-600 text-white px-5 py-2 rounded-full text-sm font-medium transition-colors">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden processing elements -->
+    <img id="srcImg" style="display:none;">
+
+    <script>
+        let cvReady = false;
+        let extractedData = [];
+        let currentZoomIndex = -1;
+        
+        // Zoom Variables
+        let zoomLevel = 1;
+        let panX = 0;
+        let panY = 0;
+        let isDragging = false;
+        let startX = 0;
+        let startY = 0;
+
+        function onCvLoaded() {
+            cvReady = true;
+            document.getElementById('status').innerText = "✅ System Ready";
+            document.getElementById('status').className = "text-xs text-green-400 mt-1";
+            
+            // Re-process if image is already loaded
+            if(document.getElementById('srcImg').src) process();
+        }
+
+        // --- Helpers ---
+        function setControlValue(id, value) {
+            const range = document.getElementById('rng-' + id);
+            const num = document.getElementById('num-' + id);
+            if(range) range.value = value;
+            if(num) num.value = value;
+        }
+
+        function bindInput(id) {
+            const range = document.getElementById('rng-' + id);
+            const num = document.getElementById('num-' + id);
+            
+            if(range) {
+                range.addEventListener('input', () => {
+                    num.value = range.value;
+                    debouncedProcess();
+                });
+            }
+            if(num) {
+                num.addEventListener('input', () => {
+                    range.value = num.value;
+                    debouncedProcess();
+                });
+            }
+        }
+        
+        let procTimer;
+        function debouncedProcess() {
+            if(procTimer) clearTimeout(procTimer);
+            procTimer = setTimeout(process, 50);
+        }
+
+        function resetDetection() {
+            setControlValue('threshold', 50);
+            setControlValue('minArea', 80);
+            setControlValue('maxArea', 300);
+            process();
+        }
+
+        function resetCleanup() {
+            setControlValue('maskWidth', 50);
+            setControlValue('maskHeight', 30);
+            setControlValue('offsetX', 0);
+            setControlValue('offsetY', 0);
+            setControlValue('cleanThresh', 180);
+            setControlValue('maxBlob', 30);
+            document.getElementById('maskMode').value = 'auto';
+            document.getElementById('bgFill').value = 'black';
+            document.getElementById('customColorContainer').style.display = 'none';
+            process();
+        }
+
+        function hexToRgb(hex) {
+            var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : { r: 0, g: 0, b: 0 };
+        }
+
+        // --- Zoom Modal Functions ---
+        function updateZoomTransform() {
+            const img = document.getElementById('zoomImage');
+            if(img) {
+                img.style.transform = `translate(${panX}px, ${panY}px) scale(${zoomLevel})`;
+            }
+        }
+
+        function openZoom(index) {
+            currentZoomIndex = index;
+            const data = extractedData[index].data;
+            const modal = document.getElementById('zoomModal');
+            const img = document.getElementById('zoomImage');
+            const label = document.getElementById('zoomLabel');
+
+            img.src = data;
+            label.innerText = `Item #${index + 1}`;
+            
+            // Reset Zoom State
+            zoomLevel = 1;
+            panX = 0;
+            panY = 0;
+            updateZoomTransform();
+            
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+            }, 10);
+        }
+
+        function closeZoom() {
+            const modal = document.getElementById('zoomModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                currentZoomIndex = -1;
+            }, 200);
+        }
+
+        function downloadZoomed() {
+            if (currentZoomIndex === -1) return;
+            const data = extractedData[currentZoomIndex].data;
+            let a = document.createElement('a');
+            a.href = data;
+            a.download = `item_${currentZoomIndex + 1}.png`;
+            a.click();
+        }
+
+        // --- Event Listeners ---
+        const controls = [
+            'threshold', 'minArea', 'maxArea', 
+            'maskWidth', 'maskHeight', 'offsetX', 'offsetY',
+            'cleanThresh', 'maxBlob'
+        ];
+        
+        controls.forEach(bindInput);
+
+        document.getElementById('bgFill').addEventListener('change', (e) => {
+            const custom = document.getElementById('customColorContainer');
+            custom.style.display = e.target.value === 'custom' ? 'block' : 'none';
+            process();
+        });
+
+        document.getElementById('customColor').addEventListener('input', debouncedProcess);
+        document.getElementById('showDebug').addEventListener('change', process);
+        document.getElementById('maskMode').addEventListener('change', process);
+
+        document.getElementById('fileInput').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if(!file) return;
+            const reader = new FileReader();
+            reader.onload = (evt) => {
+                const img = document.getElementById('srcImg');
+                img.onload = () => {
+                    document.getElementById('placeholder').style.display = 'none';
+                    process();
+                };
+                img.src = evt.target.result;
+            };
+            reader.readAsDataURL(file);
+        });
+
+        document.getElementById('downloadBtn').addEventListener('click', async () => {
+            if(extractedData.length === 0) return;
+            const zip = new JSZip();
+            const folder = zip.folder("extracted_icons");
+            
+            extractedData.forEach((item, i) => {
+                const data = item.data.split(',')[1];
+                folder.file(`icon_${i+1}.png`, data, {base64: true});
+            });
+
+            const content = await zip.generateAsync({type:"blob"});
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(content);
+            link.download = "icons.zip";
+            link.click();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeZoom();
+        });
+        
+        // --- Zoom Event Listeners ---
+        const zoomContainer = document.getElementById('zoomContainer');
+
+        zoomContainer.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            // Zoom multiplier
+            const scaleFactor = 1.1;
+            if (e.deltaY < 0) {
+                zoomLevel *= scaleFactor;
+            } else {
+                zoomLevel /= scaleFactor;
+            }
+            // Clamp Zoom
+            zoomLevel = Math.max(0.1, Math.min(zoomLevel, 50));
+            updateZoomTransform();
+        });
+
+        zoomContainer.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.clientX - panX;
+            startY = e.clientY - panY;
+            zoomContainer.style.cursor = 'grabbing';
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            panX = e.clientX - startX;
+            panY = e.clientY - startY;
+            updateZoomTransform();
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            zoomContainer.style.cursor = 'grab';
+        });
+
+        // --- Core Logic ---
+
+        function process() {
+            if(!cvReady) return;
+            const imgElement = document.getElementById('srcImg');
+            if(!imgElement.src) return;
+
+            const t0 = performance.now();
+            
+            const threshold = parseInt(document.getElementById('num-threshold').value);
+            const minW = parseInt(document.getElementById('num-minArea').value);
+            const maxW = parseInt(document.getElementById('num-maxArea').value);
+            const cleanThresh = parseInt(document.getElementById('num-cleanThresh').value);
+            
+            const maskWidthPct = parseInt(document.getElementById('num-maskWidth').value) / 100;
+            const maskHeightPct = parseInt(document.getElementById('num-maskHeight').value) / 100;
+            const maxBlobPct = parseInt(document.getElementById('num-maxBlob').value) / 100;
+            
+            const offXPct = parseInt(document.getElementById('num-offsetX').value) / 100;
+            const offYPct = parseInt(document.getElementById('num-offsetY').value) / 100;
+
+            const maskMode = document.getElementById('maskMode').value;
+            const bgFill = document.getElementById('bgFill').value;
+            const customColor = document.getElementById('customColor').value;
+            const showDebug = document.getElementById('showDebug').checked;
+
+            const canvas = document.getElementById('debugCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = imgElement.naturalWidth;
+            canvas.height = imgElement.naturalHeight;
+
+            let src = cv.imread(imgElement);
+            let gray = new cv.Mat();
+            let edges = new cv.Mat();
+            let contours = new cv.MatVector();
+            let hierarchy = new cv.Mat();
+
+            try {
+                // 1. Detect
+                cv.cvtColor(src, gray, cv.COLOR_RGBA2GRAY, 0);
+                cv.Canny(gray, edges, threshold, threshold * 2.5, 3, false);
+                cv.findContours(edges, contours, hierarchy, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE);
+
+                let items = [];
+                for(let i = 0; i < contours.size(); ++i) {
+                    let rect = cv.boundingRect(contours.get(i));
+                    // Size & Aspect Ratio Filter
+                    if(rect.width > minW && rect.width < maxW && 
+                       rect.height > minW && rect.height < maxW) {
+                        let ratio = rect.width / rect.height;
+                        if(ratio > 0.8 && ratio < 1.2) {
+                            items.push({ rect: rect, contourIdx: i });
+                        }
+                    }
+                }
+
+                // Sort Grid
+                items.sort((a, b) => {
+                    let yDiff = Math.abs(a.rect.y - b.rect.y);
+                    return yDiff < 20 ? a.rect.x - b.rect.x : a.rect.y - b.rect.y;
+                });
+
+                // 2. Extract & Clean
+                const grid = document.getElementById('grid');
+                grid.innerHTML = '';
+                extractedData = [];
+
+                // Debug Mat
+                let debugMat = src.clone();
+
+                items.forEach((item, idx) => {
+                    let rect = item.rect;
+
+                    // Draw Debug
+                    if(showDebug) {
+                        let p1 = new cv.Point(rect.x, rect.y);
+                        let p2 = new cv.Point(rect.x + rect.width, rect.y + rect.height);
+                        cv.rectangle(debugMat, p1, p2, [0, 255, 0, 255], 2);
+                    }
+
+                    // --- Smart Extraction ---
+                    let roi = src.roi(rect);
+                    
+                    // A. Setup Inpainting (Text Removal) - Working in RGB initially
+                    let roiRGB = new cv.Mat();
+                    cv.cvtColor(roi, roiRGB, cv.COLOR_RGBA2RGB); 
+                    
+                    let mask = new cv.Mat.zeros(rect.height, rect.width, cv.CV_8U);
+                    
+                    // ROI Calculation
+                    let subW = Math.floor(rect.width * maskWidthPct); 
+                    let subH = Math.floor(rect.height * maskHeightPct);
+                    
+                    let shiftX = Math.floor(rect.width * offXPct);
+                    let shiftY = Math.floor(rect.height * offYPct);
+                    
+                    let subX = (rect.width - subW) + shiftX;
+                    let subY = (rect.height - subH) + shiftY;
+                    
+                    if(subX < 0) subX = 0; 
+                    if(subY < 0) subY = 0;
+                    if(subX + subW > rect.width) subW = rect.width - subX;
+                    if(subY + subH > rect.height) subH = rect.height - subY;
+
+                    if(subW > 0 && subH > 0) {
+                        let subRect = new cv.Rect(subX, subY, subW, subH);
+                        let roiSub = roi.roi(subRect);
+                        let subGray = new cv.Mat();
+                        cv.cvtColor(roiSub, subGray, cv.COLOR_RGBA2GRAY);
+
+                        let textMask = new cv.Mat();
+                        cv.threshold(subGray, textMask, cleanThresh, 255, cv.THRESH_BINARY);
+
+                        let subContours = new cv.MatVector();
+                        let subHierarchy = new cv.Mat();
+                        cv.findContours(textMask, subContours, subHierarchy, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE);
+                        
+                        let refinedTextMask = new cv.Mat.zeros(subH, subW, cv.CV_8U);
+                        
+                        for(let j = 0; j < subContours.size(); ++j) {
+                            let cnt = subContours.get(j);
+                            let area = cv.contourArea(cnt);
+                            let patchArea = subW * subH;
+                            if(area < patchArea * maxBlobPct) { 
+                                 cv.drawContours(refinedTextMask, subContours, j, [255,255,255,255], -1);
+                            }
+                        }
+
+                        let M = cv.Mat.ones(3, 3, cv.CV_8U);
+                        let dilatedTextMask = new cv.Mat();
+                        cv.dilate(refinedTextMask, dilatedTextMask, M);
+
+                        for(let r = 0; r < dilatedTextMask.rows; r++) {
+                            for(let c = 0; c < dilatedTextMask.cols; c++) {
+                                if(dilatedTextMask.ucharPtr(r, c)[0] > 0) {
+                                    mask.ucharPtr(subY + r, subX + c)[0] = 255;
+                                }
+                            }
+                        }
+                        
+                        roiSub.delete(); subGray.delete(); textMask.delete(); 
+                        subContours.delete(); subHierarchy.delete(); refinedTextMask.delete();
+                        dilatedTextMask.delete(); M.delete();
+                    }
+
+                    // Inpaint - Output is RGB
+                    let dstRGB = new cv.Mat();
+                    cv.inpaint(roiRGB, mask, dstRGB, 3, cv.INPAINT_TELEA);
+
+                    // Convert to RGBA for Final Masking
+                    let dstRGBA = new cv.Mat();
+                    cv.cvtColor(dstRGB, dstRGBA, cv.COLOR_RGB2RGBA);
+
+                    // Prepare Final Container (RGBA)
+                    // Determine Background Color
+                    let bgPixel = [0, 0, 0, 0]; // Transparent default
+                    if(bgFill === 'black') bgPixel = [0, 0, 0, 255];
+                    else if(bgFill === 'white') bgPixel = [255, 255, 255, 255];
+                    else if(bgFill === 'custom') {
+                        const rgb = hexToRgb(customColor);
+                        bgPixel = [rgb.r, rgb.g, rgb.b, 255];
+                    }
+
+                    let finalMat = new cv.Mat(rect.height, rect.width, cv.CV_8UC4, new cv.Scalar(...bgPixel));
+
+                    // B. Generate Mask for Item Shape
+                    let itemMask = null;
+
+                    if (maskMode === 'auto') {
+                        let white = new cv.Scalar(255, 255, 255, 255);
+                        let hull = new cv.Mat();
+                        let tmpCnt = contours.get(item.contourIdx);
+                        cv.convexHull(tmpCnt, hull, false, true);
+                        
+                        let bigMask = new cv.Mat.zeros(imgElement.naturalHeight, imgElement.naturalWidth, cv.CV_8U);
+                        let hullVector = new cv.MatVector();
+                        hullVector.push_back(hull);
+                        
+                        cv.drawContours(bigMask, hullVector, 0, white, -1);
+                        itemMask = bigMask.roi(rect);
+                        
+                        bigMask.delete(); hull.delete(); hullVector.delete();
+                    }
+
+                    // C. Compose Final
+                    if (maskMode !== 'none' && itemMask) {
+                        // Copy dstRGBA into finalMat ONLY where itemMask is white
+                        dstRGBA.copyTo(finalMat, itemMask);
+                        itemMask.delete();
+                    } else {
+                        // If No Mask, just use the Inpainted Rect (Alpha=255)
+                        finalMat.delete();
+                        finalMat = dstRGBA.clone();
+                    }
+
+                    // Render
+                    let c = document.createElement('canvas');
+                    c.width = rect.width;
+                    c.height = rect.height;
+                    cv.imshow(c, finalMat);
+                    
+                    const dataUrl = c.toDataURL();
+                    extractedData.push({data: dataUrl});
+
+                    // UI
+                    let div = document.createElement('div');
+                    div.className = "group relative aspect-square bg-gray-800 rounded border border-gray-700 hover:border-blue-500 overflow-hidden cursor-pointer transition-colors";
+                    div.innerHTML = `
+                        <div class="absolute inset-0 checkerboard opacity-30"></div>
+                        <div class="absolute inset-0 flex items-center justify-center p-2">
+                            <img src="${dataUrl}" class="max-w-full max-h-full object-contain">
+                        </div>
+                        <div class="absolute top-1 right-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                            <button class="bg-blue-600 text-white p-1 rounded hover:bg-blue-500 shadow-sm" onclick="event.stopPropagation(); downloadItem(${idx})">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-0 left-0 bg-gray-900/80 text-[10px] text-white px-1">${rect.width}x${rect.height}</div>
+                        <div class="absolute bottom-0 right-0 bg-gray-900/80 text-[10px] text-white px-1">#${idx+1}</div>
+                    `;
+                    div.onclick = () => openZoom(idx);
+                    grid.appendChild(div);
+
+                    // Cleanup
+                    roi.delete(); roiRGB.delete(); mask.delete(); 
+                    dstRGB.delete(); dstRGBA.delete(); finalMat.delete();
+                });
+
+                cv.imshow('debugCanvas', debugMat);
+                document.getElementById('countDisplay').innerText = items.length;
+                document.getElementById('downloadBtn').disabled = items.length === 0;
+
+                debugMat.delete();
+
+            } catch(e) {
+                console.error(e);
+            } finally {
+                src.delete(); gray.delete(); edges.delete(); 
+                contours.delete(); hierarchy.delete();
+                const t1 = performance.now();
+                document.getElementById('perfTime').innerText = Math.round(t1 - t0);
+            }
+        }
+
+        function downloadItem(index) {
+            const data = extractedData[index].data;
+            let a = document.createElement('a');
+            a.href = data;
+            a.download = `item_${index + 1}.png`;
+            a.click();
+        }
+    </script>
+</body>
+</html>
