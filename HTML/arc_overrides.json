@@ -1,0 +1,14 @@
+{
+  "angled_grip_iii": {
+    "name": {
+      "it": "Impugnatura angolata III"
+    },
+    "description": {
+      "it": "Riduce significativamente il rinculo orizzontale. Compatibile con: Arpeggio, Ferro, Venator, Il Toro, Stitcher"
+    },
+    "rarity": "Rare",
+    "value": 5000,
+    "weightKg": 0.75,
+    "stackSize": 1
+  }
+}
