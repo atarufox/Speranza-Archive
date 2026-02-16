@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARC RAIDERS // MISSION CONTROL v1.17.5</title>
+    <title>ARC RAIDERS // MISSION CONTROL v1.17.8</title>
     <style>
         /* FONTS */
         @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Teko:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap');
@@ -377,6 +377,9 @@
         .val-total { font-weight: 700; font-size: 1.1rem; }
         .val-better { color: var(--arc-teal); } 
         .val-worse { color: var(--arc-red); } 
+        
+        .clickable-row { cursor: pointer; transition: background 0.2s; }
+        .clickable-row:hover { background: rgba(255,255,255,0.05); }
 
         #loader { background: #000; }
         .spinner { border-color: #333; border-top-color: var(--arc-yellow); }
@@ -396,7 +399,7 @@
         .btn-track:hover { border-color: var(--arc-yellow); color: var(--arc-yellow); }
         .btn-track.added { background: var(--arc-yellow); color: #000; border-color: var(--arc-yellow); }
 
-        /* --- MAPPA SECTION - DASHBOARD v1.17.5 --- */
+        /* --- MAPPA SECTION - DASHBOARD v1.17.8 --- */
         #map-container { 
             position: absolute; top:0; left:0; width:100%; height:100%; 
             background-color: #050505;
@@ -470,18 +473,31 @@
         .ev-card:hover { border-color: #666; background: rgba(255,255,255,0.02); }
         
         .ev-status-line {
-            width: 100%; height: 2px; background: #333; margin-bottom: 8px; position: relative;
+            width: 100%; height: 2px; background: #333; margin: 8px 0; position: relative;
         }
         .ev-status-line::after {
             content:''; position: absolute; left: 0; top: 0; bottom: 0; width: 30%; background: #555;
         }
+        
+        /* STANDARD / MINOR */
         .active .ev-status-line { background: rgba(0,255,102,0.2); }
         .active .ev-status-line::after { background: var(--arc-green); width: 100%; box-shadow: 0 0 10px var(--arc-green); }
         
         .upcoming .ev-status-line { background: rgba(0,229,255,0.2); }
         .upcoming .ev-status-line::after { background: var(--arc-teal); width: 40%; }
 
-        .ev-title { font-family: var(--font-head); font-size: 1.6rem; color: #fff; line-height: 0.9; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        /* MAJOR OVERRIDE */
+        .ev-card.major { border-left: 2px solid var(--arc-red); background: linear-gradient(90deg, rgba(255, 42, 42, 0.05) 0%, rgba(0,0,0,0) 100%); }
+        .ev-card.major:hover { background: linear-gradient(90deg, rgba(255, 42, 42, 0.1) 0%, rgba(0,0,0,0) 100%); border-color: var(--arc-red); }
+        .major .ev-status-line { background: rgba(255, 42, 42, 0.2); }
+        .major .ev-status-line::after { background: var(--arc-red); box-shadow: 0 0 10px var(--arc-red); }
+        .major .ev-title { color: var(--arc-red); text-shadow: 0 0 10px rgba(255, 42, 42, 0.3); }
+        .major .ev-tag { background: var(--arc-red); color: #000; border-color: var(--arc-red); box-shadow: 0 0 15px var(--arc-red); }
+        .major .ev-icon-danger { display: inline-block; width: 16px; height: 16px; fill: var(--arc-red); margin-right: 5px; animation: pulse-red 2s infinite; }
+
+        @keyframes pulse-red { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+
+        .ev-title { font-family: var(--font-head); font-size: 1.6rem; color: #fff; line-height: 0.9; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; display:flex; align-items:center; }
         .ev-loc { font-family: var(--font-mono); font-size: 0.8rem; color: #888; display: flex; align-items: center; gap: 6px; text-transform: uppercase; }
         .ev-loc svg { fill: #666; width: 12px; height: 12px; }
 
@@ -494,6 +510,7 @@
         
         .active .ev-timer { color: var(--arc-green); text-shadow: 0 0 5px rgba(0,255,102,0.5); }
         .upcoming .ev-timer { color: var(--arc-teal); }
+        .major .ev-timer { color: var(--arc-red); }
 
         .ev-tag { position: absolute; top: 12px; right: 12px; font-family: var(--font-head); font-size: 1.1rem; color: #333; background: #111; padding: 0 6px; border: 1px solid #333; }
         .active .ev-tag { color: #000; background: var(--arc-green); border-color: var(--arc-green); box-shadow: 0 0 10px rgba(0,255,102,0.3); }
@@ -547,7 +564,7 @@
                 <div class="app-logo">
                     <img src="https://raw.githubusercontent.com/atarufox/Speranza-Archive/main/images/menu/logo.png" alt="ARC Raiders">
                 </div>
-                <span class="version-badge">v1.17.5</span>
+                <span class="version-badge">v1.17.8</span>
             </div>
 
             <div class="nav-links">
@@ -575,6 +592,14 @@
             <select id="langSelect" class="btn-system lang-selector-btn" style="width: auto;">
                 <option value="">LANG</option>
             </select>
+            
+            <button class="btn-system btn-icon" onclick="exportUserData()" title="BACKUP DATA">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            </button>
+            <label for="importInput" class="btn-system btn-icon" title="RESTORE DATA" style="cursor:pointer">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
+            </label>
+            <input type="file" id="importInput" style="display:none" onchange="importUserData(event)">
         </div>
     </header>
 
@@ -595,6 +620,7 @@
    <symbol id="icon-cosmetic" viewBox="0 0 24 24"><path d="M12 2C9 2 7 3.5 7 5v2H5v14h14V7h-2V5c0-1.5-2-3-5-3zm0 2c1.5 0 3 1 3 3v2H9V5c0-2 1.5-3 3-3z"/></symbol>
    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></symbol>
    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></symbol>
+   <symbol id="icon-danger" viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></symbol>
 </svg>
 
 <script>
@@ -610,6 +636,8 @@
     let currentOpenedItem = null; // Track opened item for live translation
     let activeTranslation = {}; 
     let mapTicker = null;
+    // OPTIMIZATION: CACHE WARNINGS
+    const warnedLocKeys = new Set();
 
     const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/atarufox/Speranza-Archive/main/';
 
@@ -655,6 +683,7 @@
             
             activeTranslation = await response.json();
             currentLang = lang;
+            warnedLocKeys.clear(); // Reset warnings on lang change
             
             updateStaticText();
             if(document.body.classList.contains('db-loaded')) {
@@ -739,10 +768,29 @@
     function getUI(key) { return (activeTranslation?.ui?.[key]) || `UI_${key.toUpperCase()}`; }
     function getNav(key) { return (activeTranslation?.nav?.[key]) || `NAV_${key}`; }
     function getFilter(key) { return (activeTranslation?.filters?.[key]) || `FILT_${key}`; }
-    function getLoc(obj) { if(!obj) return ""; if(typeof obj === 'string') return obj; return obj[currentLang] || obj['en'] || ""; }
+    
+    function getLoc(obj) { 
+        if(!obj) return ""; 
+        if(typeof obj === 'string') return obj; 
+        
+        // Log missing translation if object exists but current lang key is missing
+        if (obj['en'] && !obj[currentLang] && currentLang !== 'en') {
+             // Suppress item logs to avoid extreme spam, or use a Set like below
+        }
+        
+        return obj[currentLang] || obj['en'] || ""; 
+    }
+    
     function getLocLocation(locId) {
         if(!locId) return "Unknown";
-        if(activeTranslation && activeTranslation.locations && activeTranslation.locations[locId]) return activeTranslation.locations[locId];
+        if(activeTranslation && activeTranslation.locations && activeTranslation.locations[locId]) {
+            return activeTranslation.locations[locId];
+        }
+        // DEBUG: LOG MISSING ONCE
+        if (!warnedLocKeys.has(locId)) {
+            console.warn(`[MISSING LOC] Location ID: "${locId}"`);
+            warnedLocKeys.add(locId);
+        }
         return locId;
     }
 
@@ -865,6 +913,7 @@
             Object.keys(schedule).forEach(mapId => {
                 const mapSchedule = schedule[mapId];
                 Object.keys(mapSchedule).forEach(cat => {
+                    // cat is usually "Standard" or something similar. Let's use it for Major detection.
                     const hoursObj = mapSchedule[cat]; 
                     Object.entries(hoursObj).forEach(([hourStr, eventTypeId]) => {
                         const evtDef = types[eventTypeId];
@@ -891,10 +940,10 @@
             const endMs = end.getTime();
             
             if (nowTs >= startMs && nowTs < endMs) {
-                activeEvents.push({ mapId, name: evtDef.name || eventTypeId, timeLeft: Math.floor((endMs - nowTs) / 1000) });
+                activeEvents.push({ mapId, name: evtDef.name || eventTypeId, cat: cat, timeLeft: Math.floor((endMs - nowTs) / 1000) });
             }
             else if (nowTs < startMs && (startMs - nowTs) < (4 * 60 * 60 * 1000)) {
-                upcomingEvents.push({ mapId, name: evtDef.name || eventTypeId, timeLeft: Math.floor((startMs - nowTs) / 1000) });
+                upcomingEvents.push({ mapId, name: evtDef.name || eventTypeId, cat: cat, timeLeft: Math.floor((startMs - nowTs) / 1000) });
             }
         }
 
@@ -914,11 +963,18 @@
                 let s = Math.floor(e.timeLeft % 60);
                 let timer = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
                 
+                // Determine Major/Standard
+                const isMajor = e.cat.toLowerCase().includes('major') || e.cat.toLowerCase().includes('high') || e.cat.toLowerCase().includes('pro');
+                const cardClass = isMajor ? 'ev-card active major' : 'ev-card active';
+                const tagText = isMajor ? 'HIGH VALUE' : 'LIVE';
+                const iconHtml = isMajor ? `<svg class="ev-icon-danger"><use href="#icon-danger"></use></svg>` : '';
+
+                // FIX: Status Line BELOW title to prevent overlapping tag
                 html += `
-                <div class="ev-card active">
-                    <div class="ev-tag">LIVE</div>
+                <div class="${cardClass}">
+                    <div class="ev-tag">${tagText}</div>
+                    <div class="ev-title">${iconHtml}${getLocLocation(e.name)}</div>
                     <div class="ev-status-line"></div>
-                    <div class="ev-title">${getLocLocation(e.name)}</div>
                     <div class="ev-loc"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> ${getLocLocation(e.mapId)}</div>
                     <div class="ev-timer-box">
                          <span class="ev-label">CLOSING IN</span>
@@ -938,11 +994,17 @@
                 let s = Math.floor(e.timeLeft % 60);
                 let timer = `${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
 
+                const isMajor = e.cat.toLowerCase().includes('major') || e.cat.toLowerCase().includes('high') || e.cat.toLowerCase().includes('pro');
+                const cardClass = isMajor ? 'ev-card upcoming major' : 'ev-card upcoming';
+                const tagText = isMajor ? 'HIGH VALUE' : 'SOON';
+                const iconHtml = isMajor ? `<svg class="ev-icon-danger"><use href="#icon-danger"></use></svg>` : '';
+
+                // FIX: Status Line BELOW title
                 html += `
-                <div class="ev-card upcoming">
-                    <div class="ev-tag">SOON</div>
+                <div class="${cardClass}">
+                    <div class="ev-tag">${tagText}</div>
+                    <div class="ev-title">${iconHtml}${getLocLocation(e.name)}</div>
                     <div class="ev-status-line"></div>
-                    <div class="ev-title">${getLocLocation(e.name)}</div>
                     <div class="ev-loc"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> ${getLocLocation(e.mapId)}</div>
                     <div class="ev-timer-box">
                          <span class="ev-label">OPENS IN</span>
@@ -1048,6 +1110,10 @@
     function updateWishlistCounter() { let count = 0; wishlist.forEach(v => count += parseInt(v) || 0); dom.wlCounter.innerText = count; dom.wlCounter.style.display = count > 0 ? 'inline-block' : 'none'; }
     function saveUserData() { localStorage.setItem('arc_wishlist', JSON.stringify(Array.from(wishlist.entries()))); localStorage.setItem('arc_blueprints', JSON.stringify(Array.from(ownedBlueprints))); updateWishlistCounter(); }
     window.addReqsToWishlist = function(reqsJson, btn) { if(!reqsJson) return; try { const reqs = JSON.parse(decodeURIComponent(reqsJson)); reqs.forEach(r => { const current = wishlist.get(r.item) || 0; wishlist.set(r.item, current + r.count); }); saveUserData(); btn.classList.add('added'); btn.innerText = getUI('added'); } catch(e) { console.error(e); } };
+    
+    // RESTORED EXPORT/IMPORT
+    function exportUserData() { const data = { wishlist: Array.from(wishlist.entries()), blueprints: Array.from(ownedBlueprints) }; const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data)); const anchor = document.createElement('a'); anchor.setAttribute("href", dataStr); anchor.setAttribute("download", "arc_user_data.json"); document.body.appendChild(anchor); anchor.click(); anchor.remove(); }
+    function importUserData(e) { const file = e.target.files[0]; if(!file) return; const r = new FileReader(); r.onload = (ev) => { try { const data = JSON.parse(ev.target.result); if(data.wishlist) wishlist = new Map(data.wishlist); if(data.blueprints) ownedBlueprints = new Set(data.blueprints); saveUserData(); updateWishlistCounter(); render(); alert("DATA RESTORED SUCCESS"); } catch(ex) { alert("FILE ERROR"); } }; r.readAsText(file); }
 
     function render() {
         const grid = dom.grid; grid.innerHTML = "";
@@ -1213,61 +1279,88 @@
         currentOpenedItem = data; // Set tracked item
         const modal = dom.infoModal;
         
-        let craftHtml = '', upgradesHtml = '', recycleHtml = '', reverseRecycleHtml = '', usedInHtml = '';
+        let contentHtml = '';
         
-        // 1. CRAFTING
-        let craftList = normalizeReqs(data.recipe);
-        if (craftList.length > 0 || data.craftBench) {
-            craftHtml += `<div class="info-section"><div class="info-title">${getUI('crafting')}</div>`;
-            if (data.craftBench) craftHtml += `<div style="margin-bottom:10px; color:#aaa; font-size:0.9rem;"><span style="color:#fff; font-weight:700;">${getUI('bench')}:</span> ${String(data.craftBench).toUpperCase().replace(/_/g, ' ')}</div>`;
-            if (craftList.length > 0) {
-                let rows = craftList.map(r => {
-                    const ing = getItem(r.item);
-                    const name = ing ? getLoc(ing.name) : r.item;
-                    let imgHtml = ing ? `<img src="${getImg(ing)}" class="mini-icon" onerror="this.style.display='none'">` : '';
-                    return `<tr><td style="display:flex;align-items:center">${imgHtml}${name}</td><td style="text-align:right; font-weight:700; color:var(--arc-yellow);">x${r.count}</td></tr>`;
-                }).join('');
-                craftHtml += `<table class="info-table"><tbody>${rows}</tbody></table>`;
-            }
-            craftHtml += `</div>`;
-        }
-
-        // 2. UPGRADES (HIDEOUT)
+        // IS HIDEOUT MODULE?
         if (data.levels && Array.isArray(data.levels)) {
-            upgradesHtml += `<div class="info-section"><div class="info-title">${getUI('upgrades')}</div>`;
+            contentHtml += `<div class="info-section"><div class="info-title">${getUI('upgrades')}</div>`;
             data.levels.sort((a,b) => a.level - b.level).forEach(lvl => {
                 const reqs = normalizeReqs(lvl.requirements);
                 let rows = reqs.map(r => {
                     const ing = getItem(r.item);
                     const name = ing ? getLoc(ing.name) : r.item;
                     let imgHtml = ing ? `<img src="${getImg(ing)}" class="mini-icon" onerror="this.style.display='none'">` : '';
-                    return `<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222; padding:4px 0;"><div style="display:flex; align-items:center; font-size:0.9rem; color:#ccc;">${imgHtml}${name}</div><div style="color:var(--arc-yellow); font-weight:700;">x${r.count}</div></div>`;
+                    let clickAttr = ing ? `onclick="openInfoModal(getItem('${r.item}'))"` : '';
+                    let rowClass = ing ? 'clickable-row' : '';
+                    
+                    return `<div class="${rowClass}" ${clickAttr} style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222; padding:4px 0;"><div style="display:flex; align-items:center; font-size:0.9rem; color:#ccc;">${imgHtml}${name}</div><div style="color:var(--arc-yellow); font-weight:700;">x${r.count}</div></div>`;
                 }).join('');
                 const reqsString = encodeURIComponent(JSON.stringify(reqs));
-                upgradesHtml += `<details class="upgrade-level"><summary><span>${getUI('level')} ${lvl.level}</span><button class="btn-track" onclick="event.preventDefault(); addReqsToWishlist('${reqsString}', this)"><svg style="width:14px;height:14px;fill:currentColor; margin-right:5px;"><use href="#icon-plus"></use></svg> ${getUI('track')}</button></summary><div style="padding:10px;">${rows || '<div style="color:#666">No data</div>'}</div></details>`;
+                contentHtml += `<details class="upgrade-level"><summary><span>${getUI('level')} ${lvl.level}</span><button class="btn-track" onclick="event.preventDefault(); event.stopPropagation(); addReqsToWishlist('${reqsString}', this)"><svg style="width:14px;height:14px;fill:currentColor; margin-right:5px;"><use href="#icon-plus"></use></svg> ${getUI('track')}</button></summary><div style="padding:10px;">${rows || '<div style="color:#666">No data</div>'}</div></details>`;
             });
-            upgradesHtml += `</div>`;
-        }
+            contentHtml += `</div>`;
+        } else {
+            // IS ITEM
+            
+            // 1. CRAFTING
+            let craftList = normalizeReqs(data.recipe);
+            if (craftList.length > 0 || data.craftBench) {
+                contentHtml += `<div class="info-section"><div class="info-title">${getUI('crafting')}</div>`;
+                if (data.craftBench) contentHtml += `<div style="margin-bottom:10px; color:#aaa; font-size:0.9rem;"><span style="color:#fff; font-weight:700;">${getUI('bench')}:</span> ${String(data.craftBench).toUpperCase().replace(/_/g, ' ')}</div>`;
+                if (craftList.length > 0) {
+                    let rows = craftList.map(r => {
+                        const ing = getItem(r.item);
+                        const name = ing ? getLoc(ing.name) : r.item;
+                        let imgHtml = ing ? `<img src="${getImg(ing)}" class="mini-icon" onerror="this.style.display='none'">` : '';
+                        let clickAttr = ing ? `onclick="openInfoModal(getItem('${r.item}'))"` : '';
+                        let rowClass = ing ? 'clickable-row' : '';
+                        return `<div class="${rowClass}" ${clickAttr} style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222; padding:4px 0;"><div style="display:flex; align-items:center; font-size:0.9rem; color:#ccc;">${imgHtml}${name}</div><div style="color:var(--arc-yellow); font-weight:700;">x${r.count}</div></div>`;
+                    }).join('');
+                    contentHtml += `<div style="padding:5px;">${rows}</div>`;
+                }
+                contentHtml += `</div>`;
+            }
 
-        // 3. USED FOR
-        if (!data.levels) {
+            // 2. RECYCLES INTO
+            let recYield = normalizeReqs(data.recyclingYield);
+            contentHtml += `<div class="info-section"><div class="info-title">${getUI('recycles_into')}</div>`;
+            if (recYield.length > 0) {
+                 let rows = recYield.map(r => {
+                    const ing = getItem(r.item);
+                    const name = ing ? getLoc(ing.name) : r.item;
+                    let imgHtml = ing ? `<img src="${getImg(ing)}" class="mini-icon" onerror="this.style.display='none'">` : '';
+                    let clickAttr = ing ? `onclick="openInfoModal(getItem('${r.item}'))"` : '';
+                    let rowClass = ing ? 'clickable-row' : '';
+                    return `<div class="${rowClass}" ${clickAttr} style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222; padding:4px 0;"><div style="display:flex; align-items:center; font-size:0.9rem; color:#ccc;">${imgHtml}${name}</div><div style="color:var(--arc-green); font-weight:700;">x${r.count}</div></div>`;
+                 }).join('');
+                 contentHtml += `<div style="padding:5px;">${rows}</div>`;
+            } else {
+                 contentHtml += `<div style="padding:10px; color:#666; font-style:italic;">${getUI('no_data')}</div>`;
+            }
+            contentHtml += `</div>`;
+
+            // 3. USED FOR
             let usages = [];
             itemsDB.forEach(i => { if(i.recipe) { let recipe = normalizeReqs(i.recipe); if(recipe.find(req => req.item === data.id)) usages.push({ parent: i, type: 'CRAFT' }); } });
             hideoutDB.forEach(h => { if (h.levels) { h.levels.forEach(lvl => { if(normalizeReqs(lvl.requirements).find(req => req.item === data.id)) usages.push({ parent: h, type: `HIDEOUT LVL ${lvl.level}` }); }); } });
             
+            contentHtml += `<div class="info-section"><div class="info-title">${getUI('used_for')}</div>`;
             if (usages.length > 0) {
-                usedInHtml += `<div class="info-section"><div class="info-title">${getUI('used_for')}</div>`;
-                let uniqueUsages = [...new Map(usages.map(item => [item.parent.id, item])).values()]; // Dedup
-                uniqueUsages.forEach(u => {
+                let uniqueUsages = [...new Map(usages.map(item => [item.parent.id, item])).values()];
+                let rows = uniqueUsages.map(u => {
                     const pImg = getImg(u.parent) || (currentSection==='OFFICINA' ? `${GITHUB_RAW_BASE_URL}images/menu/${u.parent.id.toLowerCase()}.png` : '');
                     let imgHtml = pImg ? `<img src="${pImg}" class="mini-icon" onerror="this.style.display='none'">` : '';
-                    usedInHtml += `<div style="padding:5px 0; border-bottom:1px solid #222; display:flex; align-items:center; cursor:pointer;" onclick="closeInfoModal(); setTimeout(()=>openInfoModal(getItem('${u.parent.id}')), 100)">${imgHtml} ${getLoc(u.parent.name)} <span style="font-size:0.7rem; color:#666; margin-left:10px;">${u.type}</span></div>`;
-                });
-                usedInHtml += `</div>`;
+                    // Clickable parent
+                    return `<div class="clickable-row" style="padding:5px 0; border-bottom:1px solid #222; display:flex; align-items:center;" onclick="closeInfoModal(); setTimeout(()=>openInfoModal(getItem('${u.parent.id}')), 50)">${imgHtml} ${getLoc(u.parent.name)} <span style="font-size:0.7rem; color:#666; margin-left:10px;">${u.type}</span></div>`;
+                }).join('');
+                contentHtml += `<div style="padding:5px;">${rows}</div>`;
+            } else {
+                contentHtml += `<div style="padding:10px; color:#666; font-style:italic;">${getUI('no_usage_found')}</div>`;
             }
+            contentHtml += `</div>`;
         }
 
-        modal.innerHTML = `<div class="overlay-header"><div class="overlay-title">${getLoc(data.name)}</div><button class="overlay-close" onclick="closeInfoModal()">×</button></div><div class="overlay-scrollable-content">${craftHtml || upgradesHtml || usedInHtml ? (craftHtml + upgradesHtml + usedInHtml) : '<div style="text-align:center; color:#666; margin-top:20px;">NESSUN DATO TECNICO DISPONIBILE</div>'}</div>`;
+        modal.innerHTML = `<div class="overlay-header"><div class="overlay-title">${getLoc(data.name)}</div><button class="overlay-close" onclick="closeInfoModal()">×</button></div><div class="overlay-scrollable-content">${contentHtml}</div>`;
         dom.modalBackdrop.style.display = 'block';
         modal.style.display = 'flex';
     }
