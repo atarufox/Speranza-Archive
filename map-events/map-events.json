@@ -7,7 +7,7 @@
   "eventTypes": {
     "night-raid": {
       "displayName": "Night Raid",
-      "icon": "https://cdn.arctracker.io/map-events/night_raid.png",
+      "icon": "images/maps/night_raid.png",
       "translationKey": "nightRaid",
       "category": "major",
       "localizations": {
@@ -35,7 +35,7 @@
     },
     "electromagnetic-storm": {
       "displayName": "Electromagnetic Storm",
-      "icon": "https://cdn.arctracker.io/map-events/electromagnetic_storm.png",
+      "icon": "images/maps/electromagnetic_storm.png",
       "translationKey": "electromagneticStorm",
       "category": "major",
       "localizations": {
@@ -63,7 +63,7 @@
     },
     "cold-snap": {
       "displayName": "Cold Snap",
-      "icon": "https://cdn.arctracker.io/map-events/cold_snap.png",
+      "icon": "images/maps/cold_snap.png",
       "translationKey": "coldSnap",
       "category": "major",
       "disabled": true,
@@ -92,7 +92,7 @@
     },
     "locked-gate": {
       "displayName": "Locked Gate",
-      "icon": "https://cdn.arctracker.io/map-events/locked_gate.png",
+      "icon": "images/maps/locked_gate.png",
       "translationKey": "lockedGate",
       "category": "major",
       "localizations": {
@@ -120,7 +120,7 @@
     },
     "hidden-bunker": {
       "displayName": "Hidden Bunker",
-      "icon": "https://cdn.arctracker.io/map-events/hidden_bunker.png",
+      "icon": "images/maps/hidden_bunker.png",
       "translationKey": "hiddenBunker",
       "category": "major",
       "disabled": false,
@@ -149,7 +149,7 @@
     },
     "matriarch": {
       "displayName": "Matriarch",
-      "icon": "https://cdn.arctracker.io/map-events/matriarch.png",
+      "icon": "images/maps/matriarch.png",
       "translationKey": "matriarch",
       "category": "minor",
       "localizations": {
@@ -177,7 +177,7 @@
     },
     "harvester": {
       "displayName": "Harvester",
-      "icon": "https://cdn.arctracker.io/map-events/harvester.png",
+      "icon": "images/maps/harvester.png",
       "translationKey": "harvester",
       "category": "minor",
       "localizations": {
@@ -205,7 +205,7 @@
     },
     "lush-blooms": {
       "displayName": "Lush Blooms",
-      "icon": "https://cdn.arctracker.io/map-events/lush_blooms.png",
+      "icon": "images/maps/lush_blooms.png",
       "translationKey": "lushBlooms",
       "category": "minor",
       "disabled": false,
@@ -234,7 +234,7 @@
     },
     "prospecting-probes": {
       "displayName": "Prospecting Probes",
-      "icon": "https://cdn.arctracker.io/map-events/prospecting_probes.png",
+      "icon": "images/maps/prospecting_probes.png",
       "translationKey": "prospectingProbes",
       "category": "minor",
       "disabled": false,
@@ -263,7 +263,7 @@
     },
     "husk-graveyard": {
       "displayName": "Husk Graveyard",
-      "icon": "https://cdn.arctracker.io/map-events/husk_graveyard.png",
+      "icon": "images/maps/husk_graveyard.png",
       "translationKey": "huskGraveyard",
       "category": "minor",
       "disabled": true,
@@ -292,7 +292,7 @@
     },
     "uncovered-caches": {
       "displayName": "Uncovered Caches",
-      "icon": "https://cdn.arctracker.io/map-events/uncovered_caches.png",
+      "icon": "images/maps/uncovered_caches.png",
       "translationKey": "uncoveredCaches",
       "category": "minor",
       "localizations": {
@@ -320,7 +320,7 @@
     },
     "launch-tower-loot": {
       "displayName": "Launch Tower Loot",
-      "icon": "https://cdn.arctracker.io/map-events/launch_tower_loot.png",
+      "icon": "images/maps/launch_tower_loot.png",
       "translationKey": "launchTowerLoot",
       "category": "minor",
       "localizations": {
@@ -348,7 +348,7 @@
     },
     "bird-city": {
       "displayName": "Bird City",
-      "icon": "https://cdn.arctracker.io/map-events/bird_city.png",
+      "icon": "images/maps/bird_city.png",
       "translationKey": "birdCity",
       "category": "minor",
       "localizations": {
