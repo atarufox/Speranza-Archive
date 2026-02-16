@@ -24,6 +24,7 @@
     "obtained_recycling": "SI OTTIENE RICICLANDO",
     "all": "TUTTI",
     "search": "CERCA",
+    "connect_btn": "CONNETTITI",
     "ui_connect_btn": "CONNETTI A SPERANZA",
     "database_btn": "DATABASE",
     "wishlist_btn": "WISHLIST"
@@ -81,6 +82,6 @@
   "MAP_LOC_UNCOVERED_CACHES": "UNCOVERED_CACHES",
   "MAP_LOC_NIGHT_RAID": "RAID NOTTURNO",
   "MAP_LOC_HARVESTER": "RACCOGLITORE",
-  "MAP_LOC_HUSK_GRAVEYARD": "HUSK_GRAVEYARD",
+  "MAP_LOC_HUSK_GRAVEYARD": "HUSK_GRAVEYARD"
   }
 }
