@@ -24,19 +24,18 @@
     "obtained_recycling": "SI OTTIENE RICICLANDO",
     "all": "TUTTI",
     "search": "CERCA",
-    "ui_connect_btn": "CONNETTI A SPERANZA",
     "connect_btn": "CONNETTITI",
     "database_btn": "DATABASE",
     "wishlist_btn": "WISHLIST"
   },
   "nav": {
-    "INVENTARIO": "INVENTARIO",
-    "OFFICINA": "OFFICINA",
-    "PROGETTI": "PROGETTI",
-    "NAV_MAPPA": "EVENTI",
-    "MERCANTI": "MERCANTI",
-    "NEGOZIO": "NEGOZIO",
-    "MISSIONI": "MISSIONI"
+    "NAV_INVENTORY": "INVENTARIO",
+    "NAV_WORKSHOP": "OFFICINA",
+    "NAV_BLUEPRINTS": "PROGETTI",
+    "NAV_EVENTS": "EVENTI",
+    "NAV_TRADERS": "MERCANTI",
+    "NAV_STORE": "NEGOZIO",
+    "NAV_QUESTS": "MISSIONI"
   },
   "filters": {
     "ALL": "TUTTO",
