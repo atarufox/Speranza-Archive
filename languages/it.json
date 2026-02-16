@@ -68,7 +68,7 @@
     "Basic Material": "MATERIALE BASE",
     "Upgrade Station": "STAZIONE POTENZIAMENTO"
   },
-  "events": {
+  "locations": {
   "MAP_LOC_DAM_BATTLEGROUND": "CAMPO DI BATTAGLIA DELLA DIGA",
   "MAP_LOC_BURIED_CITY": "CITTÀ SEPOLTA",
   "MAP_LOC_THE_SPACEPORT": "SPAZIOPORTO",
