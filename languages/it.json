@@ -67,5 +67,8 @@
     "Topside Material": "MATERIALE SUPERFICIE",
     "Basic Material": "MATERIALE BASE",
     "Upgrade Station": "STAZIONE POTENZIAMENTO"
+  },
+  "events": {
+  "MAP_LOC_BIRD_CITY": "Uccelli?"
   }
 }
