@@ -4,7 +4,7 @@
     "bench": "BANCO",
     "ingredient": "INGREDIENTE",
     "qty": "QTA",
-    "recycle": "RICICLA IN",
+    "recycles_into": "RICICLA IN",
     "item": "OGGETTO",
     "val_u": "VAL/U",
     "tot": "TOT",
@@ -26,7 +26,9 @@
     "search": "CERCA",
     "connect_btn": "CONNETTITI",
     "database_btn": "DATABASE",
-    "wishlist_btn": "WISHLIST"
+    "wishlist_btn": "WISHLIST",
+    "no_usage_found": "NESSUN DATO FORNITO",
+    "no_data": "NESSUN DATO FORNITO"
   },
   "nav": {
     "NAV_INVENTORY": "INVENTARIO",
