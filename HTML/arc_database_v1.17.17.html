@@ -1358,20 +1358,19 @@
             ecoHtml += `<div class="tt-found"><div class="tt-found-label">${labelClean} :</div><div class="tt-found-val"><svg><use href="#icon-arc"></use></svg> ${getLoc(data.foundIn)}</div></div>`;
         }
         
-        // RECYCLING YIELD IN TOOLTIP - Robust check
-        const recyclingData = data.recyclingYield || data.recycling || data.recycling_yield;
-        let recYield = normalizeReqs(recyclingData);
+        // RECYCLING YIELD IN TOOLTIP
+        let recYield = normalizeReqs(data.recyclingYield);
         if (recYield && recYield.length > 0) {
             let recHtml = recYield.map(r => {
                 const ing = getItem(r.item);
                 const ingName = ing ? getLoc(ing.name) : r.item;
                 return `<span style="color:var(--col-recycle); font-weight:700;">x${r.count}</span> ${ingName}`;
             }).join(', ');
-            // Fallback to Italian if UI key is missing
+            
             let recLabel = getUI('recycles_into');
             if (recLabel === 'UI_RECYCLES_INTO') recLabel = 'RICICLA IN';
             
-            ecoHtml += `<div class="tt-found" style="border-top:1px solid rgba(0,0,0,0.1); margin-top:8px; padding-top:8px;"><div class="tt-found-label" style="color:#555;">${recLabel} :</div><div class="tt-found-val" style="font-size:0.85rem; line-height:1.2; color:#000;">${recHtml}</div></div>`;
+            ecoHtml += `<div class="tt-found" style="border-top:1px solid #c0b49b; margin-top:5px; padding-top:5px;"><div class="tt-found-label">${recLabel} :</div><div class="tt-found-val" style="font-size:0.85rem; line-height:1.2;">${recHtml}</div></div>`;
         }
 
         return `<div style="background:var(--card-bg); color:var(--card-text);"><div class="tt-header"><div class="tt-tag" style="background:var(--col-${rarity.toLowerCase()})">${rarity}</div></div><div class="tt-body"><div class="tt-title">${name}</div><div class="tt-desc">${desc}</div>${ecoHtml}</div><div class="tt-footer"><div class="tt-foot-item"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" fill="#1a1a1a"></path></svg> ${stack}</div><div class="tt-foot-item"><img src="${GITHUB_RAW_BASE_URL}images/menu/weight.png" style="height:22px;"> ${weight}</div><div class="tt-foot-item"><img src="${GITHUB_RAW_BASE_URL}images/menu/coins.png" style="height:22px;"> ${val}</div></div></div>`;
