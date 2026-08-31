@@ -1,11 +1,11 @@
-<!-- START OF FILE arc_database_v1.17.18.html -->
-<!-- VERSION v1.17.18 -->
+<!-- START OF FILE arc_database_v1.17.23.html -->
+<!-- VERSION v1.17.23 -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARC RAIDERS // MISSION CONTROL v1.17.18</title>
+    <title>ARC RAIDERS // MISSION CONTROL v1.17.23</title>
     <style>
         /* FONTS */
         @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Teko:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap');
@@ -401,7 +401,7 @@
         .btn-track:hover { border-color: var(--arc-yellow); color: var(--arc-yellow); }
         .btn-track.added { background: var(--arc-yellow); color: #000; border-color: var(--arc-yellow); }
 
-        /* --- MAPPA SECTION - DASHBOARD v1.17.18 --- */
+        /* --- MAPPA SECTION - DASHBOARD v1.17.23 --- */
         #map-container { 
             position: absolute; top:0; left:0; width:100%; height:100%; 
             background-color: #050505;
@@ -566,7 +566,7 @@
                 <div class="app-logo">
                     <img src="https://raw.githubusercontent.com/atarufox/Speranza-Archive/main/images/menu/logo.png" alt="ARC Raiders">
                 </div>
-                <span class="version-badge">v1.17.18</span>
+                <span class="version-badge">v1.17.23 ivan</span>
             </div>
 
             <div class="nav-links">
@@ -626,7 +626,7 @@
 </svg>
 
 <script>
-    let itemsDB = [], hideoutDB = [];
+    let itemsDB = [], hideoutDB = [], questsDB = [];
     let scheduleData = null; // New container for map-events.json
     let wishlist = new Map();
     let ownedBlueprints = new Set();
@@ -715,16 +715,16 @@
     }
 
     async function connectToDatabase() {
-        dom.loader.style.display = 'flex'; itemsDB = []; hideoutDB = []; scheduleData = null;
+        dom.loader.style.display = 'flex'; itemsDB = []; hideoutDB = []; questsDB = []; scheduleData = null;
         dom.loaderText.textContent = "ESTABLISHING CONNECTION...";
         
         try {
             const repo = 'atarufox/Speranza-Archive';
             const ts = new Date().getTime(); 
             
-            // 1. ITEMS (Inventory + Blueprints)
-            dom.loaderText.textContent = "INDEXING INVENTORY & BLUEPRINTS...";
-            const paths = ['items/inventory', 'items/blueprints'];
+            // 1. ITEMS (Inventory + Blueprints + Cosmetics)
+            dom.loaderText.textContent = "INDEXING INVENTORY, BLUEPRINTS & COSMETICS...";
+            const paths = ['items/inventory', 'items/blueprints', 'items/cosmetics'];
             for (const p of paths) {
                 try {
                     const listUrl = `https://api.github.com/repos/${repo}/contents/${p}?t=${ts}`;
@@ -763,6 +763,19 @@
                     }
                 }
             } catch(e) { console.warn("Map events fetch error", e); }
+
+            // 4. QUESTS
+            dom.loaderText.textContent = "DOWNLOADING QUEST DATA...";
+            try {
+                const questUrl = `https://api.github.com/repos/${repo}/contents/quests?t=${ts}`;
+                const responseQuest = await fetch(questUrl);
+                if (responseQuest.ok) {
+                    const questList = await responseQuest.json();
+                    const jsonQuestFiles = questList.filter(f => f.name.endsWith('.json'));
+                    const fetchedQuests = await Promise.all(jsonQuestFiles.map(file => fetch(file.download_url + `?t=${ts}`).then(res => res.json())));
+                    questsDB = fetchedQuests;
+                }
+            } catch(e) { console.warn("Failed to fetch quests", e); }
 
             enableUI(); analyzeTypes();
         } catch (error) {
@@ -1354,22 +1367,30 @@
         let ecoHtml = "";
         
         if(data.foundIn) {
-            const labelClean = getUI('obtained_recycling') !== 'UI_OBTAINED_RECYCLING' ? getUI('obtained_recycling').replace('RICICLANDO', '') : "SOURCE";
+            const labelClean = getUI('obtained_recycling');
             ecoHtml += `<div class="tt-found"><div class="tt-found-label">${labelClean} :</div><div class="tt-found-val"><svg><use href="#icon-arc"></use></svg> ${getLoc(data.foundIn)}</div></div>`;
         }
         
         // RECYCLING YIELD IN TOOLTIP
-        let recYield = normalizeReqs(data.recyclingYield);
+        let recYield = normalizeReqs(data.recyclesInto);
+
         if (recYield && recYield.length > 0) {
             let recHtml = recYield.map(r => {
                 const ing = getItem(r.item);
                 const ingName = ing ? getLoc(ing.name) : r.item;
-                return `<span style="color:var(--col-recycle); font-weight:700;">x${r.count}</span> ${ingName}`;
-            }).join(', ');
+                let imgHtml = '';
+                if (ing) {
+                    const imgSrc = getImg(ing);
+                    if (imgSrc) {
+                        imgHtml = `<img src="${imgSrc}" style="width:32px; height:32px; object-fit:contain; border-radius:4px; background:rgba(0,0,0,0.1); border:1px solid rgba(0,0,0,0.2);">`;
+                    }
+                }
+                return `<div style="display:flex; align-items:center; gap:6px; margin-right:12px; margin-bottom:6px; font-size:0.9rem; line-height:1;">${imgHtml}<span style="color:var(--col-recycle); font-weight:700;">x${r.count}</span> <span>${ingName}</span></div>`;
+            }).join('');
             
             let recLabel = getUI('recycles_into');
             
-            ecoHtml += `<div class="tt-found" style="border-top:1px solid #c0b49b; margin-top:8px; padding-top:8px;"><div class="tt-found-label">${recLabel} :</div><div class="tt-found-val" style="display:block; font-size:0.85rem; line-height:1.4;">${recHtml}</div></div>`;
+            ecoHtml += `<div class="tt-found" style="border-top:1px solid #c0b49b; margin-top:8px; padding-top:8px;"><div class="tt-found-label">${recLabel} :</div><div class="tt-found-val" style="display:flex; flex-wrap:wrap; gap:0;">${recHtml}</div></div>`;
         }
 
         return `<div style="background:var(--card-bg); color:var(--card-text);"><div class="tt-header"><div class="tt-tag" style="background:var(--col-${rarity.toLowerCase()})">${rarity}</div></div><div class="tt-body"><div class="tt-title">${name}</div><div class="tt-desc">${desc}</div>${ecoHtml}</div><div class="tt-footer"><div class="tt-foot-item"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" fill="#1a1a1a"></path></svg> ${stack}</div><div class="tt-foot-item"><img src="${GITHUB_RAW_BASE_URL}images/menu/weight.png" style="height:22px;"> ${weight}</div><div class="tt-foot-item"><img src="${GITHUB_RAW_BASE_URL}images/menu/coins.png" style="height:22px;"> ${val}</div></div></div>`;
@@ -1428,25 +1449,20 @@
                 contentHtml += `</div>`;
             }
 
-            // 2. RECYCLES INTO (REMOVED - NOW IN TOOLTIP)
-            /*
-            let recYield = normalizeReqs(data.recyclingYield);
-            contentHtml += `<div class="info-section"><div class="info-title">${getUI('recycles_into')}</div>`;
-            if (recYield.length > 0) {
-                 let rows = recYield.map(r => {
+            // 2. RECYCLES INTO
+            let recYield = normalizeReqs(data.recyclesInto);
+            if (recYield && recYield.length > 0) {
+                contentHtml += `<div class="info-section"><div class="info-title">${getUI('recycles_into')}</div>`;
+                let rows = recYield.map(r => {
                     const ing = getItem(r.item);
                     const name = ing ? getLoc(ing.name) : r.item;
                     let imgHtml = ing ? `<img src="${getImg(ing)}" class="mini-icon" onerror="this.style.display='none'">` : '';
                     let clickAttr = ing ? `onclick="openInfoModal(getItem('${r.item}'))"` : '';
                     let rowClass = ing ? 'clickable-row' : '';
                     return `<div class="${rowClass}" ${clickAttr} style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222; padding:4px 0;"><div style="display:flex; align-items:center; font-size:0.9rem; color:#ccc;">${imgHtml}${name}</div><div style="color:var(--arc-green); font-weight:700;">x${r.count}</div></div>`;
-                 }).join('');
-                 contentHtml += `<div style="padding:5px;">${rows}</div>`;
-            } else {
-                 contentHtml += `<div style="padding:10px; color:#666; font-style:italic;">${getUI('no_data')}</div>`;
+                }).join('');
+                contentHtml += `<div style="padding:5px;">${rows}</div></div>`;
             }
-            contentHtml += `</div>`;
-            */
 
             // 3. USED FOR
             let usages = [];
@@ -1479,4 +1495,4 @@
 </script>
 </body>
 </html>
-<!-- VERSION v1.17.18 -->
+<!-- VERSION v1.17.23 -->
