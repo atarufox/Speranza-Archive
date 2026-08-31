@@ -1,13 +1,14 @@
-<!-- START OF FILE arc_database_v1.9.0.html -->
+<!-- START OF FILE arc_database_v1.17.23.html -->
+<!-- VERSION v1.17.23 -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARC RAIDERS // DATABASE v1.9.0</title>
+    <title>ARC RAIDERS // MISSION CONTROL v1.17.23</title>
     <style>
         /* FONTS */
-        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Teko:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Teko:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap');
 
         :root {
             /* GAME UI PALETTE */
@@ -21,6 +22,8 @@
             --arc-white: #e6e6e6;
             --arc-teal: #00e5ff;   
             --arc-red: #ff2a2a;
+            --arc-green: #00ff66;
+            --arc-gray: #555555;
             
             /* SIDEBAR COLORS */
             --sb-inactive-bg: #2b2f3b;
@@ -54,6 +57,7 @@
             --font-head: 'Teko', sans-serif;
             --font-ui: 'Rajdhani', sans-serif;
             --font-body: 'Barlow', sans-serif;
+            --font-mono: 'Share Tech Mono', monospace;
 
             /* DYNAMIC SIZES */
             --header-h: 80px;
@@ -100,93 +104,74 @@
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             transition: opacity 0.8s ease-in-out, visibility 0.8s;
             overflow: hidden;
-            /* Animazione di accensione stile vecchia TV */
-            animation: turn-on 3s linear forwards;
+            animation: turn-on 2.5s linear forwards;
         }
-
+        
         body.db-loaded .intro-screen { opacity: 0; visibility: hidden; pointer-events: none; }
 
-        /* 1. RUMORE DI FONDO (NOISE) */
+        /* CRT EFFECTS LAYERS */
         .noise {
             position: absolute; top: -500%; left: -500%; width: 1000%; height: 1000%;
             background: repeating-radial-gradient(#000 0 0.0001%, #1a1a1a 0 0.0002%);
             opacity: 0.2; transform: translate(0, 0);
-            animation: noise-anim 0.5s infinite linear;
-            z-index: 0; pointer-events: none;
+            animation: noise-anim 0.5s infinite linear; z-index: 0; pointer-events: none;
         }
-
-        /* 2. SCANLINES FISSE E VIGNETTATURA */
         .scanlines {
             position: absolute; inset: 0;
             background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5));
-            background-size: 100% 4px;
-            z-index: 10; pointer-events: none;
+            background-size: 100% 4px; z-index: 10; pointer-events: none;
             box-shadow: inset 0 0 150px rgba(0,0,0,0.9);
         }
-
-        /* 3. BARRA DI SCANSIONE CHE SCORRE */
         .scan-bar {
-            width: 100%; height: 10px;
-            background: rgba(255, 196, 0, 0.1);
+            width: 100%; height: 10px; background: rgba(255, 196, 0, 0.1);
             position: absolute; z-index: 11; top: -10%;
-            animation: scan-move 5s linear infinite;
-            pointer-events: none;
+            animation: scan-move 5s linear infinite; pointer-events: none;
             box-shadow: 0 0 10px rgba(255, 196, 0, 0.2);
         }
 
-        /* CONTENUTO CENTRALE INTRO */
+        /* INTRO CONTENT */
         .intro-content { position: relative; z-index: 20; display: flex; flex-direction: column; align-items: center; filter: blur(0.5px); }
 
-        /* LOGO GLITCHATO */
         .glitch-logo {
-            width: 350px; position: relative; margin-bottom: 40px;
+            width: 300px; margin-bottom: 40px; position: relative;
             filter: drop-shadow(-2px 0 red) drop-shadow(2px 0 blue);
             animation: glitch-skew 3s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         .glitch-logo img { width: 100%; height: auto; display: block; }
 
-        /* BOTTONE INTRO FLICKER */
-        .btn-connect-crt {
-            background: rgba(0, 0, 0, 0.6);
-            border: 2px solid var(--arc-yellow); color: var(--arc-yellow);
-            padding: 15px 50px; font-family: var(--font-head); font-size: 2rem;
-            letter-spacing: 4px; text-transform: uppercase; cursor: pointer;
-            position: relative; transition: 0.2s;
+        .btn-connect-big {
+            background: rgba(0,0,0,0.6); color: var(--arc-yellow);
+            border: 2px solid var(--arc-yellow);
+            padding: 15px 40px; font-family: var(--font-head); font-size: 2rem; letter-spacing: 3px;
+            cursor: pointer; text-transform: uppercase;
+            transition: all 0.2s; position: relative; overflow: hidden;
             box-shadow: 0 0 10px rgba(255, 196, 0, 0.2);
             animation: text-flicker 4s infinite;
         }
-        .btn-connect-crt:hover { background: var(--arc-yellow); color: #000; box-shadow: 0 0 30px var(--arc-yellow); transform: scale(1.02); }
-        .btn-connect-crt::before, .btn-connect-crt::after {
-            content: '+'; position: absolute; top: 50%; transform: translateY(-50%);
-            font-size: 1.5rem; color: rgba(255, 255, 255, 0.5);
-        }
-        .btn-connect-crt::before { left: -30px; }
-        .btn-connect-crt::after { right: -30px; }
-
-        /* --- KEYFRAMES CRT --- */
-        @keyframes noise-anim {
-            0% { transform: translate(0, 0); } 10% { transform: translate(-5%, -5%); }
-            20% { transform: translate(-10%, 5%); } 30% { transform: translate(5%, -10%); }
-            40% { transform: translate(-5%, 15%); } 50% { transform: translate(-10%, 5%); }
-            60% { transform: translate(15%, 0); } 70% { transform: translate(0, 10%); }
-            80% { transform: translate(-15%, 0); } 90% { transform: translate(10%, 5%); }
-            100% { transform: translate(5%, 0); }
-        }
-        @keyframes scan-move {
-            0% { top: -10%; opacity: 0; } 5% { opacity: 1; } 90% { opacity: 1; } 100% { top: 110%; opacity: 0; }
-        }
+        .btn-connect-big:hover { background: var(--arc-yellow); color: #000; box-shadow: 0 0 30px var(--arc-yellow); transform: scale(1.02); }
+        
+        /* KEYFRAMES CRT */
         @keyframes turn-on {
             0% { transform: scale(1, 0.001) scaleY(0); filter: brightness(0); background: #000; }
             10% { transform: scale(1, 0.001) scaleY(1); filter: brightness(3); background: #fff; }
-            25% { transform: scale(1, 0.001) scaleY(1); filter: brightness(1); background: var(--bg-body); }
-            40% { transform: scale(1, 1); } 100% { transform: scale(1, 1); }
+            25% { transform: scale(1, 0.001) scaleY(1); filter: brightness(1); background: #050505; }
+            40% { transform: scale(1, 1); }
+            100% { transform: scale(1, 1); }
+        }
+        @keyframes noise-anim {
+            0% { transform: translate(0,0); } 10% { transform: translate(-5%,-5%); } 20% { transform: translate(-10%,5%); }
+            30% { transform: translate(5%,-10%); } 40% { transform: translate(-5%,15%); } 50% { transform: translate(-10%,5%); }
+            60% { transform: translate(15%,0); } 70% { transform: translate(0,10%); } 80% { transform: translate(-15%,0); }
+            90% { transform: translate(10%,5%); } 100% { transform: translate(5%,0); }
+        }
+        @keyframes scan-move {
+            0% { top: -10%; opacity: 0; } 5% { opacity: 1; } 90% { opacity: 1; } 100% { top: 110%; opacity: 0; }
         }
         @keyframes glitch-skew {
             0% { transform: skew(0deg); } 20% { transform: skew(0deg); }
             21% { transform: skew(10deg); filter: drop-shadow(-5px 0 red) drop-shadow(5px 0 blue); }
             22% { transform: skew(-10deg); filter: drop-shadow(5px 0 red) drop-shadow(-5px 0 blue); }
-            23% { transform: skew(0deg); filter: drop-shadow(-2px 0 red) drop-shadow(2px 0 blue); }
-            100% { transform: skew(0deg); }
+            23% { transform: skew(0deg); filter: drop-shadow(-2px 0 red) drop-shadow(2px 0 blue); } 100% { transform: skew(0deg); }
         }
         @keyframes text-flicker {
             0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; text-shadow: 0 0 10px rgba(255, 196, 0, 0.5); }
@@ -269,7 +254,11 @@
         }
         aside::-webkit-scrollbar { width: 0; }
         body.db-loaded aside { display: flex; }
+        
+        /* FIX: Hide sidebar for Progetti and Map */
         body.section-progetti aside { display: none !important; width: 0 !important; pointer-events: none; }
+        body.section-map aside { display: none !important; width: 0 !important; pointer-events: none; }
+        
         @keyframes slideInLeft { from { transform: translateX(-20px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
         
         .filter-circle {
@@ -293,7 +282,17 @@
         /* --- CONTENT AREA --- */
         .content-area { flex: 1; padding: 20px 40px 40px 40px; overflow-y: auto; transition: padding-left 0.3s ease; }
         body.db-loaded .content-area { padding-left: var(--content-pad-left); }
-        body.section-progetti .content-area { padding-left: 40px !important; }
+        
+        /* FIX: Center Layout for Progetti */
+        body.section-progetti .content-area { padding-left: 0 !important; }
+        body.section-progetti .stash-grid {
+             max-width: 1400px;
+             margin: 0 auto;
+             padding: 0 20px 100px 20px;
+             justify-content: center;
+        }
+        
+        body.section-map .content-area { padding: 0 !important; overflow: hidden; }
         
         .section-header-bp { margin-bottom: 20px; animation: fadeIn 0.5s ease; }
         .sh-title { font-family: var(--font-head); font-size: 2.5rem; color: #fff; line-height: 1; letter-spacing: 2px; text-transform: uppercase; }
@@ -332,7 +331,7 @@
         .wishlist-badge { position: absolute; top: 4px; right: 4px; background: var(--arc-yellow); color: #000; font-weight: 800; font-size: 0.8rem; padding: 2px 6px; border-radius: 2px; z-index: 20; pointer-events: none; box-shadow: 0 0 5px var(--arc-yellow); }
 
         /* --- TOOLTIP (HOVER - BEIGE CARD) --- */
-        #tooltip { position: fixed; display: none; width: 340px; background-color: var(--card-bg); color: var(--card-text); box-shadow: 0 40px 80px rgba(0,0,0,1); z-index: 11000; font-family: var(--font-body); pointer-events: none; border-radius: 4px; overflow: hidden; border: none; }
+        #tooltip { position: fixed; display: none; width: 340px; background-color: var(--card-bg); color: var(--card-text); box-shadow: 0 40px 80px rgba(0,0,0,1); z-index: 13000; font-family: var(--font-body); pointer-events: none; border-radius: 4px; overflow: hidden; border: none; }
         #tooltip.interactive { pointer-events: auto !important; }
 
         /* --- SIDEBAR TOOLTIP (CUSTOM) --- */
@@ -355,13 +354,14 @@
         .tt-foot-item img { display: block; filter: none; opacity: 1; }
 
         /* --- POPUP / INFO MODAL --- */
-        #modalBackdrop { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.7); backdrop-filter: blur(3px); z-index: 11500; display: none; }
-        .overlay-container { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #111; color: var(--arc-white); box-shadow: 0 0 100px rgba(0,0,0,1); z-index: 12000; width: 450px; display: none; flex-direction: column; max-height: 85vh; border-radius: 4px; border: 1px solid var(--arc-yellow); user-select: text !important; cursor: auto; }
+        #modalBackdrop { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.7); backdrop-filter: blur(3px); z-index: 14000; display: none; }
+        .overlay-container { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #111; color: var(--arc-white); box-shadow: 0 0 100px rgba(0,0,0,1); z-index: 14100; width: 450px; display: none; flex-direction: column; max-height: 85vh; border-radius: 4px; border: 1px solid var(--arc-yellow); user-select: text !important; cursor: auto; }
         .overlay-header { display: flex; justify-content: space-between; align-items: center; padding: 15px; border-bottom: 1px solid #333; background: #1a1a1a; user-select: none !important; flex-shrink: 0; }
         .overlay-title { font-family: var(--font-head); font-size: 2.2rem; color: var(--arc-yellow); margin: 0; text-transform: uppercase; line-height: 1; }
         .overlay-close { background: none; border: none; color: #666; font-size: 2.5rem; cursor: pointer; line-height: 1; user-select: none !important; transition:0.2s;}
         .overlay-close:hover { color: #fff; }
-        .overlay-scrollable-content { overflow-y: auto; flex: 1; background: #111; color: #fff; padding: 15px; }
+        .overlay-scrollable-content { overflow-y: auto; flex: 1; background: #111; color: #fff; padding: 15px; user-select: text !important; cursor: text; }
+        .overlay-scrollable-content * { user-select: text !important; }
         .overlay-scrollable-content::-webkit-scrollbar { width: 8px; }
         .overlay-scrollable-content::-webkit-scrollbar-track { background: #1a1a1a; }
         .overlay-scrollable-content::-webkit-scrollbar-thumb { background: var(--arc-yellow); border-radius: 4px; }
@@ -379,11 +379,9 @@
         .val-total { font-weight: 700; font-size: 1.1rem; }
         .val-better { color: var(--arc-teal); } 
         .val-worse { color: var(--arc-red); } 
-
-        #adminModal { width: 600px; }
-        .edit-form { display: flex; flex-direction: column; gap: 10px; color: #ddd; padding: 20px; }
-        .edit-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-        .edit-input { background: #000; border: 1px solid #444; color: white; padding: 8px; width: 65%; font-family: var(--font-ui); font-size: 1rem; }
+        
+        .clickable-row { cursor: pointer; transition: background 0.2s; }
+        .clickable-row:hover { background: rgba(255,255,255,0.05); }
 
         #loader { background: #000; }
         .spinner { border-color: #333; border-top-color: var(--arc-yellow); }
@@ -403,25 +401,138 @@
         .btn-track:hover { border-color: var(--arc-yellow); color: var(--arc-yellow); }
         .btn-track.added { background: var(--arc-yellow); color: #000; border-color: var(--arc-yellow); }
 
+        /* --- MAPPA SECTION - DASHBOARD v1.17.23 --- */
+        #map-container { 
+            position: absolute; top:0; left:0; width:100%; height:100%; 
+            background-color: #050505;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            display:none; 
+            padding-top: 120px; justify-content: center; align-items: flex-start; overflow-y: auto;
+        }
+
+        /* --- DASHBOARD OVERLAY (ARC RAIDERS STYLE) --- */
+        .mission-control {
+            position: relative;
+            width: 90%; max-width: 900px;
+            margin: 0 auto 50px auto;
+            display: flex; flex-direction: column; gap: 20px;
+            z-index: 200; pointer-events: auto;
+        }
+        
+        .mc-clock-panel {
+             display: flex; justify-content: space-between; align-items: center;
+             background: #111;
+             border: 1px solid #444;
+             border-left: 4px solid var(--arc-yellow);
+             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+             padding: 12px 20px; color: #aaa; font-family: var(--font-mono); font-size: 1rem;
+             text-transform: uppercase; letter-spacing: 1px;
+        }
+        .mc-clock-panel strong { color: #fff; margin-left: 5px; text-shadow: 0 0 5px rgba(255,255,255,0.3); }
+        
+        .mc-panel {
+            background: rgba(12, 12, 14, 0.95);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 2px;
+            padding: 0;
+            display: flex; flex-direction: column;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            position: relative;
+        }
+        .mc-panel::before {
+             content: ''; position: absolute; top: -1px; left: -1px; width: 10px; height: 10px;
+             border-top: 2px solid var(--arc-white); border-left: 2px solid var(--arc-white); pointer-events: none;
+        }
+        .mc-panel::after {
+             content: ''; position: absolute; bottom: -1px; right: -1px; width: 10px; height: 10px;
+             border-bottom: 2px solid var(--arc-white); border-right: 2px solid var(--arc-white); pointer-events: none;
+        }
+
+        .mc-header {
+            font-family: var(--font-head); font-size: 1.8rem;
+            color: #fff; text-transform: uppercase;
+            display: flex; align-items: center; gap: 10px;
+            padding: 15px 20px; background: rgba(255,255,255,0.02);
+            border-bottom: 1px solid rgba(255,255,255,0.05); letter-spacing: 2px;
+        }
+        .mc-header-icon { width: 6px; height: 24px; background: var(--arc-yellow); display: block; margin-right: 5px; }
+        .mc-header-sub { font-family: var(--font-ui); color: #555; font-size: 0.9rem; margin-left: auto; letter-spacing: 1px; font-weight: 700; }
+
+        .mc-scroll-area { padding: 15px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
+
+        /* ARC EVENT CARD */
+        .ev-card {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid #333;
+            padding: 15px;
+            position: relative; overflow: hidden;
+            transition: all 0.2s;
+            display: flex; flex-direction: column; gap: 5px;
+        }
+        .ev-card:hover { border-color: #666; background: rgba(255,255,255,0.02); }
+        
+        .ev-status-line {
+            width: 100%; height: 2px; background: #333; margin: 8px 0; position: relative;
+        }
+        .ev-status-line::after {
+            content:''; position: absolute; left: 0; top: 0; bottom: 0; width: 30%; background: #555;
+        }
+        
+        /* STANDARD / MINOR */
+        .active .ev-status-line { background: rgba(0,255,102,0.2); }
+        .active .ev-status-line::after { background: var(--arc-green); width: 100%; box-shadow: 0 0 10px var(--arc-green); }
+        
+        .upcoming .ev-status-line { background: rgba(0,229,255,0.2); }
+        .upcoming .ev-status-line::after { background: var(--arc-teal); width: 40%; }
+
+        /* MAJOR OVERRIDE */
+        .ev-card.major { border-left: 2px solid var(--arc-red); background: linear-gradient(90deg, rgba(255, 42, 42, 0.05) 0%, rgba(0,0,0,0) 100%); }
+        .ev-card.major:hover { background: linear-gradient(90deg, rgba(255, 42, 42, 0.1) 0%, rgba(0,0,0,0) 100%); border-color: var(--arc-red); }
+        .major .ev-status-line { background: rgba(255, 42, 42, 0.2); }
+        .major .ev-status-line::after { background: var(--arc-red); box-shadow: 0 0 10px var(--arc-red); }
+        .major .ev-title { color: var(--arc-red); text-shadow: 0 0 10px rgba(255, 42, 42, 0.3); }
+        .major .ev-tag { background: var(--arc-red); color: #000; border-color: var(--arc-red); box-shadow: 0 0 15px var(--arc-red); }
+        .major .ev-icon-danger { display: inline-block; width: 16px; height: 16px; fill: var(--arc-red); margin-right: 5px; animation: pulse-red 2s infinite; }
+
+        @keyframes pulse-red { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+
+        .ev-title { font-family: var(--font-head); font-size: 1.6rem; color: #fff; line-height: 0.9; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; display:flex; align-items:center; }
+        .ev-loc { font-family: var(--font-mono); font-size: 0.8rem; color: #888; display: flex; align-items: center; gap: 6px; text-transform: uppercase; }
+        .ev-loc svg { fill: #666; width: 12px; height: 12px; }
+
+        .ev-timer-box {
+             margin-top: 10px; background: rgba(0,0,0,0.5); border: 1px solid #222; padding: 5px 10px;
+             display: flex; justify-content: space-between; align-items: center;
+        }
+        .ev-label { font-family: var(--font-ui); font-size: 0.75rem; color: #666; font-weight: 700; letter-spacing: 1px; }
+        .ev-timer { font-family: var(--font-mono); font-size: 1.2rem; color: #fff; font-weight: 700; letter-spacing: 0px; font-variant-numeric: tabular-nums; }
+        
+        .active .ev-timer { color: var(--arc-green); text-shadow: 0 0 5px rgba(0,255,102,0.5); }
+        .upcoming .ev-timer { color: var(--arc-teal); }
+        .major .ev-timer { color: var(--arc-red); }
+
+        .ev-tag { position: absolute; top: 12px; right: 12px; font-family: var(--font-head); font-size: 1.1rem; color: #333; background: #111; padding: 0 6px; border: 1px solid #333; }
+        .active .ev-tag { color: #000; background: var(--arc-green); border-color: var(--arc-green); box-shadow: 0 0 10px rgba(0,255,102,0.3); }
+        .upcoming .ev-tag { color: var(--arc-teal); border-color: var(--arc-teal); background: rgba(0,229,255,0.1); }
+
     </style>
 </head>
 <body>
 
-<!-- INTRO / BOOT SCREEN WITH CRT EFFECT -->
+<!-- INTRO / BOOT SCREEN -->
 <div id="introScreen" class="intro-screen">
-    <!-- LAYERS -->
     <div class="noise"></div>
     <div class="scanlines"></div>
     <div class="scan-bar"></div>
-
-    <!-- CONTENT -->
     <div class="intro-content">
         <div class="glitch-logo">
             <img src="https://raw.githubusercontent.com/atarufox/Speranza-Archive/main/images/menu/logo.png" alt="ARC Raiders">
         </div>
-        
-        <button class="btn-connect-crt" onclick="connectToDatabase()">
-            <span id="btnConnectBig">CONNECT TO SPERANZA</span>
+        <button class="btn-connect-big" onclick="connectToDatabase()">
+            <span id="btnConnectBig">UI_CONNECT_BTN</span>
         </button>
     </div>
 </div>
@@ -433,9 +544,7 @@
     <circle cx="50" cy="50" r="48.5" stroke="white" stroke-width="3" fill="none" />
     <g stroke="white" stroke-width="3" fill="black" stroke-linejoin="round" stroke-linecap="round">
       <circle cx="50" cy="50" r="11" />
-      <defs>
-        <path id="reel-blade" d="M 45 29 L 39 9 A 42 42 0 0 1 61 9 L 55 29 A 25 25 0 0 1 45 29 Z" />
-      </defs>
+      <defs><path id="reel-blade" d="M 45 29 L 39 9 A 42 42 0 0 1 61 9 L 55 29 A 25 25 0 0 1 45 29 Z" /></defs>
       <use href="#reel-blade" />
       <use href="#reel-blade" transform="rotate(120, 50, 50)" />
       <use href="#reel-blade" transform="rotate(240, 50, 50)" />
@@ -457,17 +566,17 @@
                 <div class="app-logo">
                     <img src="https://raw.githubusercontent.com/atarufox/Speranza-Archive/main/images/menu/logo.png" alt="ARC Raiders">
                 </div>
-                <span class="version-badge">v1.9.0</span>
+                <span class="version-badge">v1.17.23</span>
             </div>
 
-            <!-- HIDDEN IN INTRO, SHOWN IN APP -->
             <div class="nav-links">
-                <div class="nav-item active" onclick="setSection('INVENTARIO')" data-nav="INVENTARIO">INVENTARIO</div>
-                <div class="nav-item" onclick="setSection('OFFICINA')" data-nav="OFFICINA">OFFICINA</div>
-                <div class="nav-item" onclick="setSection('PROGETTI')" data-nav="PROGETTI">PROGETTI</div>
-                <div class="nav-item" onclick="setSection('MERCANTI')" data-nav="MERCANTI">MERCANTI</div>
-                <div class="nav-item" onclick="setSection('NEGOZIO')" data-nav="NEGOZIO">NEGOZIO</div>
-                <div class="nav-item" onclick="setSection('MISSIONI')" data-nav="MISSIONI">MISSIONI</div>
+                <div class="nav-item active" onclick="setSection('INVENTARIO')" data-section="INVENTARIO" data-nav="NAV_INVENTORY">NAV_INVENTORY</div>
+                <div class="nav-item" onclick="setSection('OFFICINA')" data-section="OFFICINA" data-nav="NAV_WORKSHOP">NAV_WORKSHOP</div>
+                <div class="nav-item" onclick="setSection('PROGETTI')" data-section="PROGETTI" data-nav="NAV_BLUEPRINTS">NAV_BLUEPRINTS</div>
+                <div class="nav-item" onclick="setSection('MAPPA')" data-section="MAPPA" data-nav="NAV_EVENTS">NAV_EVENTS</div>
+                <div class="nav-item" onclick="setSection('MERCANTI')" data-section="MERCANTI" data-nav="NAV_TRADERS">NAV_TRADERS</div>
+                <div class="nav-item" onclick="setSection('NEGOZIO')" data-section="NEGOZIO" data-nav="NAV_STORE">NAV_STORE</div>
+                <div class="nav-item" onclick="setSection('MISSIONI')" data-section="MISSIONI" data-nav="NAV_QUESTS">NAV_QUESTS</div>
             </div>
         </div>
 
@@ -482,7 +591,6 @@
                 <span id="btnWishlistText">WISHLIST</span> <span id="wlCounter" class="wl-counter" style="display:none">0</span>
             </button>
 
-            <!-- LANG SELECTOR IS ALWAYS VISIBLE (class lang-selector-btn to exclude from hiding) -->
             <select id="langSelect" class="btn-system lang-selector-btn" style="width: auto;">
                 <option value="">LANG</option>
             </select>
@@ -494,60 +602,66 @@
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
             </label>
             <input type="file" id="importInput" style="display:none" onchange="importUserData(event)">
-            
-            <button class="btn-system btn-icon" id="btnAdmin" onclick="toggleAdminMode()" title="Admin Mode">
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 0.9-2 2v10c0 1.1 0.9 2 2 2h12c1.1 0 2-0.9 2-2V10c0-1.1-0.9-2-2-2zm-6 9c-1.1 0-2-0.9-2-2s0.9-2 2-2 2 0.9 2 2-0.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
-            </button>
-            <button class="btn-system" id="btnExport" onclick="exportOverrides()" style="display:none; color:var(--arc-yellow)">SAVE</button>
         </div>
     </header>
 
     <div class="content-area">
-        <div id="grid-container" class="stash-grid">
-            <!-- Grid will be populated after connection -->
+        <div id="grid-container" class="stash-grid"></div>
+        <div id="map-container">
+             <!-- MAP CONTENT & OVERLAYS INJECTED BY JS -->
         </div>
     </div>
 </div>
 
-<!-- OVERLAYS (Hidden) -->
 <div id="tooltip"></div>
 <div id="infoModal" class="overlay-container"></div>
-<div id="adminModal" class="overlay-container"></div>
 <svg style="display:none">
     <symbol id="icon-wrench" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></symbol>
    <symbol id="icon-arc" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2-1-2-1-2 1 2 1zm0 2l-10 5 10 5 10-5-10-5z"/></symbol>
    <symbol id="icon-all" viewBox="0 0 24 24"><path d="M4 4h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z M4 10h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z M4 16h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z"/></symbol>
    <symbol id="icon-cosmetic" viewBox="0 0 24 24"><path d="M12 2C9 2 7 3.5 7 5v2H5v14h14V7h-2V5c0-1.5-2-3-5-3zm0 2c1.5 0 3 1 3 3v2H9V5c0-2 1.5-3 3-3z"/></symbol>
    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></symbol>
+   <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></symbol>
+   <symbol id="icon-danger" viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></symbol>
 </svg>
 
 <script>
-    let itemsDB = [], hideoutDB = [], overridesDB = {};
+    let itemsDB = [], hideoutDB = [], questsDB = [];
+    let scheduleData = null; // New container for map-events.json
     let wishlist = new Map();
     let ownedBlueprints = new Set();
-    let currentFilter = 'ALL', viewMode = 'STASH', currentLang = 'it', adminMode = false;
-    let isEditing = false, isWishlistView = false; 
+    let currentFilter = 'ALL', viewMode = 'STASH', currentLang = 'it';
+    let isWishlistView = false; 
     let currentSection = 'INVENTARIO';
     let bpViewMode = 0; 
     let isModalOpen = false; 
+    let currentOpenedItem = null; // Track opened item for live translation
     let activeTranslation = {}; 
+    let mapTicker = null;
+    
+    // LOGGING SYSTEM
+    const missingKeysLog = new Set();
+    function logMissing(category, key) {
+        const combo = `${category}.${key}`;
+        if(!missingKeysLog.has(combo)) {
+            console.warn(`[MISSING ${category.toUpperCase()}] "${key}"`);
+            missingKeysLog.add(combo);
+        }
+    }
 
     const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/atarufox/Speranza-Archive/main/';
 
-    // --- INIT APP (Boot Sequence Step 1) ---
     async function initApp() {
         try {
-            // 1. Fetch available languages
             const availableLangs = ['it', 'en', 'es', 'fr'];
             const langLabels = { 'it': 'ITA', 'en': 'ENG', 'es': 'ESP', 'fr': 'FRA' };
             dom.langSelect.innerHTML = '<option value="">LANG</option>'; 
-            
             const ts = new Date().getTime();
 
             for (let lang of availableLangs) {
                 try {
                     let check = await fetch(`${GITHUB_RAW_BASE_URL}languages/${lang}.json?t=${ts}`, { method: 'HEAD' });
-                    if (!check.ok) check = await fetch(`${GITHUB_RAW_BASE_URL}languages/${lang}.json?t=${ts}`); // Fallback GET
+                    if (!check.ok) check = await fetch(`${GITHUB_RAW_BASE_URL}languages/${lang}.json?t=${ts}`);
                     
                     if (check.ok) {
                         let opt = document.createElement('option');
@@ -558,7 +672,6 @@
                 } catch(e) { console.log("Lang check failed for", lang); }
             }
             
-            // 2. Set Default Lang (IT) and load its text immediately for the intro button
             if(dom.langSelect.querySelector('option[value="it"]')) {
                 dom.langSelect.value = 'it';
                 await loadLanguage('it');
@@ -580,13 +693,17 @@
             
             activeTranslation = await response.json();
             currentLang = lang;
+            missingKeysLog.clear(); // Reset warnings on lang change
             
             updateStaticText();
-            // If already connected, re-render the app
             if(document.body.classList.contains('db-loaded')) {
                 renderSidebar();
                 updateUI();
                 render();
+                // LIVE MODAL UPDATE
+                if(isModalOpen && currentOpenedItem) {
+                    openInfoModal(currentOpenedItem);
+                }
             }
         } catch (error) {
             console.error("Failed to load language:", error);
@@ -598,41 +715,67 @@
     }
 
     async function connectToDatabase() {
-        dom.loader.style.display = 'flex'; itemsDB = []; hideoutDB = []; 
+        dom.loader.style.display = 'flex'; itemsDB = []; hideoutDB = []; questsDB = []; scheduleData = null;
         dom.loaderText.textContent = "ESTABLISHING CONNECTION...";
         
         try {
             const repo = 'atarufox/Speranza-Archive';
-            const ts = new Date().getTime(); // Cache busting for DB files
+            const ts = new Date().getTime(); 
             
-            // Load Items
-            dom.loaderText.textContent = "DOWNLOADING ITEM DATABASE...";
-            const itemsUrl = `https://api.github.com/repos/${repo}/contents/items?t=${ts}`;
-            const responseItems = await fetch(itemsUrl);
-            if (!responseItems.ok) throw new Error(`GitHub API error (Items): ${responseItems.status}`);
-            const filesItems = await responseItems.json();
-            const jsonFilesItems = filesItems.filter(f => f.name.endsWith('.json'));
-            
-            // Load Hideout
-            dom.loaderText.textContent = "DOWNLOADING HIDEOUT DATA...";
-            const hideoutUrl = `https://api.github.com/repos/${repo}/contents/hideout?t=${ts}`;
-            const responseHideout = await fetch(hideoutUrl);
-            let jsonFilesHideout = [];
-            if (responseHideout.ok) {
-                const filesHideout = await responseHideout.json();
-                jsonFilesHideout = filesHideout.filter(f => f.name.endsWith('.json'));
+            // 1. ITEMS (Inventory + Blueprints + Cosmetics)
+            dom.loaderText.textContent = "INDEXING INVENTORY, BLUEPRINTS & COSMETICS...";
+            const paths = ['items/inventory', 'items/blueprints', 'items/cosmetics'];
+            for (const p of paths) {
+                try {
+                    const listUrl = `https://api.github.com/repos/${repo}/contents/${p}?t=${ts}`;
+                    const responseList = await fetch(listUrl);
+                    if (responseList.ok) {
+                        const fileList = await responseList.json();
+                        const jsonFiles = fileList.filter(f => f.name.endsWith('.json'));
+                        const fetched = await Promise.all(jsonFiles.map(file => fetch(file.download_url + `?t=${ts}`).then(res => res.json())));
+                        itemsDB = itemsDB.concat(fetched);
+                    }
+                } catch(e) { console.warn(`Failed to fetch ${p}`, e); }
             }
+            if (itemsDB.length === 0) console.warn("No items found in new subdirectories.");
 
-            dom.loaderText.textContent = `PROCESSING ${jsonFilesItems.length + jsonFilesHideout.length} FILES...`;
-            
-            const itemPromises = jsonFilesItems.map(file => fetch(file.download_url + `?t=${ts}`).then(res => res.json()));
-            const hideoutPromises = jsonFilesHideout.map(file => fetch(file.download_url + `?t=${ts}`).then(res => res.json()));
+            // 2. HIDEOUT
+            dom.loaderText.textContent = "DOWNLOADING HIDEOUT DATA...";
+            const hideoutFiles = ['explosives_station.json', 'gear_bench.json', 'gunsmith.json', 'medical_lab.json', 'refiner.json', 'scrappy.json', 'stash.json', 'utility_station.json', 'workbench.json'];
+            try {
+                const hideoutPromises = hideoutFiles.map(f => fetch(`${GITHUB_RAW_BASE_URL}hideout/${f}?t=${ts}`).then(res => res.ok ? res.json() : null));
+                const loadedHideouts = (await Promise.all(hideoutPromises)).filter(Boolean);
+                hideoutDB = normalizeHideoutData(loadedHideouts, 'RaidTheory');
+            } catch(e) { console.error("Hideout error", e); }
 
-            const loadedItems = await Promise.all(itemPromises);
-            const loadedHideout = await Promise.all(hideoutPromises);
+            // 3. MAP EVENTS
+            dom.loaderText.textContent = "DOWNLOADING MAP DATA...";
+            try {
+                const url = `${GITHUB_RAW_BASE_URL}map-events/map-events.json?t=${ts}`;
+                const mapRes = await fetch(url);
+                if(mapRes.ok) {
+                    let rawData = await mapRes.json();
+                    if(rawData.schedule) {
+                         scheduleData = rawData;
+                    } else if (Array.isArray(rawData) || rawData.events) {
+                         console.warn("Using Legacy Map Format (Deprecated)");
+                         scheduleData = { legacy: Array.isArray(rawData) ? rawData : rawData.events };
+                    }
+                }
+            } catch(e) { console.warn("Map events fetch error", e); }
 
-            itemsDB = loadedItems;
-            hideoutDB = normalizeHideoutData(loadedHideout, 'RaidTheory');
+            // 4. QUESTS
+            dom.loaderText.textContent = "DOWNLOADING QUEST DATA...";
+            try {
+                const questUrl = `https://api.github.com/repos/${repo}/contents/quests?t=${ts}`;
+                const responseQuest = await fetch(questUrl);
+                if (responseQuest.ok) {
+                    const questList = await responseQuest.json();
+                    const jsonQuestFiles = questList.filter(f => f.name.endsWith('.json'));
+                    const fetchedQuests = await Promise.all(jsonQuestFiles.map(file => fetch(file.download_url + `?t=${ts}`).then(res => res.json())));
+                    questsDB = fetchedQuests;
+                }
+            } catch(e) { console.warn("Failed to fetch quests", e); }
 
             enableUI(); analyzeTypes();
         } catch (error) {
@@ -645,79 +788,95 @@
         document.body.classList.add('db-loaded');
         dom.search.disabled = false;
         dom.loader.style.display = 'none';
-        
-        // Hide intro, show grid
         setSection('INVENTARIO'); 
         setFilter('ALL');
     }
 
-    // --- TRANSLATION HELPERS (Fixed: Safe checks & Fallbacks) ---
-    function getUI(key) {
-        if (activeTranslation && activeTranslation.ui && activeTranslation.ui[key]) return activeTranslation.ui[key];
-        // LOG WARNING IF MISSING (Only once per key to avoid spam? No, spam is fine for debugging)
-        console.warn(`⚠️ MISSING TRANSLATION (ui): ${key}`);
+    // --- TRANSLATION HELPERS ---
+    function getUI(key) { 
+        if(activeTranslation?.ui?.[key]) return activeTranslation.ui[key];
+        logMissing('ui', key);
         return `UI_${key.toUpperCase()}`; 
     }
-    
-    function getNav(key) {
-        if (activeTranslation && activeTranslation.nav && activeTranslation.nav[key]) return activeTranslation.nav[key];
-        console.warn(`⚠️ MISSING TRANSLATION (nav): ${key}`);
-        return `NAV_${key}`;
-    }
-    
-    function getFilter(key) {
-        if (activeTranslation && activeTranslation.filters && activeTranslation.filters[key]) return activeTranslation.filters[key];
-        console.warn(`⚠️ MISSING TRANSLATION (filter): ${key}`);
-        return `FILT_${key}`;
+
+    function getNav(key) { 
+        if(activeTranslation?.nav?.[key]) return activeTranslation.nav[key];
+        logMissing('nav', key);
+        return key; 
     }
 
-    function translateType(rawType) {
-        if(!rawType) return "";
-        if(rawType.toLowerCase() === 'item') return getUI('item');
-        if (activeTranslation && activeTranslation.types && activeTranslation.types[rawType]) return activeTranslation.types[rawType];
-        return rawType.toUpperCase();
+    function getFilter(key) { 
+        if(activeTranslation?.filters?.[key]) return activeTranslation.filters[key];
+        // Standardize fallback: if missing, return key itself (e.g. FILT_WEAPONS)
+        logMissing('filters', key);
+        return key; 
+    }
+    
+    function getLoc(obj) { 
+        if(!obj) return ""; 
+        if(typeof obj === 'string') return obj; 
+        
+        // Log missing translation if object exists but current lang key is missing
+        if (obj['en'] && !obj[currentLang] && currentLang !== 'en') {
+             // Suppress item logs to avoid extreme spam, or use a Set like below
+        }
+        
+        return obj[currentLang] || obj['en'] || ""; 
+    }
+    
+    function getLocLocation(locId) {
+        if(!locId) return "Unknown";
+        
+        // Construct the standardized key first
+        const key = `MAP_LOC_${locId.toUpperCase().replace(/[-\s]/g, '_')}`;
+        
+        // Look up the constructed key
+        if (activeTranslation && activeTranslation.locations && activeTranslation.locations[key]) {
+            return activeTranslation.locations[key];
+        }
+
+        // Fallback: return the constructed key (placeholder)
+        logMissing('locations', key);
+        return key;
     }
 
-    // --- CONFIGURAZIONE FILTRI SIDEBAR ---
     const SIDEBAR_CONFIG = {
-        'INVENTARIO': [
-            { id: 'ALL', img: 'all', type: 'img', labelKey: 'ALL' }, 
-            { id: 'POTENZIAMENTI', img: 'augments', type: 'img', labelKey: 'POTENZIAMENTI' },
-            { id: 'SCUDI', img: 'shields', type: 'img', labelKey: 'SCUDI' },
-            { id: 'ARMI', img: 'weapons', type: 'img', labelKey: 'ARMI' },
-            { id: 'MUNIZIONI', img: 'ammunitions', type: 'img', labelKey: 'MUNIZIONI' },
-            { id: 'MOD', img: 'weapon_mods', type: 'img', labelKey: 'MOD' },
-            { id: 'USO_RAPIDO', img: 'quick_use', type: 'img', labelKey: 'USO_RAPIDO' },
-            { id: 'CHIAVI', img: 'keys', type: 'img', labelKey: 'CHIAVI' },
-            { id: 'MATERIALI', img: 'crafting_materials', type: 'img', labelKey: 'MATERIALI' },
-            { id: 'VARIE', img: 'misc', type: 'img', labelKey: 'VARIE' },
-            { id: 'COSMETICS', icon: 'icon-cosmetic', type: 'svg', labelKey: 'COSMETICS' }
+        'INVENTARIO': [ 
+            { id: 'ALL', img: 'all', type: 'img', labelKey: 'FILT_ALL' }, 
+            { id: 'AUGMENTS', img: 'augments', type: 'img', labelKey: 'FILT_AUGMENTS' }, 
+            { id: 'SHIELDS', img: 'shields', type: 'img', labelKey: 'FILT_SHIELDS' }, 
+            { id: 'WEAPONS', img: 'weapons', type: 'img', labelKey: 'FILT_WEAPONS' }, 
+            { id: 'AMMO', img: 'ammunitions', type: 'img', labelKey: 'FILT_AMMO' }, 
+            { id: 'MODS', img: 'weapon_mods', type: 'img', labelKey: 'FILT_MODS' }, 
+            { id: 'QUICK_USE', img: 'quick_use', type: 'img', labelKey: 'FILT_QUICK_USE' }, 
+            { id: 'KEYS', img: 'keys', type: 'img', labelKey: 'FILT_KEYS' }, 
+            { id: 'MATERIALS', img: 'crafting_materials', type: 'img', labelKey: 'FILT_MATERIALS' }, 
+            { id: 'MISC', img: 'misc', type: 'img', labelKey: 'FILT_MISC' } 
         ],
-        'PROGETTI': [
-            { id: 'ALL', icon: 'icon-all', type: 'svg', labelKey: 'ALL' }, 
-            { id: 'ARMI', img: 'weapons', type: 'img', labelKey: 'ARMI' },
-            { id: 'MOD', img: 'weapon_mods', type: 'img', labelKey: 'MOD' },
-            { id: 'USO_RAPIDO', img: 'quick_use', type: 'img', labelKey: 'USO_RAPIDO' },
-            { id: 'MATERIALI', img: 'crafting_materials', type: 'img', labelKey: 'MATERIALI' }
+        'PROGETTI': [ 
+            { id: 'ALL', icon: 'icon-all', type: 'svg', labelKey: 'FILT_ALL' }, 
+            { id: 'WEAPONS', img: 'weapons', type: 'img', labelKey: 'FILT_WEAPONS' }, 
+            { id: 'MODS', img: 'weapon_mods', type: 'img', labelKey: 'FILT_MODS' }, 
+            { id: 'QUICK_USE', img: 'quick_use', type: 'img', labelKey: 'FILT_QUICK_USE' }, 
+            { id: 'MATERIALS', img: 'crafting_materials', type: 'img', labelKey: 'FILT_MATERIALS' } 
         ],
-        'OFFICINA': [
-            { id: 'ALL', img: 'all', type: 'img', labelKey: 'ALL' },
-            { targetId: 'scrappy' },
-            { targetId: 'workbench' },
-            { targetId: 'gunsmith' },
-            { targetId: 'gear_bench' },
-            { targetId: 'explosives_station' },
-            { targetId: 'refiner' },
-            { targetId: 'medical_lab' },
-            { targetId: 'utility_station' }
+        'OFFICINA': [ 
+            { id: 'ALL', img: 'all', type: 'img', labelKey: 'FILT_ALL' }, 
+            { targetId: 'scrappy' }, 
+            { targetId: 'workbench' }, 
+            { targetId: 'gunsmith' }, 
+            { targetId: 'gear_bench' }, 
+            { targetId: 'explosives_station' }, 
+            { targetId: 'refiner' }, 
+            { targetId: 'medical_lab' }, 
+            { targetId: 'utility_station' } 
         ], 
-        'MERCANTI': [], 
-        'NEGOZIO': [],
-        'MISSIONI': []
+        'MERCANTI': [], 'NEGOZIO': [], 'MISSIONI': [], 'MAPPA': [] 
     };
 
     const dom = {
         grid: document.getElementById('grid-container'),
+        mapContainer: document.getElementById('map-container'),
         loader: document.getElementById('loader'),
         loaderText: document.getElementById('loader-text'),
         search: document.getElementById('searchInput'),
@@ -727,7 +886,6 @@
         sbTooltip: document.getElementById('sidebar-tooltip'),
         wlCounter: document.getElementById('wlCounter'),
         infoModal: document.getElementById('infoModal'),
-        adminModal: document.getElementById('adminModal'),
         modalBackdrop: document.getElementById('modalBackdrop'),
         btnWishlistText: document.getElementById('btnWishlistText'),
         btnWishlist: document.getElementById('btnWishlist'),
@@ -739,73 +897,229 @@
     dom.langSelect.addEventListener('change', (e) => { if(e.target.value) loadLanguage(e.target.value); });
     
     function updateStaticText() {
-        dom.search.placeholder = (getUI('search') && getUI('search') !== 'UI_SEARCH') ? getUI('search') : 'SEARCH';
-        
-        if(dom.btnConnectBig) {
-            const transBtn = getUI('connect_btn');
-            dom.btnConnectBig.innerText = (transBtn && transBtn !== 'UI_CONNECT_BTN') ? transBtn : "CONNECT TO SPERANZA";
-        }
-
-        if(dom.btnWishlistText && !isWishlistView && currentSection !== 'PROGETTI') {
-             const transWl = getUI('what_i_need');
-             dom.btnWishlistText.innerText = (transWl && transWl !== 'UI_WHAT_I_NEED') ? transWl : "WHAT I NEED";
-        }
-        
-        document.querySelectorAll('.nav-item').forEach(el => {
-            const key = el.getAttribute('data-nav');
-            if(key) el.innerText = getNav(key) || key;
-        });
+        const ph = getUI('search');
+        dom.search.placeholder = ph;
+        if(dom.btnConnectBig) dom.btnConnectBig.innerText = getUI('connect_btn');
+        if(dom.btnWishlistText && !isWishlistView && currentSection !== 'PROGETTI') dom.btnWishlistText.innerText = getUI('what_i_need');
+        document.querySelectorAll('.nav-item').forEach(el => { const key = el.getAttribute('data-nav'); el.innerText = getNav(key); });
     }
 
     // Modal controls
-    window.closeInfoModal = function() { dom.infoModal.style.display = 'none'; dom.modalBackdrop.style.display = 'none'; isModalOpen = false; };
-    window.closeAdmin = function() { isEditing = false; dom.adminModal.style.display = 'none'; dom.modalBackdrop.style.display = 'none'; isModalOpen = false; };
-    window.saveEdit = saveEdit;
-
+    window.closeInfoModal = function() { dom.infoModal.style.display = 'none'; dom.modalBackdrop.style.display = 'none'; isModalOpen = false; currentOpenedItem = null; };
+    
     // --- NAVIGATION LOGIC ---
     function setSection(sectionName) {
         currentSection = sectionName;
-        document.querySelectorAll('.nav-item').forEach(el => {
-            el.classList.toggle('active', el.getAttribute('data-nav') === sectionName);
-        });
+        // Use data-section for active class toggle instead of data-nav
+        document.querySelectorAll('.nav-item').forEach(el => el.classList.toggle('active', el.getAttribute('data-section') === sectionName));
+        
+        // Handle Map View
+        if(sectionName === 'MAPPA') {
+            document.body.classList.add('section-map');
+            dom.grid.style.display = 'none';
+            dom.mapContainer.style.display = 'flex'; // Changed to flex for centering
+            renderMap();
+        } else {
+            document.body.classList.remove('section-map');
+            dom.grid.style.display = 'grid';
+            dom.mapContainer.style.display = 'none';
+            stopMapTicker();
+        }
+
         if(sectionName === 'PROGETTI') {
             document.body.classList.add('section-progetti');
             document.body.classList.add('sidebar-empty');
         } else {
             document.body.classList.remove('section-progetti');
-            if(SIDEBAR_CONFIG[sectionName] && SIDEBAR_CONFIG[sectionName].length > 0) {
-                document.body.classList.remove('sidebar-empty');
-            } else {
-                document.body.classList.add('sidebar-empty');
-            }
+            if(SIDEBAR_CONFIG[sectionName] && SIDEBAR_CONFIG[sectionName].length > 0) document.body.classList.remove('sidebar-empty');
+            else document.body.classList.add('sidebar-empty');
         }
+        
         renderSidebar();
-        if(document.body.classList.contains('db-loaded')) {
+        if(document.body.classList.contains('db-loaded') && sectionName !== 'MAPPA') {
             currentFilter = 'ALL'; viewMode = 'STASH'; isWishlistView = false;
             dom.btnWishlist.classList.remove('active'); updateUI(); render();
         }
     }
 
+    // --- MAP LOGIC (ARC RAIDERS DASHBOARD) ---
+    function renderMap() {
+        dom.mapContainer.innerHTML = '';
+        
+        const dashboard = document.createElement('div');
+        dashboard.className = 'mission-control';
+        dashboard.id = 'missionControl';
+        
+        dom.mapContainer.appendChild(dashboard);
+        startMapTicker();
+    }
+
+    function startMapTicker() {
+        if(mapTicker) clearInterval(mapTicker);
+        updateMapEvents(); 
+        mapTicker = setInterval(updateMapEvents, 1000);
+    }
+
+    function stopMapTicker() {
+        if(mapTicker) clearInterval(mapTicker);
+    }
+
+    function updateMapEvents() {
+        const dashboard = document.getElementById('missionControl');
+        
+        if(!scheduleData) {
+            if(dashboard) dashboard.innerHTML = `<div style="color:#fff; padding:20px; text-align:center;">OFFLINE / NO DATA</div>`;
+            return;
+        }
+
+        const now = new Date();
+        const nowTs = now.getTime();
+        const utcStr = now.toISOString().substring(11, 16);
+        const locStr = now.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+
+        let activeEvents = [];
+        let upcomingEvents = [];
+
+        if(scheduleData.schedule) {
+            const types = scheduleData.eventTypes || {};
+            const schedule = scheduleData.schedule; 
+            
+            Object.keys(schedule).forEach(mapId => {
+                const mapSchedule = schedule[mapId];
+                Object.keys(mapSchedule).forEach(cat => {
+                    // cat is usually "Standard" or something similar. Let's use it for Major detection.
+                    const hoursObj = mapSchedule[cat]; 
+                    Object.entries(hoursObj).forEach(([hourStr, eventTypeId]) => {
+                        const evtDef = types[eventTypeId];
+                        if(!evtDef) return;
+
+                        const durationMin = evtDef.duration || 60; 
+                        const durationMs = durationMin * 60 * 1000;
+                        const targetHour = parseInt(hourStr);
+
+                        const startToday = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), targetHour, 0, 0));
+                        const endToday = new Date(startToday.getTime() + durationMs);
+                        processInstance(startToday, endToday, mapId, eventTypeId, evtDef, cat);
+
+                        const startTom = new Date(startToday.getTime() + 24 * 60 * 60 * 1000);
+                        const endTom = new Date(startTom.getTime() + durationMs);
+                        processInstance(startTom, endTom, mapId, eventTypeId, evtDef, cat);
+                    });
+                });
+            });
+        }
+
+        function processInstance(start, end, mapId, eventTypeId, evtDef, cat) {
+            const startMs = start.getTime();
+            const endMs = end.getTime();
+            
+            // EXTRACT ICON
+            const icon = evtDef.icon || null; 
+
+            if (nowTs >= startMs && nowTs < endMs) {
+                activeEvents.push({ mapId, name: evtDef.name || eventTypeId, cat: cat, timeLeft: Math.floor((endMs - nowTs) / 1000), icon: icon });
+            }
+            else if (nowTs < startMs && (startMs - nowTs) < (4 * 60 * 60 * 1000)) {
+                upcomingEvents.push({ mapId, name: evtDef.name || eventTypeId, cat: cat, timeLeft: Math.floor((startMs - nowTs) / 1000), icon: icon });
+            }
+        }
+
+        upcomingEvents.sort((a,b) => a.timeLeft - b.timeLeft);
+
+        // --- RENDER ---
+        let html = '';
+        
+        // CLOCK PANEL
+        html += `<div class="mc-clock-panel"><span>MISSION TIMER // UTC: <strong>${utcStr}</strong></span><span>LOCAL: <strong>${locStr}</strong></span></div>`;
+
+        // ACTIVE PANEL
+        if(activeEvents.length > 0) {
+            html += `<div class="mc-panel"><div class="mc-header"><span class="mc-header-icon"></span>ACTIVE DEPLOYMENTS<div class="mc-header-sub">LIVE</div></div><div class="mc-scroll-area">`;
+            activeEvents.forEach(e => {
+                let m = Math.floor(e.timeLeft / 60);
+                let s = Math.floor(e.timeLeft % 60);
+                let timer = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+                
+                // Determine Major/Standard
+                const isMajor = e.cat.toLowerCase().includes('major') || e.cat.toLowerCase().includes('high') || e.cat.toLowerCase().includes('pro');
+                const cardClass = isMajor ? 'ev-card active major' : 'ev-card active';
+                const tagText = isMajor ? 'HIGH VALUE' : 'LIVE';
+                const iconHtml = isMajor ? `<svg class="ev-icon-danger"><use href="#icon-danger"></use></svg>` : '';
+                
+                let eventIconImg = '';
+                if(e.icon) {
+                    const src = e.icon.startsWith('http') ? e.icon : (e.icon.includes('/') ? GITHUB_RAW_BASE_URL + e.icon : GITHUB_RAW_BASE_URL + 'images/menu/' + e.icon);
+                    eventIconImg = `<img src="${src}" style="height:28px; width:auto; margin-right:8px; vertical-align:middle; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));">`;
+                }
+
+                // FIX: Status Line BELOW title to prevent overlapping tag
+                html += `
+                <div class="${cardClass}">
+                    <div class="ev-tag">${tagText}</div>
+                    <div class="ev-title">${iconHtml}${eventIconImg}${getLocLocation(e.name)}</div>
+                    <div class="ev-status-line"></div>
+                    <div class="ev-loc"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> ${getLocLocation(e.mapId)}</div>
+                    <div class="ev-timer-box">
+                         <span class="ev-label">CLOSING IN</span>
+                         <span class="ev-timer">${timer}</span>
+                    </div>
+                </div>`;
+            });
+            html += `</div></div>`;
+        }
+
+        // UPCOMING PANEL
+        if(upcomingEvents.length > 0) {
+            html += `<div class="mc-panel"><div class="mc-header"><span class="mc-header-icon" style="background:var(--arc-teal)"></span>UPCOMING WINDOWS<div class="mc-header-sub">T-MINUS 4H</div></div><div class="mc-scroll-area">`;
+            upcomingEvents.forEach(e => {
+                let h = Math.floor(e.timeLeft / 3600);
+                let m = Math.floor((e.timeLeft % 3600) / 60);
+                let s = Math.floor(e.timeLeft % 60);
+                let timer = `${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+
+                const isMajor = e.cat.toLowerCase().includes('major') || e.cat.toLowerCase().includes('high') || e.cat.toLowerCase().includes('pro');
+                const cardClass = isMajor ? 'ev-card upcoming major' : 'ev-card upcoming';
+                const tagText = isMajor ? 'HIGH VALUE' : 'SOON';
+                const iconHtml = isMajor ? `<svg class="ev-icon-danger"><use href="#icon-danger"></use></svg>` : '';
+                
+                let eventIconImg = '';
+                if(e.icon) {
+                    const src = e.icon.startsWith('http') ? e.icon : (e.icon.includes('/') ? GITHUB_RAW_BASE_URL + e.icon : GITHUB_RAW_BASE_URL + 'images/menu/' + e.icon);
+                    eventIconImg = `<img src="${src}" style="height:28px; width:auto; margin-right:8px; vertical-align:middle; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));">`;
+                }
+
+                // FIX: Status Line BELOW title
+                html += `
+                <div class="${cardClass}">
+                    <div class="ev-tag">${tagText}</div>
+                    <div class="ev-title">${iconHtml}${eventIconImg}${getLocLocation(e.name)}</div>
+                    <div class="ev-status-line"></div>
+                    <div class="ev-loc"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> ${getLocLocation(e.mapId)}</div>
+                    <div class="ev-timer-box">
+                         <span class="ev-label">OPENS IN</span>
+                         <span class="ev-timer">${timer}</span>
+                    </div>
+                </div>`;
+            });
+            html += `</div></div>`;
+        } else if (activeEvents.length === 0) {
+             html += `<div class="mc-panel" style="padding:40px; text-align:center; color:#555;">NO SIGNAL DETECTED</div>`;
+        }
+
+        dashboard.innerHTML = html;
+    }
+
+    // --- OTHER CORE FUNCTIONS ---
     function renderSidebar() {
         const config = SIDEBAR_CONFIG[currentSection] || [];
         dom.sidebar.innerHTML = "";
-        if(config.length === 0) return; 
-
         config.forEach(item => {
-            if(item.sep) {
-                const sep = document.createElement('div');
-                sep.className = 'sidebar-sep';
-                dom.sidebar.appendChild(sep);
-                return;
-            }
-            let realItem = null;
+            if(item.sep) { dom.sidebar.appendChild(Object.assign(document.createElement('div'), {className:'sidebar-sep'})); return; }
             let displayTitle = "";
             if (currentSection === 'OFFICINA' && item.targetId) {
-                realItem = hideoutDB.find(x => x.id === item.targetId);
-                if (realItem) displayTitle = getLoc(realItem.name); else displayTitle = item.targetId;
-            } else {
-                displayTitle = getFilter(item.labelKey);
-            }
+                const realItem = hideoutDB.find(x => x.id === item.targetId);
+                displayTitle = realItem ? getLoc(realItem.name) : item.targetId;
+            } else { displayTitle = getFilter(item.labelKey); }
 
             const div = document.createElement('div');
             div.className = 'filter-circle';
@@ -813,33 +1127,16 @@
             div.onmouseleave = hideSidebarTooltip;
 
             let isActive = false;
-            if (currentSection === 'OFFICINA') {
-                if (item.id === 'ALL' && currentFilter === 'ALL') isActive = true;
-                if (item.targetId && currentFilter === item.targetId) isActive = true;
-            } else {
-                if (item.id === currentFilter) isActive = true;
-            }
+            if (currentSection === 'OFFICINA') { if ((item.id === 'ALL' && currentFilter === 'ALL') || (item.targetId && currentFilter === item.targetId)) isActive = true; }
+            else { if (item.id === currentFilter) isActive = true; }
             if(isActive) div.classList.add('active');
 
-            if (currentSection === 'OFFICINA' && item.targetId) {
-                div.onclick = () => setFilter(item.targetId);
-                div.dataset.filter = item.targetId;
-            } else {
-                div.onclick = () => setFilter(item.id);
-                div.dataset.filter = item.id;
-            }
-
-            if(item.type === 'svg') {
-                div.innerHTML = `<svg><use href="#${item.icon}"></use></svg>`;
-            } else {
+            div.onclick = () => setFilter(item.targetId || item.id);
+            if(item.type === 'svg') div.innerHTML = `<svg><use href="#${item.icon}"></use></svg>`;
+            else {
                 div.classList.add('has-image');
-                let imgName = item.img; 
-                if (currentSection === 'OFFICINA' && item.targetId) imgName = item.targetId;
-                
-                div.innerHTML = `
-                    <img class="icon-inactive" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_inactive.png" onerror="this.style.display='none'" alt="">
-                    <img class="icon-active" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_active.png" onerror="this.style.display='none'" alt="">
-                `;
+                let imgName = (currentSection === 'OFFICINA' && item.targetId) ? item.targetId : item.img;
+                div.innerHTML = `<img class="icon-inactive" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_inactive.png" onerror="this.style.display='none'"><img class="icon-active" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_active.png" onerror="this.style.display='none'">`;
             }
             dom.sidebar.appendChild(div);
         });
@@ -855,198 +1152,69 @@
     }
     function hideSidebarTooltip() { dom.sbTooltip.style.display = 'none'; }
 
-    function setFilter(f) {
-        currentFilter = f; 
-        viewMode = (f === 'HIDEOUT') ? 'HIDEOUT' : 'STASH';
-        if(currentSection !== 'PROGETTI') { isWishlistView = false; dom.btnWishlist.classList.remove('active'); }
-        renderSidebar(); render();
-    }
-
-    function handleTopRightButton() {
-        if(currentSection === 'PROGETTI') { bpViewMode = (bpViewMode + 1) % 3; updateUI(); render(); } else { toggleWishlistView(); }
-    }
-
-    function toggleWishlistView() {
-        isWishlistView = !isWishlistView;
-        if(isWishlistView) { dom.btnWishlist.classList.add('active'); viewMode = 'WISHLIST'; } 
-        else { dom.btnWishlist.classList.remove('active'); setFilter('ALL'); }
-        render();
-    }
+    function setFilter(f) { currentFilter = f; viewMode = (f === 'HIDEOUT') ? 'HIDEOUT' : 'STASH'; if(currentSection !== 'PROGETTI') { isWishlistView = false; dom.btnWishlist.classList.remove('active'); } renderSidebar(); render(); }
+    function handleTopRightButton() { if(currentSection === 'PROGETTI') { bpViewMode = (bpViewMode + 1) % 3; updateUI(); render(); } else { toggleWishlistView(); } }
+    function toggleWishlistView() { isWishlistView = !isWishlistView; if(isWishlistView) { dom.btnWishlist.classList.add('active'); viewMode = 'WISHLIST'; } else { dom.btnWishlist.classList.remove('active'); setFilter('ALL'); } render(); }
 
     function updateUI() {
         if (currentSection === 'PROGETTI') {
              dom.btnWishlist.classList.remove('active', 'bp-filter-owned', 'bp-filter-missing');
-             document.getElementById('iconWishlist').style.display = 'none';
-             dom.wlCounter.style.display = 'none';
-             if(bpViewMode === 0) {
-                 const t = getUI('all');
-                 dom.btnWishlistText.innerText = (t !== 'UI_ALL') ? t : 'ALL';
-             } else if(bpViewMode === 1) {
-                 const t = getUI('have');
-                 dom.btnWishlistText.innerText = (t !== 'UI_HAVE') ? t : 'OWNED';
-                 dom.btnWishlist.classList.add('bp-filter-owned');
-             } else if(bpViewMode === 2) {
-                 const t = getUI('missing');
-                 dom.btnWishlistText.innerText = (t !== 'UI_MISSING') ? t : 'MISSING';
-                 dom.btnWishlist.classList.add('bp-filter-missing');
-             }
+             document.getElementById('iconWishlist').style.display = 'none'; dom.wlCounter.style.display = 'none';
+             if(bpViewMode === 0) dom.btnWishlistText.innerText = getUI('all');
+             else if(bpViewMode === 1) { dom.btnWishlistText.innerText = getUI('have'); dom.btnWishlist.classList.add('bp-filter-owned'); }
+             else if(bpViewMode === 2) { dom.btnWishlistText.innerText = getUI('missing'); dom.btnWishlist.classList.add('bp-filter-missing'); }
         } else {
-             document.getElementById('iconWishlist').style.display = 'block';
-             const t = getUI('what_i_need');
-             dom.btnWishlistText.innerText = (t !== 'UI_WHAT_I_NEED') ? t : 'WHAT I NEED';
-             dom.btnWishlist.classList.remove('bp-filter-owned', 'bp-filter-missing');
-             updateWishlistCounter();
+             document.getElementById('iconWishlist').style.display = 'block'; dom.btnWishlistText.innerText = getUI('what_i_need'); dom.btnWishlist.classList.remove('bp-filter-owned', 'bp-filter-missing'); updateWishlistCounter();
         }
     }
 
     function normalizeHideoutData(sourceData, sourceRepo) {
         let normalized = [];
-        if (sourceRepo === 'RaidTheory') { 
-            if(Array.isArray(sourceData)) {
-                sourceData.forEach(d => {
-                    if (d.levels) {
-                        let newItem = {
-                            id: d.id, name: d.name,
-                            levels: d.levels.map(l => ({
-                                level: l.level,
-                                requirements: (l.requirementItemIds || []).map(req => ({ item: req.itemId, count: req.quantity }))
-                            }))
-                        };
-                        normalized.push(newItem);
-                    }
-                });
-            }
+        if (sourceRepo === 'RaidTheory' && Array.isArray(sourceData)) { 
+             sourceData.forEach(d => { 
+                 if (d && d.id) {
+                     let levels = d.levels || [];
+                     normalized.push({ 
+                         id: d.id, 
+                         name: d.name, 
+                         levels: levels.map(l => ({ 
+                             level: l.level, 
+                             requirements: (l.requirementItemIds || l.requirements || []).map(req => ({ item: req.itemId || req.item, count: req.quantity || req.count })) 
+                         })) 
+                     });
+                 }
+             });
         }
         return normalized;
     }
 
-    function analyzeTypes() {
-        const typeCounts = {}; let total = itemsDB.length;
-        itemsDB.forEach(i => { const t = i.type || "UNDEFINED"; typeCounts[t] = (typeCounts[t] || 0) + 1; });
-        console.group("ANALISI DATI"); console.log(`TOTALE: ${total}`); console.table(typeCounts); console.groupEnd();
-    }
-
-    function getLoc(obj) {
-        if(!obj) return "";
-        if(typeof obj === 'string') return obj;
-        return obj[currentLang] || obj['en'] || "";
-    }
-
-    function getImg(data) {
-        if(!data) return null;
-        if (data.imageFilename) {
-            if (data.imageFilename.startsWith('http')) return data.imageFilename;
-            const cleanPath = data.imageFilename.replace(/^[\/|\\]/, '');
-            return GITHUB_RAW_BASE_URL + cleanPath;
-        }
-        return null;
-    }
-
-    function getItem(id) { 
-        let base = itemsDB.find(x => x.id === id);
-        if (!base) base = hideoutDB.find(x => x.id === id);
-        if(!base) return null;
-        if(overridesDB[id]) {
-            let merged = { ...base, ...overridesDB[id] };
-            if(overridesDB[id].name) merged.name = { ...(base.name || {}), ...overridesDB[id].name };
-            if(overridesDB[id].description) merged.description = { ...(base.description || {}), ...overridesDB[id].description };
-            return merged;
-        }
-        return base;
-    }
-
-    function isBlueprint(item) {
-        const t = (item.type || "").toLowerCase();
-        const name = item.name ? JSON.stringify(item.name).toLowerCase() : "";
-        return t.includes('blueprint') || t.includes('schematic') || name.includes('blueprint') || name.includes('recipe');
-    }
-
-    function isCosmetic(item) {
-        const t = (item.type || "").toLowerCase();
-        return t.includes('cosmetic') || t.includes('outfit') || t.includes('backpack') || t.includes('customization');
-    }
-
-    function normalizeReqs(reqsObj) {
-        if (!reqsObj) return [];
-        if (Array.isArray(reqsObj)) {
-            return reqsObj.map(r => {
-                if(r.itemId && r.quantity !== undefined) return { item: r.itemId, count: r.quantity };
-                return r; 
-            });
-        }
-        return Object.entries(reqsObj).map(([key, val]) => ({ item: key, count: val }));
-    }
-
+    function analyzeTypes() { const typeCounts = {}; itemsDB.forEach(i => { const t = i.type || "UNDEFINED"; typeCounts[t] = (typeCounts[t] || 0) + 1; }); console.group("ANALISI DATI"); console.log(`TOTALE: ${itemsDB.length}`); console.table(typeCounts); console.groupEnd(); }
+    function getImg(data) { if(!data?.imageFilename) return null; if (data.imageFilename.startsWith('http')) return data.imageFilename; return GITHUB_RAW_BASE_URL + data.imageFilename.replace(/^[\/|\\]/, ''); }
+    function getItem(id) { let base = itemsDB.find(x => x.id === id) || hideoutDB.find(x => x.id === id); return base || null; }
+    function isBlueprint(item) { const t = (item.type || "").toLowerCase(); const name = item.name ? JSON.stringify(item.name).toLowerCase() : ""; return t.includes('blueprint') || t.includes('schematic') || name.includes('blueprint') || name.includes('recipe'); }
+    function isCosmetic(item) { const t = (item.type || "").toLowerCase(); return t.includes('cosmetic') || t.includes('outfit') || t.includes('backpack') || t.includes('customization'); }
+    function normalizeReqs(reqsObj) { if (!reqsObj) return []; if (Array.isArray(reqsObj)) return reqsObj.map(r => (r.itemId && r.quantity !== undefined) ? { item: r.itemId, count: r.quantity } : r); return Object.entries(reqsObj).map(([key, val]) => ({ item: key, count: val })); }
     function clearSearch() { dom.search.value = ""; dom.searchClear.style.display = 'none'; render(); }
     
-    function updateWishlistCounter() {
-        let count = 0;
-        wishlist.forEach(v => count += parseInt(v) || 0);
-        dom.wlCounter.innerText = count;
-        dom.wlCounter.style.display = count > 0 ? 'inline-block' : 'none';
-    }
+    function updateWishlistCounter() { let count = 0; wishlist.forEach(v => count += parseInt(v) || 0); dom.wlCounter.innerText = count; dom.wlCounter.style.display = count > 0 ? 'inline-block' : 'none'; }
+    function saveUserData() { localStorage.setItem('arc_wishlist', JSON.stringify(Array.from(wishlist.entries()))); localStorage.setItem('arc_blueprints', JSON.stringify(Array.from(ownedBlueprints))); updateWishlistCounter(); }
+    window.addReqsToWishlist = function(reqsJson, btn) { if(!reqsJson) return; try { const reqs = JSON.parse(decodeURIComponent(reqsJson)); reqs.forEach(r => { const current = wishlist.get(r.item) || 0; wishlist.set(r.item, current + r.count); }); saveUserData(); btn.classList.add('added'); btn.innerText = getUI('added'); } catch(e) { console.error(e); } };
     
-    function exportUserData() {
-        const data = { wishlist: Array.from(wishlist.entries()), blueprints: Array.from(ownedBlueprints) };
-        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
-        const anchor = document.createElement('a');
-        anchor.setAttribute("href", dataStr); anchor.setAttribute("download", "arc_user_data.json");
-        document.body.appendChild(anchor); anchor.click(); anchor.remove();
-    }
+    // RESTORED EXPORT/IMPORT
+    function exportUserData() { const data = { wishlist: Array.from(wishlist.entries()), blueprints: Array.from(ownedBlueprints) }; const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data)); const anchor = document.createElement('a'); anchor.setAttribute("href", dataStr); anchor.setAttribute("download", "arc_user_data.json"); document.body.appendChild(anchor); anchor.click(); anchor.remove(); }
+    function importUserData(e) { const file = e.target.files[0]; if(!file) return; const r = new FileReader(); r.onload = (ev) => { try { const data = JSON.parse(ev.target.result); if(data.wishlist) wishlist = new Map(data.wishlist); if(data.blueprints) ownedBlueprints = new Set(data.blueprints); saveUserData(); updateWishlistCounter(); render(); alert("DATA RESTORED SUCCESS"); } catch(ex) { alert("FILE ERROR"); } }; r.readAsText(file); }
 
-    function importUserData(e) {
-        const file = e.target.files[0];
-        if(!file) return;
-        const r = new FileReader();
-        r.onload = (ev) => {
-            try {
-                const data = JSON.parse(ev.target.result);
-                if(data.wishlist) wishlist = new Map(data.wishlist);
-                if(data.blueprints) ownedBlueprints = new Set(data.blueprints);
-                saveUserData(); updateWishlistCounter(); render();
-                alert("Dati utente caricati con successo!");
-            } catch(ex) { alert("Errore nel file dati."); }
-        };
-        r.readAsText(file);
-    }
-    
-    function saveUserData() {
-        localStorage.setItem('arc_wishlist', JSON.stringify(Array.from(wishlist.entries())));
-        localStorage.setItem('arc_blueprints', JSON.stringify(Array.from(ownedBlueprints)));
-        updateWishlistCounter();
-    }
-    
-    window.addReqsToWishlist = function(reqsJson, btn) {
-        if(!reqsJson) return;
-        try {
-            const reqs = JSON.parse(decodeURIComponent(reqsJson));
-            reqs.forEach(r => {
-               const current = wishlist.get(r.item) || 0;
-               wishlist.set(r.item, current + r.count);
-            });
-            saveUserData();
-            btn.classList.add('added');
-            const t = getUI('added');
-            btn.innerText = (t !== 'UI_ADDED') ? t : 'ADDED';
-        } catch(e) { console.error(e); }
-    };
-
-    // --- RENDER GRID ---
     function render() {
         const grid = dom.grid; grid.innerHTML = "";
         const search = dom.search.value.toLowerCase();
         let source = [];
 
         if (itemsDB.length === 0 && hideoutDB.length === 0 && !isWishlistView && wishlist.size === 0) {
-             // EMPTY STATE
              return;
         }
         
         if(currentSection !== 'INVENTARIO' && currentSection !== 'PROGETTI' && currentSection !== 'OFFICINA' && !isWishlistView) {
-             grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; margin-top: 100px; color: #666;">
-                    <h3 style="font-family: var(--font-head); font-size: 3rem; color: #aaa;">SEZIONE ${currentSection}</h3>
-                    <p style="color:var(--arc-yellow)">WORK IN PROGRESS</p>
-                </div>`;
+             grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; margin-top: 100px; color: #666;"><h3 style="font-family: var(--font-head); font-size: 3rem; color: #aaa;">SEZIONE ${currentSection}</h3><p style="color:var(--arc-yellow)">WORK IN PROGRESS</p></div>`;
             return;
         }
 
@@ -1056,9 +1224,7 @@
                 if(item) source.push({...item, _wishQty: qty}); 
             });
             if (source.length === 0) {
-                 grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; margin-top: 100px; color: #444;">
-                    <h3 style="font-family: var(--font-head); font-size: 2rem; color: #aaa;">WISHLIST VUOTA</h3>
-                </div>`;
+                 grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; margin-top: 100px; color: #444;"><h3 style="font-family: var(--font-head); font-size: 2rem; color: #aaa;">WISHLIST VUOTA</h3></div>`;
                 return;
             }
             let totalW = 0, totalV = 0;
@@ -1089,10 +1255,11 @@
                     if(bpViewMode === 1 && !ownedBlueprints.has(item.id)) return false; 
                     if(bpViewMode === 2 && ownedBlueprints.has(item.id)) return false;  
                     if (currentFilter === 'ALL') return true;
-                    if (currentFilter === 'ARMI') return t.includes('hand cannon') || t.includes('assault rifle') || t.includes('smg') || t.includes('pistol') || t.includes('lmg') || t.includes('battle rifle') || t.includes('shotgun') || t.includes('sniper rifle') || t.includes('special');
-                    if (currentFilter === 'MOD') return t.includes('modification') || t.includes('gadget');
-                    if (currentFilter === 'USO_RAPIDO') return t.includes('quick use');
-                    if (currentFilter === 'MATERIALI') return t.includes('material');
+                    // UPDATED FILTER LOGIC TO MATCH NEW IDs
+                    if (currentFilter === 'WEAPONS') return t.includes('hand cannon') || t.includes('assault rifle') || t.includes('smg') || t.includes('pistol') || t.includes('lmg') || t.includes('battle rifle') || t.includes('shotgun') || t.includes('sniper rifle') || t.includes('special');
+                    if (currentFilter === 'MODS') return t.includes('modification') || t.includes('gadget');
+                    if (currentFilter === 'QUICK_USE') return t.includes('quick use');
+                    if (currentFilter === 'MATERIALS') return t.includes('material');
                     return false;
                 }
 
@@ -1103,15 +1270,16 @@
                 }
                 
                 if (currentFilter === 'COSMETICS') return isCosm;
-                if (currentFilter === 'POTENZIAMENTI') return t.includes('augment');
-                if (currentFilter === 'SCUDI') return t.includes('shield');
-                if (currentFilter === 'ARMI') return t.includes('hand cannon') || t.includes('assault rifle') || t.includes('smg') || t.includes('pistol') || t.includes('lmg') || t.includes('battle rifle') || t.includes('shotgun') || t.includes('sniper rifle') || t.includes('special');
-                if (currentFilter === 'MUNIZIONI') return t.includes('ammunition');
-                if (currentFilter === 'MOD') return t.includes('modification') || t.includes('gadget');
-                if (currentFilter === 'USO_RAPIDO') return t.includes('quick use');
-                if (currentFilter === 'CHIAVI') return t.includes('key');
-                if (currentFilter === 'MATERIALI') return t.includes('refined material') || t.includes('topside material') || t.includes('basic material') || t.includes('material') || t.includes('nature') || t.includes('recyclable');
-                if (currentFilter === 'VARIE') return t.includes('trinket') || t.includes('misc') || t.includes('junk') || t.includes('valuable');
+                // UPDATED FILTER LOGIC TO MATCH NEW IDs
+                if (currentFilter === 'AUGMENTS') return t.includes('augment');
+                if (currentFilter === 'SHIELDS') return t.includes('shield');
+                if (currentFilter === 'WEAPONS') return t.includes('hand cannon') || t.includes('assault rifle') || t.includes('smg') || t.includes('pistol') || t.includes('lmg') || t.includes('battle rifle') || t.includes('shotgun') || t.includes('sniper rifle') || t.includes('special');
+                if (currentFilter === 'AMMO') return t.includes('ammunition');
+                if (currentFilter === 'MODS') return t.includes('modification') || t.includes('gadget');
+                if (currentFilter === 'QUICK_USE') return t.includes('quick use');
+                if (currentFilter === 'KEYS') return t.includes('key');
+                if (currentFilter === 'MATERIALS') return t.includes('refined material') || t.includes('topside material') || t.includes('basic material') || t.includes('material') || t.includes('nature') || t.includes('recyclable');
+                if (currentFilter === 'MISC') return t.includes('trinket') || t.includes('misc') || t.includes('junk') || t.includes('valuable');
                 return false;
             });
         }
@@ -1144,8 +1312,6 @@
                 }
             }
 
-            if(adminMode && overridesDB[data.id]) slot.style.borderTop = "2px solid var(--arc-yellow)";
-            
             let inner = "";
             if(imgUrl) {
                 inner = `<img src="${imgUrl}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -1175,13 +1341,12 @@
                 }
             }
 
-            slot.onmouseenter = (e) => { if(!isEditing && !isModalOpen) showTooltip(data, isItem, e); };
-            slot.onmouseleave = () => { if(!isEditing) hideTooltip(); };
-            slot.onmousemove = (e) => { if(!isEditing) moveTooltip(e); };
+            slot.onmouseenter = (e) => { if(!isModalOpen) showTooltip(data, isItem, e); };
+            slot.onmouseleave = () => { hideTooltip(); };
+            slot.onmousemove = (e) => { moveTooltip(e); };
             
             slot.onclick = (e) => { 
-                if(adminMode) { isEditing = true; openAdminEdit(data); } 
-                else if (currentSection === 'PROGETTI' || isBlueprint(data)) toggleBlueprint(data.id, e); 
+                if (currentSection === 'PROGETTI' || isBlueprint(data)) toggleBlueprint(data.id, e); 
                 else openInfoModal(data); 
             };
             
@@ -1189,299 +1354,145 @@
         });
     }
 
-    function toggleBlueprint(id, e) {
-        if(e) e.stopPropagation();
-        if (ownedBlueprints.has(id)) ownedBlueprints.delete(id); else ownedBlueprints.add(id);
-        saveUserData(); updateUI(); render(); 
-    }
-
-    function modWishlist(id, delta, e) {
-        e.stopPropagation();
-        let currentVal = parseInt(wishlist.get(id) || 0);
-        let newVal = currentVal + delta;
-        if (newVal <= 0) wishlist.delete(id); else wishlist.set(id, newVal);
-        saveUserData(); 
-        if (isWishlistView) render(); else {
-            const slot = e.target.closest('.slot');
-            let badge = slot.querySelector('.wishlist-badge');
-            if (newVal > 0) {
-                if (!badge) { badge = document.createElement('div'); badge.className = 'wishlist-badge'; slot.appendChild(badge); }
-                badge.innerText = newVal;
-            } else if (badge) { badge.remove(); }
-        }
-    }
-
-    function toggleAdminMode() {
-        adminMode = !adminMode;
-        document.getElementById('btnAdmin').classList.toggle('active');
-        document.getElementById('btnExport').style.display = adminMode ? 'flex' : 'none';
-        if(!adminMode) { isEditing = false; dom.tt.classList.remove('interactive', 'admin-overlay'); hideTooltip(); }
-    }
-
-    function openAdminEdit(data) {
-        dom.tt.classList.add('interactive', 'admin-overlay');
-        dom.tt.style.display = 'block'; dom.tt.style.left='50%'; dom.tt.style.top='50%'; dom.tt.style.transform='translate(-50%,-50%)'; 
-        const html = `
-            <div style="padding:25px; background:#111; color:#fff;">
-                <h3 style="color:var(--arc-yellow); margin-bottom:20px; font-family:var(--font-head); font-size:2rem; text-transform:uppercase;">EDIT: ${data.id}</h3>
-                <div class="edit-form">
-                    <div class="edit-row"><span>Name (${currentLang}):</span> <input id="ed-name" class="edit-input" value="${getLoc(data.name).replace(/"/g, '&quot;')}"></div>
-                    <div class="edit-row"><span>Desc:</span> <textarea id="ed-desc" class="edit-input">${getLoc(data.description)}</textarea></div>
-                    <div class="edit-row"><span>Rarity:</span> 
-                        <select id="ed-rarity" class="edit-input">
-                            <option value="Common" ${data.rarity=='Common'?'selected':''}>Common</option>
-                            <option value="Uncommon" ${data.rarity=='Uncommon'?'selected':''}>Uncommon</option>
-                            <option value="Rare" ${data.rarity=='Rare'?'selected':''}>Rare</option>
-                            <option value="Epic" ${data.rarity=='Epic'?'selected':''}>Epic</option>
-                            <option value="Legendary" ${data.rarity=='Legendary'?'selected':''}>Legendary</option>
-                        </select>
-                    </div>
-                    <div class="edit-row"><span>Value:</span> <input id="ed-val" type="number" class="edit-input" value="${data.value || 0}"></div>
-                    <div class="edit-row"><span>Weight:</span> <input id="ed-w" type="number" step="0.1" class="edit-input" value="${data.weightKg || 0}"></div>
-                    <div class="edit-row"><span>Stack:</span> <input id="ed-stack" type="number" class="edit-input" value="${data.stackSize || 1}"></div>
-                    <div style="display:flex; gap:10px; margin-top:15px;">
-                        <button onclick="saveEdit('${data.id}')" style="background:var(--arc-yellow); border:none; padding:10px 20px; font-family:var(--font-head); font-size:1.2rem; cursor:pointer;">SAVE</button>
-                        <button onclick="closeAdmin()" style="background:#333; border:none; padding:10px 20px; font-family:var(--font-head); font-size:1.2rem; cursor:pointer; color:white;">CANCEL</button>
-                    </div>
-                </div>
-            </div>`;
-        dom.tt.innerHTML = html;
-        isModalOpen = true; 
-    }
+    function toggleBlueprint(id, e) { if(e) e.stopPropagation(); if (ownedBlueprints.has(id)) ownedBlueprints.delete(id); else ownedBlueprints.add(id); saveUserData(); updateUI(); render(); }
+    function modWishlist(id, delta, e) { e.stopPropagation(); let currentVal = parseInt(wishlist.get(id) || 0); let newVal = currentVal + delta; if (newVal <= 0) wishlist.delete(id); else wishlist.set(id, newVal); saveUserData(); if (isWishlistView) render(); else { const slot = e.target.closest('.slot'); let badge = slot.querySelector('.wishlist-badge'); if (newVal > 0) { if (!badge) { badge = document.createElement('div'); badge.className = 'wishlist-badge'; slot.appendChild(badge); } badge.innerText = newVal; } else if (badge) { badge.remove(); } } }
     
-    function saveEdit(id) {
-        if(!overridesDB[id]) overridesDB[id] = {};
-        if(!overridesDB[id].name) overridesDB[id].name = {};
-        if(!overridesDB[id].description) overridesDB[id].description = {};
-        overridesDB[id].name[currentLang] = document.getElementById('ed-name').value;
-        overridesDB[id].description[currentLang] = document.getElementById('ed-desc').value;
-        overridesDB[id].rarity = document.getElementById('ed-rarity').value;
-        overridesDB[id].value = parseFloat(document.getElementById('ed-val').value);
-        overridesDB[id].weightKg = parseFloat(document.getElementById('ed-w').value);
-        overridesDB[id].stackSize = parseInt(document.getElementById('ed-stack').value);
-        closeAdmin(); render();
-    }
-    function exportOverrides() {
-        if(Object.keys(overridesDB).length === 0) { alert("No changes."); return; }
-        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(overridesDB, null, 2));
-        const anchor = document.createElement('a');
-        anchor.setAttribute("href", dataStr); anchor.setAttribute("download", "arc_overrides.json");
-        document.body.appendChild(anchor); anchor.click(); anchor.remove();
-    }
-
-    // --- CARD GENERATOR ---
     function generateCardHTML(data) {
         const name = getLoc(data.name) || data.id;
         const desc = getLoc(data.description);
         const rarity = (data.rarity || 'common').toUpperCase();
-        let type = (data.type || 'ITEM').toUpperCase();
-        
-        if(data.levels) {
-            const t = getUI('upgrades');
-            type = (t !== 'UI_UPGRADES') ? t : "UPGRADES";
-        } else {
-            type = translateType(data.type) || type;
-        }
-
-        let tagColor = 'var(--col-common)';
-        if(data.type && data.type.toLowerCase().includes('material')) tagColor = 'var(--col-material)';
-        if(data.recyclesInto) tagColor = 'var(--col-recycle)'; 
-        let rarColor = `var(--col-${rarity.toLowerCase()})`;
-        
         const weight = (data.weightKg || 0).toString().replace('.', ',');
         const val = (data.value || 0).toLocaleString(currentLang);
         const stack = `${data.stackSize || 1}/${data.stackSize || 1}`;
-        const pesoKey = `${GITHUB_RAW_BASE_URL}images/menu/weight.png`;
-        const monetaKey = `${GITHUB_RAW_BASE_URL}images/menu/coins.png`;
-        
-        const pesoIconUrl = pesoKey; 
-        const monetaIconUrl = monetaKey;
-
         let ecoHtml = "";
+        
         if(data.foundIn) {
-            const labelRaw = getUI('obtained_recycling');
-            const labelClean = (labelRaw !== 'UI_OBTAINED_RECYCLING') ? labelRaw.replace('RICICLANDO', '') : "SOURCE";
+            const labelClean = getUI('obtained_recycling');
             ecoHtml += `<div class="tt-found"><div class="tt-found-label">${labelClean} :</div><div class="tt-found-val"><svg><use href="#icon-arc"></use></svg> ${getLoc(data.foundIn)}</div></div>`;
         }
+        
+        // RECYCLING YIELD IN TOOLTIP
+        let recYield = normalizeReqs(data.recyclesInto);
 
-        return `
-            <div style="background:var(--card-bg); color:var(--card-text);">
-                <div class="tt-header">
-                    <div class="tt-tag" style="background:${tagColor}"><svg style="width:16px;height:16px;fill:white;margin-right:4px;"><use href="#icon-wrench"></use></svg>${type}</div>
-                    <div class="tt-tag" style="background:${rarColor}; margin-left:1px;">${rarity}</div>
-                </div>
-                <div class="tt-body">
-                    <div class="tt-title">${name}</div>
-                    <div class="tt-desc">${desc}</div>
-                    ${ecoHtml}
-                </div>
-                <div class="tt-footer">
-                    <div class="tt-foot-item"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" fill="#1a1a1a"></path></svg> ${stack}</div>
-                    <div class="tt-foot-item"><img src="${pesoIconUrl}" style="height: 22px; width: auto; object-fit: contain;" onerror="this.style.display='none'" alt="Kg"> ${weight}</div>
-                    <div class="tt-foot-item"><img src="${monetaIconUrl}" style="height: 22px; width: auto; object-fit: contain;" onerror="this.style.display='none'" alt="$"> ${val}</div>
-                </div>
-            </div>
-        `;
-    }
+        if (recYield && recYield.length > 0) {
+            let recHtml = recYield.map(r => {
+                const ing = getItem(r.item);
+                const ingName = ing ? getLoc(ing.name) : r.item;
+                let imgHtml = '';
+                if (ing) {
+                    const imgSrc = getImg(ing);
+                    if (imgSrc) {
+                        imgHtml = `<img src="${imgSrc}" style="width:32px; height:32px; object-fit:contain; border-radius:4px; background:rgba(0,0,0,0.1); border:1px solid rgba(0,0,0,0.2);">`;
+                    }
+                }
+                return `<div style="display:flex; align-items:center; gap:6px; margin-right:12px; margin-bottom:6px; font-size:0.9rem; line-height:1;">${imgHtml}<span style="color:var(--col-recycle); font-weight:700;">x${r.count}</span> <span>${ingName}</span></div>`;
+            }).join('');
+            
+            let recLabel = getUI('recycles_into');
+            
+            ecoHtml += `<div class="tt-found" style="border-top:1px solid #c0b49b; margin-top:8px; padding-top:8px;"><div class="tt-found-label">${recLabel} :</div><div class="tt-found-val" style="display:flex; flex-wrap:wrap; gap:0;">${recHtml}</div></div>`;
+        }
 
-    function showTooltip(data, isItem, e) {
-        if(isModalOpen) return; 
-        dom.tt.innerHTML = generateCardHTML(data);
-        dom.tt.style.display = 'block';
-        moveTooltip(e);
+        return `<div style="background:var(--card-bg); color:var(--card-text);"><div class="tt-header"><div class="tt-tag" style="background:var(--col-${rarity.toLowerCase()})">${rarity}</div></div><div class="tt-body"><div class="tt-title">${name}</div><div class="tt-desc">${desc}</div>${ecoHtml}</div><div class="tt-footer"><div class="tt-foot-item"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" fill="#1a1a1a"></path></svg> ${stack}</div><div class="tt-foot-item"><img src="${GITHUB_RAW_BASE_URL}images/menu/weight.png" style="height:22px;"> ${weight}</div><div class="tt-foot-item"><img src="${GITHUB_RAW_BASE_URL}images/menu/coins.png" style="height:22px;"> ${val}</div></div></div>`;
     }
+    function showTooltip(data, isItem, e) { if(isModalOpen) return; dom.tt.innerHTML = generateCardHTML(data); dom.tt.style.display = 'block'; moveTooltip(e); }
     function hideTooltip() { dom.tt.style.display = 'none'; }
-    function moveTooltip(e) {
-        if(isModalOpen) return; const t = dom.tt;
-        let l = e.clientX + 20, tp = e.clientY + 20;
-        if(l + 370 > window.innerWidth) l = e.clientX - 380;
-        if(tp + t.offsetHeight > window.innerHeight) tp = e.clientY - t.offsetHeight;
-        t.style.left = l + 'px'; t.style.top = tp + 'px';
-    }
-
+    function moveTooltip(e) { if(isModalOpen) return; const t = dom.tt; let l = e.clientX + 20, tp = e.clientY + 20; if(l + 370 > window.innerWidth) l = e.clientX - 380; if(tp + t.offsetHeight > window.innerHeight) tp = e.clientY - t.offsetHeight; t.style.left = l + 'px'; t.style.top = tp + 'px'; }
+    
+    // --- RESTORED OPEN INFO MODAL ---
     function openInfoModal(data) {
         if(!data) return;
-        hideTooltip(); isModalOpen = true; const modal = dom.infoModal;
+        hideTooltip();
+        isModalOpen = true;
+        currentOpenedItem = data; // Set tracked item
+        const modal = dom.infoModal;
         
-        const uiCraft = getUI('crafting'); const txtCraft = (uiCraft !== 'UI_CRAFTING') ? uiCraft : "CRAFTING";
-        const uiBench = getUI('bench'); const txtBench = (uiBench !== 'UI_BENCH') ? uiBench : "BENCH";
-        const uiIng = getUI('ingredient'); const txtIng = (uiIng !== 'UI_INGREDIENT') ? uiIng : "INGREDIENT";
-        const uiQty = getUI('qty'); const txtQty = (uiQty !== 'UI_QTY') ? uiQty : "QTY";
+        let contentHtml = '';
         
-        let craftHtml = ''; let craftList = normalizeReqs(data.recipe); 
-        if (craftList.length > 0 || data.craftBench) {
-            craftHtml += `<div class="info-section"><div class="info-title">${txtCraft}</div>`;
-            if (data.craftBench) {
-                let benchName = String(data.craftBench).replace(/_/g, ' ').toUpperCase();
-                craftHtml += `<div style="margin-bottom:10px; color:#aaa; font-size:0.9rem;"><span style="color:#fff; font-weight:700;">${txtBench}:</span> ${benchName}</div>`;
-            }
-            if (craftList.length > 0) {
-                let rows = craftList.map(r => {
-                    const ing = getItem(r.item); const name = ing ? getLoc(ing.name) : r.item;
-                    let imgHtml = ''; if(ing) { const idLower = ing.id.toLowerCase(); imgHtml = `<img src="${GITHUB_RAW_BASE_URL}images/items/${idLower}.png" class="mini-icon" onerror="this.style.display='none'">`; }
-                    const clickAttr = ing ? `onclick="closeInfoModal(); setTimeout(()=> openInfoModal(getItem('${ing.id}')), 100)" style="cursor:pointer; color:#fff; display:flex; align-items:center;"` : `style="color:#e0e0e0; display:flex; align-items:center;"`;
-                    return `<tr><td ${clickAttr}>${imgHtml}${name}</td><td style="text-align:right; font-weight:700; color:var(--arc-yellow);">x${r.count}</td></tr>`;
-                }).join('');
-                craftHtml += `<table class="info-table" style="margin-top:5px;"><thead><tr><th>${txtIng}</th><th style="text-align:right;">${txtQty}</th></tr></thead><tbody>${rows}</tbody></table>`;
-            }
-            craftHtml += `</div>`;
-        }
-        
-        const uiUp = getUI('upgrades'); const txtUp = (uiUp !== 'UI_UPGRADES') ? uiUp : "UPGRADES";
-        const uiLvl = getUI('level'); const txtLvl = (uiLvl !== 'UI_LEVEL') ? uiLvl : "LEVEL";
-        const uiTrack = getUI('track'); const txtTrack = (uiTrack !== 'UI_TRACK') ? uiTrack : "TRACK";
-
-        let upgradesHtml = '';
+        // IS HIDEOUT MODULE?
         if (data.levels && Array.isArray(data.levels)) {
-            upgradesHtml += `<div class="info-section"><div class="info-title">${txtUp}</div>`;
+            contentHtml += `<div class="info-section"><div class="info-title">${getUI('upgrades')}</div>`;
             data.levels.sort((a,b) => a.level - b.level).forEach(lvl => {
-                const reqs = lvl.requirements;
+                const reqs = normalizeReqs(lvl.requirements);
                 let rows = reqs.map(r => {
-                    const ing = getItem(r.item); const name = ing ? getLoc(ing.name) : r.item;
-                    let imgHtml = ''; if(ing) { const idLower = ing.id.toLowerCase(); imgHtml = `<img src="${GITHUB_RAW_BASE_URL}images/items/${idLower}.png" class="mini-icon" onerror="this.style.display='none'">`; } else { imgHtml = `<span style="width:32px;height:32px;display:inline-block;background:rgba(255,255,255,0.1);margin-right:10px;border-radius:2px;vertical-align:middle;"></span>`; }
-                    const clickAttr = ing ? `onclick="closeInfoModal(); setTimeout(()=> openInfoModal(getItem('${ing.id}')), 100)"` : '';
-                    const cursorStyle = ing ? 'cursor:pointer;' : '';
-                    return `<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222; padding:4px 0;"><div ${clickAttr} style="display:flex; align-items:center; font-size:0.9rem; color:#ccc; ${cursorStyle}">${imgHtml}${name}</div><div style="color:var(--arc-yellow); font-weight:700;">x${r.count}</div></div>`;
+                    const ing = getItem(r.item);
+                    const name = ing ? getLoc(ing.name) : r.item;
+                    let imgHtml = ing ? `<img src="${getImg(ing)}" class="mini-icon" onerror="this.style.display='none'">` : '';
+                    let clickAttr = ing ? `onclick="openInfoModal(getItem('${r.item}'))"` : '';
+                    let rowClass = ing ? 'clickable-row' : '';
+                    
+                    return `<div class="${rowClass}" ${clickAttr} style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222; padding:4px 0;"><div style="display:flex; align-items:center; font-size:0.9rem; color:#ccc;">${imgHtml}${name}</div><div style="color:var(--arc-yellow); font-weight:700;">x${r.count}</div></div>`;
                 }).join('');
                 const reqsString = encodeURIComponent(JSON.stringify(reqs));
-                upgradesHtml += `<details class="upgrade-level"><summary><span>${txtLvl} ${lvl.level}</span><button class="btn-track" onclick="event.preventDefault(); addReqsToWishlist('${reqsString}', this)"><svg style="width:14px;height:14px;fill:currentColor; margin-right:5px;"><use href="#icon-plus"></use></svg> ${txtTrack}</button></summary><div style="padding:10px;">${rows || '<div style="color:#666">No data</div>'}</div></details>`;
+                contentHtml += `<details class="upgrade-level"><summary><span>${getUI('level')} ${lvl.level}</span><button class="btn-track" onclick="event.preventDefault(); event.stopPropagation(); addReqsToWishlist('${reqsString}', this)"><svg style="width:14px;height:14px;fill:currentColor; margin-right:5px;"><use href="#icon-plus"></use></svg> ${getUI('track')}</button></summary><div style="padding:10px;">${rows || '<div style="color:#666">No data</div>'}</div></details>`;
             });
-            upgradesHtml += `</div>`;
-        }
-
-        const uiRec = getUI('recycle'); const txtRec = (uiRec !== 'UI_RECYCLE') ? uiRec : "RECYCLE";
-        const uiItem = getUI('item'); const txtItem = (uiItem !== 'UI_ITEM') ? uiItem : "ITEM";
-        const uiValU = getUI('val_u'); const txtValU = (uiValU !== 'UI_VAL_U') ? uiValU : "VAL/U";
-        const uiTot = getUI('tot'); const txtTot = (uiTot !== 'UI_TOT') ? uiTot : "TOT";
-        const uiTotRec = getUI('tot_recycle'); const txtTotRec = (uiTotRec !== 'UI_TOT_RECYCLE') ? uiTotRec : "TOTAL SCRAP";
-        const uiSell = getUI('sell_val'); const txtSell = (uiSell !== 'UI_SELL_VAL') ? uiSell : "SELL VALUE";
-
-        let rawRecycle = data.recyclesInto || data.salvagesInto; let recycleList = normalizeReqs(rawRecycle); let recycleHtml = '';
-        if (recycleList.length > 0) {
-            recycleHtml += `<div class="info-section"><div class="info-title">${txtRec}</div>`;
-            let totalRecycleVal = 0;
-            let rows = recycleList.map(r => {
-                const ing = getItem(r.item); const name = ing ? getLoc(ing.name) : r.item;
-                const unitVal = ing ? (ing.value || 0) : 0; const totalVal = unitVal * r.count; totalRecycleVal += totalVal;
-                let imgHtml = ''; if(ing) { const idLower = ing.id.toLowerCase(); imgHtml = `<img src="${GITHUB_RAW_BASE_URL}images/items/${idLower}.png" class="mini-icon" onerror="this.style.display='none'">`; }
-                const clickAttr = ing ? `onclick="closeInfoModal(); setTimeout(()=> openInfoModal(getItem('${ing.id}')), 100)" style="cursor:pointer; display:flex; align-items:center;"` : `style="display:flex; align-items:center;"`;
-                return `<tr><td ${clickAttr}>${imgHtml}${name}</td><td>x${r.count}</td><td>${unitVal}</td><td>${totalVal}</td></tr>`;
-            }).join('');
-            const diffClass = totalRecycleVal > (data.value||0) ? 'val-better' : (totalRecycleVal < (data.value||0) ? 'val-worse' : 'val-neutral');
-            recycleHtml += `<table class="info-table"><thead><tr><th>${txtItem}</th><th>${txtQty}</th><th>${txtValU}</th><th>${txtTot}</th></tr></thead><tbody>${rows}</tbody><tfoot><tr><td colspan="3" style="text-align:right;">${txtTotRec}:</td><td class="val-total ${diffClass}">${totalRecycleVal}</td></tr><tr><td colspan="3" style="text-align:right;">${txtSell}:</td><td class="val-total">${data.value||0}</td></tr></tfoot></table></div>`;
-        }
-        
-        const uiObt = getUI('obtained_recycling'); const txtObt = (uiObt !== 'UI_OBTAINED_RECYCLING') ? uiObt : "OBTAINED BY SCRAPPING";
-
-        let reverseRecycleHtml = ''; let sourceItems = [];
-        itemsDB.forEach(potentialSource => {
-            let outcomes = normalizeReqs(potentialSource.recyclesInto || potentialSource.salvagesInto);
-            let match = outcomes.find(o => o.item === data.id);
-            if (match) sourceItems.push({ item: potentialSource, yield: match.count });
-        });
-        if (sourceItems.length > 0) {
-            reverseRecycleHtml += `<div class="info-section"><div class="info-title">${txtObt}</div>`;
-            let rrRows = sourceItems.map(src => {
-                const ing = src.item; const name = ing ? getLoc(ing.name) : 'Unknown';
-                let imgHtml = ''; if(ing) { const idLower = ing.id.toLowerCase(); imgHtml = `<img src="${GITHUB_RAW_BASE_URL}images/items/${idLower}.png" class="mini-icon" onerror="this.style.display='none'">`; }
-                return `<tr><td style="display:flex; align-items:center; cursor:pointer;" onclick="closeInfoModal(); setTimeout(()=> openInfoModal(getItem('${ing.id}')), 100)">${imgHtml}${name}</td><td style="text-align:right; font-weight:700; color:var(--arc-yellow);">x${src.yield}</td></tr>`;
-            }).join('');
-            reverseRecycleHtml += `<table class="info-table"><tbody>${rrRows}</tbody></table></div>`;
-        }
-
-        const uiUsed = getUI('used_for'); const txtUsed = (uiUsed !== 'UI_USED_FOR') ? uiUsed : "USED FOR";
-        const uiNoUse = getUI('no_usage'); const txtNoUse = (uiNoUse !== 'UI_NO_USAGE') ? uiNoUse : "NO USAGE FOUND";
-
-        let usedInHtml = '';
-        if (!data.levels && !data.requirements) {
-            usedInHtml += `<div class="info-section"><div class="info-title">${txtUsed}</div>`;
-            let usages = [];
-            itemsDB.forEach(i => { if(i.recipe) { let recipe = normalizeReqs(i.recipe); const found = recipe.find(req => req.item === data.id); if(found) usages.push({ parent: i, reqs: recipe, type: 'CRAFT' }); } });
-            hideoutDB.forEach(h => { if (h.levels) { h.levels.forEach(lvl => { let reqs = lvl.requirements; const found = reqs.find(req => req.item === data.id); if(found) usages.push({ parent: h, reqs: reqs, type: `HIDEOUT LVL ${lvl.level}` }); }); } });
-
-            if (usages.length > 0) {
-                usages.forEach(usage => {
-                    const parentName = getLoc(usage.parent.name) || usage.parent.id;
-                    let parentImgHtml = ''; const pImgUrl = getImg(usage.parent);
-                    if(pImgUrl) { parentImgHtml = `<img src="${pImgUrl}" class="mini-icon" onerror="this.style.display='none'" style="width:40px; height:40px;">`; } 
-                    else { const pidLower = usage.parent.id.toLowerCase(); parentImgHtml = `<img src="${GITHUB_RAW_BASE_URL}images/menu/${pidLower}.png" class="mini-icon" style="width:40px; height:40px;" onerror="this.style.display='none'">`; }
-                    const pId = usage.parent.id;
-                    const parentOnClick = `onclick="closeInfoModal(); setTimeout(()=> openInfoModal(getItem('${pId}')), 100)"`;
-                    let reqRows = usage.reqs.map(r => {
-                        const ing = getItem(r.item); const name = ing ? getLoc(ing.name) : r.item; const isMe = r.item === data.id; const style = isMe ? 'recipe-hl' : '';
-                        let ingImgHtml = ''; if(ing) { const iImgUrl = getImg(ing); if(iImgUrl) ingImgHtml = `<img src="${iImgUrl}" class="mini-icon" onerror="this.style.display='none'">`; else { const iidLower = ing.id.toLowerCase(); imgHtml = `<img src="${GITHUB_RAW_BASE_URL}images/items/${iidLower}.png" class="mini-icon" onerror="this.style.display='none'">`; } }
-                        const ingOnClick = ing ? `onclick="closeInfoModal(); setTimeout(()=> openInfoModal(getItem('${ing.id}')), 100)"` : '';
-                        const ingCursor = ing ? 'cursor:pointer;' : '';
-                        return `<div class="recipe-row ${style}" ${ingOnClick} style="${ingCursor} display:flex; align-items:center;"><span style="display:flex; align-items:center;">${ingImgHtml}${name}</span><span>x${r.count}</span></div>`;
+            contentHtml += `</div>`;
+        } else {
+            // IS ITEM
+            
+            // 1. CRAFTING
+            let craftList = normalizeReqs(data.recipe);
+            if (craftList.length > 0 || data.craftBench) {
+                contentHtml += `<div class="info-section"><div class="info-title">${getUI('crafting')}</div>`;
+                if (data.craftBench) contentHtml += `<div style="margin-bottom:10px; color:#aaa; font-size:0.9rem;"><span style="color:#fff; font-weight:700;">${getUI('bench')}:</span> ${String(data.craftBench).toUpperCase().replace(/_/g, ' ')}</div>`;
+                if (craftList.length > 0) {
+                    let rows = craftList.map(r => {
+                        const ing = getItem(r.item);
+                        const name = ing ? getLoc(ing.name) : r.item;
+                        let imgHtml = ing ? `<img src="${getImg(ing)}" class="mini-icon" onerror="this.style.display='none'">` : '';
+                        let clickAttr = ing ? `onclick="openInfoModal(getItem('${r.item}'))"` : '';
+                        let rowClass = ing ? 'clickable-row' : '';
+                        return `<div class="${rowClass}" ${clickAttr} style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222; padding:4px 0;"><div style="display:flex; align-items:center; font-size:0.9rem; color:#ccc;">${imgHtml}${name}</div><div style="color:var(--arc-yellow); font-weight:700;">x${r.count}</div></div>`;
                     }).join('');
-                    usedInHtml += `<div style="background:#111; padding:10px; margin-bottom:10px; border-left:3px solid var(--arc-yellow);"><div ${parentOnClick} style="cursor:pointer; font-weight:bold; margin-bottom:5px; color:#fff; text-transform:uppercase; display:flex; align-items:center;">${parentImgHtml} ${parentName} <span style="font-size:0.7rem; color:#666; margin-left:5px;">${usage.type}</span></div><div style="padding-left:5px;">${reqRows}</div></div>`;
-                });
-            } else { usedInHtml += `<div style="color:#666; padding:10px;">${txtNoUse}</div>`; }
-            usedInHtml += `</div>`;
+                    contentHtml += `<div style="padding:5px;">${rows}</div>`;
+                }
+                contentHtml += `</div>`;
+            }
+
+            // 2. RECYCLES INTO
+            let recYield = normalizeReqs(data.recyclesInto);
+            if (recYield && recYield.length > 0) {
+                contentHtml += `<div class="info-section"><div class="info-title">${getUI('recycles_into')}</div>`;
+                let rows = recYield.map(r => {
+                    const ing = getItem(r.item);
+                    const name = ing ? getLoc(ing.name) : r.item;
+                    let imgHtml = ing ? `<img src="${getImg(ing)}" class="mini-icon" onerror="this.style.display='none'">` : '';
+                    let clickAttr = ing ? `onclick="openInfoModal(getItem('${r.item}'))"` : '';
+                    let rowClass = ing ? 'clickable-row' : '';
+                    return `<div class="${rowClass}" ${clickAttr} style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222; padding:4px 0;"><div style="display:flex; align-items:center; font-size:0.9rem; color:#ccc;">${imgHtml}${name}</div><div style="color:var(--arc-green); font-weight:700;">x${r.count}</div></div>`;
+                }).join('');
+                contentHtml += `<div style="padding:5px;">${rows}</div></div>`;
+            }
+
+            // 3. USED FOR
+            let usages = [];
+            itemsDB.forEach(i => { if(i.recipe) { let recipe = normalizeReqs(i.recipe); if(recipe.find(req => req.item === data.id)) usages.push({ parent: i, type: 'CRAFT' }); } });
+            hideoutDB.forEach(h => { if (h.levels) { h.levels.forEach(lvl => { if(normalizeReqs(lvl.requirements).find(req => req.item === data.id)) usages.push({ parent: h, type: `HIDEOUT LVL ${lvl.level}` }); }); } });
+            
+            contentHtml += `<div class="info-section"><div class="info-title">${getUI('used_for')}</div>`;
+            if (usages.length > 0) {
+                let uniqueUsages = [...new Map(usages.map(item => [item.parent.id, item])).values()];
+                let rows = uniqueUsages.map(u => {
+                    const pImg = getImg(u.parent) || (currentSection==='OFFICINA' ? `${GITHUB_RAW_BASE_URL}images/menu/${u.parent.id.toLowerCase()}.png` : '');
+                    let imgHtml = pImg ? `<img src="${pImg}" class="mini-icon" onerror="this.style.display='none'">` : '';
+                    // Clickable parent
+                    return `<div class="clickable-row" style="padding:5px 0; border-bottom:1px solid #222; display:flex; align-items:center;" onclick="closeInfoModal(); setTimeout(()=>openInfoModal(getItem('${u.parent.id}')), 50)">${imgHtml} ${getLoc(u.parent.name)} <span style="font-size:0.7rem; color:#666; margin-left:10px;">${u.type}</span></div>`;
+                }).join('');
+                contentHtml += `<div style="padding:5px;">${rows}</div>`;
+            } else {
+                contentHtml += `<div style="padding:10px; color:#666; font-style:italic;">${getUI('no_usage_found')}</div>`;
+            }
+            contentHtml += `</div>`;
         }
 
-        modal.innerHTML = `<div class="overlay-header"><div class="overlay-title">${getLoc(data.name)}</div><button class="overlay-close" onclick="closeInfoModal()">×</button></div><div class="overlay-scrollable-content">${craftHtml || upgradesHtml || recycleHtml || reverseRecycleHtml || usedInHtml ? (craftHtml + upgradesHtml + recycleHtml + reverseRecycleHtml + usedInHtml) : '<div style="text-align:center; color:#666; margin-top:20px; font-family:var(--font-ui);">NESSUN DATO TECNICO DISPONIBILE</div>'}</div>`;
-        dom.modalBackdrop.style.display = 'block'; modal.style.display = 'flex'; 
+        modal.innerHTML = `<div class="overlay-header"><div class="overlay-title">${getLoc(data.name)}</div><button class="overlay-close" onclick="closeInfoModal()">×</button></div><div class="overlay-scrollable-content">${contentHtml}</div>`;
+        dom.modalBackdrop.style.display = 'block';
+        modal.style.display = 'flex';
     }
 
-// Initialize on Load (Boot Sequence Step 0)
-document.addEventListener('DOMContentLoaded', () => { initApp(); });
-
-// Reset database on logo click
-(function(){
-  function resetDatabase(){
-    try{ itemsDB=[]; hideoutDB=[]; overridesDB={}; wishlist.clear(); ownedBlueprints.clear(); }catch(_){ }
-    try{ localStorage.removeItem('arc_wishlist'); localStorage.removeItem('arc_blueprints'); }catch(_){ }
-    try{ document.body.classList.remove('db-loaded'); dom.search.disabled=true; }catch(_){ }
-    try{ var cw=document.querySelector('.connect-wrapper'); if(cw) cw.style.display='flex'; }catch(_){ }
-    try{ currentSection='INVENTARIO'; setFilter('ALL'); render(); }catch(_){ }
-    // Reset UI to intro state
-    document.body.classList.remove('db-loaded');
-  }
-  try{ var logo=document.querySelector('.app-logo'); if(logo){ logo.style.cursor='pointer'; logo.addEventListener('click', resetDatabase); } }catch(_){ }
-})();
-
+    document.addEventListener('DOMContentLoaded', () => { initApp(); });
+    (function(){ function resetDatabase(){ try{ itemsDB=[]; hideoutDB=[]; wishlist.clear(); ownedBlueprints.clear(); localStorage.removeItem('arc_wishlist'); localStorage.removeItem('arc_blueprints'); document.body.classList.remove('db-loaded'); dom.search.disabled=true; }catch(_){} currentSection='INVENTARIO'; setFilter('ALL'); render(); document.body.classList.remove('db-loaded'); } try{ var logo=document.querySelector('.app-logo'); if(logo){ logo.style.cursor='pointer'; logo.addEventListener('click', resetDatabase); } }catch(_){ } })();
 </script>
 </body>
 </html>
-<!-- END OF FILE arc_database_v1.9.0.html -->
+<!-- VERSION v1.17.23 -->
