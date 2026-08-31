@@ -22,11 +22,7 @@
     "zh-CN": "医疗物资",
     "zh-TW": "醫療商品"
   },
-  "map": [
-    "buried_city",
-    "the_spaceport",
-    "dam_battlegrounds"
-  ],
+  "map": ["buried_city", "the_spaceport", "dam_battlegrounds"],
   "trader": "Lance",
   "description": {
     "da": "Jeg er blevet ret ferm til at væve bandager af Stof, men til min skam har jeg ikke helt mestret at væve en røntgenmaskine eller et pulsoximeter.",
@@ -129,10 +125,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "doctors_orders"
-  ],
-  "nextQuestIds": [
-    "a_reveal_in_ruins"
-  ]
+  "previousQuestIds": ["doctors_orders"],
+  "nextQuestIds": ["a_reveal_in_ruins"],
+  "updatedAt": "03/31/2026"
 }

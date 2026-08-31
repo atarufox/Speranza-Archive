@@ -22,9 +22,7 @@
     "zh-CN": "我们在上面的据点",
     "zh-TW": "我們在上頭的勢力"
   },
-  "map": [
-    "dam_battlegrounds"
-  ],
+  "map": ["dam_battlegrounds"],
   "trader": "Shani",
   "description": {
     "da": "ARC forandrer sig måske, men vi forandrer os endelig med dem. Lad os færdiggøre de forposter og revolutionere måden, vi sporer dem, flankerer dem og smadrer dem til atomer på.",
@@ -132,10 +130,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "back_on_top"
-  ],
-  "nextQuestIds": [
-    "lost_in_transmission"
-  ]
+  "previousQuestIds": ["back_on_top"],
+  "nextQuestIds": ["lost_in_transmission"],
+  "updatedAt": "03/31/2026"
 }

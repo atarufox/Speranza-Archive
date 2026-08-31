@@ -22,9 +22,7 @@
     "zh-CN": "矫正市场规则",
     "zh-TW": "市場修正"
   },
-  "map": [
-    "buried_city"
-  ],
+  "map": ["buried_city"],
   "trader": "Tian Wen",
   "description": {
     "da": "Det tyveri før? Det ligner ikke et tilfælde længere. Nogle af konkurrenterne fra Toledo er ved at etablere sig, hvor de ikke hører hjemme. Jeg vil have deres depot saboteret, helst før de gør sig det for behageligt.",
@@ -110,10 +108,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "marked_for_death"
-  ],
-  "nextQuestIds": [
-    "eyes_on_the_prize"
-  ]
+  "previousQuestIds": ["marked_for_death"],
+  "nextQuestIds": ["eyes_on_the_prize"],
+  "updatedAt": "03/31/2026"
 }

@@ -22,9 +22,7 @@
     "zh-CN": "死亡标记",
     "zh-TW": "死亡標記"
   },
-  "map": [
-    "buried_city"
-  ],
+  "map": ["buried_city"],
   "trader": "Tian Wen",
   "description": {
     "da": "Nogen har stjålet forsyninger fra mit afleveringssted i Buried City. Jeg har sat en fælde op, men jeg har brug for en til at tjekke den for mig.",
@@ -127,10 +125,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "broken_monument"
-  ],
-  "nextQuestIds": [
-    "market_correction"
-  ]
+  "previousQuestIds": ["broken_monument"],
+  "nextQuestIds": ["market_correction"],
+  "updatedAt": "03/31/2026"
 }

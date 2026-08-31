@@ -22,9 +22,7 @@
     "zh-CN": "蛛丝马迹",
     "zh-TW": "追查痕跡"
   },
-  "map": [
-    "the_blue_gate"
-  ],
+  "map": ["the_blue_gate"],
   "trader": "Shani",
   "description": {
     "da": "Den nedlagte maskine... Det var ikke os, der gjorde det. Vi ved, at der er omstrejfende overlevende derude, men det her? Det her rækker langt ud over en enkelt person.",
@@ -149,11 +147,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "reduced_to_rubble"
-  ],
-  "nextQuestIds": [
-    "armored_transports",
-    "the_clean_dream"
-  ]
+  "previousQuestIds": ["reduced_to_rubble"],
+  "nextQuestIds": ["armored_transports", "the_clean_dream"],
+  "updatedAt": "02/25/2026"
 }

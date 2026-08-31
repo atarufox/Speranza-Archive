@@ -22,9 +22,7 @@
     "zh-CN": "未结债务",
     "zh-TW": "未結餘額"
   },
-  "map": [
-    "the_blue_gate"
-  ],
+  "map": ["the_blue_gate"],
   "trader": "Tian Wen",
   "requiredItemIds": [
     {
@@ -134,10 +132,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "the_clean_dream"
-  ],
-  "nextQuestIds": [
-    "settled_in_full"
-  ]
+  "previousQuestIds": ["the_clean_dream"],
+  "nextQuestIds": ["settled_in_full"],
+  "updatedAt": "03/31/2026"
 }

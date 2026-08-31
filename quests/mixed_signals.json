@@ -22,12 +22,7 @@
     "zh-CN": "混合信号",
     "zh-TW": "混雜訊號"
   },
-  "map": [
-    "buried_city",
-    "the_spaceport",
-    "the_blue_gate",
-    "dam_battlegrounds"
-  ],
+  "map": ["buried_city", "the_spaceport", "the_blue_gate", "dam_battlegrounds"],
   "trader": "Shani",
   "requiredItemIds": [
     {
@@ -124,8 +119,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "dormant_barons"
-  ],
-  "nextQuestIds": []
+  "previousQuestIds": ["dormant_barons"],
+  "nextQuestIds": [],
+  "updatedAt": "02/25/2026"
 }

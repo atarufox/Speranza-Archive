@@ -22,9 +22,7 @@
     "zh-CN": "昔日的药方",
     "zh-TW": "過去的處方"
   },
-  "map": [
-    "the_spaceport"
-  ],
+  "map": ["the_spaceport"],
   "trader": "Lance",
   "description": {
     "da": "Jeg har længe været nysgerrig på det medicinske område i Spaceport. Noget siger mig, at der er lige præcis det, jeg skal bruge for at blive den ubestridte mester her.",
@@ -132,10 +130,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "a_warm_place_to_rest"
-  ],
-  "nextQuestIds": [
-    "power_out"
-  ]
+  "previousQuestIds": ["a_warm_place_to_rest"],
+  "nextQuestIds": ["power_out"],
+  "updatedAt": "03/31/2026"
 }

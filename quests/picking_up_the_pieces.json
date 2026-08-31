@@ -103,8 +103,6 @@
   ],
   "xp": 0,
   "previousQuestIds": [],
-  "nextQuestIds": [
-    "clearer_skies",
-    "trash_into_treasure"
-  ]
+  "nextQuestIds": ["clearer_skies", "trash_into_treasure"],
+  "updatedAt": "04/28/2026"
 }

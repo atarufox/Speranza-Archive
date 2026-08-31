@@ -22,9 +22,7 @@
     "zh-CN": "风景如画",
     "zh-TW": "目的明確"
   },
-  "map": [
-    "stella_montis"
-  ],
+  "map": ["stella_montis"],
   "trader": "Shani",
   "requiredItemIds": [
     {
@@ -185,11 +183,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "snap_and_salvage"
-  ],
-  "nextQuestIds": [
-    "stable_housing",
-    "movie_night"
-  ]
+  "previousQuestIds": ["snap_and_salvage"],
+  "nextQuestIds": ["stable_housing", "movie_night"],
+  "updatedAt": "02/25/2026"
 }

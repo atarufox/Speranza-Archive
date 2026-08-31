@@ -22,9 +22,7 @@
     "zh-CN": "充耳不闻",
     "zh-TW": "聽而不聞"
   },
-  "map": [
-    "stella_montis"
-  ],
+  "map": ["stella_montis"],
   "trader": "Lance",
   "description": {
     "da": "Det virker til, at hver anden Raider her har alvorlige høreskader.\r\n\r\nJeg har hørt rygter om, at de udviklede nogle ekstra avancerede høreapparater ved Stella Montis. Hvis du kan opspore dem, kan vi måske alle bruge vores indendørsstemmer for en gangs skyld.",
@@ -153,11 +151,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "worth_your_salt",
-    "snap_and_salvage"
-  ],
-  "nextQuestIds": [
-    "on_the_map"
-  ]
+  "previousQuestIds": ["worth_your_salt", "snap_and_salvage"],
+  "nextQuestIds": ["on_the_map"],
+  "updatedAt": "02/25/2026"
 }

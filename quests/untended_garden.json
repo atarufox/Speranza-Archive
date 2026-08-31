@@ -22,9 +22,7 @@
     "zh-CN": "无人照看的农园",
     "zh-TW": "荒蕪庭園"
   },
-  "map": [
-    "dam_battlegrounds"
-  ],
+  "map": ["dam_battlegrounds"],
   "trader": "Celeste",
   "description": {
     "da": "Ifølge filerne, du fandt i laboratoriet, var det faktisk dyrkningsforskerne, der oprettede de hydroponiske kupler ude i sumpen. Det lyder som det mest oplagte sted at lede videre, synes du ikke?",
@@ -132,10 +130,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "a_balanced_harvest"
-  ],
-  "nextQuestIds": [
-    "the_root_of_the_matter"
-  ]
+  "previousQuestIds": ["a_balanced_harvest"],
+  "nextQuestIds": ["the_root_of_the_matter"],
+  "updatedAt": "03/31/2026"
 }

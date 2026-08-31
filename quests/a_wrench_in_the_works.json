@@ -22,9 +22,7 @@
     "zh-CN": "暗中破坏",
     "zh-TW": "阻撓計畫"
   },
-  "map": [
-    "the_spaceport"
-  ],
+  "map": ["the_spaceport"],
   "trader": "Celeste",
   "description": {
     "da": "Det ser ud til, at vreden endte med at nå frem til selve jordpersonalet på The Spaceport. Et mytteri er under opsejling, lige i hjertet af Exodus.",
@@ -105,8 +103,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "safe_harbor"
-  ],
-  "nextQuestIds": []
+  "previousQuestIds": ["safe_harbor"],
+  "nextQuestIds": [],
+  "updatedAt": "04/28/2026"
 }

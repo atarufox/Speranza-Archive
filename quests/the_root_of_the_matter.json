@@ -22,9 +22,7 @@
     "zh-CN": "源头之种",
     "zh-TW": "問題的根源"
   },
-  "map": [
-    "buried_city"
-  ],
+  "map": ["buried_city"],
   "trader": "Celeste",
   "requiredItemIds": [
     {
@@ -130,10 +128,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "untended_garden"
-  ],
-  "nextQuestIds": [
-    "water_troubles"
-  ]
+  "previousQuestIds": ["untended_garden"],
+  "nextQuestIds": ["water_troubles"],
+  "updatedAt": "03/31/2026"
 }

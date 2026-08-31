@@ -22,11 +22,7 @@
     "zh-CN": "踏实补给",
     "zh-TW": "腳踏實地"
   },
-  "map": [
-    "buried_city",
-    "the_spaceport",
-    "dam_battlegrounds"
-  ],
+  "map": ["buried_city", "the_spaceport", "dam_battlegrounds"],
   "trader": "Shani",
   "grantedItemIds": [
     {
@@ -136,10 +132,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "hatch_repairs"
-  ],
-  "nextQuestIds": [
-    "the_trifecta"
-  ]
+  "previousQuestIds": ["hatch_repairs"],
+  "nextQuestIds": ["the_trifecta"],
+  "updatedAt": "03/31/2026"
 }

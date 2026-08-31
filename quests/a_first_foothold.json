@@ -22,13 +22,9 @@
     "zh-CN": "首个立足点",
     "zh-TW": "第一個立足點"
   },
-  "map": [
-    "the_blue_gate"
-  ],
+  "map": ["the_blue_gate"],
   "trader": "Apollo",
-  "otherRequirements": [
-    "18x Raids"
-  ],
+  "otherRequirements": ["18x Raids"],
   "grantedItemIds": [
     {
       "itemId": "noisemaker",
@@ -162,10 +158,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "off_the_radar"
-  ],
-  "nextQuestIds": [
-    "reduced_to_rubble"
-  ]
+  "previousQuestIds": ["off_the_radar"],
+  "nextQuestIds": ["reduced_to_rubble"],
+  "updatedAt": "03/31/2026"
 }

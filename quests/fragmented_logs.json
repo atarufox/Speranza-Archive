@@ -22,9 +22,7 @@
     "zh-CN": "碎片日志",
     "zh-TW": "紀錄片段"
   },
-  "map": [
-    "stella_montis"
-  ],
+  "map": ["stella_montis"],
   "trader": "Shani",
   "description": {
     "da": "Nu hvor vi har fundet fodfæste på Stella Montis, er flere interesserede i at grave lidt dybere og se, hvad vi kan finde ud af om dette steds fortid. For at gøre det skal vi dog have strøm på nogle af disse gamle maskiner, så vi kan begynde at gennemgå dataene.",
@@ -127,11 +125,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "a_dead_end",
-    "dust_on_the_wires"
-  ],
-  "nextQuestIds": [
-    "furtive_meetings"
-  ]
+  "previousQuestIds": ["a_dead_end", "dust_on_the_wires"],
+  "nextQuestIds": ["furtive_meetings"],
+  "updatedAt": "03/31/2026"
 }

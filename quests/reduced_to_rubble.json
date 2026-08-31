@@ -22,9 +22,7 @@
     "zh-CN": "化为废墟",
     "zh-TW": "化為瓦礫"
   },
-  "map": [
-    "the_blue_gate"
-  ],
+  "map": ["the_blue_gate"],
   "trader": "Shani",
   "grantedItemIds": [
     {
@@ -159,10 +157,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "a_first_foothold"
-  ],
-  "nextQuestIds": [
-    "with_a_trace"
-  ]
+  "previousQuestIds": ["a_first_foothold"],
+  "nextQuestIds": ["with_a_trace"],
+  "updatedAt": "02/25/2026"
 }

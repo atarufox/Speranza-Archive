@@ -22,9 +22,7 @@
     "zh-CN": "死路一条",
     "zh-TW": "盡頭"
   },
-  "map": [
-    "the_blue_gate"
-  ],
+  "map": ["the_blue_gate"],
   "trader": "Shani",
   "requiredItemIds": [
     {
@@ -174,11 +172,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "groundbreaking"
-  ],
-  "nextQuestIds": [
-    "a_rising_tide",
-    "fragmented_logs"
-  ]
+  "previousQuestIds": ["groundbreaking"],
+  "nextQuestIds": ["a_rising_tide", "fragmented_logs"],
+  "updatedAt": "03/31/2026"
 }

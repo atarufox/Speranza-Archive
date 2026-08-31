@@ -22,10 +22,7 @@
     "zh-CN": "涨潮",
     "zh-TW": "掀起浪潮"
   },
-  "map": [
-    "buried_city",
-    "dam_battlegrounds"
-  ],
+  "map": ["buried_city", "dam_battlegrounds"],
   "trader": "Celeste",
   "description": {
     "da": "Der står her, at der var en formand ved The Dam, som blev rekrutteret, lige efter de aflyste Project Heartwood. Han blev sat i spidsen for et stort genopbygningsprojekt.",
@@ -180,8 +177,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "a_dead_end"
-  ],
-  "nextQuestIds": []
+  "previousQuestIds": ["a_dead_end"],
+  "nextQuestIds": [],
+  "updatedAt": "02/25/2026"
 }

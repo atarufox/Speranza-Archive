@@ -22,9 +22,7 @@
     "zh-CN": "在地图上",
     "zh-TW": "標上地圖"
   },
-  "map": [
-    "the_spaceport"
-  ],
+  "map": ["the_spaceport"],
   "trader": "Lance",
   "grantedItemIds": [
     {
@@ -181,8 +179,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "on_deaf_ears"
-  ],
-  "nextQuestIds": []
+  "previousQuestIds": ["on_deaf_ears"],
+  "nextQuestIds": [],
+  "updatedAt": "03/31/2026"
 }

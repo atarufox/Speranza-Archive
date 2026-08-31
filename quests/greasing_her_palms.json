@@ -22,11 +22,7 @@
     "zh-CN": "打通通路",
     "zh-TW": "行賄討好"
   },
-  "map": [
-    "buried_city",
-    "the_spaceport",
-    "dam_battlegrounds"
-  ],
+  "map": ["buried_city", "the_spaceport", "dam_battlegrounds"],
   "trader": "Celeste",
   "grantedItemIds": [
     {
@@ -139,11 +135,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "a_better_use"
-  ],
-  "nextQuestIds": [
-    "dormant_barons",
-    "doctors_orders"
-  ]
+  "previousQuestIds": ["a_better_use"],
+  "nextQuestIds": ["dormant_barons", "doctors_orders"],
+  "updatedAt": "03/31/2026"
 }

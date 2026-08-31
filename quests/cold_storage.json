@@ -22,9 +22,7 @@
     "zh-CN": "冷冻储藏",
     "zh-TW": "冷藏室"
   },
-  "map": [
-    "stella_montis"
-  ],
+  "map": ["stella_montis"],
   "trader": "Shani",
   "requiredItemIds": [
     {
@@ -112,10 +110,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "in_my_image"
-  ],
-  "nextQuestIds": [
-    "snap_and_salvage"
-  ]
+  "previousQuestIds": ["in_my_image"],
+  "nextQuestIds": ["snap_and_salvage"],
+  "updatedAt": "03/31/2026"
 }

@@ -22,9 +22,7 @@
     "zh-CN": "迷失在传输中",
     "zh-TW": "傳送遺失"
   },
-  "map": [
-    "the_spaceport"
-  ],
+  "map": ["the_spaceport"],
   "trader": "Shani",
   "grantedItemIds": [
     {
@@ -130,10 +128,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "our_presence_up_there"
-  ],
-  "nextQuestIds": [
-    "communication_hideout"
-  ]
+  "previousQuestIds": ["our_presence_up_there"],
+  "nextQuestIds": ["communication_hideout"],
+  "updatedAt": "03/31/2026"
 }

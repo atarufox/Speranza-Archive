@@ -22,9 +22,7 @@
     "zh-CN": "最后条目",
     "zh-TW": "最後條目"
   },
-  "map": [
-    "stella_montis"
-  ],
+  "map": ["stella_montis"],
   "trader": "Shani",
   "requiredItemIds": [
     {
@@ -174,10 +172,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "furtive_meetings"
-  ],
-  "nextQuestIds": [
-    "line_in_the_sand"
-  ]
+  "previousQuestIds": ["furtive_meetings"],
+  "nextQuestIds": ["line_in_the_sand"],
+  "updatedAt": "04/28/2026"
 }

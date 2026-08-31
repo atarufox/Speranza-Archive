@@ -104,8 +104,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "outstanding_balance"
-  ],
-  "nextQuestIds": []
+  "previousQuestIds": ["outstanding_balance"],
+  "nextQuestIds": [],
+  "updatedAt": "03/31/2026"
 }

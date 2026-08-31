@@ -22,9 +22,7 @@
     "zh-CN": "战斗侦察",
     "zh-TW": "戰鬥偵察"
   },
-  "map": [
-    "buried_city"
-  ],
+  "map": ["buried_city"],
   "trader": "Shani",
   "requiredItemIds": [
     {
@@ -183,11 +181,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "into_the_fray",
-    "out_of_the_shadows"
-  ],
-  "nextQuestIds": [
-    "bombing_run"
-  ]
+  "previousQuestIds": ["into_the_fray", "out_of_the_shadows"],
+  "nextQuestIds": ["bombing_run"],
+  "updatedAt": "03/31/2026"
 }

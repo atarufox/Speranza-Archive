@@ -22,9 +22,7 @@
     "zh-CN": "少校的储物柜",
     "zh-TW": "少校的儲物櫃"
   },
-  "map": [
-    "dam_battlegrounds"
-  ],
+  "map": ["dam_battlegrounds"],
   "trader": "Tian Wen",
   "requiredItemIds": [
     {
@@ -108,10 +106,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "a_symbol_of_unification"
-  ],
-  "nextQuestIds": [
-    "back_on_top"
-  ]
+  "previousQuestIds": ["a_symbol_of_unification"],
+  "nextQuestIds": ["back_on_top"],
+  "updatedAt": "03/31/2026"
 }

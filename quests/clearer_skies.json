@@ -108,10 +108,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "picking_up_the_pieces"
-  ],
-  "nextQuestIds": [
-    "off_the_radar"
-  ]
+  "previousQuestIds": ["picking_up_the_pieces"],
+  "nextQuestIds": ["off_the_radar"],
+  "updatedAt": "03/31/2026"
 }

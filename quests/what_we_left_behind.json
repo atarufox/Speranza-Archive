@@ -22,11 +22,7 @@
     "zh-CN": "遗留之物",
     "zh-TW": "遺留之物"
   },
-  "map": [
-    "buried_city",
-    "the_spaceport",
-    "dam_battlegrounds"
-  ],
+  "map": ["buried_city", "the_spaceport", "dam_battlegrounds"],
   "trader": "Tian Wen",
   "description": {
     "da": "Celeste fortalte mig, at det var dig, der hjalp hende med at plage mig om at bidrage mere. Jeg siger det kun én gang: Jeg bryder mig ikke om indblanding, og jeg har mine egne grunde til at sige fra. Jeg sætter dog pris på skrot. Da du åbenbart er god til at opspore det, har jeg måske en opgave til dig.",
@@ -133,10 +129,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "dormant_barons"
-  ],
-  "nextQuestIds": [
-    "broken_monument"
-  ]
+  "previousQuestIds": ["dormant_barons"],
+  "nextQuestIds": ["broken_monument"],
+  "updatedAt": "03/31/2026"
 }

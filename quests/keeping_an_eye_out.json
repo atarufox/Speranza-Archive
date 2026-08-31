@@ -22,9 +22,7 @@
     "zh-CN": "循“目”追踪",
     "zh-TW": "多加留意"
   },
-  "map": [
-    "the_blue_gate"
-  ],
+  "map": ["the_blue_gate"],
   "trader": "Celeste",
   "description": {
     "da": "Jeg leder efter en. Bilguun. Du har måske set ham, men det er nok tvivlsomt. Han er… ikke den mest sociale person, ser du.\r\n\r\nHan bruger meget tid på Overfladen, men vender normalt tilbage til Speranza regelmæssigt for at tjekke ind.",
@@ -105,8 +103,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "the_clean_dream"
-  ],
-  "nextQuestIds": []
+  "previousQuestIds": ["the_clean_dream"],
+  "nextQuestIds": [],
+  "updatedAt": "02/25/2026"
 }

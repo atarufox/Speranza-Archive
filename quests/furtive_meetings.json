@@ -22,9 +22,7 @@
     "zh-CN": "秘密集会",
     "zh-TW": "秘密會面"
   },
-  "map": [
-    "stella_montis"
-  ],
+  "map": ["stella_montis"],
   "trader": "Shani",
   "requiredItemIds": [
     {
@@ -178,10 +176,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "fragmented_logs"
-  ],
-  "nextQuestIds": [
-    "last_entry"
-  ]
+  "previousQuestIds": ["fragmented_logs"],
+  "nextQuestIds": ["last_entry"],
+  "updatedAt": "03/31/2026"
 }

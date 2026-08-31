@@ -22,9 +22,7 @@
     "zh-CN": "电力不足",
     "zh-TW": "斷電"
   },
-  "map": [
-    "the_spaceport"
-  ],
+  "map": ["the_spaceport"],
   "trader": "Celeste",
   "description": {
     "da": "Det her er mere end bare uheld. Noget – eller nogen – har slået nogle af vores transformatorstationer ud. Ingeniøren, jeg sendte ud for at ordne det, er ikke vendt tilbage, så jeg har brug for, at alle ledige Raiders undersøger det. Det inkluderer dig.",
@@ -154,10 +152,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "prescriptions_of_the_past"
-  ],
-  "nextQuestIds": [
-    "flickering_threat"
-  ]
+  "previousQuestIds": ["prescriptions_of_the_past"],
+  "nextQuestIds": ["flickering_threat"],
+  "updatedAt": "03/31/2026"
 }

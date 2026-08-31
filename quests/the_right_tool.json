@@ -134,10 +134,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "a_bad_feeling"
-  ],
-  "nextQuestIds": [
-    "a_better_use"
-  ]
+  "previousQuestIds": ["a_bad_feeling"],
+  "nextQuestIds": ["a_better_use"],
+  "updatedAt": "02/25/2026"
 }
