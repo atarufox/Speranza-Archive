@@ -22,9 +22,7 @@
     "zh-CN": "更换水源",
     "zh-TW": "切換供給"
   },
-  "map": [
-    "the_spaceport"
-  ],
+  "map": ["the_spaceport"],
   "trader": "Celeste",
   "description": {
     "da": "Der er et reservoir under Spaceport; hvis vi kan få ledt vandet herhen, burde det købe os tid til at håndtere forureningen.",
@@ -106,10 +104,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "source_of_the_contamination"
-  ],
-  "nextQuestIds": [
-    "a_warm_place_to_rest"
-  ]
+  "previousQuestIds": ["source_of_the_contamination"],
+  "nextQuestIds": ["a_warm_place_to_rest"],
+  "updatedAt": "03/31/2026"
 }

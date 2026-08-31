@@ -22,9 +22,7 @@
     "zh-CN": "初露端倪的威胁",
     "zh-TW": "閃爍的威脅"
   },
-  "map": [
-    "dam_battlegrounds"
-  ],
+  "map": ["dam_battlegrounds"],
   "trader": "Celeste",
   "requiredItemIds": [
     {
@@ -155,10 +153,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "power_out"
-  ],
-  "nextQuestIds": [
-    "bees"
-  ]
+  "previousQuestIds": ["power_out"],
+  "nextQuestIds": ["bees"],
+  "updatedAt": "03/31/2026"
 }

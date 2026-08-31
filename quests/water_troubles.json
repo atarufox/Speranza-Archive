@@ -22,9 +22,7 @@
     "zh-CN": "水源问题",
     "zh-TW": "水源問題"
   },
-  "map": [
-    "dam_battlegrounds"
-  ],
+  "map": ["dam_battlegrounds"],
   "trader": "Celeste",
   "description": {
     "da": "Hvis du er her for at klage over vandet, så velkommen i klubben. Jeg har taget imod klager hele dagen. Der er helt sikkert noget galt, og jeg har brug for hjælp til at få det ordnet.",
@@ -132,12 +130,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "after_rain_comes",
-    "the_root_of_the_matter"
-  ],
-  "nextQuestIds": [
-    "into_the_fray",
-    "source_of_the_contamination"
-  ]
+  "previousQuestIds": ["after_rain_comes", "the_root_of_the_matter"],
+  "nextQuestIds": ["into_the_fray", "source_of_the_contamination"],
+  "updatedAt": "03/31/2026"
 }

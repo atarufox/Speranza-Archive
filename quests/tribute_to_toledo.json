@@ -90,10 +90,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "life_of_a_pharmacist"
-  ],
-  "nextQuestIds": [
-    "digging_up_dirt"
-  ]
+  "previousQuestIds": ["life_of_a_pharmacist"],
+  "nextQuestIds": ["digging_up_dirt"],
+  "updatedAt": "02/25/2026"
 }

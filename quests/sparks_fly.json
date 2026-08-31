@@ -98,11 +98,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "what_goes_around"
-  ],
-  "nextQuestIds": [
-    "the_league",
-    "out_of_the_shadows"
-  ]
+  "previousQuestIds": ["what_goes_around"],
+  "nextQuestIds": ["the_league", "out_of_the_shadows"],
+  "updatedAt": "02/25/2026"
 }

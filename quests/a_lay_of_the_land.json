@@ -22,9 +22,7 @@
     "zh-CN": "地形勘查",
     "zh-TW": "打探地勢"
   },
-  "map": [
-    "the_spaceport"
-  ],
+  "map": ["the_spaceport"],
   "trader": "Shani",
   "requiredItemIds": [
     {
@@ -160,10 +158,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "a_reveal_in_ruins"
-  ],
-  "nextQuestIds": [
-    "eyes_in_the_sky"
-  ]
+  "previousQuestIds": ["a_reveal_in_ruins"],
+  "nextQuestIds": ["eyes_in_the_sky"],
+  "updatedAt": "03/31/2026"
 }

@@ -86,10 +86,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "safe_passage"
-  ],
-  "nextQuestIds": [
-    "sparks_fly"
-  ]
+  "previousQuestIds": ["safe_passage"],
+  "nextQuestIds": ["sparks_fly"],
+  "updatedAt": "02/25/2026"
 }

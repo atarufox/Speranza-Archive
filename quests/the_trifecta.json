@@ -22,12 +22,7 @@
     "zh-CN": "三连胜",
     "zh-TW": "三連發"
   },
-  "map": [
-    "buried_city",
-    "the_spaceport",
-    "the_blue_gate",
-    "dam_battlegrounds"
-  ],
+  "map": ["buried_city", "the_spaceport", "the_blue_gate", "dam_battlegrounds"],
   "trader": "Shani",
   "requiredItemIds": [
     {
@@ -220,11 +215,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "down_to_earth"
-  ],
-  "nextQuestIds": [
-    "dormant_barons",
-    "dust_on_the_wires"
-  ]
+  "previousQuestIds": ["down_to_earth"],
+  "nextQuestIds": ["dormant_barons", "dust_on_the_wires"],
+  "updatedAt": "03/31/2026"
 }

@@ -22,9 +22,7 @@
     "zh-CN": "线路积尘",
     "zh-TW": "電線上的塵埃"
   },
-  "map": [
-    "the_spaceport"
-  ],
+  "map": ["the_spaceport"],
   "trader": "Shani",
   "requiredItemIds": [
     {
@@ -190,11 +188,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "the_trifecta"
-  ],
-  "nextQuestIds": [
-    "waking_the_grid",
-    "fragmented_logs"
-  ]
+  "previousQuestIds": ["the_trifecta"],
+  "nextQuestIds": ["waking_the_grid", "fragmented_logs"],
+  "updatedAt": "03/31/2026"
 }

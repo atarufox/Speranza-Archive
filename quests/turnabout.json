@@ -22,9 +22,7 @@
     "zh-CN": "反将一军",
     "zh-TW": "大逆轉"
   },
-  "map": [
-    "the_spaceport"
-  ],
+  "map": ["the_spaceport"],
   "trader": "Celeste",
   "grantedItemIds": [
     {
@@ -111,8 +109,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "digging_up_dirt"
-  ],
-  "nextQuestIds": []
+  "previousQuestIds": ["digging_up_dirt"],
+  "nextQuestIds": [],
+  "updatedAt": "02/25/2026"
 }

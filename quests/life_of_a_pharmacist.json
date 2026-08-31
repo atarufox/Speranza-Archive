@@ -22,9 +22,7 @@
     "zh-CN": "药剂师的生活",
     "zh-TW": "藥師的人生"
   },
-  "map": [
-    "buried_city"
-  ],
+  "map": ["buried_city"],
   "trader": "Lance",
   "description": {
     "da": "Det her sted trænger til en overhaling, men jeg vil ikke have, at det ligner jeres lurvede Raider-huler. Se om du kan finde ud af, hvordan mine medicinske storheder plejede at leve.\n",
@@ -175,11 +173,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "espresso"
-  ],
-  "nextQuestIds": [
-    "a_toxic_trail",
-    "tribute_to_toledo"
-  ]
+  "previousQuestIds": ["espresso"],
+  "nextQuestIds": ["a_toxic_trail", "tribute_to_toledo"],
+  "updatedAt": "02/25/2026"
 }

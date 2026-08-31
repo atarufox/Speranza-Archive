@@ -22,9 +22,7 @@
     "zh-CN": "工业间谍",
     "zh-TW": "工業間諜"
   },
-  "map": [
-    "buried_city"
-  ],
+  "map": ["buried_city"],
   "trader": "Tian Wen",
   "grantedItemIds": [
     {
@@ -137,10 +135,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "eyes_on_the_prize"
-  ],
-  "nextQuestIds": [
-    "unexpected_initiative"
-  ]
+  "previousQuestIds": ["eyes_on_the_prize"],
+  "nextQuestIds": ["unexpected_initiative"],
+  "updatedAt": "03/31/2026"
 }

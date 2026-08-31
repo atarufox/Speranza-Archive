@@ -22,9 +22,7 @@
     "zh-CN": "沙滩防线",
     "zh-TW": "沙灘紅線"
   },
-  "map": [
-    "buried_city"
-  ],
+  "map": ["buried_city"],
   "trader": "Celeste",
   "description": {
     "da": "Den Stella Montis-harddisk indeholdt mere end bare nedlukningsdokumentationen - den havde også transportplanerne for nogle ret kritiske Exodus-komponenter.",
@@ -153,10 +151,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "last_entry"
-  ],
-  "nextQuestIds": [
-    "safe_harbor"
-  ]
+  "previousQuestIds": ["last_entry"],
+  "nextQuestIds": ["safe_harbor"],
+  "updatedAt": "04/28/2026"
 }

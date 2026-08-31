@@ -22,9 +22,7 @@
     "zh-CN": "风雨过后",
     "zh-TW": "雨過天晴"
   },
-  "map": [
-    "buried_city"
-  ],
+  "map": ["buried_city"],
   "trader": "Celeste",
   "requiredItemIds": [
     {
@@ -125,10 +123,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "eyes_in_the_sky"
-  ],
-  "nextQuestIds": [
-    "water_troubles"
-  ]
+  "previousQuestIds": ["eyes_in_the_sky"],
+  "nextQuestIds": ["water_troubles"],
+  "updatedAt": "03/31/2026"
 }

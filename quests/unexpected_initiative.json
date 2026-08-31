@@ -22,9 +22,7 @@
     "zh-CN": "计划不如变化快",
     "zh-TW": "意外創舉"
   },
-  "map": [
-    "buried_city"
-  ],
+  "map": ["buried_city"],
   "trader": "Tian Wen",
   "requiredItemIds": [
     {
@@ -208,11 +206,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "industrial_espionage",
-    "echoes_of_victory_ridge"
-  ],
-  "nextQuestIds": [
-    "a_symbol_of_unification"
-  ]
+  "previousQuestIds": ["industrial_espionage", "echoes_of_victory_ridge"],
+  "nextQuestIds": ["a_symbol_of_unification"],
+  "updatedAt": "03/31/2026"
 }

@@ -164,8 +164,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "the_league"
-  ],
-  "nextQuestIds": []
+  "previousQuestIds": ["the_league"],
+  "nextQuestIds": [],
+  "updatedAt": "03/31/2026"
 }

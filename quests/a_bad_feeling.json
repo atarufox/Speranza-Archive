@@ -84,13 +84,12 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "off_the_radar"
-  ],
+  "previousQuestIds": ["off_the_radar"],
   "nextQuestIds": [
     "in_my_image",
     "safe_passage",
     "the_right_tool",
     "hatch_repairs"
-  ]
+  ],
+  "updatedAt": "02/25/2026"
 }

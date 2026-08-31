@@ -22,9 +22,7 @@
     "zh-CN": "安全港湾",
     "zh-TW": "安全海灣"
   },
-  "map": [
-    "riven_tides"
-  ],
+  "map": ["riven_tides"],
   "trader": "Tian Wen",
   "requiredItemIds": [
     {
@@ -160,10 +158,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "line_in_the_sand"
-  ],
-  "nextQuestIds": [
-    "a_wrench_in_the_works"
-  ]
+  "previousQuestIds": ["line_in_the_sand"],
+  "nextQuestIds": ["a_wrench_in_the_works"],
+  "updatedAt": "04/28/2026"
 }

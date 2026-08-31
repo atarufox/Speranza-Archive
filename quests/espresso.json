@@ -22,9 +22,7 @@
     "zh-CN": "浓缩咖啡",
     "zh-TW": "義式咖啡"
   },
-  "map": [
-    "buried_city"
-  ],
+  "map": ["buried_city"],
   "trader": "Apollo",
   "requiredItemIds": [
     {
@@ -112,10 +110,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "bees"
-  ],
-  "nextQuestIds": [
-    "life_of_a_pharmacist"
-  ]
+  "previousQuestIds": ["bees"],
+  "nextQuestIds": ["life_of_a_pharmacist"],
+  "updatedAt": "03/31/2026"
 }

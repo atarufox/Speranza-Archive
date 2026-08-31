@@ -22,12 +22,7 @@
     "zh-CN": "走出阴影",
     "zh-TW": "走出陰影"
   },
-  "map": [
-    "buried_city",
-    "the_spaceport",
-    "the_blue_gate",
-    "dam_battlegrounds"
-  ],
+  "map": ["buried_city", "the_spaceport", "the_blue_gate", "dam_battlegrounds"],
   "trader": "Shani",
   "requiredItemIds": [
     {
@@ -128,11 +123,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "a_symbol_of_unification",
-    "sparks_fly"
-  ],
-  "nextQuestIds": [
-    "combat_recon"
-  ]
+  "previousQuestIds": ["a_symbol_of_unification", "sparks_fly"],
+  "nextQuestIds": ["combat_recon"],
+  "updatedAt": "02/25/2026"
 }

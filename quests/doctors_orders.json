@@ -168,10 +168,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "greasing_her_palms"
-  ],
-  "nextQuestIds": [
-    "medical_merchandise"
-  ]
+  "previousQuestIds": ["greasing_her_palms"],
+  "nextQuestIds": ["medical_merchandise"],
+  "updatedAt": "03/31/2026"
 }

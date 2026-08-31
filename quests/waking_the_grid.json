@@ -22,9 +22,7 @@
     "zh-CN": "唤醒安保网络",
     "zh-TW": "喚醒網絡"
   },
-  "map": [
-    "the_spaceport"
-  ],
+  "map": ["the_spaceport"],
   "trader": "Shani",
   "description": {
     "da": "Der er et problem med vores sensordækning i rumhavnen. Sikkerhedsnettet er gammelt, så måske skaber det sig bare. Hvis du kunne få det til at køre igen, ville det spare mig for mange søvnløse nætter.",
@@ -131,8 +129,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "dust_on_the_wires"
-  ],
-  "nextQuestIds": []
+  "previousQuestIds": ["dust_on_the_wires"],
+  "nextQuestIds": [],
+  "updatedAt": "04/28/2026"
 }

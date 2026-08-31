@@ -112,8 +112,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "safe_passage"
-  ],
-  "nextQuestIds": []
+  "previousQuestIds": ["safe_passage"],
+  "nextQuestIds": [],
+  "updatedAt": "04/28/2026"
 }

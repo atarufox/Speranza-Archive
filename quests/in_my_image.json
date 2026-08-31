@@ -22,13 +22,9 @@
     "zh-CN": "与我同“形”",
     "zh-TW": "和我如出一轍"
   },
-  "map": [
-    "stella_montis"
-  ],
+  "map": ["stella_montis"],
   "trader": "Lance",
-  "otherRequirements": [
-    "24x Raids"
-  ],
+  "otherRequirements": ["24x Raids"],
   "grantedItemIds": [
     {
       "itemId": "defibrillator",
@@ -114,10 +110,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "a_bad_feeling"
-  ],
-  "nextQuestIds": [
-    "cold_storage"
-  ]
+  "previousQuestIds": ["a_bad_feeling"],
+  "nextQuestIds": ["cold_storage"],
+  "updatedAt": "03/31/2026"
 }

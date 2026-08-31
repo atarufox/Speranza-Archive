@@ -22,11 +22,7 @@
     "zh-CN": "天空之眼",
     "zh-TW": "天空之眼"
   },
-  "map": [
-    "buried_city",
-    "the_spaceport",
-    "dam_battlegrounds"
-  ],
+  "map": ["buried_city", "the_spaceport", "dam_battlegrounds"],
   "trader": "Shani",
   "grantedItemIds": [
     {
@@ -139,12 +135,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "a_lay_of_the_land"
-  ],
-  "nextQuestIds": [
-    "after_rain_comes",
-    "a_balanced_harvest",
-    "back_on_top"
-  ]
+  "previousQuestIds": ["a_lay_of_the_land"],
+  "nextQuestIds": ["after_rain_comes", "a_balanced_harvest", "back_on_top"],
+  "updatedAt": "02/25/2026"
 }

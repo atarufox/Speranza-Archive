@@ -22,9 +22,7 @@
     "zh-CN": "丰富图书室",
     "zh-TW": "建造圖書館"
   },
-  "map": [
-    "buried_city"
-  ],
+  "map": ["buried_city"],
   "trader": "Apollo",
   "requiredItemIds": [
     {
@@ -182,10 +180,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "digging_up_dirt"
-  ],
-  "nextQuestIds": [
-    "a_new_type_of_plant"
-  ]
+  "previousQuestIds": ["digging_up_dirt"],
+  "nextQuestIds": ["a_new_type_of_plant"],
+  "updatedAt": "03/31/2026"
 }

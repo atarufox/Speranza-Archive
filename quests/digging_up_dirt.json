@@ -22,9 +22,7 @@
     "zh-CN": "揭露丑闻",
     "zh-TW": "挖掘醜聞"
   },
-  "map": [
-    "buried_city"
-  ],
+  "map": ["buried_city"],
   "trader": "Celeste",
   "description": {
     "da": "Vi har været heldige. En af vores spejdere så et medlem af Tubes Management lave en hemmelig overlevering inde i Santa Maria-husene i Buried City. Det her er måske vores chance for at grave lidt snavs frem om dem for en gangs skyld. Er du med?",
@@ -105,11 +103,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "tribute_to_toledo"
-  ],
-  "nextQuestIds": [
-    "turnabout",
-    "building_a_library"
-  ]
+  "previousQuestIds": ["tribute_to_toledo"],
+  "nextQuestIds": ["turnabout", "building_a_library"],
+  "updatedAt": "02/25/2026"
 }

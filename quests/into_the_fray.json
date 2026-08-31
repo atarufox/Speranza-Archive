@@ -22,12 +22,7 @@
     "zh-CN": "投入战斗",
     "zh-TW": "投入戰鬥"
   },
-  "map": [
-    "buried_city",
-    "the_spaceport",
-    "the_blue_gate",
-    "dam_battlegrounds"
-  ],
+  "map": ["buried_city", "the_spaceport", "the_blue_gate", "dam_battlegrounds"],
   "trader": "Shani",
   "requiredItemIds": [
     {
@@ -114,12 +109,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "water_troubles",
-    "communication_hideout"
-  ],
-  "nextQuestIds": [
-    "combat_recon",
-    "paving_the_way"
-  ]
+  "previousQuestIds": ["water_troubles", "communication_hideout"],
+  "nextQuestIds": ["combat_recon", "paving_the_way"],
+  "updatedAt": "02/25/2026"
 }

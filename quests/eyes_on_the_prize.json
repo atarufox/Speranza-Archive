@@ -22,9 +22,7 @@
     "zh-CN": "目光长远",
     "zh-TW": "緊盯目標"
   },
-  "map": [
-    "buried_city"
-  ],
+  "map": ["buried_city"],
   "trader": "Tian Wen",
   "requiredItemIds": [
     {
@@ -111,10 +109,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "market_correction"
-  ],
-  "nextQuestIds": [
-    "industrial_espionage"
-  ]
+  "previousQuestIds": ["market_correction"],
+  "nextQuestIds": ["industrial_espionage"],
+  "updatedAt": "03/31/2026"
 }

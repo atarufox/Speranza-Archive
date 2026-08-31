@@ -22,13 +22,9 @@
     "zh-CN": "加固防御",
     "zh-TW": "嚴陣以待"
   },
-  "map": [
-    "riven_tides"
-  ],
+  "map": ["riven_tides"],
   "trader": "Apollo",
-  "otherRequirements": [
-    "20x Raids"
-  ],
+  "otherRequirements": ["20x Raids"],
   "description": {
     "da": "Vi havde håbet, at bølgebryderne ved Riven Tides kunne tilbyde os lidt beskyttelse mod elementerne, men det lader til, at orkanerne heller ikke var nådige mod dette sted.",
     "de": "Wir hatten gehofft, dass uns die Ufermauern in Riven Tides etwas Schutz vor den Elementen bieten würden, aber anscheinend haben die Hurrikane auch diesen Ort nicht verschont.",
@@ -130,8 +126,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "off_the_radar"
-  ],
-  "nextQuestIds": []
+  "previousQuestIds": ["off_the_radar"],
+  "nextQuestIds": [],
+  "updatedAt": "04/28/2026"
 }

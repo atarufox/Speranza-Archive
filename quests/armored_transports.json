@@ -22,9 +22,7 @@
     "zh-CN": "装甲运输",
     "zh-TW": "裝甲運輸車"
   },
-  "map": [
-    "the_blue_gate"
-  ],
+  "map": ["the_blue_gate"],
   "trader": "Tian Wen",
   "description": {
     "da": "Lige siden vi udvidede tunnellerne til Blue Gate, er der begyndt at dukke sjældne dele op på det sorte marked.\n\nImens sidder jeg fast her og sælger smadrede, gamle Rattlers. Hvis jeg ikke finder nye forsyningslinjer, bliver jeg hægtet helt af. ",
@@ -149,9 +147,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "with_a_trace",
-    "a_new_type_of_plant"
-  ],
-  "nextQuestIds": []
+  "previousQuestIds": ["with_a_trace", "a_new_type_of_plant"],
+  "nextQuestIds": [],
+  "updatedAt": "03/31/2026"
 }

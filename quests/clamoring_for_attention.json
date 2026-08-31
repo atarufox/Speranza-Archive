@@ -22,13 +22,9 @@
     "zh-CN": "哗众取宠",
     "zh-TW": "爭奪關注"
   },
-  "map": [
-    "the_blue_gate"
-  ],
+  "map": ["the_blue_gate"],
   "trader": "Shani",
-  "otherRequirements": [
-    "18x Raids"
-  ],
+  "otherRequirements": ["18x Raids"],
   "description": {
     "da": "Jeg tror, jeg har fundet noget, vi kan udnytte. Når større ARC-maskiner er lige langt nok fra hinanden, kan en veltimet afledning trække en ud af position. Vil du teste den idé?",
     "de": "Ich glaube, ich hab was gefunden, das wir nutzen könnten. Wenn größere ARC-Maschinen weit genug voneinander entfernt sind, könnte eine gut getimte Ablenkung eine aus ihrer Position bringen. Willst du diese Idee testen?",
@@ -134,8 +130,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "dormant_barons"
-  ],
-  "nextQuestIds": []
+  "previousQuestIds": ["dormant_barons"],
+  "nextQuestIds": [],
+  "updatedAt": "03/31/2026"
 }

@@ -22,9 +22,7 @@
     "zh-CN": "温暖的休憩之地",
     "zh-TW": "溫暖的休息處"
   },
-  "map": [
-    "buried_city"
-  ],
+  "map": ["buried_city"],
   "trader": "Apollo",
   "description": {
     "da": "En af mine kunder så en familie søge dækning i en gammel lejr i Buried City. Jeg betaler enhver, der formår at finde dem og eskortere dem i sikkerhed.",
@@ -153,10 +151,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "switching_the_supply"
-  ],
-  "nextQuestIds": [
-    "prescriptions_of_the_past"
-  ]
+  "previousQuestIds": ["switching_the_supply"],
+  "nextQuestIds": ["prescriptions_of_the_past"],
+  "updatedAt": "02/25/2026"
 }

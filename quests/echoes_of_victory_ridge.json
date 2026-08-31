@@ -22,9 +22,7 @@
     "zh-CN": "凯旋岭的回声",
     "zh-TW": "勝利山脊的回音"
   },
-  "map": [
-    "dam_battlegrounds"
-  ],
+  "map": ["dam_battlegrounds"],
   "trader": "Celeste",
   "requiredItemIds": [
     {
@@ -138,10 +136,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "keeping_the_memory"
-  ],
-  "nextQuestIds": [
-    "unexpected_initiative"
-  ]
+  "previousQuestIds": ["keeping_the_memory"],
+  "nextQuestIds": ["unexpected_initiative"],
+  "updatedAt": "03/31/2026"
 }

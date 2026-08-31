@@ -22,9 +22,7 @@
     "zh-CN": "破败的纪念",
     "zh-TW": "破損的紀念碑"
   },
-  "map": [
-    "dam_battlegrounds"
-  ],
+  "map": ["dam_battlegrounds"],
   "trader": "Tian Wen",
   "requiredItemIds": [
     {
@@ -234,11 +232,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "what_we_left_behind"
-  ],
-  "nextQuestIds": [
-    "marked_for_death",
-    "straight_record"
-  ]
+  "previousQuestIds": ["what_we_left_behind"],
+  "nextQuestIds": ["marked_for_death", "straight_record"],
+  "updatedAt": "03/31/2026"
 }

@@ -22,9 +22,7 @@
     "zh-CN": "废墟中的揭示",
     "zh-TW": "遺跡揭密"
   },
-  "map": [
-    "buried_city"
-  ],
+  "map": ["buried_city"],
   "trader": "Lance",
   "requiredItemIds": [
     {
@@ -112,10 +110,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "medical_merchandise"
-  ],
-  "nextQuestIds": [
-    "a_lay_of_the_land"
-  ]
+  "previousQuestIds": ["medical_merchandise"],
+  "nextQuestIds": ["a_lay_of_the_land"],
+  "updatedAt": "03/31/2026"
 }

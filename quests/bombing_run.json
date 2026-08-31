@@ -104,8 +104,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "combat_recon"
-  ],
-  "nextQuestIds": []
+  "previousQuestIds": ["combat_recon"],
+  "nextQuestIds": [],
+  "updatedAt": "02/25/2026"
 }

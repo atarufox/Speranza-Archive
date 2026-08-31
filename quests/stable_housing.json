@@ -22,9 +22,7 @@
     "zh-CN": "稳固住宅",
     "zh-TW": "穩定住宅"
   },
-  "map": [
-    "stella_montis"
-  ],
+  "map": ["stella_montis"],
   "trader": "Tian Wen",
   "requiredItemIds": [
     {
@@ -226,8 +224,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "with_a_view"
-  ],
-  "nextQuestIds": []
+  "previousQuestIds": ["with_a_view"],
+  "nextQuestIds": [],
+  "updatedAt": "03/31/2026"
 }

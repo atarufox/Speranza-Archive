@@ -22,9 +22,7 @@
     "zh-CN": "新型植物",
     "zh-TW": "新種類植物"
   },
-  "map": [
-    "dam_battlegrounds"
-  ],
+  "map": ["dam_battlegrounds"],
   "trader": "Lance",
   "requiredItemIds": [
     {
@@ -112,10 +110,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "building_a_library"
-  ],
-  "nextQuestIds": [
-    "armored_transports"
-  ]
+  "previousQuestIds": ["building_a_library"],
+  "nextQuestIds": ["armored_transports"],
+  "updatedAt": "03/31/2026"
 }

@@ -22,9 +22,7 @@
     "zh-CN": "通讯隐蔽处",
     "zh-TW": "通訊躲藏點"
   },
-  "map": [
-    "buried_city"
-  ],
+  "map": ["buried_city"],
   "trader": "Shani",
   "description": {
     "da": "Vi har mistet signalet i visse områder af Buried City – mit gæt er, at vores udstyr driller. Du er ret ferm til reparationer, ikke? Kunne du tjekke det?",
@@ -172,10 +170,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "lost_in_transmission"
-  ],
-  "nextQuestIds": [
-    "into_the_fray"
-  ]
+  "previousQuestIds": ["lost_in_transmission"],
+  "nextQuestIds": ["into_the_fray"],
+  "updatedAt": "03/31/2026"
 }

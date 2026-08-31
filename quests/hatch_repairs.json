@@ -80,10 +80,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "a_bad_feeling"
-  ],
-  "nextQuestIds": [
-    "down_to_earth"
-  ]
+  "previousQuestIds": ["a_bad_feeling"],
+  "nextQuestIds": ["down_to_earth"],
+  "updatedAt": "03/31/2026"
 }

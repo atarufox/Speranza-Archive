@@ -22,9 +22,7 @@
     "zh-CN": "电池的“盐”伸",
     "zh-TW": "勝任職責"
   },
-  "map": [
-    "the_spaceport"
-  ],
+  "map": ["the_spaceport"],
   "trader": "Celeste",
   "description": {
     "da": "Jeg fandt noter om, at nogle elektroingeniører på The Spaceport arbejdede på avancerede, saltbaserede batterier. Hvis vi kan få fingrene i et, kan det måske forhindre totale strømsvigt, næste gang et loft braser sammen.",
@@ -168,10 +166,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "groundbreaking"
-  ],
-  "nextQuestIds": [
-    "on_deaf_ears"
-  ]
+  "previousQuestIds": ["groundbreaking"],
+  "nextQuestIds": ["on_deaf_ears"],
+  "updatedAt": "03/31/2026"
 }

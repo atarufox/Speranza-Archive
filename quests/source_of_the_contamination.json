@@ -22,9 +22,7 @@
     "zh-CN": "污染源头",
     "zh-TW": "污染源"
   },
-  "map": [
-    "dam_battlegrounds"
-  ],
+  "map": ["dam_battlegrounds"],
   "trader": "Celeste",
   "description": {
     "da": "Jeg siger ikke, at der er blevet pillet ved vores vand, men baseret på dine prøver kan jeg heller ikke udelukke muligheden. Vil du tage tilbage til Dæmningen og se, hvad der er galt?",
@@ -131,10 +129,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "water_troubles"
-  ],
-  "nextQuestIds": [
-    "switching_the_supply"
-  ]
+  "previousQuestIds": ["water_troubles"],
+  "nextQuestIds": ["switching_the_supply"],
+  "updatedAt": "03/31/2026"
 }

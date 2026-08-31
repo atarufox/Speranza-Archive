@@ -22,9 +22,7 @@
     "zh-CN": "蜜蜂！",
     "zh-TW": "有蜜蜂！"
   },
-  "map": [
-    "the_blue_gate"
-  ],
+  "map": ["the_blue_gate"],
   "trader": "Celeste",
   "grantedItemIds": [
     {
@@ -112,10 +110,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "flickering_threat"
-  ],
-  "nextQuestIds": [
-    "espresso"
-  ]
+  "previousQuestIds": ["flickering_threat"],
+  "nextQuestIds": ["espresso"],
+  "updatedAt": "03/31/2026"
 }

@@ -22,9 +22,7 @@
     "zh-CN": "拍照并拆解回收",
     "zh-TW": "破壞並拆解"
   },
-  "map": [
-    "stella_montis"
-  ],
+  "map": ["stella_montis"],
   "trader": "Tian Wen",
   "requiredItemIds": [
     {
@@ -167,11 +165,7 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "cold_storage"
-  ],
-  "nextQuestIds": [
-    "on_deaf_ears",
-    "with_a_view"
-  ]
+  "previousQuestIds": ["cold_storage"],
+  "nextQuestIds": ["on_deaf_ears", "with_a_view"],
+  "updatedAt": "02/25/2026"
 }

@@ -22,9 +22,7 @@
     "zh-CN": "团结的象征",
     "zh-TW": "統一象徵"
   },
-  "map": [
-    "dam_battlegrounds"
-  ],
+  "map": ["dam_battlegrounds"],
   "trader": "Celeste",
   "description": {
     "da": "Ved du hvad, dengang havde vi faktisk et flag – tja, nok nærmere en stoflas end noget andet. Alligevel, når man så det, vidste man, at der var allierede i nærheden, og at man var på hjemmebane. Så jeg tænkte...",
@@ -128,12 +126,11 @@
     }
   ],
   "xp": 0,
-  "previousQuestIds": [
-    "unexpected_initiative"
-  ],
+  "previousQuestIds": ["unexpected_initiative"],
   "nextQuestIds": [
     "the_majors_footlocker",
     "celestes_journals",
     "out_of_the_shadows"
-  ]
+  ],
+  "updatedAt": "03/31/2026"
 }
