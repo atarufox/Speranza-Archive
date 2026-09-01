@@ -1,57 +1,25 @@
-﻿{
-    "id":  "familiar_duck",
-    "name":  {
-                 "da":  "familiar_duck",
-                 "de":  "familiar_duck",
-                 "en":  "Familiar Duck",
-                 "es":  "familiar_duck",
-                 "fr":  "familiar_duck",
-                 "he":  "familiar_duck",
-                 "hr":  "familiar_duck",
-                 "it":  "Anatra familiare",
-                 "ja":  "familiar_duck",
-                 "kr":  "familiar_duck",
-                 "no":  "familiar_duck",
-                 "pl":  "familiar_duck",
-                 "pt":  "familiar_duck",
-                 "pt-BR":  "familiar_duck",
-                 "ru":  "familiar_duck",
-                 "sr":  "familiar_duck",
-                 "tr":  "familiar_duck",
-                 "uk":  "familiar_duck",
-                 "zh-CN":  "familiar_duck",
-                 "zh-TW":  "familiar_duck"
-             },
-    "description":  {
-                        "da":  "Unlike the real one, this one fits in your pack.",
-                        "de":  "Unlike the real one, this one fits in your pack.",
-                        "en":  "Unlike the real one, this one fits in your pack. Can be thrown to create noise.",
-                        "es":  "Unlike the real one, this one fits in your pack.",
-                        "fr":  "Unlike the real one, this one fits in your pack.",
-                        "he":  "Unlike the real one, this one fits in your pack.",
-                        "hr":  "Unlike the real one, this one fits in your pack.",
-                        "it":  "A differenza di quella vera, questa entra nello zaino. Si può lanciare per fare rumore.",
-                        "ja":  "Unlike the real one, this one fits in your pack.",
-                        "kr":  "Unlike the real one, this one fits in your pack.",
-                        "no":  "Unlike the real one, this one fits in your pack.",
-                        "pl":  "Unlike the real one, this one fits in your pack.",
-                        "pt":  "Unlike the real one, this one fits in your pack.",
-                        "pt-BR":  "Unlike the real one, this one fits in your pack.",
-                        "ru":  "Unlike the real one, this one fits in your pack.",
-                        "sr":  "Unlike the real one, this one fits in your pack.",
-                        "tr":  "Unlike the real one, this one fits in your pack.",
-                        "uk":  "Unlike the real one, this one fits in your pack.",
-                        "zh-CN":  "Unlike the real one, this one fits in your pack.",
-                        "zh-TW":  "Unlike the real one, this one fits in your pack."
-                    },
-    "type":  "Trinket",
-    "rarity":  "Epic",
-    "value":  7000,
-    "weightKg":  0.3,
-    "stackSize":  15,
-    "recyclesInto":  {
-
-                     },
-    "imageFilename":  "images/items/familiar_duck.png",
-    "lastUpdate":  "2026-01-31 00:55:04"
+{
+    "id": "familiar_duck",
+    "name": {
+        "DEU": "familiar_duck",
+        "ENG": "Familiar Duck",
+        "ESP": "familiar_duck",
+        "FRA": "familiar_duck",
+        "ITA": "Anatra familiare"
+    },
+    "description": {
+        "DEU": "Unlike the real one, this one fits in your pack.",
+        "ENG": "Unlike the real one, this one fits in your pack. Can be thrown to create noise.",
+        "ESP": "Unlike the real one, this one fits in your pack.",
+        "FRA": "Unlike the real one, this one fits in your pack.",
+        "ITA": "A differenza di quella vera, questa entra nello zaino. Si può lanciare per fare rumore."
+    },
+    "type": "Trinket",
+    "rarity": "Epic",
+    "value": 7000,
+    "weightKg": 0.3,
+    "stackSize": 15,
+    "recyclesInto": {},
+    "imageFilename": "images/items/familiar_duck.png",
+    "lastUpdate": "2026-01-31 00:55:04"
 }

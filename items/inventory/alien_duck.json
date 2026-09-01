@@ -1,57 +1,25 @@
-﻿{
-    "id":  "alien_duck",
-    "name":  {
-                 "da":  "alien_duck",
-                 "de":  "alien_duck",
-                 "en":  "Alien Duck",
-                 "es":  "alien_duck",
-                 "fr":  "alien_duck",
-                 "he":  "alien_duck",
-                 "hr":  "alien_duck",
-                 "it":  "Anatra aliena",
-                 "ja":  "alien_duck",
-                 "kr":  "alien_duck",
-                 "no":  "alien_duck",
-                 "pl":  "alien_duck",
-                 "pt":  "alien_duck",
-                 "pt-BR":  "alien_duck",
-                 "ru":  "alien_duck",
-                 "sr":  "alien_duck",
-                 "tr":  "alien_duck",
-                 "uk":  "alien_duck",
-                 "zh-CN":  "alien_duck",
-                 "zh-TW":  "alien_duck"
-             },
-    "description":  {
-                        "da":  "A long, long way from home.",
-                        "de":  "A long, long way from home.",
-                        "en":  "A long, long way from home. Can be thrown to create noise.",
-                        "es":  "A long, long way from home.",
-                        "fr":  "A long, long way from home.",
-                        "he":  "A long, long way from home.",
-                        "hr":  "A long, long way from home.",
-                        "it":  "Molto, molto lontano da casa. Si può lanciare per fare rumore.",
-                        "ja":  "A long, long way from home.",
-                        "kr":  "A long, long way from home.",
-                        "no":  "A long, long way from home.",
-                        "pl":  "A long, long way from home.",
-                        "pt":  "A long, long way from home.",
-                        "pt-BR":  "A long, long way from home.",
-                        "ru":  "A long, long way from home.",
-                        "sr":  "A long, long way from home.",
-                        "tr":  "A long, long way from home.",
-                        "uk":  "A long, long way from home.",
-                        "zh-CN":  "A long, long way from home.",
-                        "zh-TW":  "A long, long way from home."
-                    },
-    "type":  "Trinket",
-    "rarity":  "Common",
-    "value":  1000,
-    "weightKg":  0.3,
-    "stackSize":  15,
-    "recyclesInto":  {
-
-                     },
-    "imageFilename":  "images/items/alien_duck.png",
-    "lastUpdate":  "2026-01-31 00:55:04"
+{
+    "id": "alien_duck",
+    "name": {
+        "DEU": "alien_duck",
+        "ENG": "Alien Duck",
+        "ESP": "alien_duck",
+        "FRA": "alien_duck",
+        "ITA": "Anatra aliena"
+    },
+    "description": {
+        "DEU": "A long, long way from home.",
+        "ENG": "A long, long way from home. Can be thrown to create noise.",
+        "ESP": "A long, long way from home.",
+        "FRA": "A long, long way from home.",
+        "ITA": "Molto, molto lontano da casa. Si può lanciare per fare rumore."
+    },
+    "type": "Trinket",
+    "rarity": "Common",
+    "value": 1000,
+    "weightKg": 0.3,
+    "stackSize": 15,
+    "recyclesInto": {},
+    "imageFilename": "images/items/alien_duck.png",
+    "lastUpdate": "2026-01-31 00:55:04"
 }
