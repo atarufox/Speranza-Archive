@@ -2914,6 +2914,19 @@
     "added_to_wishlist": "ADDED TO WISHLIST",
     "location": "LOCATION",
     "crafting": "CRAFTING",
-    "level": "LEVEL"
+    "level": "LEVEL",
+    "what_i_need": "What I Need"
+  },
+  "filters": {
+    "FILT_ALL": "All",
+    "FILT_WEAPONS": "Weapons",
+    "FILT_AMMO": "Ammo",
+    "FILT_MODS": "Mods",
+    "FILT_QUICK_USE": "Quick Use",
+    "FILT_MATERIALS": "Materials",
+    "FILT_KEYS": "Keys",
+    "FILT_MISC": "Misc",
+    "FILT_AUGMENTS": "Augments",
+    "FILT_SHIELDS": "Shields"
   }
 }

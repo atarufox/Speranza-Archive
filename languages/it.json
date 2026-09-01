@@ -2883,6 +2883,19 @@
     "added_to_wishlist": "AGGIUNTO ALLA LISTA",
     "location": "POSIZIONE",
     "crafting": "CREAZIONE",
-    "level": "LIVELLO"
+    "level": "LIVELLO",
+    "what_i_need": "Cosa mi serve"
+  },
+  "filters": {
+    "FILT_ALL": "Tutti",
+    "FILT_WEAPONS": "Armi",
+    "FILT_AMMO": "Munizioni",
+    "FILT_MODS": "Modifiche",
+    "FILT_QUICK_USE": "Uso Rapido",
+    "FILT_MATERIALS": "Materiali",
+    "FILT_KEYS": "Chiavi",
+    "FILT_MISC": "Varie",
+    "FILT_AUGMENTS": "Potenziamenti",
+    "FILT_SHIELDS": "Scudi"
   }
 }

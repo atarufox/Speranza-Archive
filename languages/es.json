@@ -2880,5 +2880,20 @@
     "shop": "Tienda",
     "traderNotFound": "Comerciante no encontrado",
     "traderNotFoundDesc": "El comerciante que buscas no existe."
+  },
+  "filters": {
+    "FILT_ALL": "Todo",
+    "FILT_WEAPONS": "Armas",
+    "FILT_AMMO": "Munición",
+    "FILT_MODS": "Modificaciones",
+    "FILT_QUICK_USE": "Uso Rápido",
+    "FILT_MATERIALS": "Materiales",
+    "FILT_KEYS": "Llaves",
+    "FILT_MISC": "Varios",
+    "FILT_AUGMENTS": "Mejoras",
+    "FILT_SHIELDS": "Escudos"
+  },
+  "UI": {
+    "what_i_need": "Lo que necesito"
   }
 }
