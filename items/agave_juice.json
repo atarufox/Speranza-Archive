@@ -154,7 +154,7 @@
   "salvagesInto": {
     "empty_wine_bottle": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/v2/agave_juice.png",
+  "imageFilename": "images/items/agave_juice.png",
   "updatedAt": "05/30/2026",
   "addedIn": "base"
 }

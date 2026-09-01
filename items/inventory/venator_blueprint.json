@@ -48,5 +48,5 @@
     "rarity": "Common",
     "value": 5000,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/venator_blueprint.png"
+    "imageFilename": "images/items/venator_blueprint.png"
 }

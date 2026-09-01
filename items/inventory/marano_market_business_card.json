@@ -50,5 +50,5 @@
     "weightKg": 0.5,
     "stackSize": 1,
     "questItem": true,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/marano_market_business_card.png"
+    "imageFilename": "images/items/marano_market_business_card.png"
 }

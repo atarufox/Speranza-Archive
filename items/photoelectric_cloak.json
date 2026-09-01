@@ -87,7 +87,7 @@
   "salvagesInto": {
     "advanced_electrical_components": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/v2/photoelectric_cloak.png",
+  "imageFilename": "images/items/photoelectric_cloak.png",
   "updatedAt": "02/24/2026",
   "addedIn": "base",
   "repairCost": {

@@ -107,7 +107,7 @@
     "smoke_grenade": 1,
     "wires": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/v2/smoke_grenade_trap.png",
+  "imageFilename": "images/items/smoke_grenade_trap.png",
   "updatedAt": "05/30/2026",
   "addedIn": "base"
 }

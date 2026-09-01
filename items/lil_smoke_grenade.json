@@ -113,7 +113,7 @@
   "salvagesInto": {
     "chemicals": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/v2/lil_smoke_grenade.png",
+  "imageFilename": "images/items/lil_smoke_grenade.png",
   "updatedAt": "05/30/2026",
   "addedIn": "base"
 }

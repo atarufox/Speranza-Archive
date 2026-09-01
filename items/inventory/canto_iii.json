@@ -61,7 +61,7 @@
         "advanced_mechanical_components": 1,
         "medium_gun_parts": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/canto_iii.png",
+    "imageFilename": "images/items/canto_iii.png",
     "modSlots": {
         "grip": [
             "angled_grip_i",

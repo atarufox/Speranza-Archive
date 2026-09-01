@@ -48,5 +48,5 @@
     "rarity": "Legendary",
     "value": 10000,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/elephant_obelisk.png"
+    "imageFilename": "images/items/elephant_obelisk.png"
 }

@@ -135,7 +135,7 @@
   "salvagesInto": {
     "rubber_parts": 3
   },
-  "imageFilename": "https://cdn.arctracker.io/items/v2/shield_recharger.png",
+  "imageFilename": "images/items/shield_recharger.png",
   "updatedAt": "05/30/2026",
   "addedIn": "base",
   "vendors": [

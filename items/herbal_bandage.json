@@ -136,7 +136,7 @@
   "salvagesInto": {
     "fabric": 8
   },
-  "imageFilename": "https://cdn.arctracker.io/items/v2/herbal_bandage.png",
+  "imageFilename": "images/items/herbal_bandage.png",
   "updatedAt": "05/30/2026",
   "addedIn": "base",
   "vendors": [

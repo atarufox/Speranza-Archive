@@ -50,7 +50,7 @@
     "value": 100,
     "weightKg": 0.25,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/riven_tides_crane_house_keycard.png",
+    "imageFilename": "images/items/riven_tides_crane_house_keycard.png",
     "updatedAt": "06/03/2026",
     "addedIn": "1.26"
   },
@@ -105,7 +105,7 @@
     "value": 100,
     "weightKg": 0.5,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/riven_tides_hotel_keycard_no_102.png",
+    "imageFilename": "images/items/riven_tides_hotel_keycard_no_102.png",
     "updatedAt": "06/03/2026",
     "addedIn": "1.26"
   },
@@ -160,7 +160,7 @@
     "value": 100,
     "weightKg": 0.5,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/riven_tides_hotel_keycard_no_107.png",
+    "imageFilename": "images/items/riven_tides_hotel_keycard_no_107.png",
     "updatedAt": "06/03/2026",
     "addedIn": "1.26"
   },
@@ -215,7 +215,7 @@
     "value": 100,
     "weightKg": 0.5,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/riven_tides_hotel_keycard_no_113.png",
+    "imageFilename": "images/items/riven_tides_hotel_keycard_no_113.png",
     "updatedAt": "06/03/2026",
     "addedIn": "1.26"
   },
@@ -270,7 +270,7 @@
     "value": 100,
     "weightKg": 0.5,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/riven_tides_hotel_keycard_no_205.png",
+    "imageFilename": "images/items/riven_tides_hotel_keycard_no_205.png",
     "updatedAt": "06/03/2026",
     "addedIn": "1.26"
   },
@@ -325,7 +325,7 @@
     "value": 100,
     "weightKg": 0.5,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/riven_tides_hotel_keycard_no_208.png",
+    "imageFilename": "images/items/riven_tides_hotel_keycard_no_208.png",
     "updatedAt": "06/03/2026",
     "addedIn": "1.26"
   },
@@ -380,7 +380,7 @@
     "value": 100,
     "weightKg": 0.5,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/riven_tides_hotel_keycard_no_311.png",
+    "imageFilename": "images/items/riven_tides_hotel_keycard_no_311.png",
     "updatedAt": "06/03/2026",
     "addedIn": "1.26"
   },
@@ -435,7 +435,7 @@
     "value": 100,
     "weightKg": 0.5,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/riven_tides_hotel_keycard_no_404.png",
+    "imageFilename": "images/items/riven_tides_hotel_keycard_no_404.png",
     "updatedAt": "06/03/2026",
     "addedIn": "1.26"
   },
@@ -490,7 +490,7 @@
     "value": 100,
     "weightKg": 0.25,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/riven_tides_secure_storage_keycard.png",
+    "imageFilename": "images/items/riven_tides_secure_storage_keycard.png",
     "updatedAt": "06/03/2026",
     "addedIn": "1.26"
   },
@@ -553,7 +553,7 @@
     "salvagesInto": {
       "synthesized_fuel": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/rocket_thruster.png",
+    "imageFilename": "images/items/rocket_thruster.png",
     "updatedAt": "01/09/2026",
     "addedIn": "base"
   },
@@ -616,7 +616,7 @@
     "salvagesInto": {
       "arc_circuitry": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/rocketeer_driver.png",
+    "imageFilename": "images/items/rocketeer_driver.png",
     "updatedAt": "02/24/2026",
     "addedIn": "base"
   },
@@ -678,7 +678,7 @@
     "salvagesInto": {
       "assorted_seeds": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/roots.png",
+    "imageFilename": "images/items/roots.png",
     "updatedAt": "01/09/2026",
     "addedIn": "base"
   },
@@ -740,7 +740,7 @@
     "salvagesInto": {
       "fabric": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/rope.png",
+    "imageFilename": "images/items/rope.png",
     "updatedAt": "03/22/2026",
     "addedIn": "base",
     "vendors": [
@@ -807,7 +807,7 @@
     "value": 2000,
     "weightKg": 0.3,
     "stackSize": 3,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/rosary.png",
+    "imageFilename": "images/items/rosary.png",
     "updatedAt": "11/11/2025",
     "addedIn": "base"
   },
@@ -870,7 +870,7 @@
     "salvagesInto": {
       "processor": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/rotary_encoder.png",
+    "imageFilename": "images/items/rotary_encoder.png",
     "updatedAt": "01/09/2026",
     "addedIn": "1.2"
   },
@@ -925,7 +925,7 @@
     "value": 1000,
     "weightKg": 0.3,
     "stackSize": 15,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/rubber_duck.png",
+    "imageFilename": "images/items/rubber_duck.png",
     "updatedAt": "02/24/2026",
     "addedIn": "base"
   },
@@ -987,7 +987,7 @@
     "salvagesInto": {
       "rubber_parts": 12
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/rubber_pad.png",
+    "imageFilename": "images/items/rubber_pad.png",
     "updatedAt": "02/24/2026",
     "addedIn": "base"
   },
@@ -1043,7 +1043,7 @@
     "value": 50,
     "weightKg": 0.1,
     "stackSize": 50,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/rubber_parts.png",
+    "imageFilename": "images/items/rubber_parts.png",
     "updatedAt": "03/17/2026",
     "addedIn": "base",
     "vendors": [
@@ -1114,7 +1114,7 @@
     "salvagesInto": {
       "rubber_parts": 13
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/ruined_accordion.png",
+    "imageFilename": "images/items/ruined_accordion.png",
     "updatedAt": "11/02/2025",
     "addedIn": "base"
   },
@@ -1177,7 +1177,7 @@
     "salvagesInto": {
       "plastic_parts": 3
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/ruined_augment.png",
+    "imageFilename": "images/items/ruined_augment.png",
     "updatedAt": "02/24/2026",
     "addedIn": "base"
   },
@@ -1240,7 +1240,7 @@
     "salvagesInto": {
       "metal_parts": 4
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/ruined_baton.png",
+    "imageFilename": "images/items/ruined_baton.png",
     "updatedAt": "01/13/2026",
     "addedIn": "base"
   },
@@ -1302,7 +1302,7 @@
     "salvagesInto": {
       "metal_parts": 4
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/ruined_handcuffs.png",
+    "imageFilename": "images/items/ruined_handcuffs.png",
     "updatedAt": "01/09/2026",
     "addedIn": "base"
   },
@@ -1364,7 +1364,7 @@
     "salvagesInto": {
       "fabric": 5
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/ruined_parachute.png",
+    "imageFilename": "images/items/ruined_parachute.png",
     "updatedAt": "12/07/2025",
     "addedIn": "base"
   },
@@ -1427,7 +1427,7 @@
     "salvagesInto": {
       "plastic_parts": 10
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/ruined_riot_shield.png",
+    "imageFilename": "images/items/ruined_riot_shield.png",
     "updatedAt": "12/07/2025",
     "addedIn": "base"
   },
@@ -1490,7 +1490,7 @@
     "salvagesInto": {
       "fabric": 5
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/ruined_tactical_vest.png",
+    "imageFilename": "images/items/ruined_tactical_vest.png",
     "updatedAt": "11/19/2025",
     "addedIn": "base"
   },
@@ -1552,7 +1552,7 @@
     "salvagesInto": {
       "metal_parts": 4
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/rusted_bolts.png",
+    "imageFilename": "images/items/rusted_bolts.png",
     "updatedAt": "11/01/2025",
     "addedIn": "base"
   },
@@ -1615,7 +1615,7 @@
     "salvagesInto": {
       "metal_parts": 12
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/rusted_gear.png",
+    "imageFilename": "images/items/rusted_gear.png",
     "updatedAt": "01/09/2026",
     "addedIn": "base"
   },
@@ -1678,7 +1678,7 @@
     "salvagesInto": {
       "syringe": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/rusted_shut_medical_kit.png",
+    "imageFilename": "images/items/rusted_shut_medical_kit.png",
     "updatedAt": "01/13/2026",
     "addedIn": "base"
   },
@@ -1741,7 +1741,7 @@
     "salvagesInto": {
       "metal_parts": 7
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/rusted_tools.png",
+    "imageFilename": "images/items/rusted_tools.png",
     "updatedAt": "02/24/2026",
     "addedIn": "base"
   },
@@ -1803,7 +1803,7 @@
     "salvagesInto": {
       "metal_parts": 3
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/rusty_arc_steel.png",
+    "imageFilename": "images/items/rusty_arc_steel.png",
     "updatedAt": "11/17/2025",
     "addedIn": "base"
   },
@@ -1866,7 +1866,7 @@
     "salvagesInto": {
       "assorted_seeds": 12
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/sample_cleaner.png",
+    "imageFilename": "images/items/sample_cleaner.png",
     "updatedAt": "01/09/2026",
     "addedIn": "1.2"
   },
@@ -1922,7 +1922,7 @@
     "weightKg": 0.5,
     "stackSize": 1,
     "questItem": true,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/scout_patrol_note.png",
+    "imageFilename": "images/items/scout_patrol_note.png",
     "updatedAt": "04/14/2026",
     "addedIn": "1.22"
   },
@@ -1978,7 +1978,7 @@
     "weightKg": 0.5,
     "stackSize": 1,
     "questItem": true,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/secret_meeting_info.png",
+    "imageFilename": "images/items/secret_meeting_info.png",
     "updatedAt": "04/14/2026",
     "addedIn": "1.22"
   },
@@ -2034,7 +2034,7 @@
     "weightKg": 0.25,
     "stackSize": 1,
     "questItem": true,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/seed_vault_box_key.png",
+    "imageFilename": "images/items/seed_vault_box_key.png",
     "updatedAt": "05/04/2026",
     "addedIn": "1.22"
   },
@@ -2089,7 +2089,7 @@
     "value": 5000,
     "weightKg": 0,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/seeker_grenade_blueprint.png",
+    "imageFilename": "images/items/seeker_grenade_blueprint.png",
     "updatedAt": "01/13/2026",
     "addedIn": "1.2"
   },
@@ -2205,7 +2205,7 @@
     "salvagesInto": {
       "chemicals": 3
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/seeker_grenade.png",
+    "imageFilename": "images/items/seeker_grenade.png",
     "updatedAt": "03/22/2026",
     "addedIn": "1.2",
     "vendors": [
@@ -2279,7 +2279,7 @@
     "salvagesInto": {
       "wires": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/sensors.png",
+    "imageFilename": "images/items/sensors.png",
     "updatedAt": "03/22/2026",
     "addedIn": "base",
     "vendors": [
@@ -2353,7 +2353,7 @@
     "salvagesInto": {
       "mechanical_components": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/sentinel_firing_core.png",
+    "imageFilename": "images/items/sentinel_firing_core.png",
     "updatedAt": "10/30/2025",
     "addedIn": "base"
   },
@@ -2407,7 +2407,7 @@
     "rarity": "Uncommon",
     "value": 2000,
     "stackSize": 5,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/sextant.png",
+    "imageFilename": "images/items/sextant.png",
     "updatedAt": "08/01/2026",
     "addedIn": "1.33"
   },
@@ -2479,7 +2479,7 @@
     "salvagesInto": {
       "plastic_parts": 4
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/shaker.png",
+    "imageFilename": "images/items/shaker.png",
     "updatedAt": "05/30/2026",
     "addedIn": "1.7",
     "repairCost": {
@@ -2640,7 +2640,7 @@
     "salvagesInto": {
       "rubber_parts": 3
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/shield_recharger.png",
+    "imageFilename": "images/items/shield_recharger.png",
     "updatedAt": "05/30/2026",
     "addedIn": "base",
     "vendors": [
@@ -2714,7 +2714,7 @@
       "chemicals": 2,
       "metal_parts": 3
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/shotgun_ammo.png",
+    "imageFilename": "images/items/shotgun_ammo.png",
     "updatedAt": "02/24/2026",
     "addedIn": "base",
     "vendors": [
@@ -2818,7 +2818,7 @@
     "salvagesInto": {
       "metal_parts": 3
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/shotgun_choke_i.png",
+    "imageFilename": "images/items/shotgun_choke_i.png",
     "updatedAt": "03/22/2026",
     "addedIn": "base",
     "vendors": [
@@ -2884,7 +2884,7 @@
     "value": 5000,
     "weightKg": 0,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/shotgun_choke_ii_blueprint.png",
+    "imageFilename": "images/items/shotgun_choke_ii_blueprint.png",
     "updatedAt": "12/07/2025",
     "addedIn": "base"
   },
@@ -2982,7 +2982,7 @@
     "salvagesInto": {
       "mechanical_components": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/shotgun_choke_ii.png",
+    "imageFilename": "images/items/shotgun_choke_ii.png",
     "updatedAt": "03/22/2026",
     "addedIn": "base",
     "vendors": [
@@ -3048,7 +3048,7 @@
     "value": 5000,
     "weightKg": 0,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/shotgun_choke_iii_blueprint.png",
+    "imageFilename": "images/items/shotgun_choke_iii_blueprint.png",
     "updatedAt": "12/07/2025",
     "addedIn": "base"
   },
@@ -3192,7 +3192,7 @@
     "salvagesInto": {
       "mechanical_components": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/shotgun_choke_iii.png",
+    "imageFilename": "images/items/shotgun_choke_iii.png",
     "updatedAt": "01/09/2026",
     "addedIn": "base"
   },
@@ -3247,7 +3247,7 @@
     "value": 5000,
     "weightKg": 0,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/shotgun_silencer_blueprint.png",
+    "imageFilename": "images/items/shotgun_silencer_blueprint.png",
     "updatedAt": "01/13/2026",
     "addedIn": "base"
   },
@@ -3345,7 +3345,7 @@
     "salvagesInto": {
       "mechanical_components": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/shotgun_silencer.png",
+    "imageFilename": "images/items/shotgun_silencer.png",
     "updatedAt": "01/09/2026",
     "addedIn": "base"
   },
@@ -3400,7 +3400,7 @@
     "value": 5000,
     "weightKg": 0,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/showstopper_blueprint.png",
+    "imageFilename": "images/items/showstopper_blueprint.png",
     "updatedAt": "12/07/2025",
     "addedIn": "base"
   },
@@ -3541,7 +3541,7 @@
     "salvagesInto": {
       "electrical_components": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/showstopper.png",
+    "imageFilename": "images/items/showstopper.png",
     "updatedAt": "02/24/2026",
     "addedIn": "base"
   },
@@ -3657,7 +3657,7 @@
     "salvagesInto": {
       "crude_explosives": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/shrapnel_grenade.png",
+    "imageFilename": "images/items/shrapnel_grenade.png",
     "updatedAt": "02/24/2026",
     "addedIn": "base"
   },
@@ -3720,7 +3720,7 @@
     "salvagesInto": {
       "mechanical_components": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/shredder_gyro.png",
+    "imageFilename": "images/items/shredder_gyro.png",
     "updatedAt": "02/24/2026",
     "addedIn": "1.2"
   },
@@ -3783,7 +3783,7 @@
     "salvagesInto": {
       "voltage_converter": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/signal_amplifier.png",
+    "imageFilename": "images/items/signal_amplifier.png",
     "updatedAt": "01/09/2026",
     "addedIn": "1.2"
   },
@@ -3838,7 +3838,7 @@
     "value": 5000,
     "weightKg": 0,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/silencer_i_blueprint.png",
+    "imageFilename": "images/items/silencer_i_blueprint.png",
     "updatedAt": "01/13/2026",
     "addedIn": "base"
   },
@@ -3948,7 +3948,7 @@
     "salvagesInto": {
       "mechanical_components": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/silencer_i.png",
+    "imageFilename": "images/items/silencer_i.png",
     "updatedAt": "03/22/2026",
     "addedIn": "base",
     "vendors": [
@@ -4022,7 +4022,7 @@
     "value": 5000,
     "weightKg": 0,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/silencer_ii_blueprint.png",
+    "imageFilename": "images/items/silencer_ii_blueprint.png",
     "updatedAt": "01/13/2026",
     "addedIn": "base"
   },
@@ -4132,7 +4132,7 @@
     "salvagesInto": {
       "mechanical_components": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/silencer_ii.png",
+    "imageFilename": "images/items/silencer_ii.png",
     "updatedAt": "02/24/2026",
     "addedIn": "base"
   },
@@ -4258,7 +4258,7 @@
     "salvagesInto": {
       "mod_components": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/silencer_iii.png",
+    "imageFilename": "images/items/silencer_iii.png",
     "updatedAt": "02/24/2026",
     "addedIn": "base"
   },
@@ -4314,7 +4314,7 @@
     "value": 3000,
     "weightKg": 0.3,
     "stackSize": 3,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/silver_teaspoon_set.png",
+    "imageFilename": "images/items/silver_teaspoon_set.png",
     "updatedAt": "03/17/2026",
     "addedIn": "base"
   },
@@ -4376,7 +4376,7 @@
     "salvagesInto": {
       "metal_parts": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/simple_gun_parts.png",
+    "imageFilename": "images/items/simple_gun_parts.png",
     "updatedAt": "03/22/2026",
     "addedIn": "base",
     "vendors": [
@@ -4442,7 +4442,7 @@
     "value": 7000,
     "weightKg": 0.5,
     "stackSize": 3,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/sirena_dorata_ship_model.png",
+    "imageFilename": "images/items/sirena_dorata_ship_model.png",
     "updatedAt": "06/17/2026",
     "addedIn": "1.26"
   },
@@ -4497,7 +4497,7 @@
     "value": 5000,
     "weightKg": 0,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/smoke_grenade_blueprint.png",
+    "imageFilename": "images/items/smoke_grenade_blueprint.png",
     "updatedAt": "01/13/2026",
     "addedIn": "base"
   },
@@ -4618,7 +4618,7 @@
       "smoke_grenade": 1,
       "wires": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/smoke_grenade_trap.png",
+    "imageFilename": "images/items/smoke_grenade_trap.png",
     "updatedAt": "05/30/2026",
     "addedIn": "base"
   },
@@ -4735,7 +4735,7 @@
     "salvagesInto": {
       "chemicals": 3
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/smoke_grenade.png",
+    "imageFilename": "images/items/smoke_grenade.png",
     "updatedAt": "03/22/2026",
     "addedIn": "base",
     "vendors": [
@@ -4862,7 +4862,7 @@
     "salvagesInto": {
       "chemicals": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/snap_blast_grenade.png",
+    "imageFilename": "images/items/snap_blast_grenade.png",
     "updatedAt": "03/22/2026",
     "addedIn": "base",
     "vendors": [
@@ -4928,7 +4928,7 @@
     "value": 5000,
     "weightKg": 0,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/snap_hook_blueprint.png",
+    "imageFilename": "images/items/snap_hook_blueprint.png",
     "updatedAt": "11/14/2025",
     "addedIn": "base"
   },
@@ -5046,7 +5046,7 @@
     "salvagesInto": {
       "advanced_electrical_components": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/snap_hook.png",
+    "imageFilename": "images/items/snap_hook.png",
     "updatedAt": "02/24/2026",
     "addedIn": "base",
     "repairCost": {
@@ -5114,7 +5114,7 @@
     "salvagesInto": {
       "electrical_components": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/snitch_scanner.png",
+    "imageFilename": "images/items/snitch_scanner.png",
     "updatedAt": "02/24/2026",
     "addedIn": "base"
   },
@@ -5170,7 +5170,7 @@
     "value": 10,
     "weightKg": 0.4,
     "stackSize": 5,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/snowball.png",
+    "imageFilename": "images/items/snowball.png",
     "updatedAt": "02/24/2026",
     "addedIn": "1.7"
   },
@@ -5225,7 +5225,7 @@
     "value": 100,
     "weightKg": 0.25,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/spaceport_container_storage_key.png",
+    "imageFilename": "images/items/spaceport_container_storage_key.png",
     "updatedAt": "11/08/2025",
     "_note": "not_in_serverslam",
     "addedIn": "base"
@@ -5281,7 +5281,7 @@
     "value": 100,
     "weightKg": 0.25,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/spaceport_control_tower_key.png",
+    "imageFilename": "images/items/spaceport_control_tower_key.png",
     "updatedAt": "02/24/2026",
     "addedIn": "base"
   },
@@ -5336,7 +5336,7 @@
     "value": 100,
     "weightKg": 0.25,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/spaceport_trench_tower_key.png",
+    "imageFilename": "images/items/spaceport_trench_tower_key.png",
     "updatedAt": "02/24/2026",
     "addedIn": "base"
   },
@@ -5391,7 +5391,7 @@
     "value": 100,
     "weightKg": 0.25,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/spaceport_warehouse_key.png",
+    "imageFilename": "images/items/spaceport_warehouse_key.png",
     "updatedAt": "02/24/2026",
     "addedIn": "base"
   },
@@ -5454,7 +5454,7 @@
     "salvagesInto": {
       "plastic_parts": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/speaker_component.png",
+    "imageFilename": "images/items/speaker_component.png",
     "updatedAt": "03/22/2026",
     "addedIn": "base",
     "vendors": [
@@ -5528,7 +5528,7 @@
     "salvagesInto": {
       "electrical_components": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/spectrometer.png",
+    "imageFilename": "images/items/spectrometer.png",
     "updatedAt": "01/09/2026",
     "addedIn": "1.2"
   },
@@ -5591,7 +5591,7 @@
     "salvagesInto": {
       "processor": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/spectrum_analyzer.png",
+    "imageFilename": "images/items/spectrum_analyzer.png",
     "updatedAt": "02/24/2026",
     "addedIn": "1.2"
   },
@@ -5654,7 +5654,7 @@
     "salvagesInto": {
       "electrical_components": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/spotter_relay.png",
+    "imageFilename": "images/items/spotter_relay.png",
     "updatedAt": "10/31/2025",
     "addedIn": "base"
   },
@@ -5717,7 +5717,7 @@
     "salvagesInto": {
       "steel_spring": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/spring_cushion.png",
+    "imageFilename": "images/items/spring_cushion.png",
     "updatedAt": "11/04/2025",
     "addedIn": "base"
   },
@@ -5849,7 +5849,7 @@
     "salvagesInto": {
       "rubber_parts": 3
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/stable_stock_i.png",
+    "imageFilename": "images/items/stable_stock_i.png",
     "updatedAt": "02/24/2026",
     "addedIn": "base"
   },
@@ -5904,7 +5904,7 @@
     "value": 5000,
     "weightKg": 0,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/stable_stock_ii_blueprint.png",
+    "imageFilename": "images/items/stable_stock_ii_blueprint.png",
     "updatedAt": "12/07/2025",
     "addedIn": "base"
   },
@@ -6061,7 +6061,7 @@
     "salvagesInto": {
       "mechanical_components": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/stable_stock_ii.png",
+    "imageFilename": "images/items/stable_stock_ii.png",
     "updatedAt": "03/22/2026",
     "addedIn": "base",
     "vendors": [
@@ -6135,7 +6135,7 @@
     "value": 5000,
     "weightKg": 0,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/stable_stock_iii_blueprint.png",
+    "imageFilename": "images/items/stable_stock_iii_blueprint.png",
     "updatedAt": "12/07/2025",
     "addedIn": "base"
   },
@@ -6315,7 +6315,7 @@
     "salvagesInto": {
       "mechanical_components": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/stable_stock_iii.png",
+    "imageFilename": "images/items/stable_stock_iii.png",
     "updatedAt": "01/09/2026",
     "addedIn": "base"
   },
@@ -6349,7 +6349,7 @@
     "weightKg": 0.5,
     "stackSize": 1,
     "questItem": true,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/stack_of_movie_tapes.png",
+    "imageFilename": "images/items/stack_of_movie_tapes.png",
     "updatedAt": "04/14/2026",
     "addedIn": "1.13"
   },
@@ -6405,7 +6405,7 @@
     "value": 3000,
     "weightKg": 0.3,
     "stackSize": 3,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/statuette.png",
+    "imageFilename": "images/items/statuette.png",
     "updatedAt": "03/17/2026",
     "addedIn": "base"
   },
@@ -6467,7 +6467,7 @@
     "salvagesInto": {
       "metal_parts": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/steel_spring.png",
+    "imageFilename": "images/items/steel_spring.png",
     "updatedAt": "03/22/2026",
     "addedIn": "base",
     "vendors": [
@@ -6558,7 +6558,7 @@
         "zh-TW": "在某處打開一扇門"
       }
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/stella_montis_archives_key.png",
+    "imageFilename": "images/items/stella_montis_archives_key.png",
     "updatedAt": "12/07/2025",
     "addedIn": "1.1"
   },
@@ -6613,7 +6613,7 @@
     "value": 100,
     "weightKg": 0.25,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/stella_montis_assembly_admin_key.png",
+    "imageFilename": "images/items/stella_montis_assembly_admin_key.png",
     "updatedAt": "11/13/2025",
     "addedIn": "1.1"
   },
@@ -6693,7 +6693,7 @@
         "zh-TW": "在某處打開一扇門"
       }
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/stella_montis_medical_storage_key.png",
+    "imageFilename": "images/items/stella_montis_medical_storage_key.png",
     "updatedAt": "12/07/2025",
     "addedIn": "1.1"
   },
@@ -6748,7 +6748,7 @@
     "value": 100,
     "weightKg": 0.25,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/stella_montis_security_checkpoint_key.png",
+    "imageFilename": "images/items/stella_montis_security_checkpoint_key.png",
     "updatedAt": "11/13/2025",
     "addedIn": "1.1"
   },
@@ -6887,7 +6887,7 @@
     "salvagesInto": {
       "durable_cloth": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/sterilized_bandage.png",
+    "imageFilename": "images/items/sterilized_bandage.png",
     "updatedAt": "03/22/2026",
     "addedIn": "base",
     "vendors": [
@@ -7095,7 +7095,7 @@
     "salvagesInto": {
       "metal_parts": 3
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/stitcher_i.png",
+    "imageFilename": "images/items/stitcher_i.png",
     "updatedAt": "03/17/2026",
     "addedIn": "base",
     "modSlots": {
@@ -7378,7 +7378,7 @@
       "metal_parts": 8,
       "rubber_parts": 12
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/stitcher_ii.png",
+    "imageFilename": "images/items/stitcher_ii.png",
     "updatedAt": "03/17/2026",
     "addedIn": "base",
     "modSlots": {
@@ -7653,7 +7653,7 @@
       "metal_parts": 10,
       "simple_gun_parts": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/stitcher_iii.png",
+    "imageFilename": "images/items/stitcher_iii.png",
     "updatedAt": "03/17/2026",
     "addedIn": "base",
     "modSlots": {
@@ -7928,7 +7928,7 @@
       "mechanical_components": 3,
       "simple_gun_parts": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/stitcher_iv.png",
+    "imageFilename": "images/items/stitcher_iv.png",
     "updatedAt": "02/24/2026",
     "addedIn": "base",
     "modSlots": {
@@ -8026,7 +8026,7 @@
     "value": 5000,
     "weightKg": 0,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/surge_coil_blueprint.png",
+    "imageFilename": "images/items/surge_coil_blueprint.png",
     "updatedAt": "03/31/2026",
     "addedIn": "1.22"
   },
@@ -8096,7 +8096,7 @@
     "salvagesInto": {
       "electrical_components": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/surge_coil.png",
+    "imageFilename": "images/items/surge_coil.png",
     "updatedAt": "03/31/2026",
     "addedIn": "1.22"
   },
@@ -8211,7 +8211,7 @@
     "salvagesInto": {
       "plastic_parts": 5
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/surge_shield_recharger.png",
+    "imageFilename": "images/items/surge_shield_recharger.png",
     "updatedAt": "03/22/2026",
     "addedIn": "base",
     "vendors": [
@@ -8293,7 +8293,7 @@
     "salvagesInto": {
       "mechanical_components": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/surveyor_vault.png",
+    "imageFilename": "images/items/surveyor_vault.png",
     "updatedAt": "01/13/2026",
     "addedIn": "base"
   }

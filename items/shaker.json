@@ -64,7 +64,7 @@
   "salvagesInto": {
     "plastic_parts": 4
   },
-  "imageFilename": "https://cdn.arctracker.io/items/v2/shaker.png",
+  "imageFilename": "images/items/shaker.png",
   "updatedAt": "05/30/2026",
   "addedIn": "1.7",
   "repairCost": {

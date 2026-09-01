@@ -57,7 +57,7 @@
   "salvagesInto": {
     "oil": 3
   },
-  "imageFilename": "https://cdn.arctracker.io/items/v2/motor.png",
+  "imageFilename": "images/items/motor.png",
   "updatedAt": "02/24/2026",
   "addedIn": "base"
 }

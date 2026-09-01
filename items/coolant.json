@@ -57,7 +57,7 @@
   "salvagesInto": {
     "oil": 2
   },
-  "imageFilename": "https://cdn.arctracker.io/items/v2/coolant.png",
+  "imageFilename": "images/items/coolant.png",
   "updatedAt": "11/07/2025",
   "addedIn": "base"
 }

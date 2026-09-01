@@ -50,5 +50,5 @@
     "weightKg": 0.5,
     "stackSize": 1,
     "questItem": true,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/precision_gimbal.png"
+    "imageFilename": "images/items/precision_gimbal.png"
 }

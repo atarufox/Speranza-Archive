@@ -28,5 +28,5 @@
     "weightKg": 0.5,
     "stackSize": 1,
     "questItem": true,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/major_aivas_mementos.png"
+    "imageFilename": "images/items/major_aivas_mementos.png"
 }

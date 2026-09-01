@@ -66,7 +66,7 @@
   "salvagesInto": {
     "fabric": 3
   },
-  "imageFilename": "https://cdn.arctracker.io/items/v2/white_flag.png",
+  "imageFilename": "images/items/white_flag.png",
   "updatedAt": "05/30/2026",
   "addedIn": "1.26"
 }

@@ -49,5 +49,5 @@
     "value": 1000,
     "weightKg": 0.5,
     "stackSize": 10,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/wind_sprite_ship_model.png"
+    "imageFilename": "images/items/wind_sprite_ship_model.png"
 }

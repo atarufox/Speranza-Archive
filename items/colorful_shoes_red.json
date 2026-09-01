@@ -48,7 +48,7 @@
   "rarity": "Rare",
   "value": 3000,
   "stackSize": 3,
-  "imageFilename": "https://cdn.arctracker.io/items/v2/colorful_shoes_red.png",
+  "imageFilename": "images/items/colorful_shoes_red.png",
   "updatedAt": "08/01/2026",
   "addedIn": "1.33"
 }

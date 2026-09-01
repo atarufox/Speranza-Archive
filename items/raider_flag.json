@@ -50,7 +50,7 @@
   "weightKg": 0.5,
   "stackSize": 1,
   "questItem": true,
-  "imageFilename": "https://cdn.arctracker.io/items/v2/raider_flag.png",
+  "imageFilename": "images/items/raider_flag.png",
   "updatedAt": "05/23/2026",
   "addedIn": "base"
 }

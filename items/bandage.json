@@ -134,7 +134,7 @@
   "salvagesInto": {
     "fabric": 1
   },
-  "imageFilename": "https://cdn.arctracker.io/items/v2/bandage.png",
+  "imageFilename": "images/items/bandage.png",
   "updatedAt": "05/30/2026",
   "addedIn": "base",
   "vendors": [

@@ -87,7 +87,7 @@
   "salvagesInto": {
     "plastic_parts": 4
   },
-  "imageFilename": "https://cdn.arctracker.io/items/v2/binoculars.png",
+  "imageFilename": "images/items/binoculars.png",
   "updatedAt": "03/22/2026",
   "addedIn": "base",
   "repairCost": {

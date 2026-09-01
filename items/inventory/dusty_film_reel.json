@@ -50,5 +50,5 @@
     "weightKg": 0,
     "stackSize": 1,
     "questItem": true,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/dusty_film_reel.png"
+    "imageFilename": "images/items/dusty_film_reel.png"
 }
