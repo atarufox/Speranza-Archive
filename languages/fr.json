@@ -76,7 +76,8 @@
     "squads": "Escouades",
     "stash": "Réserve",
     "seasons": "Saisons",
-    "traders": "Marchands"
+    "traders": "Marchands",
+    "leaderboards": "Classements"
   },
   "MapEvents": {
     "startsIn": "Commence dans",
@@ -2894,6 +2895,73 @@
     "FILT_SHIELDS": "Boucliers"
   },
   "UI": {
-    "what_i_need": "Ce dont j'ai besoin"
+    "what_i_need": "Ce dont j'ai besoin",
+    "obtained_recycling": "Obtained from Recycling",
+    "recycles_into": "Recycles Into",
+    "track": "Track",
+    "have": "Have",
+    "missing": "Missing",
+    "upgrades": "Upgrades",
+    "all": "All",
+    "bench": "Bench",
+    "used_for": "Used For",
+    "no_usage_found": "No usage found",
+    "added": "Added",
+    "connect_btn": "CONNECT",
+    "establish_uplink": "ESTABLISH UPLINK",
+    "initializing": "INITIALIZING SYSTEM...",
+    "wishlist": "WISHLIST",
+    "search": "SEARCH DATABASE",
+    "no_data": "NO DATA",
+    "archives_empty": "ARCHIVES ARE EMPTY",
+    "active_uplinks": "ACTIVE UPLINKS",
+    "incoming_signals": "INCOMING SIGNALS",
+    "owned": "OWNED",
+    "unmark": "UNMARK",
+    "add_all_to_wishlist": "ADD ALL TO WISHLIST",
+    "added_to_wishlist": "ADDED TO WISHLIST",
+    "location": "LOCATION",
+    "crafting": "CRAFTING",
+    "level": "LEVEL"
+  },
+  "LeaderboardsPage": {
+    "toggleMenu": "Toggle Menu",
+    "loading": "Loading leaderboards...",
+    "searchPlaceholder": "Search player name",
+    "jumpToMe": "Jump to me",
+    "showing": "Showing {count} of {total} ranked players",
+    "yourRank": "Your rank: #{rank}",
+    "notRanked": "You are not ranked for this leaderboard yet.",
+    "signInHint": "Sign in to jump to your rank.",
+    "updatedAt": "Updated {date}",
+    "emptyTitle": "No ranked players yet",
+    "emptyDescription": "This leaderboard will appear after the next aggregation run has eligible synced rounds.",
+    "emptySearch": "No players matched that search.",
+    "searchResults": "Search results keep each player's true global rank.",
+    "filters": {
+      "allTime": "All time",
+      "arcType": "ARC type"
+    },
+    "metrics": {
+      "player_kd": "Player K/D",
+      "player_kills": "Player Kills",
+      "total_kills": "Total Kills",
+      "arc_kills": "ARC Kills",
+      "enemy_kills": "By ARC Type"
+    },
+    "metricShort": {
+      "player_kd": "K/D",
+      "player_kills": "kills",
+      "total_kills": "kills",
+      "arc_kills": "ARC kills",
+      "enemy_kills": "kills"
+    },
+    "stats": {
+      "rounds": "{count} rounds",
+      "deaths": "{count} deaths"
+    },
+    "errors": {
+      "fetchFailed": "Failed to load leaderboard."
+    }
   }
 }

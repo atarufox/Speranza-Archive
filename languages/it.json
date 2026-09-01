@@ -76,7 +76,8 @@
     "squads": "Squadre",
     "stash": "Deposito",
     "seasons": "Stagioni",
-    "traders": "Commercianti"
+    "traders": "Commercianti",
+    "leaderboards": "Classifiche"
   },
   "MapEvents": {
     "startsIn": "Inizia tra",
@@ -2884,7 +2885,18 @@
     "location": "POSIZIONE",
     "crafting": "CREAZIONE",
     "level": "LIVELLO",
-    "what_i_need": "Cosa mi serve"
+    "what_i_need": "Cosa mi serve",
+    "obtained_recycling": "Ottenuto dal Riciclo",
+    "recycles_into": "Si Ricicla In",
+    "track": "Traccia",
+    "have": "Posseduti",
+    "missing": "Mancanti",
+    "upgrades": "Miglioramenti",
+    "all": "Tutti",
+    "bench": "Banco",
+    "used_for": "Usato Per",
+    "no_usage_found": "Nessun utilizzo trovato",
+    "added": "Aggiunto"
   },
   "filters": {
     "FILT_ALL": "Tutti",
@@ -2897,5 +2909,45 @@
     "FILT_MISC": "Varie",
     "FILT_AUGMENTS": "Potenziamenti",
     "FILT_SHIELDS": "Scudi"
+  },
+  "LeaderboardsPage": {
+    "toggleMenu": "Apri Menu",
+    "loading": "Caricamento classifiche...",
+    "searchPlaceholder": "Cerca nome giocatore",
+    "jumpToMe": "Vai al mio profilo",
+    "showing": "Mostrati {count} di {total} giocatori classificati",
+    "yourRank": "La tua posizione: #{rank}",
+    "notRanked": "Non sei ancora classificato in questa leaderboard.",
+    "signInHint": "Accedi per vedere la tua posizione.",
+    "updatedAt": "Aggiornato il {date}",
+    "emptyTitle": "Nessun giocatore classificato",
+    "emptyDescription": "Questa classifica apparirà dopo la prossima esecuzione di aggregazione con round sincronizzati idonei.",
+    "emptySearch": "Nessun giocatore corrisponde alla ricerca.",
+    "searchResults": "I risultati della ricerca mantengono la posizione globale reale di ogni giocatore.",
+    "filters": {
+      "allTime": "Sempre",
+      "arcType": "Tipo ARC"
+    },
+    "metrics": {
+      "player_kd": "K/D Giocatore",
+      "player_kills": "Uccisioni Giocatore",
+      "total_kills": "Uccisioni Totali",
+      "arc_kills": "Uccisioni ARC",
+      "enemy_kills": "Per Tipo ARC"
+    },
+    "metricShort": {
+      "player_kd": "K/D",
+      "player_kills": "uccisioni",
+      "total_kills": "uccisioni",
+      "arc_kills": "uccisioni ARC",
+      "enemy_kills": "uccisioni"
+    },
+    "stats": {
+      "rounds": "{count} round",
+      "deaths": "{count} morti"
+    },
+    "errors": {
+      "fetchFailed": "Impossibile caricare la classifica."
+    }
   }
 }

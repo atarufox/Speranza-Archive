@@ -2915,7 +2915,18 @@
     "location": "LOCATION",
     "crafting": "CRAFTING",
     "level": "LEVEL",
-    "what_i_need": "What I Need"
+    "what_i_need": "What I Need",
+    "obtained_recycling": "Obtained from Recycling",
+    "recycles_into": "Recycles Into",
+    "track": "Track",
+    "have": "Have",
+    "missing": "Missing",
+    "upgrades": "Upgrades",
+    "all": "All",
+    "bench": "Bench",
+    "used_for": "Used For",
+    "no_usage_found": "No usage found",
+    "added": "Added"
   },
   "filters": {
     "FILT_ALL": "All",
