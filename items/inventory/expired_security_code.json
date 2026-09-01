@@ -49,5 +49,5 @@
     "value": 10,
     "weightKg": 0.25,
     "stackSize": 1,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/expired_security_code.png"
+    "imageFilename": "images/items/expired_security_code.png"
 }

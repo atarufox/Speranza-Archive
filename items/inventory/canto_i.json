@@ -64,7 +64,7 @@
     "salvagesInto": {
         "medium_gun_parts": 2
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/canto_i.png",
+    "imageFilename": "images/items/canto_i.png",
     "modSlots": {
         "grip": [
             "angled_grip_i",

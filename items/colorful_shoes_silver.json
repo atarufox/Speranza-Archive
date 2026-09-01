@@ -48,7 +48,7 @@
   "rarity": "Legendary",
   "value": 10000,
   "stackSize": 1,
-  "imageFilename": "https://cdn.arctracker.io/items/v2/colorful_shoes_silver.png",
+  "imageFilename": "images/items/colorful_shoes_silver.png",
   "updatedAt": "06/17/2026",
   "addedIn": "1.33"
 }

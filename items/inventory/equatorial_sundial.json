@@ -48,5 +48,5 @@
     "rarity": "Rare",
     "value": 3000,
     "stackSize": 3,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/equatorial_sundial.png"
+    "imageFilename": "images/items/equatorial_sundial.png"
 }

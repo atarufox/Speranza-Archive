@@ -49,7 +49,7 @@
   "value": 5000,
   "weightKg": 0,
   "stackSize": 1,
-  "imageFilename": "https://cdn.arctracker.io/items/v2/rascal.png",
+  "imageFilename": "images/items/rascal.png",
   "updatedAt": "05/19/2026",
   "addedIn": "1.29"
 }

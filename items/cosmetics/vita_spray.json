@@ -134,7 +134,7 @@
     "salvagesInto": {
         "antiseptic": 1
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/vita_spray.png",
+    "imageFilename": "images/items/vita_spray.png",
     "repairCost": {
         "antiseptic": 2,
         "canister": 1

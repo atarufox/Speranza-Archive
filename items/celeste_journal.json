@@ -50,7 +50,7 @@
   "weightKg": 0.25,
   "stackSize": 1,
   "questItem": true,
-  "imageFilename": "https://cdn.arctracker.io/items/v2/celeste_journal.png",
+  "imageFilename": "images/items/celeste_journal.png",
   "updatedAt": "06/03/2026",
   "addedIn": "base"
 }

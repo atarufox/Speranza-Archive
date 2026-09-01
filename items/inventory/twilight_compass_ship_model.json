@@ -49,5 +49,5 @@
     "value": 1000,
     "weightKg": 0.5,
     "stackSize": 5,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/twilight_compass_ship_model.png"
+    "imageFilename": "images/items/twilight_compass_ship_model.png"
 }

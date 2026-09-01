@@ -74,6 +74,6 @@
             "zh-TW": "耐久度"
         }
     },
-    "imageFilename": "https://cdn.arctracker.io/items/v2/dockmasters_detector.png",
+    "imageFilename": "images/items/dockmasters_detector.png",
     "repairDurability": 0.5
 }

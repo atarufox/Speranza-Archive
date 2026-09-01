@@ -50,5 +50,5 @@
     "weightKg": 0.5,
     "stackSize": 1,
     "questItem": true,
-    "imageFilename": "https://cdn.arctracker.io/items/v2/scout_patrol_note.png"
+    "imageFilename": "images/items/scout_patrol_note.png"
 }
