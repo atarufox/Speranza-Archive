@@ -2866,5 +2866,23 @@
     "shop": "Negozio",
     "traderNotFound": "Commerciante non trovato",
     "traderNotFoundDesc": "Il commerciante che cerchi non esiste."
+  },
+  "UI": {
+    "connect_btn": "CONNETTITI",
+    "establish_uplink": "STABILISCI COLLEGAMENTO",
+    "initializing": "INIZIALIZZAZIONE SISTEMA...",
+    "wishlist": "LISTA DESIDERI",
+    "search": "CERCA NEL DATABASE",
+    "no_data": "NESSUN DATO",
+    "archives_empty": "ARCHIVIO VUOTO",
+    "active_uplinks": "COLLEGAMENTI ATTIVI",
+    "incoming_signals": "SEGNALI IN ARRIVO",
+    "owned": "POSSEDUTO",
+    "unmark": "RIMUOVI",
+    "add_all_to_wishlist": "AGGIUNGI TUTTI ALLA LISTA DESIDERI",
+    "added_to_wishlist": "AGGIUNTO ALLA LISTA",
+    "location": "POSIZIONE",
+    "crafting": "CREAZIONE",
+    "level": "LIVELLO"
   }
 }
