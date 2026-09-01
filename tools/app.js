@@ -71,11 +71,18 @@ const State = {
     wishlist: new Map(),
     blueprints: new Set(),
     wishlistMode: false,
+    connected: false,
 
     async init() {
         this.loadUser();
+    },
+
+    async connect() {
+        if (this.connected) return;
         await Api.loadAll();
-        UI.init();
+        this.connected = true;
+        UI.applyTranslations();
+        UI.renderAll();
         MapSys.start();
     },
 
@@ -148,13 +155,14 @@ const UI = {
 
     init() {
         // Cache Elements
-        const ids = ['landing-screen', 'app-container', 'btn-connect', 'main-nav', 'sidebar', 'grid-container', 'map-container', 'map-events-panel', 'map-clock', 'search-input', 'btn-wishlist', 'wishlist-counter', 'lang-select', 'btn-crt-toggle', 'crt-layer', 'empty-state', 'modal-overlay', 'modal-content', 'loading-text'];
+        const ids = ['landing-screen', 'app-container', 'btn-connect', 'ui-connect-btn', 'main-nav', 'sidebar', 'grid-container', 'map-container', 'map-events-panel', 'map-clock', 'search-input', 'btn-wishlist', 'wishlist-counter', 'lang-select', 'btn-crt-toggle', 'crt-layer', 'empty-state', 'modal-overlay', 'modal-content', 'loading-text'];
         ids.forEach(id => this.el[id] = document.getElementById(id));
 
         // Listeners
         this.el['btn-connect'].onclick = () => {
             this.el['loading-text'].classList.remove('hidden');
-            setTimeout(() => {
+            setTimeout(async () => {
+                await State.connect();
                 this.el['landing-screen'].style.opacity = 0;
                 setTimeout(() => {
                     this.el['landing-screen'].remove();
@@ -184,14 +192,33 @@ const UI = {
         this.el['lang-select'].onchange = async (e) => {
             State.lang = e.target.value;
             State.translations = await Api.getLang(State.lang);
+            this.applyTranslations();
             this.renderAll();
         };
 
         this.el['modal-overlay'].onclick = (e) => {
             if(e.target === this.el['modal-overlay']) this.closeModal();
         };
+    },
 
-        this.renderAll();
+    applyTranslations() {
+        const t = State.translations.UI || {};
+        if (this.el['ui-connect-btn']) {
+            this.el['ui-connect-btn'].textContent = t.establish_uplink || 'ESTABLISH UPLINK';
+        }
+        if (this.el['search-input']) {
+            this.el['search-input'].placeholder = t.search || 'SEARCH DATABASE';
+        }
+        if (this.el['btn-wishlist']) {
+            const wishlistSpan = this.el['btn-wishlist'].querySelector('span:first-child');
+            if (wishlistSpan) wishlistSpan.textContent = t.wishlist || 'WISHLIST';
+        }
+        if (this.el['empty-state']) {
+            const noDataEl = this.el['empty-state'].querySelector('.font-teko');
+            const archivesEl = this.el['empty-state'].querySelector('.font-raj');
+            if (noDataEl) noDataEl.textContent = t.no_data || 'NO DATA';
+            if (archivesEl) archivesEl.textContent = t.archives_empty || 'ARCHIVES ARE EMPTY';
+        }
     },
 
     renderAll() {
@@ -223,7 +250,10 @@ const UI = {
 
     renderNav() {
         this.el['main-nav'].innerHTML = CONFIG.SECTIONS.map(sec => {
-            const label = State.translations.nav?.[sec] || sec;
+            // Try multiple translation paths for nav items
+            const label = State.translations.Navigation?.[sec.toLowerCase()] || 
+                         State.translations.nav?.[sec] || 
+                         sec;
             const active = State.section === sec;
             return `<button class="px-4 py-2 font-teko text-xl tracking-wide uppercase border-b-2 transition-colors ${active ? 'border-arc-yellow text-white' : 'border-transparent text-gray-500 hover:text-gray-300'}" data-sec="${sec}">${label}</button>`;
         }).join('');
