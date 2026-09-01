@@ -1,11 +1,11 @@
-<!-- START OF FILE arc_database_v1.17.26-QAI.html -->
-<!-- VERSION v1.17.26-QAI -->
+<!-- START OF FILE arc_database_v1.17.25-QAI.html -->
+<!-- VERSION v1.17.25-QAI -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARC RAIDERS // MISSION CONTROL v1.17.26-QAI</title>
+    <title>ARC RAIDERS // MISSION CONTROL v1.17.25-QAI</title>
     <style>
         /* FONTS */
         @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Teko:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap');
@@ -566,7 +566,7 @@
                 <div class="app-logo">
                     <img src="https://raw.githubusercontent.com/atarufox/Speranza-Archive/main/images/menu/logo.png" alt="ARC Raiders">
                 </div>
-                <span class="version-badge">v1.17.26-QAI ivan</span>
+                <span class="version-badge">v1.17.25-QAI ivan</span>
             </div>
 
             <div class="nav-links">
@@ -1202,7 +1202,7 @@
     function analyzeTypes() { const typeCounts = {}; itemsDB.forEach(i => { const t = i.type || "UNDEFINED"; typeCounts[t] = (typeCounts[t] || 0) + 1; }); console.group("ANALISI DATI"); console.log(`TOTALE: ${itemsDB.length}`); console.table(typeCounts); console.groupEnd(); }
     function getImg(data) { if(!data?.imageFilename) return null; if (data.imageFilename.startsWith('http')) return data.imageFilename; return GITHUB_RAW_BASE_URL + data.imageFilename.replace(/^[\/|\\]/, ''); }
     function getItem(id) { let base = itemsDB.find(x => x.id === id) || hideoutDB.find(x => x.id === id); return base || null; }
-    function isBlueprint(item) { return (item.type || "") === "Blueprint"; }
+    function isBlueprint(item) { const t = (item.type || "").toLowerCase(); const name = item.name ? JSON.stringify(item.name).toLowerCase() : ""; return t.includes('blueprint') || t.includes('schematic') || name.includes('blueprint') || name.includes('recipe'); }
     function isCosmetic(item) { const t = (item.type || "").toLowerCase(); return t.includes('cosmetic') || t.includes('outfit') || t.includes('backpack') || t.includes('customization'); }
     function normalizeReqs(reqsObj) { if (!reqsObj) return []; if (Array.isArray(reqsObj)) return reqsObj.map(r => (r.itemId && r.quantity !== undefined) ? { item: r.itemId, count: r.quantity } : r); return Object.entries(reqsObj).map(([key, val]) => ({ item: key, count: val })); }
     function clearSearch() { dom.search.value = ""; dom.searchClear.style.display = 'none'; render(); }
