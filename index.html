@@ -630,7 +630,7 @@
     let scheduleData = null; // New container for map-events.json
     let wishlist = new Map();
     let ownedBlueprints = new Set();
-    let currentFilter = 'ALL', viewMode = 'STASH', currentLang = 'it';
+    let currentFilter = 'ALL', viewMode = 'STASH', currentLang = 'ITA';
     let isWishlistView = false; 
     let currentSection = 'INVENTARIO';
     let bpViewMode = 0; 
@@ -828,11 +828,11 @@
         if(typeof obj === 'string') return obj; 
         
         // Log missing translation if object exists but current lang key is missing
-        if (obj['en'] && !obj[currentLang] && currentLang !== 'en') {
+        if (obj['ENG'] && !obj[currentLang] && currentLang !== 'ENG') {
              // Suppress item logs to avoid extreme spam, or use a Set like below
         }
         
-        return obj[currentLang] || obj['en'] || ""; 
+        return obj[currentLang] || obj['ENG'] || ""; 
     }
     
     function getLocLocation(locId) {
@@ -1373,7 +1373,9 @@
         const desc = getLoc(data.description);
         const rarity = (data.rarity || 'common').toUpperCase();
         const weight = (data.weightKg || 0).toString().replace('.', ',');
-        const val = (data.value || 0).toLocaleString(currentLang);
+        const localeMap = {'ITA': 'it-IT', 'ENG': 'en-US', 'ESP': 'es-ES', 'FRA': 'fr-FR', 'DEU': 'de-DE'};
+        const locale = localeMap.get(currentLang, 'en-US');
+        const val = (data.value || 0).toLocaleString(locale);
         const stack = `${data.stackSize || 1}/${data.stackSize || 1}`;
         let ecoHtml = "";
         

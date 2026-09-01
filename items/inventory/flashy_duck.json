@@ -1,57 +1,25 @@
-﻿{
-    "id":  "flashy_duck",
-    "name":  {
-                 "da":  "flashy_duck",
-                 "de":  "flashy_duck",
-                 "en":  "Flashy Duck",
-                 "es":  "flashy_duck",
-                 "fr":  "flashy_duck",
-                 "he":  "flashy_duck",
-                 "hr":  "flashy_duck",
-                 "it":  "Anatra appariscente",
-                 "ja":  "flashy_duck",
-                 "kr":  "flashy_duck",
-                 "no":  "flashy_duck",
-                 "pl":  "flashy_duck",
-                 "pt":  "flashy_duck",
-                 "pt-BR":  "flashy_duck",
-                 "ru":  "flashy_duck",
-                 "sr":  "flashy_duck",
-                 "tr":  "flashy_duck",
-                 "uk":  "flashy_duck",
-                 "zh-CN":  "flashy_duck",
-                 "zh-TW":  "flashy_duck"
-             },
-    "description":  {
-                        "da":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
-                        "de":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
-                        "en":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who? Can be thrown to create noise.",
-                        "es":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
-                        "fr":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
-                        "he":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
-                        "hr":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
-                        "it":  "Dipinta a mano con amore da qualcuno di grande talento, è evidente. Qualche idea su chi sia? Si può lanciare per fare rumore.",
-                        "ja":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
-                        "kr":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
-                        "no":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
-                        "pl":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
-                        "pt":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
-                        "pt-BR":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
-                        "ru":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
-                        "sr":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
-                        "tr":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
-                        "uk":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
-                        "zh-CN":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
-                        "zh-TW":  "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?"
-                    },
-    "type":  "Trinket",
-    "rarity":  "Rare",
-    "value":  3000,
-    "weightKg":  0.3,
-    "stackSize":  15,
-    "recyclesInto":  {
-
-                     },
-    "imageFilename":  "images/items/flashy_duck.png",
-    "lastUpdate":  "2026-01-31 00:55:04"
+{
+    "id": "flashy_duck",
+    "name": {
+        "DEU": "flashy_duck",
+        "ENG": "Flashy Duck",
+        "ESP": "flashy_duck",
+        "FRA": "flashy_duck",
+        "ITA": "Anatra appariscente"
+    },
+    "description": {
+        "DEU": "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
+        "ENG": "Lovingly hand-painted by someone of great talent-clearly. Any guesses who? Can be thrown to create noise.",
+        "ESP": "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
+        "FRA": "Lovingly hand-painted by someone of great talent-clearly. Any guesses who?",
+        "ITA": "Dipinta a mano con amore da qualcuno di grande talento, è evidente. Qualche idea su chi sia? Si può lanciare per fare rumore."
+    },
+    "type": "Trinket",
+    "rarity": "Rare",
+    "value": 3000,
+    "weightKg": 0.3,
+    "stackSize": 15,
+    "recyclesInto": {},
+    "imageFilename": "images/items/flashy_duck.png",
+    "lastUpdate": "2026-01-31 00:55:04"
 }
