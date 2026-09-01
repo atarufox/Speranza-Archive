@@ -2880,5 +2880,20 @@
     "shop": "Boutique",
     "traderNotFound": "Marchand introuvable",
     "traderNotFoundDesc": "Le marchand que vous recherchez n'existe pas."
+  },
+  "filters": {
+    "FILT_ALL": "Tout",
+    "FILT_WEAPONS": "Armes",
+    "FILT_AMMO": "Munitions",
+    "FILT_MODS": "Modifications",
+    "FILT_QUICK_USE": "Utilisation Rapide",
+    "FILT_MATERIALS": "Matériaux",
+    "FILT_KEYS": "Clés",
+    "FILT_MISC": "Divers",
+    "FILT_AUGMENTS": "Améliorations",
+    "FILT_SHIELDS": "Boucliers"
+  },
+  "UI": {
+    "what_i_need": "Ce dont j'ai besoin"
   }
 }
