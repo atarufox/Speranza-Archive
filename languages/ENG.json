@@ -843,7 +843,11 @@
       "languageDesc": "Change the display language for event boards and raid reports. Supports all languages available on ArcTracker.",
       "addraiderDesc": "Link an ArcTracker user to your server. Once linked, whenever that user completes a raid on ArcTracker, a summary will automatically be posted to your raids channel. Get link codes from the section below.",
       "removeraiderDesc": "Remove a linked user from your server. Their raid reports will no longer be posted. Use /listraiders to see exact usernames and IDs.",
-      "listraidersDesc": "View all ArcTracker users currently linked to your server. Shows each user's display name, ArcTracker ID, and who added them."
+      "listraidersDesc": "View all ArcTracker users currently linked to your server. Shows each user's display name, ArcTracker ID, and who added them.",
+      "eventsDesc": "[ENG] Ejecuta este comando en un canal para establecerlo como el canal de eventos de tu servidor. El bot publicará un tablero que se actualiza automáticamente mostrando todos los eventos del mapa activos y próximos con cuentas regresivas.",
+      "eventsPurpose": "[ENG] Mostrar eventos del mapa en vivo en este canal",
+      "raidsDesc": "[ENG] Ejecuta este comando en un canal para establecerlo como el canal de informes de incursión de tu servidor. Los informes de incursión de todos los usuarios vinculados se publicarán aquí.",
+      "raidsPurpose": "[ENG] Establecer canal de informes de incursión"
     },
     "adminGuide": {
       "title": "Server Admin Guide",
@@ -1880,7 +1884,8 @@
       "featuresTitle": "Everything You Need",
       "screenshotDashboardTitle": "See It In Action",
       "screenshotDashboardDesc": "View comprehensive stats, filter by map/expedition, and analyze your raid performance over time."
-    }
+    },
+    "subscriberPreview": "[ENG] Vista Previa para Suscriptores (Beta)"
   },
   "RaidSync": {
     "title": "Apply to Progress",
@@ -1952,7 +1957,9 @@
     "tabs": {
       "quests": "Quests",
       "hideout": "Hideout",
-      "blueprints": "Blueprints"
+      "blueprints": "Blueprints",
+      "projects": "[ENG] Proyectos",
+      "skills": "[ENG] Habilidades"
     },
     "questsSection": {
       "title": "Completed Quests",
@@ -1986,6 +1993,17 @@
       "selectAll": "Select All",
       "unselectAll": "Unselect All",
       "noChanges": "No changes to save"
+    },
+    "projectsSection": {
+      "count": "{count} fases completadas",
+      "noProjects": "No hay fases de proyecto completadas",
+      "phase": "Fase {phase}",
+      "title": "Progreso del proyecto"
+    },
+    "skillsSection": {
+      "noSkills": "No hay puntos de habilidad asignados",
+      "title": "Puntos de habilidad",
+      "total": "{count} puntos asignados"
     }
   },
   "SeasonsPage": {
@@ -2035,7 +2053,10 @@
       "states": {
         "ready": "Ready",
         "committed": "Committed",
-        "unknown": "Unknown"
+        "unknown": "Unknown",
+        "notStarted": "[ENG] no iniciada",
+        "inProgress": "[ENG] en curso",
+        "completed": "[ENG] completada"
       }
     }
   },
@@ -2487,7 +2508,8 @@
       "pausedErrors": "Paused: sync errors",
       "retry": "Retry",
       "authError": "Connection lost"
-    }
+    },
+    "consentDialogNote": "[ENG] ArcTracker solo lee tus datos de juego. Nunca modificamos tu cuenta de juego."
   },
   "HideoutSync": {
     "title": "Sync Hideout Progress",
@@ -2528,7 +2550,9 @@
     "applySync": "Apply Sync",
     "applying": "Applying...",
     "syncSuccess": "Quest sync complete!",
-    "syncError": "Failed to apply sync"
+    "syncError": "Failed to apply sync",
+    "questsToSync": "[ENG] Misiones para completar",
+    "questsToComplete": "[ENG] {count, plural, one {# misión} other {# misiones}} para marcar como completadas"
   },
   "ProjectSync": {
     "title": "Sync Project Progress",

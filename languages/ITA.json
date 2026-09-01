@@ -1711,7 +1711,8 @@
     "unknownMap": "Mappa sconosciuta",
     "valueSuffix": " valore",
     "timeInRaid": "Tempo in raid",
-    "statDamageByTarget": "Danni per bersaglio"
+    "statDamageByTarget": "Danni per bersaglio",
+    "subscriberPreview": "Vista Previa para Suscriptores (Beta)"
   },
   "RaidSync": {
     "title": "Applica ai Progressi",
@@ -1783,7 +1784,9 @@
     "tabs": {
       "quests": "Missioni",
       "hideout": "Rifugio",
-      "blueprints": "Progetti"
+      "blueprints": "Progetti",
+      "projects": "Proyectos",
+      "skills": "Habilidades"
     },
     "questsSection": {
       "title": "Missioni Completate",
@@ -1817,6 +1820,17 @@
       "detailsLabel": "Statistiche dettagliate",
       "detailsValue": "Non disponibile per questa stagione.",
       "title": "Stagione {number} completata"
+    },
+    "projectsSection": {
+      "count": "{count} fases completadas",
+      "noProjects": "No hay fases de proyecto completadas",
+      "phase": "Fase {phase}",
+      "title": "Progreso del proyecto"
+    },
+    "skillsSection": {
+      "noSkills": "No hay puntos de habilidad asignados",
+      "title": "Puntos de habilidad",
+      "total": "{count} puntos asignados"
     }
   },
   "season": {

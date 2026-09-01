@@ -653,8 +653,8 @@
 
     async function initApp() {
         try {
-            const availableLangs = ['ITA', 'ENG', 'ESP', 'FRA', 'DEU'];
-            const langLabels = { 'ITA': 'Italiano', 'ENG': 'English', 'ESP': 'Español', 'FRA': 'Français', 'DEU': 'Deutsch' };
+            const availableLangs = ['it', 'en', 'es', 'fr', 'de'];
+            const langLabels = { 'it': 'ITA', 'en': 'ENG', 'es': 'SPA', 'fr': 'FRA', 'de': 'GER' };
             dom.langSelect.innerHTML = '<option value="">LANG</option>'; 
             const ts = new Date().getTime();
 
@@ -672,9 +672,9 @@
                 } catch(e) { console.log("Lang check failed for", lang); }
             }
             
-            if(dom.langSelect.querySelector('option[value="ITA"]')) {
-                dom.langSelect.value = 'ITA';
-                await loadLanguage('ITA');
+            if(dom.langSelect.querySelector('option[value="it"]')) {
+                dom.langSelect.value = 'it';
+                await loadLanguage('it');
             } else if (dom.langSelect.options.length > 1) {
                 dom.langSelect.selectedIndex = 1;
                 await loadLanguage(dom.langSelect.value);
