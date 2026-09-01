@@ -1,0 +1,1482 @@
+<!-- START OF FILE arc_database_v1.17.17.html -->
+<!-- VERSION v1.17.17 -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARC RAIDERS // MISSION CONTROL v1.17.17</title>
+    <style>
+        /* FONTS */
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Teko:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+        :root {
+            /* GAME UI PALETTE */
+            --bg-body: #050505;
+            --bg-overlay: rgba(10, 10, 12, 0.85);
+            --bg-panel: rgba(20, 22, 25, 0.7);
+            --border-tech: rgba(255, 255, 255, 0.15);
+            
+            /* COLORS */
+            --arc-yellow: #ffc400;
+            --arc-white: #e6e6e6;
+            --arc-teal: #00e5ff;   
+            --arc-red: #ff2a2a;
+            --arc-green: #00ff66;
+            --arc-gray: #555555;
+            
+            /* SIDEBAR COLORS */
+            --sb-inactive-bg: #2b2f3b;
+            --sb-inactive-icon: #7f838d;
+            --sb-active-bg: #f2e8d5;
+            --sb-active-icon: #141619;
+
+            /* SIDEBAR DIMENSIONS */
+            --sb-icon-size: 52px;
+            --sb-gap: 8px;
+
+            /* NAVBAR SPACING */
+            --nav-gap: 5px;          
+            --nav-padding-x: 10px;   
+
+            /* CARD COLORS */
+            --card-bg: #f2e8d5;
+            --card-footer: #dcd0b9;
+            --card-text: #121418;
+            
+            /* RARITY COLORS */
+            --col-common: #7a7a7a;
+            --col-uncommon: #009e48;
+            --col-rare: #0090d4;
+            --col-epic: #a040b0;
+            --col-legendary: #ff9600;
+            --col-material: #0090d4;
+            --col-recycle: #009e48;
+
+            /* FONTS */
+            --font-head: 'Teko', sans-serif;
+            --font-ui: 'Rajdhani', sans-serif;
+            --font-body: 'Barlow', sans-serif;
+            --font-mono: 'Share Tech Mono', monospace;
+
+            /* DYNAMIC SIZES */
+            --header-h: 80px;
+            --logo-h: 30px;
+            --nav-font: 1.5rem;
+            --btn-play-h: 40px;
+            --btn-play-font: 1.4rem;
+            --btn-sys-h: 34px;
+            --search-w: 200px;
+            --sb-w: 70px;
+            --content-pad-left: 130px;
+        }
+
+        /* --- RESPONSIVE LOGIC --- */
+        @media (max-width: 1600px) {
+            :root { --header-h: 65px; --logo-h: 24px; --nav-font: 1.2rem; --nav-gap: 4px; --nav-padding-x: 8px; --btn-play-h: 34px; --btn-play-font: 1.1rem; --btn-sys-h: 30px; --search-w: 160px; --sb-icon-size: 46px; --sb-gap: 6px; --sb-w: 60px; --content-pad-left: 110px; }
+        }
+        @media (max-width: 1300px) {
+            :root { --header-h: 55px; --nav-font: 1.0rem; --nav-gap: 2px; --nav-padding-x: 5px; --btn-play-h: 30px; --btn-play-font: 1rem; --btn-sys-h: 26px; --search-w: 130px; --sb-icon-size: 40px; --sb-gap: 4px; --sb-w: 50px; --content-pad-left: 90px; }
+            .header-left, .header-right { gap: 10px !important; }
+            .version-badge { display: none; }
+        }
+        @media (max-height: 900px) { :root { --sb-icon-size: 40px; --sb-gap: 4px; } }
+
+        /* GLOBAL RESET */
+        * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+
+        body {
+            background-color: var(--bg-body);
+            background: radial-gradient(circle at 50% 30%, #1a1f2e 0%, #050505 80%);
+            background-attachment: fixed;
+            color: var(--arc-white);
+            font-family: var(--font-ui);
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- INTRO SCREEN (CRT EFFECT) --- */
+        .intro-screen {
+            position: fixed; inset: 0; z-index: 500;
+            background: #000;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            transition: opacity 0.8s ease-in-out, visibility 0.8s;
+            overflow: hidden;
+            animation: turn-on 2.5s linear forwards;
+        }
+        
+        body.db-loaded .intro-screen { opacity: 0; visibility: hidden; pointer-events: none; }
+
+        /* CRT EFFECTS LAYERS */
+        .noise {
+            position: absolute; top: -500%; left: -500%; width: 1000%; height: 1000%;
+            background: repeating-radial-gradient(#000 0 0.0001%, #1a1a1a 0 0.0002%);
+            opacity: 0.2; transform: translate(0, 0);
+            animation: noise-anim 0.5s infinite linear; z-index: 0; pointer-events: none;
+        }
+        .scanlines {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5));
+            background-size: 100% 4px; z-index: 10; pointer-events: none;
+            box-shadow: inset 0 0 150px rgba(0,0,0,0.9);
+        }
+        .scan-bar {
+            width: 100%; height: 10px; background: rgba(255, 196, 0, 0.1);
+            position: absolute; z-index: 11; top: -10%;
+            animation: scan-move 5s linear infinite; pointer-events: none;
+            box-shadow: 0 0 10px rgba(255, 196, 0, 0.2);
+        }
+
+        /* INTRO CONTENT */
+        .intro-content { position: relative; z-index: 20; display: flex; flex-direction: column; align-items: center; filter: blur(0.5px); }
+
+        .glitch-logo {
+            width: 300px; margin-bottom: 40px; position: relative;
+            filter: drop-shadow(-2px 0 red) drop-shadow(2px 0 blue);
+            animation: glitch-skew 3s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .glitch-logo img { width: 100%; height: auto; display: block; }
+
+        .btn-connect-big {
+            background: rgba(0,0,0,0.6); color: var(--arc-yellow);
+            border: 2px solid var(--arc-yellow);
+            padding: 15px 40px; font-family: var(--font-head); font-size: 2rem; letter-spacing: 3px;
+            cursor: pointer; text-transform: uppercase;
+            transition: all 0.2s; position: relative; overflow: hidden;
+            box-shadow: 0 0 10px rgba(255, 196, 0, 0.2);
+            animation: text-flicker 4s infinite;
+        }
+        .btn-connect-big:hover { background: var(--arc-yellow); color: #000; box-shadow: 0 0 30px var(--arc-yellow); transform: scale(1.02); }
+        
+        /* KEYFRAMES CRT */
+        @keyframes turn-on {
+            0% { transform: scale(1, 0.001) scaleY(0); filter: brightness(0); background: #000; }
+            10% { transform: scale(1, 0.001) scaleY(1); filter: brightness(3); background: #fff; }
+            25% { transform: scale(1, 0.001) scaleY(1); filter: brightness(1); background: #050505; }
+            40% { transform: scale(1, 1); }
+            100% { transform: scale(1, 1); }
+        }
+        @keyframes noise-anim {
+            0% { transform: translate(0,0); } 10% { transform: translate(-5%,-5%); } 20% { transform: translate(-10%,5%); }
+            30% { transform: translate(5%,-10%); } 40% { transform: translate(-5%,15%); } 50% { transform: translate(-10%,5%); }
+            60% { transform: translate(15%,0); } 70% { transform: translate(0,10%); } 80% { transform: translate(-15%,0); }
+            90% { transform: translate(10%,5%); } 100% { transform: translate(5%,0); }
+        }
+        @keyframes scan-move {
+            0% { top: -10%; opacity: 0; } 5% { opacity: 1; } 90% { opacity: 1; } 100% { top: 110%; opacity: 0; }
+        }
+        @keyframes glitch-skew {
+            0% { transform: skew(0deg); } 20% { transform: skew(0deg); }
+            21% { transform: skew(10deg); filter: drop-shadow(-5px 0 red) drop-shadow(5px 0 blue); }
+            22% { transform: skew(-10deg); filter: drop-shadow(5px 0 red) drop-shadow(-5px 0 blue); }
+            23% { transform: skew(0deg); filter: drop-shadow(-2px 0 red) drop-shadow(2px 0 blue); } 100% { transform: skew(0deg); }
+        }
+        @keyframes text-flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; text-shadow: 0 0 10px rgba(255, 196, 0, 0.5); }
+            20%, 24%, 55% { opacity: 0.5; text-shadow: none; }
+        }
+
+        /* --- VISIBILITY TOGGLES --- */
+        body:not(.db-loaded) .nav-links,
+        body:not(.db-loaded) .search-container,
+        body:not(.db-loaded) .btn-system:not(.lang-selector-btn),
+        body:not(.db-loaded) .connect-wrapper { display: none !important; }
+
+        /* --- UI LAYOUT --- */
+        .layout-container { flex: 1; display: flex; flex-direction: column; padding-top: var(--header-h); }
+
+        /* --- HEADER --- */
+        header {
+            position: fixed; top: 0; left: 0; right: 0;
+            height: var(--header-h);
+            background: linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 100%);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 20px;
+            z-index: 1000;
+            transition: height 0.3s ease;
+        }
+
+        .header-left { display: flex; align-items: center; gap: 20px; height: 100%; }
+        .logo-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: center; margin-right: 5px; }
+        .app-logo { height: var(--logo-h); display: flex; justify-content: center; align-items: center; }
+        .app-logo img { height: 100%; width: auto; object-fit: contain; filter: drop-shadow(0 0 5px rgba(255, 196, 0, 0.3)); }
+        .version-badge { font-family: var(--font-ui); font-size: 0.6rem; color: #555; font-weight: 700; letter-spacing: 1px; margin-top: 2px; }
+
+        /* NAV LINKS */
+        .nav-links { display: flex; gap: var(--nav-gap); margin-left: 10px; opacity: 0; pointer-events: none; transition: 0.3s; align-items: center; }
+        body.db-loaded .nav-links { opacity: 1; pointer-events: auto; }
+
+        .nav-item {
+            font-family: var(--font-head); font-weight: 600; font-size: var(--nav-font); color: #999;
+            text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: all 0.2s; position: relative;
+            padding: 2px var(--nav-padding-x); border: 2px solid transparent; border-radius: 50px; white-space: nowrap;
+        }
+        .nav-item:hover { color: #fff; }
+        .nav-item.active { color: #fff; border-color: #f0ebd8; background: rgba(255,255,255,0.05); box-shadow: 0 0 15px rgba(240, 235, 216, 0.1); }
+
+        /* HEADER RIGHT */
+        .header-right { display: flex; align-items: center; gap: 10px; }
+
+        .search-container { position: relative; }
+        .search-box {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            padding: 0 25px 0 12px; color: #fff; width: var(--search-w); height: var(--btn-sys-h); border-radius: 4px;
+            font-family: var(--font-ui); text-transform: uppercase; outline: none; transition: 0.3s; font-size: 0.9rem;
+        }
+        .search-box:focus { border-color: var(--arc-teal); background: rgba(0, 229, 255, 0.05); }
+        .search-clear { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #666; font-size: 0.8rem; }
+        
+        .btn-system {
+            height: var(--btn-sys-h); padding: 0 12px; background: transparent; border: 1px solid rgba(255,255,255,0.2);
+            color: #ccc; font-family: var(--font-ui); font-weight: 600; text-transform: uppercase; border-radius: 20px;
+            cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; transition: 0.2s;
+            font-size: 0.9rem; white-space: nowrap;
+        }
+        .btn-system:hover { border-color: #fff; color: #fff; background: rgba(255,255,255,0.05); }
+        .btn-system.active { background: var(--arc-yellow); color: #000; border-color: var(--arc-yellow); font-weight: 700; }
+        .btn-system.bp-filter-owned { background: var(--arc-teal); color: #000; border-color: var(--arc-teal); }
+        .btn-system.bp-filter-missing { background: var(--arc-red); color: #000; border-color: var(--arc-red); }
+        .btn-icon { width: var(--btn-sys-h); height: var(--btn-sys-h); padding: 0; border-radius: 50%; }
+
+        select option { background-color: #111; color: #fff; }
+        #langSelect { background-color: rgba(255,255,255,0.05); color: #fff; }
+
+        /* --- SIDEBAR --- */
+        aside {
+            position: absolute; top: calc(var(--header-h) + 20px); left: 30px; bottom: 20px; width: var(--sb-w);
+            background: transparent; border: none; display: none; flex-direction: column; align-items: center; 
+            padding: 10px 0; gap: var(--sb-gap); z-index: 90; overflow-y: auto; overflow-x: hidden; 
+            animation: slideInLeft 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        aside::-webkit-scrollbar { width: 0; }
+        body.db-loaded aside { display: flex; }
+        
+        /* FIX: Hide sidebar for Progetti and Map */
+        body.section-progetti aside { display: none !important; width: 0 !important; pointer-events: none; }
+        body.section-map aside { display: none !important; width: 0 !important; pointer-events: none; }
+        
+        @keyframes slideInLeft { from { transform: translateX(-20px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        
+        .filter-circle {
+            width: var(--sb-icon-size); height: var(--sb-icon-size); border-radius: 50%;
+            background-color: var(--sb-inactive-bg); display: flex; justify-content: center; align-items: center;
+            cursor: pointer; transition: all 0.2s; flex-shrink: 0; border: 2px solid transparent; position: relative;
+        }
+        .filter-circle:hover { transform: scale(1.05); border-color: #555; }
+        .filter-circle.active { background-color: var(--sb-active-bg); border-color: var(--sb-active-bg); box-shadow: 0 0 15px rgba(242, 232, 213, 0.2); }
+        .filter-circle svg { width: 55%; height: 55%; fill: var(--sb-inactive-icon); transition: fill 0.2s; }
+        .filter-circle:hover svg { fill: #fff; }
+        .filter-circle.active svg { fill: var(--sb-active-icon); }
+        .filter-circle img { width: 100%; height: 100%; pointer-events: none; border-radius: 50%; }
+        .filter-circle .icon-active { display: none; }
+        .filter-circle .icon-inactive { display: block; }
+        .filter-circle.active .icon-active { display: block; }
+        .filter-circle.active .icon-inactive { display: none; }
+        .filter-circle.has-image { background-color: transparent; border: none; }
+        .sidebar-sep { width: 30px; height: 1px; background: rgba(255,255,255,0.1); margin: 2px 0; flex-shrink: 0; }
+
+        /* --- CONTENT AREA --- */
+        .content-area { flex: 1; padding: 20px 40px 40px 40px; overflow-y: auto; transition: padding-left 0.3s ease; }
+        body.db-loaded .content-area { padding-left: var(--content-pad-left); }
+        
+        /* FIX: Center Layout for Progetti */
+        body.section-progetti .content-area { padding-left: 0 !important; }
+        body.section-progetti .stash-grid {
+             max-width: 1400px;
+             margin: 0 auto;
+             padding: 0 20px 100px 20px;
+             justify-content: center;
+        }
+        
+        body.section-map .content-area { padding: 0 !important; overflow: hidden; }
+        
+        .section-header-bp { margin-bottom: 20px; animation: fadeIn 0.5s ease; }
+        .sh-title { font-family: var(--font-head); font-size: 2.5rem; color: #fff; line-height: 1; letter-spacing: 2px; text-transform: uppercase; }
+        .sh-subtitle { font-family: var(--font-head); font-size: 1.1rem; color: #bbb; letter-spacing: 1px; margin-top: 5px; font-weight: 600; text-transform: uppercase;}
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .stash-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; padding-bottom: 100px; position: relative; z-index: 5; }
+
+        .slot {
+            aspect-ratio: 1; background-color: rgba(15, 15, 15, 0.6);
+            border: 1px solid var(--border-tech); border-radius: 2px;
+            position: relative; display: flex; align-items: center; justify-content: center;
+            transition: 0.2s; overflow: hidden;
+        }
+        .slot:hover { border-color: #fff; background-color: rgba(40, 40, 45, 0.8); box-shadow: 0 0 15px rgba(255,255,255,0.1); transform: scale(1.02); z-index: 2; cursor: pointer;}
+        .slot img { max-width: 80%; max-height: 80%; object-fit: contain; pointer-events: none; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.8)); }
+        .slot-fallback { width: 30px; height: 30px; fill: #444; pointer-events: none; }
+        .slot .fallback-text { position:absolute; bottom:5px; font-size:0.65rem; color:#888; text-align:center; width:90%; pointer-events: none; font-weight: 600; text-transform: uppercase;}
+        .slot::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; opacity:0.8; pointer-events:none; }
+        .slot.common::after { background: var(--col-common); opacity: 0.3; }
+        .slot.uncommon::after { background: var(--col-uncommon); box-shadow: 0 -2px 5px rgba(46, 125, 50, 0.5); }
+        .slot.rare::after { background: var(--col-rare); box-shadow: 0 -2px 5px rgba(0, 144, 212, 0.5); }
+        .slot.epic::after { background: var(--col-epic); box-shadow: 0 -2px 5px rgba(156, 39, 176, 0.5); }
+        .slot.legendary::after { background: var(--col-legendary); box-shadow: 0 -2px 5px rgba(255, 196, 0, 0.5); }
+        
+        .bp-badge { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; z-index: 10; font-weight: 900; font-family: var(--font-head); font-size: 2rem; pointer-events: none; background: rgba(0,0,0,0.7); }
+        .bp-owned { color: var(--arc-teal); border: 2px solid var(--arc-teal); background: rgba(0, 229, 255, 0.1); }
+        .bp-missing { color: var(--arc-red); border: 2px solid var(--arc-red); background: rgba(255, 42, 42, 0.1); }
+        .slot.owned { border-color: var(--arc-teal); box-shadow: inset 0 0 20px rgba(0, 229, 255, 0.2); }
+        .slot.is-missing img { opacity: 0.2; filter: grayscale(100%); }
+
+        .slot-controls { position: absolute; bottom: 3px; left: 0; right: 0; height: 24px; display: none; flex-direction: row; background: rgba(0,0,0,0.9); z-index: 20; }
+        .slot:hover .slot-controls { display: flex; }
+        .wl-btn { flex: 1; background: transparent; color: #aaa; border: none; text-align: center; cursor: pointer; font-size: 1.2rem; line-height: 24px; font-weight: 700; }
+        .wl-btn:hover { color: #fff; background: rgba(255,255,255,0.2); }
+        .wishlist-badge { position: absolute; top: 4px; right: 4px; background: var(--arc-yellow); color: #000; font-weight: 800; font-size: 0.8rem; padding: 2px 6px; border-radius: 2px; z-index: 20; pointer-events: none; box-shadow: 0 0 5px var(--arc-yellow); }
+
+        /* --- TOOLTIP (HOVER - BEIGE CARD) --- */
+        #tooltip { position: fixed; display: none; width: 340px; background-color: var(--card-bg); color: var(--card-text); box-shadow: 0 40px 80px rgba(0,0,0,1); z-index: 13000; font-family: var(--font-body); pointer-events: none; border-radius: 4px; overflow: hidden; border: none; }
+        #tooltip.interactive { pointer-events: auto !important; }
+
+        /* --- SIDEBAR TOOLTIP (CUSTOM) --- */
+        #sidebar-tooltip { position: fixed; display: none; background: rgba(10, 10, 10, 0.95); color: var(--arc-yellow); border: 1px solid var(--arc-yellow); padding: 5px 12px; font-family: var(--font-ui); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; z-index: 12000; pointer-events: none; border-radius: 0 8px 8px 8px; white-space: nowrap; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+
+        .tt-header { display: flex; height: 26px; background: transparent; }
+        .tt-tag { padding: 0 10px; font-family: var(--font-head); font-weight: 600; font-size: 1.1rem; color: white; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; justify-content: center; gap: 5px; height: 100%; }
+        .tt-tag svg { width: 14px; height: 14px; fill: white; }
+        .tt-body { padding: 16px 20px; }
+        .tt-title { font-family: var(--font-head); font-weight: 700; font-size: 2.2rem; line-height: 0.9; margin-bottom: 12px; text-transform: uppercase; color: #000; letter-spacing: 0.5px; }
+        .tt-desc { font-size: 0.95rem; line-height: 1.35; color: #222; margin-bottom: 20px; font-weight: 500; font-family: var(--font-body); }
+        .tt-found { border-top: 1px solid #c0b49b; padding-top: 10px; margin-top: 10px; }
+        .tt-found-label { font-size: 0.8rem; font-weight: 700; color: #555; text-transform: uppercase; margin-bottom: 4px; font-family: var(--font-head); letter-spacing: 1px; }
+        .tt-found-val { display: flex; align-items: center; gap: 6px; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; color: #000; }
+        .tt-found-val svg { width: 16px; height: 16px; fill: #000; }
+        .tt-footer { background: var(--card-footer); display: flex; height: 50px; border-top: 1px solid #c9bea6; }
+        .tt-foot-item { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--font-head); font-weight: 600; font-size: 1.3rem; border-right: 1px solid #c9bea6; color: #1a1a1a; }
+        .tt-foot-item:last-child { border-right: none; }
+        .tt-foot-item svg { fill: #1a1a1a; display: block; }
+        .tt-foot-item img { display: block; filter: none; opacity: 1; }
+
+        /* --- POPUP / INFO MODAL --- */
+        #modalBackdrop { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.7); backdrop-filter: blur(3px); z-index: 14000; display: none; }
+        .overlay-container { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #111; color: var(--arc-white); box-shadow: 0 0 100px rgba(0,0,0,1); z-index: 14100; width: 450px; display: none; flex-direction: column; max-height: 85vh; border-radius: 4px; border: 1px solid var(--arc-yellow); user-select: text !important; cursor: auto; }
+        .overlay-header { display: flex; justify-content: space-between; align-items: center; padding: 15px; border-bottom: 1px solid #333; background: #1a1a1a; user-select: none !important; flex-shrink: 0; }
+        .overlay-title { font-family: var(--font-head); font-size: 2.2rem; color: var(--arc-yellow); margin: 0; text-transform: uppercase; line-height: 1; }
+        .overlay-close { background: none; border: none; color: #666; font-size: 2.5rem; cursor: pointer; line-height: 1; user-select: none !important; transition:0.2s;}
+        .overlay-close:hover { color: #fff; }
+        .overlay-scrollable-content { overflow-y: auto; flex: 1; background: #111; color: #fff; padding: 15px; user-select: text !important; cursor: text; }
+        .overlay-scrollable-content * { user-select: text !important; }
+        .overlay-scrollable-content::-webkit-scrollbar { width: 8px; }
+        .overlay-scrollable-content::-webkit-scrollbar-track { background: #1a1a1a; }
+        .overlay-scrollable-content::-webkit-scrollbar-thumb { background: var(--arc-yellow); border-radius: 4px; }
+
+        .info-section { background: #161616; border: 1px solid #2c2c2c; margin-bottom: 20px; padding: 15px; border-radius: 2px;}
+        .info-title { color: var(--arc-white); font-family: var(--font-head); font-size: 1.4rem; text-transform: uppercase; border-bottom: 1px solid #333; padding-bottom: 5px; margin-bottom: 10px; letter-spacing: 1px;}
+        .info-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+        .info-table th { text-align: left; color: #888; border-bottom: 1px solid #333; padding: 5px; font-weight: 600; font-family: var(--font-ui); text-transform: uppercase; font-size: 0.8rem;}
+        .info-table td { padding: 8px 5px; border-bottom: 1px solid #222; color: #ccc; vertical-align: middle; }
+        .info-table tr:last-child td { border-bottom: none; }
+        .info-table img, .mini-icon { width: 32px; height: 32px; object-fit: contain; vertical-align: middle; margin-right: 10px; border-radius: 2px; background: rgba(255,255,255,0.05); }
+        .recipe-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #222; font-family: var(--font-ui); font-size: 1rem; align-items: center; }
+        .recipe-row:last-child { border-bottom: none; }
+        .recipe-hl { color: var(--arc-yellow); font-weight: 700; }
+        .val-total { font-weight: 700; font-size: 1.1rem; }
+        .val-better { color: var(--arc-teal); } 
+        .val-worse { color: var(--arc-red); } 
+        
+        .clickable-row { cursor: pointer; transition: background 0.2s; }
+        .clickable-row:hover { background: rgba(255,255,255,0.05); }
+
+        #loader { background: #000; }
+        .spinner { border-color: #333; border-top-color: var(--arc-yellow); }
+        input[type="file"] { display: none; }
+        #loader{position:fixed; inset:0; display:none; align-items:center; justify-content:center; flex-direction:column; background:rgba(0,0,0,0.6); z-index:20000;}
+        #loader h2{display:none; margin-top:10px;}
+        .spinner{display:none;}
+        .loader-custom{ width: 108px; height: 108px; display:block; animation: arcspin 2.2s linear infinite; }
+        @keyframes arcspin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+        details.upgrade-level { margin-bottom: 10px; background: #111; border-left: 3px solid var(--arc-teal); transition: 0.2s; }
+        details.upgrade-level[open] { background: #1a1a1a; }
+        details.upgrade-level summary { padding: 10px; color: #fff; font-weight: bold; cursor: pointer; text-transform: uppercase; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        details.upgrade-level summary::-webkit-details-marker { display: none; }
+        details.upgrade-level summary:hover { color: var(--arc-yellow); }
+        .btn-track { background: transparent; border: 1px solid #444; color: #888; padding: 2px 8px; font-size: 0.8rem; cursor: pointer; border-radius: 4px; text-transform: uppercase; font-family: var(--font-ui); font-weight: 700; transition: 0.2s; display: flex; align-items: center;}
+        .btn-track:hover { border-color: var(--arc-yellow); color: var(--arc-yellow); }
+        .btn-track.added { background: var(--arc-yellow); color: #000; border-color: var(--arc-yellow); }
+
+        /* --- MAPPA SECTION - DASHBOARD v1.17.17 --- */
+        #map-container { 
+            position: absolute; top:0; left:0; width:100%; height:100%; 
+            background-color: #050505;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            display:none; 
+            padding-top: 120px; justify-content: center; align-items: flex-start; overflow-y: auto;
+        }
+
+        /* --- DASHBOARD OVERLAY (ARC RAIDERS STYLE) --- */
+        .mission-control {
+            position: relative;
+            width: 90%; max-width: 900px;
+            margin: 0 auto 50px auto;
+            display: flex; flex-direction: column; gap: 20px;
+            z-index: 200; pointer-events: auto;
+        }
+        
+        .mc-clock-panel {
+             display: flex; justify-content: space-between; align-items: center;
+             background: #111;
+             border: 1px solid #444;
+             border-left: 4px solid var(--arc-yellow);
+             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+             padding: 12px 20px; color: #aaa; font-family: var(--font-mono); font-size: 1rem;
+             text-transform: uppercase; letter-spacing: 1px;
+        }
+        .mc-clock-panel strong { color: #fff; margin-left: 5px; text-shadow: 0 0 5px rgba(255,255,255,0.3); }
+        
+        .mc-panel {
+            background: rgba(12, 12, 14, 0.95);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 2px;
+            padding: 0;
+            display: flex; flex-direction: column;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            position: relative;
+        }
+        .mc-panel::before {
+             content: ''; position: absolute; top: -1px; left: -1px; width: 10px; height: 10px;
+             border-top: 2px solid var(--arc-white); border-left: 2px solid var(--arc-white); pointer-events: none;
+        }
+        .mc-panel::after {
+             content: ''; position: absolute; bottom: -1px; right: -1px; width: 10px; height: 10px;
+             border-bottom: 2px solid var(--arc-white); border-right: 2px solid var(--arc-white); pointer-events: none;
+        }
+
+        .mc-header {
+            font-family: var(--font-head); font-size: 1.8rem;
+            color: #fff; text-transform: uppercase;
+            display: flex; align-items: center; gap: 10px;
+            padding: 15px 20px; background: rgba(255,255,255,0.02);
+            border-bottom: 1px solid rgba(255,255,255,0.05); letter-spacing: 2px;
+        }
+        .mc-header-icon { width: 6px; height: 24px; background: var(--arc-yellow); display: block; margin-right: 5px; }
+        .mc-header-sub { font-family: var(--font-ui); color: #555; font-size: 0.9rem; margin-left: auto; letter-spacing: 1px; font-weight: 700; }
+
+        .mc-scroll-area { padding: 15px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
+
+        /* ARC EVENT CARD */
+        .ev-card {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid #333;
+            padding: 15px;
+            position: relative; overflow: hidden;
+            transition: all 0.2s;
+            display: flex; flex-direction: column; gap: 5px;
+        }
+        .ev-card:hover { border-color: #666; background: rgba(255,255,255,0.02); }
+        
+        .ev-status-line {
+            width: 100%; height: 2px; background: #333; margin: 8px 0; position: relative;
+        }
+        .ev-status-line::after {
+            content:''; position: absolute; left: 0; top: 0; bottom: 0; width: 30%; background: #555;
+        }
+        
+        /* STANDARD / MINOR */
+        .active .ev-status-line { background: rgba(0,255,102,0.2); }
+        .active .ev-status-line::after { background: var(--arc-green); width: 100%; box-shadow: 0 0 10px var(--arc-green); }
+        
+        .upcoming .ev-status-line { background: rgba(0,229,255,0.2); }
+        .upcoming .ev-status-line::after { background: var(--arc-teal); width: 40%; }
+
+        /* MAJOR OVERRIDE */
+        .ev-card.major { border-left: 2px solid var(--arc-red); background: linear-gradient(90deg, rgba(255, 42, 42, 0.05) 0%, rgba(0,0,0,0) 100%); }
+        .ev-card.major:hover { background: linear-gradient(90deg, rgba(255, 42, 42, 0.1) 0%, rgba(0,0,0,0) 100%); border-color: var(--arc-red); }
+        .major .ev-status-line { background: rgba(255, 42, 42, 0.2); }
+        .major .ev-status-line::after { background: var(--arc-red); box-shadow: 0 0 10px var(--arc-red); }
+        .major .ev-title { color: var(--arc-red); text-shadow: 0 0 10px rgba(255, 42, 42, 0.3); }
+        .major .ev-tag { background: var(--arc-red); color: #000; border-color: var(--arc-red); box-shadow: 0 0 15px var(--arc-red); }
+        .major .ev-icon-danger { display: inline-block; width: 16px; height: 16px; fill: var(--arc-red); margin-right: 5px; animation: pulse-red 2s infinite; }
+
+        @keyframes pulse-red { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+
+        .ev-title { font-family: var(--font-head); font-size: 1.6rem; color: #fff; line-height: 0.9; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; display:flex; align-items:center; }
+        .ev-loc { font-family: var(--font-mono); font-size: 0.8rem; color: #888; display: flex; align-items: center; gap: 6px; text-transform: uppercase; }
+        .ev-loc svg { fill: #666; width: 12px; height: 12px; }
+
+        .ev-timer-box {
+             margin-top: 10px; background: rgba(0,0,0,0.5); border: 1px solid #222; padding: 5px 10px;
+             display: flex; justify-content: space-between; align-items: center;
+        }
+        .ev-label { font-family: var(--font-ui); font-size: 0.75rem; color: #666; font-weight: 700; letter-spacing: 1px; }
+        .ev-timer { font-family: var(--font-mono); font-size: 1.2rem; color: #fff; font-weight: 700; letter-spacing: 0px; font-variant-numeric: tabular-nums; }
+        
+        .active .ev-timer { color: var(--arc-green); text-shadow: 0 0 5px rgba(0,255,102,0.5); }
+        .upcoming .ev-timer { color: var(--arc-teal); }
+        .major .ev-timer { color: var(--arc-red); }
+
+        .ev-tag { position: absolute; top: 12px; right: 12px; font-family: var(--font-head); font-size: 1.1rem; color: #333; background: #111; padding: 0 6px; border: 1px solid #333; }
+        .active .ev-tag { color: #000; background: var(--arc-green); border-color: var(--arc-green); box-shadow: 0 0 10px rgba(0,255,102,0.3); }
+        .upcoming .ev-tag { color: var(--arc-teal); border-color: var(--arc-teal); background: rgba(0,229,255,0.1); }
+
+    </style>
+</head>
+<body>
+
+<!-- INTRO / BOOT SCREEN -->
+<div id="introScreen" class="intro-screen">
+    <div class="noise"></div>
+    <div class="scanlines"></div>
+    <div class="scan-bar"></div>
+    <div class="intro-content">
+        <div class="glitch-logo">
+            <img src="https://raw.githubusercontent.com/atarufox/Speranza-Archive/main/images/menu/logo.png" alt="ARC Raiders">
+        </div>
+        <button class="btn-connect-big" onclick="connectToDatabase()">
+            <span id="btnConnectBig">UI_CONNECT_BTN</span>
+        </button>
+    </div>
+</div>
+
+<!-- LOADING OVERLAY -->
+<div id="loader">
+  <svg class="loader-custom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="50" fill="black" />
+    <circle cx="50" cy="50" r="48.5" stroke="white" stroke-width="3" fill="none" />
+    <g stroke="white" stroke-width="3" fill="black" stroke-linejoin="round" stroke-linecap="round">
+      <circle cx="50" cy="50" r="11" />
+      <defs><path id="reel-blade" d="M 45 29 L 39 9 A 42 42 0 0 1 61 9 L 55 29 A 25 25 0 0 1 45 29 Z" /></defs>
+      <use href="#reel-blade" />
+      <use href="#reel-blade" transform="rotate(120, 50, 50)" />
+      <use href="#reel-blade" transform="rotate(240, 50, 50)" />
+    </g>
+  </svg>
+    <div class="spinner"></div>
+    <h2 style="margin-top:25px; font-family:var(--font-head); letter-spacing:2px; font-size: 1.5rem; color:#fff">LOADING</h2>
+    <div id="loader-text" style="color:#666; font-family:var(--font-ui); margin-top:5px;"></div>
+</div>
+
+<div id="modalBackdrop" onclick="closeInfoModal()"></div>
+<div id="sidebar-tooltip"></div>
+<aside id="sidebarPanel"></aside>
+
+<div class="layout-container">
+    <header>
+        <div class="header-left">
+            <div class="logo-wrapper">
+                <div class="app-logo">
+                    <img src="https://raw.githubusercontent.com/atarufox/Speranza-Archive/main/images/menu/logo.png" alt="ARC Raiders">
+                </div>
+                <span class="version-badge">v1.17.17</span>
+            </div>
+
+            <div class="nav-links">
+                <div class="nav-item active" onclick="setSection('INVENTARIO')" data-section="INVENTARIO" data-nav="NAV_INVENTORY">NAV_INVENTORY</div>
+                <div class="nav-item" onclick="setSection('OFFICINA')" data-section="OFFICINA" data-nav="NAV_WORKSHOP">NAV_WORKSHOP</div>
+                <div class="nav-item" onclick="setSection('PROGETTI')" data-section="PROGETTI" data-nav="NAV_BLUEPRINTS">NAV_BLUEPRINTS</div>
+                <div class="nav-item" onclick="setSection('MAPPA')" data-section="MAPPA" data-nav="NAV_EVENTS">NAV_EVENTS</div>
+                <div class="nav-item" onclick="setSection('MERCANTI')" data-section="MERCANTI" data-nav="NAV_TRADERS">NAV_TRADERS</div>
+                <div class="nav-item" onclick="setSection('NEGOZIO')" data-section="NEGOZIO" data-nav="NAV_STORE">NAV_STORE</div>
+                <div class="nav-item" onclick="setSection('MISSIONI')" data-section="MISSIONI" data-nav="NAV_QUESTS">NAV_QUESTS</div>
+            </div>
+        </div>
+
+        <div class="header-right">
+             <div class="search-container">
+                <input type="text" class="search-box" id="searchInput" placeholder="SEARCH" disabled>
+                <span class="search-clear" id="searchClear" onclick="clearSearch()">✕</span>
+            </div>
+
+             <button class="btn-system" id="btnWishlist" onclick="handleTopRightButton()">
+                <svg id="iconWishlist" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-1.99.9-1.99 2L3 20c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm0 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
+                <span id="btnWishlistText">WISHLIST</span> <span id="wlCounter" class="wl-counter" style="display:none">0</span>
+            </button>
+
+            <select id="langSelect" class="btn-system lang-selector-btn" style="width: auto;">
+                <option value="">LANG</option>
+            </select>
+            
+            <button class="btn-system btn-icon" onclick="exportUserData()" title="BACKUP DATA">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            </button>
+            <label for="importInput" class="btn-system btn-icon" title="RESTORE DATA" style="cursor:pointer">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
+            </label>
+            <input type="file" id="importInput" style="display:none" onchange="importUserData(event)">
+        </div>
+    </header>
+
+    <div class="content-area">
+        <div id="grid-container" class="stash-grid"></div>
+        <div id="map-container">
+             <!-- MAP CONTENT & OVERLAYS INJECTED BY JS -->
+        </div>
+    </div>
+</div>
+
+<div id="tooltip"></div>
+<div id="infoModal" class="overlay-container"></div>
+<svg style="display:none">
+    <symbol id="icon-wrench" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></symbol>
+   <symbol id="icon-arc" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2-1-2-1-2 1 2 1zm0 2l-10 5 10 5 10-5-10-5z"/></symbol>
+   <symbol id="icon-all" viewBox="0 0 24 24"><path d="M4 4h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z M4 10h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z M4 16h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z"/></symbol>
+   <symbol id="icon-cosmetic" viewBox="0 0 24 24"><path d="M12 2C9 2 7 3.5 7 5v2H5v14h14V7h-2V5c0-1.5-2-3-5-3zm0 2c1.5 0 3 1 3 3v2H9V5c0-2 1.5-3 3-3z"/></symbol>
+   <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></symbol>
+   <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></symbol>
+   <symbol id="icon-danger" viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></symbol>
+</svg>
+
+<script>
+    let itemsDB = [], hideoutDB = [];
+    let scheduleData = null; // New container for map-events.json
+    let wishlist = new Map();
+    let ownedBlueprints = new Set();
+    let currentFilter = 'ALL', viewMode = 'STASH', currentLang = 'it';
+    let isWishlistView = false; 
+    let currentSection = 'INVENTARIO';
+    let bpViewMode = 0; 
+    let isModalOpen = false; 
+    let currentOpenedItem = null; // Track opened item for live translation
+    let activeTranslation = {}; 
+    let mapTicker = null;
+    
+    // LOGGING SYSTEM
+    const missingKeysLog = new Set();
+    function logMissing(category, key) {
+        const combo = `${category}.${key}`;
+        if(!missingKeysLog.has(combo)) {
+            console.warn(`[MISSING ${category.toUpperCase()}] "${key}"`);
+            missingKeysLog.add(combo);
+        }
+    }
+
+    const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/atarufox/Speranza-Archive/main/';
+
+    async function initApp() {
+        try {
+            const availableLangs = ['it', 'en', 'es', 'fr'];
+            const langLabels = { 'it': 'ITA', 'en': 'ENG', 'es': 'ESP', 'fr': 'FRA' };
+            dom.langSelect.innerHTML = '<option value="">LANG</option>'; 
+            const ts = new Date().getTime();
+
+            for (let lang of availableLangs) {
+                try {
+                    let check = await fetch(`${GITHUB_RAW_BASE_URL}languages/${lang}.json?t=${ts}`, { method: 'HEAD' });
+                    if (!check.ok) check = await fetch(`${GITHUB_RAW_BASE_URL}languages/${lang}.json?t=${ts}`);
+                    
+                    if (check.ok) {
+                        let opt = document.createElement('option');
+                        opt.value = lang;
+                        opt.text = langLabels[lang] || lang.toUpperCase();
+                        dom.langSelect.appendChild(opt);
+                    }
+                } catch(e) { console.log("Lang check failed for", lang); }
+            }
+            
+            if(dom.langSelect.querySelector('option[value="it"]')) {
+                dom.langSelect.value = 'it';
+                await loadLanguage('it');
+            } else if (dom.langSelect.options.length > 1) {
+                dom.langSelect.selectedIndex = 1;
+                await loadLanguage(dom.langSelect.value);
+            }
+        } catch(e) { console.error("Init failed", e); }
+    }
+
+    async function loadLanguage(lang) {
+        dom.loader.style.display = 'flex';
+        dom.loaderText.textContent = `LOADING LANGUAGE: ${lang.toUpperCase()}...`;
+        const ts = new Date().getTime();
+
+        try {
+            const response = await fetch(`${GITHUB_RAW_BASE_URL}languages/${lang}.json?t=${ts}`);
+            if(!response.ok) throw new Error(`Language file not found: ${lang}`);
+            
+            activeTranslation = await response.json();
+            currentLang = lang;
+            missingKeysLog.clear(); // Reset warnings on lang change
+            
+            updateStaticText();
+            if(document.body.classList.contains('db-loaded')) {
+                renderSidebar();
+                updateUI();
+                render();
+                // LIVE MODAL UPDATE
+                if(isModalOpen && currentOpenedItem) {
+                    openInfoModal(currentOpenedItem);
+                }
+            }
+        } catch (error) {
+            console.error("Failed to load language:", error);
+            activeTranslation = {}; 
+            updateStaticText();
+        } finally {
+            dom.loader.style.display = 'none';
+        }
+    }
+
+    async function connectToDatabase() {
+        dom.loader.style.display = 'flex'; itemsDB = []; hideoutDB = []; scheduleData = null;
+        dom.loaderText.textContent = "ESTABLISHING CONNECTION...";
+        
+        try {
+            const repo = 'atarufox/Speranza-Archive';
+            const ts = new Date().getTime(); 
+            
+            // 1. ITEMS (Inventory + Blueprints)
+            dom.loaderText.textContent = "INDEXING INVENTORY & BLUEPRINTS...";
+            const paths = ['items/inventory', 'items/blueprints'];
+            for (const p of paths) {
+                try {
+                    const listUrl = `https://api.github.com/repos/${repo}/contents/${p}?t=${ts}`;
+                    const responseList = await fetch(listUrl);
+                    if (responseList.ok) {
+                        const fileList = await responseList.json();
+                        const jsonFiles = fileList.filter(f => f.name.endsWith('.json'));
+                        const fetched = await Promise.all(jsonFiles.map(file => fetch(file.download_url + `?t=${ts}`).then(res => res.json())));
+                        itemsDB = itemsDB.concat(fetched);
+                    }
+                } catch(e) { console.warn(`Failed to fetch ${p}`, e); }
+            }
+            if (itemsDB.length === 0) console.warn("No items found in new subdirectories.");
+
+            // 2. HIDEOUT
+            dom.loaderText.textContent = "DOWNLOADING HIDEOUT DATA...";
+            const hideoutFiles = ['explosives_station.json', 'gear_bench.json', 'gunsmith.json', 'medical_lab.json', 'refiner.json', 'scrappy.json', 'stash.json', 'utility_station.json', 'workbench.json'];
+            try {
+                const hideoutPromises = hideoutFiles.map(f => fetch(`${GITHUB_RAW_BASE_URL}hideout/${f}?t=${ts}`).then(res => res.ok ? res.json() : null));
+                const loadedHideouts = (await Promise.all(hideoutPromises)).filter(Boolean);
+                hideoutDB = normalizeHideoutData(loadedHideouts, 'RaidTheory');
+            } catch(e) { console.error("Hideout error", e); }
+
+            // 3. MAP EVENTS
+            dom.loaderText.textContent = "DOWNLOADING MAP DATA...";
+            try {
+                const url = `${GITHUB_RAW_BASE_URL}map-events/map-events.json?t=${ts}`;
+                const mapRes = await fetch(url);
+                if(mapRes.ok) {
+                    let rawData = await mapRes.json();
+                    if(rawData.schedule) {
+                         scheduleData = rawData;
+                    } else if (Array.isArray(rawData) || rawData.events) {
+                         console.warn("Using Legacy Map Format (Deprecated)");
+                         scheduleData = { legacy: Array.isArray(rawData) ? rawData : rawData.events };
+                    }
+                }
+            } catch(e) { console.warn("Map events fetch error", e); }
+
+            enableUI(); analyzeTypes();
+        } catch (error) {
+            console.error(error); dom.loader.style.display = 'none';
+            alert("Connection Failed. Check console.");
+        }
+    }
+
+    function enableUI() {
+        document.body.classList.add('db-loaded');
+        dom.search.disabled = false;
+        dom.loader.style.display = 'none';
+        setSection('INVENTARIO'); 
+        setFilter('ALL');
+    }
+
+    // --- TRANSLATION HELPERS ---
+    function getUI(key) { 
+        if(activeTranslation?.ui?.[key]) return activeTranslation.ui[key];
+        logMissing('ui', key);
+        return `UI_${key.toUpperCase()}`; 
+    }
+
+    function getNav(key) { 
+        if(activeTranslation?.nav?.[key]) return activeTranslation.nav[key];
+        logMissing('nav', key);
+        return key; 
+    }
+
+    function getFilter(key) { 
+        if(activeTranslation?.filters?.[key]) return activeTranslation.filters[key];
+        // Standardize fallback: if missing, return key itself (e.g. FILT_WEAPONS)
+        logMissing('filters', key);
+        return key; 
+    }
+    
+    function getLoc(obj) { 
+        if(!obj) return ""; 
+        if(typeof obj === 'string') return obj; 
+        
+        // Log missing translation if object exists but current lang key is missing
+        if (obj['en'] && !obj[currentLang] && currentLang !== 'en') {
+             // Suppress item logs to avoid extreme spam, or use a Set like below
+        }
+        
+        return obj[currentLang] || obj['en'] || ""; 
+    }
+    
+    function getLocLocation(locId) {
+        if(!locId) return "Unknown";
+        
+        // Construct the standardized key first
+        const key = `MAP_LOC_${locId.toUpperCase().replace(/[-\s]/g, '_')}`;
+        
+        // Look up the constructed key
+        if (activeTranslation && activeTranslation.locations && activeTranslation.locations[key]) {
+            return activeTranslation.locations[key];
+        }
+
+        // Fallback: return the constructed key (placeholder)
+        logMissing('locations', key);
+        return key;
+    }
+
+    const SIDEBAR_CONFIG = {
+        'INVENTARIO': [ 
+            { id: 'ALL', img: 'all', type: 'img', labelKey: 'FILT_ALL' }, 
+            { id: 'AUGMENTS', img: 'augments', type: 'img', labelKey: 'FILT_AUGMENTS' }, 
+            { id: 'SHIELDS', img: 'shields', type: 'img', labelKey: 'FILT_SHIELDS' }, 
+            { id: 'WEAPONS', img: 'weapons', type: 'img', labelKey: 'FILT_WEAPONS' }, 
+            { id: 'AMMO', img: 'ammunitions', type: 'img', labelKey: 'FILT_AMMO' }, 
+            { id: 'MODS', img: 'weapon_mods', type: 'img', labelKey: 'FILT_MODS' }, 
+            { id: 'QUICK_USE', img: 'quick_use', type: 'img', labelKey: 'FILT_QUICK_USE' }, 
+            { id: 'KEYS', img: 'keys', type: 'img', labelKey: 'FILT_KEYS' }, 
+            { id: 'MATERIALS', img: 'crafting_materials', type: 'img', labelKey: 'FILT_MATERIALS' }, 
+            { id: 'MISC', img: 'misc', type: 'img', labelKey: 'FILT_MISC' } 
+        ],
+        'PROGETTI': [ 
+            { id: 'ALL', icon: 'icon-all', type: 'svg', labelKey: 'FILT_ALL' }, 
+            { id: 'WEAPONS', img: 'weapons', type: 'img', labelKey: 'FILT_WEAPONS' }, 
+            { id: 'MODS', img: 'weapon_mods', type: 'img', labelKey: 'FILT_MODS' }, 
+            { id: 'QUICK_USE', img: 'quick_use', type: 'img', labelKey: 'FILT_QUICK_USE' }, 
+            { id: 'MATERIALS', img: 'crafting_materials', type: 'img', labelKey: 'FILT_MATERIALS' } 
+        ],
+        'OFFICINA': [ 
+            { id: 'ALL', img: 'all', type: 'img', labelKey: 'FILT_ALL' }, 
+            { targetId: 'scrappy' }, 
+            { targetId: 'workbench' }, 
+            { targetId: 'gunsmith' }, 
+            { targetId: 'gear_bench' }, 
+            { targetId: 'explosives_station' }, 
+            { targetId: 'refiner' }, 
+            { targetId: 'medical_lab' }, 
+            { targetId: 'utility_station' } 
+        ], 
+        'MERCANTI': [], 'NEGOZIO': [], 'MISSIONI': [], 'MAPPA': [] 
+    };
+
+    const dom = {
+        grid: document.getElementById('grid-container'),
+        mapContainer: document.getElementById('map-container'),
+        loader: document.getElementById('loader'),
+        loaderText: document.getElementById('loader-text'),
+        search: document.getElementById('searchInput'),
+        searchClear: document.getElementById('searchClear'),
+        tt: document.getElementById('tooltip'),
+        sidebar: document.getElementById('sidebarPanel'),
+        sbTooltip: document.getElementById('sidebar-tooltip'),
+        wlCounter: document.getElementById('wlCounter'),
+        infoModal: document.getElementById('infoModal'),
+        modalBackdrop: document.getElementById('modalBackdrop'),
+        btnWishlistText: document.getElementById('btnWishlistText'),
+        btnWishlist: document.getElementById('btnWishlist'),
+        btnConnectBig: document.getElementById('btnConnectBig'),
+        langSelect: document.getElementById('langSelect')
+    };
+
+    dom.search.addEventListener('input', (e) => { dom.searchClear.style.display = e.target.value ? 'block' : 'none'; render(); });
+    dom.langSelect.addEventListener('change', (e) => { if(e.target.value) loadLanguage(e.target.value); });
+    
+    function updateStaticText() {
+        const ph = getUI('search');
+        dom.search.placeholder = ph;
+        if(dom.btnConnectBig) dom.btnConnectBig.innerText = getUI('connect_btn');
+        if(dom.btnWishlistText && !isWishlistView && currentSection !== 'PROGETTI') dom.btnWishlistText.innerText = getUI('what_i_need');
+        document.querySelectorAll('.nav-item').forEach(el => { const key = el.getAttribute('data-nav'); el.innerText = getNav(key); });
+    }
+
+    // Modal controls
+    window.closeInfoModal = function() { dom.infoModal.style.display = 'none'; dom.modalBackdrop.style.display = 'none'; isModalOpen = false; currentOpenedItem = null; };
+    
+    // --- NAVIGATION LOGIC ---
+    function setSection(sectionName) {
+        currentSection = sectionName;
+        // Use data-section for active class toggle instead of data-nav
+        document.querySelectorAll('.nav-item').forEach(el => el.classList.toggle('active', el.getAttribute('data-section') === sectionName));
+        
+        // Handle Map View
+        if(sectionName === 'MAPPA') {
+            document.body.classList.add('section-map');
+            dom.grid.style.display = 'none';
+            dom.mapContainer.style.display = 'flex'; // Changed to flex for centering
+            renderMap();
+        } else {
+            document.body.classList.remove('section-map');
+            dom.grid.style.display = 'grid';
+            dom.mapContainer.style.display = 'none';
+            stopMapTicker();
+        }
+
+        if(sectionName === 'PROGETTI') {
+            document.body.classList.add('section-progetti');
+            document.body.classList.add('sidebar-empty');
+        } else {
+            document.body.classList.remove('section-progetti');
+            if(SIDEBAR_CONFIG[sectionName] && SIDEBAR_CONFIG[sectionName].length > 0) document.body.classList.remove('sidebar-empty');
+            else document.body.classList.add('sidebar-empty');
+        }
+        
+        renderSidebar();
+        if(document.body.classList.contains('db-loaded') && sectionName !== 'MAPPA') {
+            currentFilter = 'ALL'; viewMode = 'STASH'; isWishlistView = false;
+            dom.btnWishlist.classList.remove('active'); updateUI(); render();
+        }
+    }
+
+    // --- MAP LOGIC (ARC RAIDERS DASHBOARD) ---
+    function renderMap() {
+        dom.mapContainer.innerHTML = '';
+        
+        const dashboard = document.createElement('div');
+        dashboard.className = 'mission-control';
+        dashboard.id = 'missionControl';
+        
+        dom.mapContainer.appendChild(dashboard);
+        startMapTicker();
+    }
+
+    function startMapTicker() {
+        if(mapTicker) clearInterval(mapTicker);
+        updateMapEvents(); 
+        mapTicker = setInterval(updateMapEvents, 1000);
+    }
+
+    function stopMapTicker() {
+        if(mapTicker) clearInterval(mapTicker);
+    }
+
+    function updateMapEvents() {
+        const dashboard = document.getElementById('missionControl');
+        
+        if(!scheduleData) {
+            if(dashboard) dashboard.innerHTML = `<div style="color:#fff; padding:20px; text-align:center;">OFFLINE / NO DATA</div>`;
+            return;
+        }
+
+        const now = new Date();
+        const nowTs = now.getTime();
+        const utcStr = now.toISOString().substring(11, 16);
+        const locStr = now.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+
+        let activeEvents = [];
+        let upcomingEvents = [];
+
+        if(scheduleData.schedule) {
+            const types = scheduleData.eventTypes || {};
+            const schedule = scheduleData.schedule; 
+            
+            Object.keys(schedule).forEach(mapId => {
+                const mapSchedule = schedule[mapId];
+                Object.keys(mapSchedule).forEach(cat => {
+                    // cat is usually "Standard" or something similar. Let's use it for Major detection.
+                    const hoursObj = mapSchedule[cat]; 
+                    Object.entries(hoursObj).forEach(([hourStr, eventTypeId]) => {
+                        const evtDef = types[eventTypeId];
+                        if(!evtDef) return;
+
+                        const durationMin = evtDef.duration || 60; 
+                        const durationMs = durationMin * 60 * 1000;
+                        const targetHour = parseInt(hourStr);
+
+                        const startToday = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), targetHour, 0, 0));
+                        const endToday = new Date(startToday.getTime() + durationMs);
+                        processInstance(startToday, endToday, mapId, eventTypeId, evtDef, cat);
+
+                        const startTom = new Date(startToday.getTime() + 24 * 60 * 60 * 1000);
+                        const endTom = new Date(startTom.getTime() + durationMs);
+                        processInstance(startTom, endTom, mapId, eventTypeId, evtDef, cat);
+                    });
+                });
+            });
+        }
+
+        function processInstance(start, end, mapId, eventTypeId, evtDef, cat) {
+            const startMs = start.getTime();
+            const endMs = end.getTime();
+            
+            // EXTRACT ICON
+            const icon = evtDef.icon || null; 
+
+            if (nowTs >= startMs && nowTs < endMs) {
+                activeEvents.push({ mapId, name: evtDef.name || eventTypeId, cat: cat, timeLeft: Math.floor((endMs - nowTs) / 1000), icon: icon });
+            }
+            else if (nowTs < startMs && (startMs - nowTs) < (4 * 60 * 60 * 1000)) {
+                upcomingEvents.push({ mapId, name: evtDef.name || eventTypeId, cat: cat, timeLeft: Math.floor((startMs - nowTs) / 1000), icon: icon });
+            }
+        }
+
+        upcomingEvents.sort((a,b) => a.timeLeft - b.timeLeft);
+
+        // --- RENDER ---
+        let html = '';
+        
+        // CLOCK PANEL
+        html += `<div class="mc-clock-panel"><span>MISSION TIMER // UTC: <strong>${utcStr}</strong></span><span>LOCAL: <strong>${locStr}</strong></span></div>`;
+
+        // ACTIVE PANEL
+        if(activeEvents.length > 0) {
+            html += `<div class="mc-panel"><div class="mc-header"><span class="mc-header-icon"></span>ACTIVE DEPLOYMENTS<div class="mc-header-sub">LIVE</div></div><div class="mc-scroll-area">`;
+            activeEvents.forEach(e => {
+                let m = Math.floor(e.timeLeft / 60);
+                let s = Math.floor(e.timeLeft % 60);
+                let timer = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+                
+                // Determine Major/Standard
+                const isMajor = e.cat.toLowerCase().includes('major') || e.cat.toLowerCase().includes('high') || e.cat.toLowerCase().includes('pro');
+                const cardClass = isMajor ? 'ev-card active major' : 'ev-card active';
+                const tagText = isMajor ? 'HIGH VALUE' : 'LIVE';
+                const iconHtml = isMajor ? `<svg class="ev-icon-danger"><use href="#icon-danger"></use></svg>` : '';
+                
+                let eventIconImg = '';
+                if(e.icon) {
+                    const src = e.icon.startsWith('http') ? e.icon : (e.icon.includes('/') ? GITHUB_RAW_BASE_URL + e.icon : GITHUB_RAW_BASE_URL + 'images/menu/' + e.icon);
+                    eventIconImg = `<img src="${src}" style="height:28px; width:auto; margin-right:8px; vertical-align:middle; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));">`;
+                }
+
+                // FIX: Status Line BELOW title to prevent overlapping tag
+                html += `
+                <div class="${cardClass}">
+                    <div class="ev-tag">${tagText}</div>
+                    <div class="ev-title">${iconHtml}${eventIconImg}${getLocLocation(e.name)}</div>
+                    <div class="ev-status-line"></div>
+                    <div class="ev-loc"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> ${getLocLocation(e.mapId)}</div>
+                    <div class="ev-timer-box">
+                         <span class="ev-label">CLOSING IN</span>
+                         <span class="ev-timer">${timer}</span>
+                    </div>
+                </div>`;
+            });
+            html += `</div></div>`;
+        }
+
+        // UPCOMING PANEL
+        if(upcomingEvents.length > 0) {
+            html += `<div class="mc-panel"><div class="mc-header"><span class="mc-header-icon" style="background:var(--arc-teal)"></span>UPCOMING WINDOWS<div class="mc-header-sub">T-MINUS 4H</div></div><div class="mc-scroll-area">`;
+            upcomingEvents.forEach(e => {
+                let h = Math.floor(e.timeLeft / 3600);
+                let m = Math.floor((e.timeLeft % 3600) / 60);
+                let s = Math.floor(e.timeLeft % 60);
+                let timer = `${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+
+                const isMajor = e.cat.toLowerCase().includes('major') || e.cat.toLowerCase().includes('high') || e.cat.toLowerCase().includes('pro');
+                const cardClass = isMajor ? 'ev-card upcoming major' : 'ev-card upcoming';
+                const tagText = isMajor ? 'HIGH VALUE' : 'SOON';
+                const iconHtml = isMajor ? `<svg class="ev-icon-danger"><use href="#icon-danger"></use></svg>` : '';
+                
+                let eventIconImg = '';
+                if(e.icon) {
+                    const src = e.icon.startsWith('http') ? e.icon : (e.icon.includes('/') ? GITHUB_RAW_BASE_URL + e.icon : GITHUB_RAW_BASE_URL + 'images/menu/' + e.icon);
+                    eventIconImg = `<img src="${src}" style="height:28px; width:auto; margin-right:8px; vertical-align:middle; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));">`;
+                }
+
+                // FIX: Status Line BELOW title
+                html += `
+                <div class="${cardClass}">
+                    <div class="ev-tag">${tagText}</div>
+                    <div class="ev-title">${iconHtml}${eventIconImg}${getLocLocation(e.name)}</div>
+                    <div class="ev-status-line"></div>
+                    <div class="ev-loc"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> ${getLocLocation(e.mapId)}</div>
+                    <div class="ev-timer-box">
+                         <span class="ev-label">OPENS IN</span>
+                         <span class="ev-timer">${timer}</span>
+                    </div>
+                </div>`;
+            });
+            html += `</div></div>`;
+        } else if (activeEvents.length === 0) {
+             html += `<div class="mc-panel" style="padding:40px; text-align:center; color:#555;">NO SIGNAL DETECTED</div>`;
+        }
+
+        dashboard.innerHTML = html;
+    }
+
+    // --- OTHER CORE FUNCTIONS ---
+    function renderSidebar() {
+        const config = SIDEBAR_CONFIG[currentSection] || [];
+        dom.sidebar.innerHTML = "";
+        config.forEach(item => {
+            if(item.sep) { dom.sidebar.appendChild(Object.assign(document.createElement('div'), {className:'sidebar-sep'})); return; }
+            let displayTitle = "";
+            if (currentSection === 'OFFICINA' && item.targetId) {
+                const realItem = hideoutDB.find(x => x.id === item.targetId);
+                displayTitle = realItem ? getLoc(realItem.name) : item.targetId;
+            } else { displayTitle = getFilter(item.labelKey); }
+
+            const div = document.createElement('div');
+            div.className = 'filter-circle';
+            div.onmouseenter = (e) => showSidebarTooltip(e, displayTitle);
+            div.onmouseleave = hideSidebarTooltip;
+
+            let isActive = false;
+            if (currentSection === 'OFFICINA') { if ((item.id === 'ALL' && currentFilter === 'ALL') || (item.targetId && currentFilter === item.targetId)) isActive = true; }
+            else { if (item.id === currentFilter) isActive = true; }
+            if(isActive) div.classList.add('active');
+
+            div.onclick = () => setFilter(item.targetId || item.id);
+            if(item.type === 'svg') div.innerHTML = `<svg><use href="#${item.icon}"></use></svg>`;
+            else {
+                div.classList.add('has-image');
+                let imgName = (currentSection === 'OFFICINA' && item.targetId) ? item.targetId : item.img;
+                div.innerHTML = `<img class="icon-inactive" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_inactive.png" onerror="this.style.display='none'"><img class="icon-active" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_active.png" onerror="this.style.display='none'">`;
+            }
+            dom.sidebar.appendChild(div);
+        });
+    }
+
+    function showSidebarTooltip(e, text) {
+        if(!text) return;
+        const rect = e.currentTarget.getBoundingClientRect();
+        dom.sbTooltip.innerText = text;
+        dom.sbTooltip.style.display = 'block';
+        dom.sbTooltip.style.left = (rect.right + 10) + 'px';
+        dom.sbTooltip.style.top = (rect.top + (rect.height / 2) - (dom.sbTooltip.offsetHeight / 2)) + 'px';
+    }
+    function hideSidebarTooltip() { dom.sbTooltip.style.display = 'none'; }
+
+    function setFilter(f) { currentFilter = f; viewMode = (f === 'HIDEOUT') ? 'HIDEOUT' : 'STASH'; if(currentSection !== 'PROGETTI') { isWishlistView = false; dom.btnWishlist.classList.remove('active'); } renderSidebar(); render(); }
+    function handleTopRightButton() { if(currentSection === 'PROGETTI') { bpViewMode = (bpViewMode + 1) % 3; updateUI(); render(); } else { toggleWishlistView(); } }
+    function toggleWishlistView() { isWishlistView = !isWishlistView; if(isWishlistView) { dom.btnWishlist.classList.add('active'); viewMode = 'WISHLIST'; } else { dom.btnWishlist.classList.remove('active'); setFilter('ALL'); } render(); }
+
+    function updateUI() {
+        if (currentSection === 'PROGETTI') {
+             dom.btnWishlist.classList.remove('active', 'bp-filter-owned', 'bp-filter-missing');
+             document.getElementById('iconWishlist').style.display = 'none'; dom.wlCounter.style.display = 'none';
+             if(bpViewMode === 0) dom.btnWishlistText.innerText = getUI('all');
+             else if(bpViewMode === 1) { dom.btnWishlistText.innerText = getUI('have'); dom.btnWishlist.classList.add('bp-filter-owned'); }
+             else if(bpViewMode === 2) { dom.btnWishlistText.innerText = getUI('missing'); dom.btnWishlist.classList.add('bp-filter-missing'); }
+        } else {
+             document.getElementById('iconWishlist').style.display = 'block'; dom.btnWishlistText.innerText = getUI('what_i_need'); dom.btnWishlist.classList.remove('bp-filter-owned', 'bp-filter-missing'); updateWishlistCounter();
+        }
+    }
+
+    function normalizeHideoutData(sourceData, sourceRepo) {
+        let normalized = [];
+        if (sourceRepo === 'RaidTheory' && Array.isArray(sourceData)) { 
+             sourceData.forEach(d => { 
+                 if (d && d.id) {
+                     let levels = d.levels || [];
+                     normalized.push({ 
+                         id: d.id, 
+                         name: d.name, 
+                         levels: levels.map(l => ({ 
+                             level: l.level, 
+                             requirements: (l.requirementItemIds || l.requirements || []).map(req => ({ item: req.itemId || req.item, count: req.quantity || req.count })) 
+                         })) 
+                     });
+                 }
+             });
+        }
+        return normalized;
+    }
+
+    function analyzeTypes() { const typeCounts = {}; itemsDB.forEach(i => { const t = i.type || "UNDEFINED"; typeCounts[t] = (typeCounts[t] || 0) + 1; }); console.group("ANALISI DATI"); console.log(`TOTALE: ${itemsDB.length}`); console.table(typeCounts); console.groupEnd(); }
+    function getImg(data) { if(!data?.imageFilename) return null; if (data.imageFilename.startsWith('http')) return data.imageFilename; return GITHUB_RAW_BASE_URL + data.imageFilename.replace(/^[\/|\\]/, ''); }
+    function getItem(id) { let base = itemsDB.find(x => x.id === id) || hideoutDB.find(x => x.id === id); return base || null; }
+    function isBlueprint(item) { const t = (item.type || "").toLowerCase(); const name = item.name ? JSON.stringify(item.name).toLowerCase() : ""; return t.includes('blueprint') || t.includes('schematic') || name.includes('blueprint') || name.includes('recipe'); }
+    function isCosmetic(item) { const t = (item.type || "").toLowerCase(); return t.includes('cosmetic') || t.includes('outfit') || t.includes('backpack') || t.includes('customization'); }
+    function normalizeReqs(reqsObj) { if (!reqsObj) return []; if (Array.isArray(reqsObj)) return reqsObj.map(r => (r.itemId && r.quantity !== undefined) ? { item: r.itemId, count: r.quantity } : r); return Object.entries(reqsObj).map(([key, val]) => ({ item: key, count: val })); }
+    function clearSearch() { dom.search.value = ""; dom.searchClear.style.display = 'none'; render(); }
+    
+    function updateWishlistCounter() { let count = 0; wishlist.forEach(v => count += parseInt(v) || 0); dom.wlCounter.innerText = count; dom.wlCounter.style.display = count > 0 ? 'inline-block' : 'none'; }
+    function saveUserData() { localStorage.setItem('arc_wishlist', JSON.stringify(Array.from(wishlist.entries()))); localStorage.setItem('arc_blueprints', JSON.stringify(Array.from(ownedBlueprints))); updateWishlistCounter(); }
+    window.addReqsToWishlist = function(reqsJson, btn) { if(!reqsJson) return; try { const reqs = JSON.parse(decodeURIComponent(reqsJson)); reqs.forEach(r => { const current = wishlist.get(r.item) || 0; wishlist.set(r.item, current + r.count); }); saveUserData(); btn.classList.add('added'); btn.innerText = getUI('added'); } catch(e) { console.error(e); } };
+    
+    // RESTORED EXPORT/IMPORT
+    function exportUserData() { const data = { wishlist: Array.from(wishlist.entries()), blueprints: Array.from(ownedBlueprints) }; const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data)); const anchor = document.createElement('a'); anchor.setAttribute("href", dataStr); anchor.setAttribute("download", "arc_user_data.json"); document.body.appendChild(anchor); anchor.click(); anchor.remove(); }
+    function importUserData(e) { const file = e.target.files[0]; if(!file) return; const r = new FileReader(); r.onload = (ev) => { try { const data = JSON.parse(ev.target.result); if(data.wishlist) wishlist = new Map(data.wishlist); if(data.blueprints) ownedBlueprints = new Set(data.blueprints); saveUserData(); updateWishlistCounter(); render(); alert("DATA RESTORED SUCCESS"); } catch(ex) { alert("FILE ERROR"); } }; r.readAsText(file); }
+
+    function render() {
+        const grid = dom.grid; grid.innerHTML = "";
+        const search = dom.search.value.toLowerCase();
+        let source = [];
+
+        if (itemsDB.length === 0 && hideoutDB.length === 0 && !isWishlistView && wishlist.size === 0) {
+             return;
+        }
+        
+        if(currentSection !== 'INVENTARIO' && currentSection !== 'PROGETTI' && currentSection !== 'OFFICINA' && !isWishlistView) {
+             grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; margin-top: 100px; color: #666;"><h3 style="font-family: var(--font-head); font-size: 3rem; color: #aaa;">SEZIONE ${currentSection}</h3><p style="color:var(--arc-yellow)">WORK IN PROGRESS</p></div>`;
+            return;
+        }
+
+        if(isWishlistView) {
+             wishlist.forEach((qty, id) => { 
+                const item = getItem(id); 
+                if(item) source.push({...item, _wishQty: qty}); 
+            });
+            if (source.length === 0) {
+                 grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; margin-top: 100px; color: #444;"><h3 style="font-family: var(--font-head); font-size: 2rem; color: #aaa;">WISHLIST VUOTA</h3></div>`;
+                return;
+            }
+            let totalW = 0, totalV = 0;
+            source.forEach(i => { totalW += (i.weightKg||0)*i._wishQty; totalV += (i.value||0)*i._wishQty; });
+            const head = document.createElement('div'); head.style.gridColumn='1/-1'; head.style.color='#aaa'; head.style.fontFamily='var(--font-head)'; head.style.fontSize='1.5rem';
+            head.innerHTML = `WISHLIST: <span style="color:#fff">${source.length}</span> ITEMS | WEIGHT: <span style="color:#fff">${totalW.toFixed(1)}</span>KG | VALUE: <span style="color:var(--arc-yellow)">${totalV}</span>`;
+            grid.appendChild(head);
+        
+        } else if (currentSection === 'OFFICINA') {
+            source = hideoutDB.filter(x => {
+                if(search && !(getLoc(x.name)||x.id).toLowerCase().includes(search)) return false;
+                const id = x.id.toUpperCase();
+                if (x.id === 'stash') return false;
+                if(currentFilter === 'ALL') return true;
+                if(currentFilter === x.id) return true;
+                return false;
+            });
+        } else {
+            source = itemsDB.map(x => getItem(x.id)).filter(item => {
+                if(!item) return false;
+                if(search && !(getLoc(item.name)||item.id).toLowerCase().includes(search)) return false;
+                const t = (item.type || "").toLowerCase();
+                const isBP = isBlueprint(item);
+                const isCosm = isCosmetic(item);
+
+                if(currentSection === 'PROGETTI') {
+                    if(!isBP) return false;
+                    if(bpViewMode === 1 && !ownedBlueprints.has(item.id)) return false; 
+                    if(bpViewMode === 2 && ownedBlueprints.has(item.id)) return false;  
+                    if (currentFilter === 'ALL') return true;
+                    // UPDATED FILTER LOGIC TO MATCH NEW IDs
+                    if (currentFilter === 'WEAPONS') return t.includes('hand cannon') || t.includes('assault rifle') || t.includes('smg') || t.includes('pistol') || t.includes('lmg') || t.includes('battle rifle') || t.includes('shotgun') || t.includes('sniper rifle') || t.includes('special');
+                    if (currentFilter === 'MODS') return t.includes('modification') || t.includes('gadget');
+                    if (currentFilter === 'QUICK_USE') return t.includes('quick use');
+                    if (currentFilter === 'MATERIALS') return t.includes('material');
+                    return false;
+                }
+
+                if (currentFilter === 'ALL') {
+                    if (isBP) return false;
+                    if (isCosm) return false;
+                    return true;
+                }
+                
+                if (currentFilter === 'COSMETICS') return isCosm;
+                // UPDATED FILTER LOGIC TO MATCH NEW IDs
+                if (currentFilter === 'AUGMENTS') return t.includes('augment');
+                if (currentFilter === 'SHIELDS') return t.includes('shield');
+                if (currentFilter === 'WEAPONS') return t.includes('hand cannon') || t.includes('assault rifle') || t.includes('smg') || t.includes('pistol') || t.includes('lmg') || t.includes('battle rifle') || t.includes('shotgun') || t.includes('sniper rifle') || t.includes('special');
+                if (currentFilter === 'AMMO') return t.includes('ammunition');
+                if (currentFilter === 'MODS') return t.includes('modification') || t.includes('gadget');
+                if (currentFilter === 'QUICK_USE') return t.includes('quick use');
+                if (currentFilter === 'KEYS') return t.includes('key');
+                if (currentFilter === 'MATERIALS') return t.includes('refined material') || t.includes('topside material') || t.includes('basic material') || t.includes('material') || t.includes('nature') || t.includes('recyclable');
+                if (currentFilter === 'MISC') return t.includes('trinket') || t.includes('misc') || t.includes('junk') || t.includes('valuable');
+                return false;
+            });
+        }
+
+        if(currentSection === 'PROGETTI') {
+            const visibleCount = source.length; 
+            const ownedCount = source.filter(i => ownedBlueprints.has(i.id)).length;
+            const header = document.createElement('div');
+            header.className = 'section-header-bp';
+            header.style.gridColumn = '1/-1';
+            header.innerHTML = `<div class="sh-title">PROGETTI</div><div class="sh-subtitle">TROVATO: <span style="color:var(--arc-white)">${ownedCount}</span> / <span style="color:#666">${visibleCount}</span></div>`;
+            grid.appendChild(header);
+        }
+
+        source.forEach(data => {
+            const isItem = !isBlueprint(data) && (currentSection !== 'OFFICINA' || isWishlistView);
+            const rarity = (data.rarity||'common').toLowerCase();
+            let imgUrl = getImg(data);
+            if (currentSection === 'OFFICINA' && !isWishlistView) imgUrl = `${GITHUB_RAW_BASE_URL}images/menu/${data.id.toLowerCase()}.png`; 
+
+            const slot = document.createElement('div');
+            slot.className = `slot ${rarity}`;
+            
+            if (currentSection === 'PROGETTI') {
+                if (ownedBlueprints.has(data.id)) {
+                    slot.classList.add('owned');
+                    slot.innerHTML += `<div class="bp-badge bp-owned">V</div>`;
+                } else {
+                    slot.classList.add('is-missing');
+                }
+            }
+
+            let inner = "";
+            if(imgUrl) {
+                inner = `<img src="${imgUrl}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                         <div class="slot-fallback-container" style="display:none; flex-direction:column; align-items:center; text-align:center; width:100%; height:100%; justify-content:center;">
+                            <svg class="slot-fallback" viewBox="0 0 24 24"><path d="M12 2l-10 6 10 6 10-6-10-6zm0 14l-10-6v8l10 6 10-6v-8l-10 6z"/></svg>
+                            <div class="fallback-text">${getLoc(data.name).substr(0,10)}</div>
+                         </div>`;
+            } else {
+                inner = `<div class="slot-fallback-container" style="display:flex; flex-direction:column; align-items:center; text-align:center; width:100%; height:100%; justify-content:center;">
+                            <svg class="slot-fallback" viewBox="0 0 24 24"><path d="M12 2l-10 6 10 6 10-6-10-6zm0 14l-10-6v8l10 6 10-6v-8l-10 6z"/></svg>
+                            <div class="fallback-text">${getLoc(data.name).substr(0,10)}</div>
+                         </div>`;
+            }
+            slot.innerHTML += inner;
+
+            if(isItem) {
+                if (currentSection !== 'PROGETTI') {
+                    let controlsHtml = `
+                    <div class="slot-controls">
+                        <button class="wl-btn plus" onclick="modWishlist('${data.id}', 1, event)">+</button>
+                        <button class="wl-btn minus" onclick="modWishlist('${data.id}', -1, event)">-</button>
+                    </div>`;
+                    slot.innerHTML += controlsHtml;
+                    
+                    if(wishlist.has(data.id) && !isWishlistView) slot.innerHTML += `<div class="wishlist-badge">${wishlist.get(data.id)}</div>`;
+                    if(isWishlistView) slot.innerHTML += `<div style="position:absolute; top:2px; right:2px; color:var(--arc-yellow); font-weight:bold; font-size:0.8rem">x${data._wishQty}</div>`;
+                }
+            }
+
+            slot.onmouseenter = (e) => { if(!isModalOpen) showTooltip(data, isItem, e); };
+            slot.onmouseleave = () => { hideTooltip(); };
+            slot.onmousemove = (e) => { moveTooltip(e); };
+            
+            slot.onclick = (e) => { 
+                if (currentSection === 'PROGETTI' || isBlueprint(data)) toggleBlueprint(data.id, e); 
+                else openInfoModal(data); 
+            };
+            
+            grid.appendChild(slot);
+        });
+    }
+
+    function toggleBlueprint(id, e) { if(e) e.stopPropagation(); if (ownedBlueprints.has(id)) ownedBlueprints.delete(id); else ownedBlueprints.add(id); saveUserData(); updateUI(); render(); }
+    function modWishlist(id, delta, e) { e.stopPropagation(); let currentVal = parseInt(wishlist.get(id) || 0); let newVal = currentVal + delta; if (newVal <= 0) wishlist.delete(id); else wishlist.set(id, newVal); saveUserData(); if (isWishlistView) render(); else { const slot = e.target.closest('.slot'); let badge = slot.querySelector('.wishlist-badge'); if (newVal > 0) { if (!badge) { badge = document.createElement('div'); badge.className = 'wishlist-badge'; slot.appendChild(badge); } badge.innerText = newVal; } else if (badge) { badge.remove(); } } }
+    
+    function generateCardHTML(data) {
+        const name = getLoc(data.name) || data.id;
+        const desc = getLoc(data.description);
+        const rarity = (data.rarity || 'common').toUpperCase();
+        const weight = (data.weightKg || 0).toString().replace('.', ',');
+        const val = (data.value || 0).toLocaleString(currentLang);
+        const stack = `${data.stackSize || 1}/${data.stackSize || 1}`;
+        let ecoHtml = "";
+        
+        if(data.foundIn) {
+            const labelClean = getUI('obtained_recycling') !== 'UI_OBTAINED_RECYCLING' ? getUI('obtained_recycling').replace('RICICLANDO', '') : "SOURCE";
+            ecoHtml += `<div class="tt-found"><div class="tt-found-label">${labelClean} :</div><div class="tt-found-val"><svg><use href="#icon-arc"></use></svg> ${getLoc(data.foundIn)}</div></div>`;
+        }
+        
+        // RECYCLING YIELD IN TOOLTIP
+        let recYield = normalizeReqs(data.recyclingYield);
+        if (recYield && recYield.length > 0) {
+            let recHtml = recYield.map(r => {
+                const ing = getItem(r.item);
+                const ingName = ing ? getLoc(ing.name) : r.item;
+                return `<span style="color:var(--col-recycle); font-weight:700;">x${r.count}</span> ${ingName}`;
+            }).join(', ');
+            
+            let recLabel = getUI('recycles_into');
+            
+            ecoHtml += `<div class="tt-found" style="border-top:1px solid #c0b49b; margin-top:5px; padding-top:5px;"><div class="tt-found-label">${recLabel} :</div><div class="tt-found-val" style="font-size:0.85rem; line-height:1.2;">${recHtml}</div></div>`;
+        }
+
+        return `<div style="background:var(--card-bg); color:var(--card-text);"><div class="tt-header"><div class="tt-tag" style="background:var(--col-${rarity.toLowerCase()})">${rarity}</div></div><div class="tt-body"><div class="tt-title">${name}</div><div class="tt-desc">${desc}</div>${ecoHtml}</div><div class="tt-footer"><div class="tt-foot-item"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" fill="#1a1a1a"></path></svg> ${stack}</div><div class="tt-foot-item"><img src="${GITHUB_RAW_BASE_URL}images/menu/weight.png" style="height:22px;"> ${weight}</div><div class="tt-foot-item"><img src="${GITHUB_RAW_BASE_URL}images/menu/coins.png" style="height:22px;"> ${val}</div></div></div>`;
+    }
+    function showTooltip(data, isItem, e) { if(isModalOpen) return; dom.tt.innerHTML = generateCardHTML(data); dom.tt.style.display = 'block'; moveTooltip(e); }
+    function hideTooltip() { dom.tt.style.display = 'none'; }
+    function moveTooltip(e) { if(isModalOpen) return; const t = dom.tt; let l = e.clientX + 20, tp = e.clientY + 20; if(l + 370 > window.innerWidth) l = e.clientX - 380; if(tp + t.offsetHeight > window.innerHeight) tp = e.clientY - t.offsetHeight; t.style.left = l + 'px'; t.style.top = tp + 'px'; }
+    
+    // --- RESTORED OPEN INFO MODAL ---
+    function openInfoModal(data) {
+        if(!data) return;
+        hideTooltip();
+        isModalOpen = true;
+        currentOpenedItem = data; // Set tracked item
+        const modal = dom.infoModal;
+        
+        let contentHtml = '';
+        
+        // IS HIDEOUT MODULE?
+        if (data.levels && Array.isArray(data.levels)) {
+            contentHtml += `<div class="info-section"><div class="info-title">${getUI('upgrades')}</div>`;
+            data.levels.sort((a,b) => a.level - b.level).forEach(lvl => {
+                const reqs = normalizeReqs(lvl.requirements);
+                let rows = reqs.map(r => {
+                    const ing = getItem(r.item);
+                    const name = ing ? getLoc(ing.name) : r.item;
+                    let imgHtml = ing ? `<img src="${getImg(ing)}" class="mini-icon" onerror="this.style.display='none'">` : '';
+                    let clickAttr = ing ? `onclick="openInfoModal(getItem('${r.item}'))"` : '';
+                    let rowClass = ing ? 'clickable-row' : '';
+                    
+                    return `<div class="${rowClass}" ${clickAttr} style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222; padding:4px 0;"><div style="display:flex; align-items:center; font-size:0.9rem; color:#ccc;">${imgHtml}${name}</div><div style="color:var(--arc-yellow); font-weight:700;">x${r.count}</div></div>`;
+                }).join('');
+                const reqsString = encodeURIComponent(JSON.stringify(reqs));
+                contentHtml += `<details class="upgrade-level"><summary><span>${getUI('level')} ${lvl.level}</span><button class="btn-track" onclick="event.preventDefault(); event.stopPropagation(); addReqsToWishlist('${reqsString}', this)"><svg style="width:14px;height:14px;fill:currentColor; margin-right:5px;"><use href="#icon-plus"></use></svg> ${getUI('track')}</button></summary><div style="padding:10px;">${rows || '<div style="color:#666">No data</div>'}</div></details>`;
+            });
+            contentHtml += `</div>`;
+        } else {
+            // IS ITEM
+            
+            // 1. CRAFTING
+            let craftList = normalizeReqs(data.recipe);
+            if (craftList.length > 0 || data.craftBench) {
+                contentHtml += `<div class="info-section"><div class="info-title">${getUI('crafting')}</div>`;
+                if (data.craftBench) contentHtml += `<div style="margin-bottom:10px; color:#aaa; font-size:0.9rem;"><span style="color:#fff; font-weight:700;">${getUI('bench')}:</span> ${String(data.craftBench).toUpperCase().replace(/_/g, ' ')}</div>`;
+                if (craftList.length > 0) {
+                    let rows = craftList.map(r => {
+                        const ing = getItem(r.item);
+                        const name = ing ? getLoc(ing.name) : r.item;
+                        let imgHtml = ing ? `<img src="${getImg(ing)}" class="mini-icon" onerror="this.style.display='none'">` : '';
+                        let clickAttr = ing ? `onclick="openInfoModal(getItem('${r.item}'))"` : '';
+                        let rowClass = ing ? 'clickable-row' : '';
+                        return `<div class="${rowClass}" ${clickAttr} style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222; padding:4px 0;"><div style="display:flex; align-items:center; font-size:0.9rem; color:#ccc;">${imgHtml}${name}</div><div style="color:var(--arc-yellow); font-weight:700;">x${r.count}</div></div>`;
+                    }).join('');
+                    contentHtml += `<div style="padding:5px;">${rows}</div>`;
+                }
+                contentHtml += `</div>`;
+            }
+
+            // 2. RECYCLES INTO (REMOVED - NOW IN TOOLTIP)
+            /*
+            let recYield = normalizeReqs(data.recyclingYield);
+            contentHtml += `<div class="info-section"><div class="info-title">${getUI('recycles_into')}</div>`;
+            if (recYield.length > 0) {
+                 let rows = recYield.map(r => {
+                    const ing = getItem(r.item);
+                    const name = ing ? getLoc(ing.name) : r.item;
+                    let imgHtml = ing ? `<img src="${getImg(ing)}" class="mini-icon" onerror="this.style.display='none'">` : '';
+                    let clickAttr = ing ? `onclick="openInfoModal(getItem('${r.item}'))"` : '';
+                    let rowClass = ing ? 'clickable-row' : '';
+                    return `<div class="${rowClass}" ${clickAttr} style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222; padding:4px 0;"><div style="display:flex; align-items:center; font-size:0.9rem; color:#ccc;">${imgHtml}${name}</div><div style="color:var(--arc-green); font-weight:700;">x${r.count}</div></div>`;
+                 }).join('');
+                 contentHtml += `<div style="padding:5px;">${rows}</div>`;
+            } else {
+                 contentHtml += `<div style="padding:10px; color:#666; font-style:italic;">${getUI('no_data')}</div>`;
+            }
+            contentHtml += `</div>`;
+            */
+
+            // 3. USED FOR
+            let usages = [];
+            itemsDB.forEach(i => { if(i.recipe) { let recipe = normalizeReqs(i.recipe); if(recipe.find(req => req.item === data.id)) usages.push({ parent: i, type: 'CRAFT' }); } });
+            hideoutDB.forEach(h => { if (h.levels) { h.levels.forEach(lvl => { if(normalizeReqs(lvl.requirements).find(req => req.item === data.id)) usages.push({ parent: h, type: `HIDEOUT LVL ${lvl.level}` }); }); } });
+            
+            contentHtml += `<div class="info-section"><div class="info-title">${getUI('used_for')}</div>`;
+            if (usages.length > 0) {
+                let uniqueUsages = [...new Map(usages.map(item => [item.parent.id, item])).values()];
+                let rows = uniqueUsages.map(u => {
+                    const pImg = getImg(u.parent) || (currentSection==='OFFICINA' ? `${GITHUB_RAW_BASE_URL}images/menu/${u.parent.id.toLowerCase()}.png` : '');
+                    let imgHtml = pImg ? `<img src="${pImg}" class="mini-icon" onerror="this.style.display='none'">` : '';
+                    // Clickable parent
+                    return `<div class="clickable-row" style="padding:5px 0; border-bottom:1px solid #222; display:flex; align-items:center;" onclick="closeInfoModal(); setTimeout(()=>openInfoModal(getItem('${u.parent.id}')), 50)">${imgHtml} ${getLoc(u.parent.name)} <span style="font-size:0.7rem; color:#666; margin-left:10px;">${u.type}</span></div>`;
+                }).join('');
+                contentHtml += `<div style="padding:5px;">${rows}</div>`;
+            } else {
+                contentHtml += `<div style="padding:10px; color:#666; font-style:italic;">${getUI('no_usage_found')}</div>`;
+            }
+            contentHtml += `</div>`;
+        }
+
+        modal.innerHTML = `<div class="overlay-header"><div class="overlay-title">${getLoc(data.name)}</div><button class="overlay-close" onclick="closeInfoModal()">×</button></div><div class="overlay-scrollable-content">${contentHtml}</div>`;
+        dom.modalBackdrop.style.display = 'block';
+        modal.style.display = 'flex';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => { initApp(); });
+    (function(){ function resetDatabase(){ try{ itemsDB=[]; hideoutDB=[]; wishlist.clear(); ownedBlueprints.clear(); localStorage.removeItem('arc_wishlist'); localStorage.removeItem('arc_blueprints'); document.body.classList.remove('db-loaded'); dom.search.disabled=true; }catch(_){} currentSection='INVENTARIO'; setFilter('ALL'); render(); document.body.classList.remove('db-loaded'); } try{ var logo=document.querySelector('.app-logo'); if(logo){ logo.style.cursor='pointer'; logo.addEventListener('click', resetDatabase); } }catch(_){ } })();
+</script>
+</body>
+</html>
+<!-- VERSION v1.17.17 -->

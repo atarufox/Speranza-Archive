@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARC RAIDERS // MAP EVENT PREVIEW v2.0.2</title>
+    <style>
+        /* FONTS & VARS */
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Rajdhani:wght@500;700&family=Teko:wght@400;600&display=swap');
+
+        :root {
+            --bg-body: #050505;
+            --arc-yellow: #ffc400;
+            --arc-white: #e6e6e6;
+            --arc-teal: #00e5ff;   
+            --arc-red: #ff2a2a;
+            --border-tech: rgba(255, 255, 255, 0.15);
+            --font-head: 'Teko', sans-serif;
+            --font-ui: 'Rajdhani', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--arc-white);
+            font-family: var(--font-ui);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* HEADER */
+        header {
+            height: 70px;
+            background: rgba(10, 10, 12, 0.95);
+            border-bottom: 1px solid var(--border-tech);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 30px; z-index: 100;
+        }
+        .logo { font-family: var(--font-head); font-size: 1.8rem; letter-spacing: 2px; color: #fff; }
+        .clock { font-family: var(--font-ui); font-weight: 700; color: var(--arc-yellow); border: 1px solid var(--arc-yellow); padding: 2px 10px; border-radius: 4px; }
+
+        /* --- MAPPA CONTAINER --- */
+        .content-area {
+            flex: 1;
+            position: relative;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .map-bg {
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i0.wp.com/intoindiegames.com/wp-content/uploads/All-maps-available-in-Arc-Raiders-scaled.jpg?fit=2560%2C1280&ssl=1');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8; 
+        }
+
+        .map-overlay {
+            position: absolute; inset: 0; pointer-events: none;
+            background: radial-gradient(circle, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%);
+            box-shadow: inset 0 0 50px rgba(0,0,0,1);
+        }
+        .map-scanlines {
+            position: absolute; inset: 0; pointer-events: none;
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2));
+            background-size: 100% 4px; opacity: 0.4;
+        }
+
+        /* --- MARKERS --- */
+        .map-marker {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            display: flex; flex-direction: column; align-items: center;
+            z-index: 10;
+            transition: z-index 0.2s; /* Rimosso transition top/left per evitare scatti */
+        }
+        .map-marker:hover { z-index: 100; }
+
+        /* DOT */
+        .marker-dot {
+            width: 16px; height: 16px;
+            background: #fff;
+            border: 2px solid #000;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            margin-bottom: 6px;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+        
+        .map-marker.active-major .marker-dot { background: var(--arc-red); box-shadow: 0 0 20px var(--arc-red); border-color: #fff; animation: pulseRed 2s infinite; }
+        .map-marker.active-minor .marker-dot { background: var(--arc-yellow); box-shadow: 0 0 20px var(--arc-yellow); border-color: #fff; }
+
+        /* LABEL */
+        .marker-label {
+            background: rgba(0, 0, 0, 0.85);
+            color: #ccc;
+            padding: 3px 8px;
+            border-radius: 2px;
+            font-family: var(--font-head);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,255,0.15);
+            white-space: nowrap;
+            text-shadow: 0 2px 4px #000;
+            transition: color 0.3s, border-color 0.3s;
+        }
+        .map-marker.active-major .marker-label { color: #fff; border-color: var(--arc-red); }
+        .map-marker.active-minor .marker-label { color: #fff; border-color: var(--arc-yellow); }
+
+        /* INFO BOX */
+        .marker-info {
+            margin-top: 6px;
+            background: rgba(15, 15, 18, 0.95);
+            border-left: 3px solid #666;
+            padding: 8px 12px;
+            display: flex; flex-direction: column; align-items: flex-start;
+            min-width: 190px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            pointer-events: none;
+            transition: border-color 0.3s;
+            /* L'animazione slideUp ora avviene solo alla creazione */
+            animation: slideUp 0.5s cubic-bezier(0.19, 1, 0.22, 1) backwards;
+        }
+
+        .map-marker.active-major .marker-info { border-left-color: var(--arc-red); }
+        .map-marker.active-minor .marker-info { border-left-color: var(--arc-yellow); }
+
+        /* Active Event Row */
+        .ev-active-row { display: flex; align-items: center; gap: 10px; width: 100%; }
+        .ev-icon { width: 32px; height: 32px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); display: block; }
+        .ev-details { display: flex; flex-direction: column; }
+        .ev-label-tiny { font-size: 0.6rem; color: #888; font-weight: 700; text-transform: uppercase; line-height: 1; margin-bottom: 2px;}
+        .ev-title { font-family: var(--font-head); font-size: 1.5rem; line-height: 0.9; text-transform: uppercase; color: #fff; white-space: nowrap; }
+        .ev-timer { font-family: var(--font-ui); font-weight: 700; font-size: 1rem; color: var(--arc-white); margin-top: 2px; }
+        
+        .map-marker.active-major .ev-timer { color: var(--arc-red); }
+        .map-marker.active-minor .ev-timer { color: var(--arc-yellow); }
+
+        /* Divider */
+        .ev-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.1); margin: 6px 0; }
+
+        /* Next Event Row */
+        .ev-next-row { display: flex; flex-direction: column; width: 100%; opacity: 0.8; }
+        .ev-next-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;}
+        .ev-next-label { font-size: 0.7rem; color: #666; font-weight: 700; text-transform: uppercase; }
+        .ev-next-time { font-family: var(--font-ui); font-size: 0.85rem; color: var(--arc-teal); font-weight: 700; }
+        .ev-next-title { font-family: var(--font-head); font-size: 1.1rem; color: #ccc; text-transform: uppercase; line-height: 1; }
+
+        /* Helpers per mostrare/nascondere sezioni */
+        .hidden { display: none !important; }
+
+        @keyframes pulseRed { 0% { box-shadow: 0 0 0 0 rgba(255, 42, 42, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(255, 42, 42, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 42, 42, 0); } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">ARC RAIDERS // MISSION CONTROL</div>
+    <div id="utcClock" class="clock">UTC 00:00:00</div>
+</header>
+
+<div class="content-area">
+    <div class="map-bg"></div>
+    <div class="map-overlay"></div>
+    <div class="map-scanlines"></div>
+    
+    <!-- Container dove il JS inietterà i marker -->
+    <div id="mapMarkersContainer"></div>
+</div>
+
+<script>
+    // --- DATI DI ESEMPIO ---
+    const mapData = {
+      "eventTypes": {
+        "night-raid": { "displayName": "Night Raid", "icon": "https://cdn.arctracker.io/map-events/night_raid.png", "category": "major" },
+        "electromagnetic-storm": { "displayName": "EM Storm", "icon": "https://cdn.arctracker.io/map-events/electromagnetic_storm.png", "category": "major" },
+        "locked-gate": { "displayName": "Locked Gate", "icon": "https://cdn.arctracker.io/map-events/locked_gate.png", "category": "major" },
+        "matriarch": { "displayName": "Matriarch", "icon": "https://cdn.arctracker.io/map-events/matriarch.png", "category": "minor" },
+        "harvester": { "displayName": "Harvester", "icon": "https://cdn.arctracker.io/map-events/harvester.png", "category": "minor" },
+        "lush-blooms": { "displayName": "Lush Blooms", "icon": "https://cdn.arctracker.io/map-events/lush_blooms.png", "category": "minor" },
+        "launch-tower-loot": { "displayName": "Launch Tower", "icon": "https://cdn.arctracker.io/map-events/launch_tower_loot.png", "category": "minor" },
+        "prospecting-probes": { "displayName": "Probes", "icon": "https://cdn.arctracker.io/map-events/prospecting_probes.png", "category": "minor" }
+      },
+      "maps": {
+        "dam-battleground": { "displayName": "Dam Battleground" },
+        "buried-city": { "displayName": "Buried City" },
+        "the-spaceport": { "displayName": "The Spaceport" },
+        "blue-gate": { "displayName": "Blue Gate" },
+        "stella-montis": { "displayName": "Stella Montis" }
+      },
+      "schedule": {
+        "dam-battleground": {
+          "major": { "2": "night-raid", "10": "electromagnetic-storm", "14": "night-raid", "18": "electromagnetic-storm" },
+          "minor": { "1": "harvester", "4": "lush-blooms", "5": "matriarch", "7": "harvester", "9": "lush-blooms", "13": "harvester", "15": "lush-blooms", "19": "harvester", "21": "lush-blooms" }
+        },
+        "buried-city": {
+          "major": { "3": "night-raid", "11": "night-raid", "19": "night-raid" },
+          "minor": { "4": "lush-blooms", "8": "prospecting-probes", "12": "lush-blooms", "20": "lush-blooms" }
+        },
+        "the-spaceport": {
+          "major": { "4": "night-raid", "8": "electromagnetic-storm", "16": "electromagnetic-storm", "20": "night-raid" },
+          "minor": { "1": "launch-tower-loot", "3": "matriarch", "6": "harvester", "9": "matriarch", "13": "launch-tower-loot", "15": "matriarch", "18": "harvester", "21": "matriarch" }
+        },
+        "blue-gate": {
+          "major": { "1": "night-raid", "5": "locked-gate", "9": "electromagnetic-storm", "13": "locked-gate", "17": "night-raid", "21": "locked-gate" },
+          "minor": { "2": "matriarch", "8": "matriarch", "11": "harvester", "14": "matriarch", "20": "matriarch", "23": "harvester" }
+        },
+        "stella-montis": {
+          "major": { "6": "night-raid", "14": "night-raid", "22": "night-raid" },
+          "minor": {}
+        }
+      }
+    };
+
+    const MAP_COORDS = {
+        "dam-battleground": { top: 60, left: 52 },
+        "buried-city":      { top: 55, left: 10 },
+        "the-spaceport":    { top: 25, left: 25 },
+        "blue-gate":        { top: 48, left: 78 },
+        "stella-montis":    { top: 12, left: 82 }
+    };
+
+    // --- LOGICA ---
+
+    function getUTCNow() {
+        return new Date();
+    }
+
+    function updateClock() {
+        const now = getUTCNow();
+        const h = String(now.getUTCHours()).padStart(2,'0');
+        const m = String(now.getUTCMinutes()).padStart(2,'0');
+        const s = String(now.getUTCSeconds()).padStart(2,'0');
+        document.getElementById('utcClock').innerText = `UTC ${h}:${m}:${s}`;
+    }
+
+    function getTimeRemaining() {
+        const now = getUTCNow();
+        const mins = 59 - now.getUTCMinutes();
+        const secs = 59 - now.getUTCSeconds();
+        return `${mins}:${String(secs).padStart(2,'0')}`;
+    }
+
+    function findActiveEvent(scheduleMap, currentHour) {
+        const majorId = scheduleMap.major[String(currentHour)];
+        if (majorId) return { id: majorId, type: 'major' };
+        
+        const minorId = scheduleMap.minor[String(currentHour)];
+        if (minorId) return { id: minorId, type: 'minor' };
+
+        return null;
+    }
+
+    function findNextEvent(scheduleMap, currentHour) {
+        for (let i = 1; i <= 24; i++) {
+            const nextHour = (currentHour + i) % 24;
+            if (scheduleMap.major[String(nextHour)]) {
+                return { id: scheduleMap.major[String(nextHour)], hoursAway: i };
+            }
+            if (scheduleMap.minor[String(nextHour)]) {
+                return { id: scheduleMap.minor[String(nextHour)], hoursAway: i };
+            }
+        }
+        return null;
+    }
+
+    function formatTimeUntil(hoursAway, currentMinutes) {
+        const realHours = hoursAway - 1;
+        const realMins = 60 - currentMinutes;
+        if (realHours <= 0) return `IN ${realMins}m`;
+        return `IN ${realHours}h ${realMins}m`;
+    }
+
+    // --- RENDER INIZIALE (Crea il DOM una sola volta) ---
+    function initMap() {
+        const container = document.getElementById('mapMarkersContainer');
+        container.innerHTML = ""; // Reset iniziale
+
+        Object.keys(mapData.maps).forEach(mapKey => {
+            const mapInfo = mapData.maps[mapKey];
+            const coords = MAP_COORDS[mapKey];
+            if (!coords) return;
+
+            // Creiamo la struttura vuota del marker
+            const marker = document.createElement('div');
+            marker.className = 'map-marker';
+            marker.id = `marker-${mapKey}`; // ID Univoco
+            marker.style.top = coords.top + '%';
+            marker.style.left = coords.left + '%';
+
+            // HTML Interno con ID specifici per gli elementi che cambiano
+            marker.innerHTML = `
+                <div class="marker-dot"></div>
+                <div class="marker-label">${mapInfo.displayName}</div>
+                <div class="marker-info">
+                    
+                    <!-- ACTIVE SECTION -->
+                    <div id="active-row-${mapKey}" class="ev-active-row">
+                        <img id="active-icon-${mapKey}" src="" class="ev-icon" style="display:none">
+                        <div class="ev-details">
+                            <span class="ev-label-tiny">ACTIVE NOW</span>
+                            <span id="active-title-${mapKey}" class="ev-title"></span>
+                            <span id="active-timer-${mapKey}" class="ev-timer"></span>
+                        </div>
+                    </div>
+                    
+                    <div id="no-signal-${mapKey}" class="ev-label-tiny hidden" style="padding-bottom:2px;">NO ACTIVE SIGNALS</div>
+
+                    <!-- NEXT SECTION -->
+                    <div id="next-section-${mapKey}">
+                        <div class="ev-divider"></div>
+                        <div class="ev-next-row">
+                            <div class="ev-next-header">
+                                <span class="ev-next-label">NEXT EVENT</span>
+                                <span id="next-timer-${mapKey}" class="ev-next-time"></span>
+                            </div>
+                            <div id="next-title-${mapKey}" class="ev-next-title"></div>
+                        </div>
+                    </div>
+
+                </div>
+            `;
+            container.appendChild(marker);
+        });
+    }
+
+    // --- AGGIORNAMENTO (Ogni secondo, tocca solo il testo/classi) ---
+    function updateMapState() {
+        const now = getUTCNow();
+        const currentHour = now.getUTCHours();
+        const currentMins = now.getUTCMinutes();
+        const timeLeftStr = getTimeRemaining();
+
+        Object.keys(mapData.maps).forEach(mapKey => {
+            const marker = document.getElementById(`marker-${mapKey}`);
+            if (!marker) return;
+
+            const sched = mapData.schedule[mapKey];
+            if (!sched) return;
+
+            const activeEvent = findActiveEvent(sched, currentHour);
+            const nextEvent = findNextEvent(sched, currentHour);
+
+            // 1. Aggiorna Classi Principali (Colore Dot/Label/Border)
+            marker.classList.remove('active-major', 'active-minor');
+            if (activeEvent) {
+                marker.classList.add(activeEvent.type === 'major' ? 'active-major' : 'active-minor');
+            }
+
+            // 2. Aggiorna Active Section
+            const activeRow = document.getElementById(`active-row-${mapKey}`);
+            const noSignal = document.getElementById(`no-signal-${mapKey}`);
+            
+            if (activeEvent) {
+                activeRow.classList.remove('hidden');
+                noSignal.classList.add('hidden');
+
+                const evDef = mapData.eventTypes[activeEvent.id];
+                
+                // Aggiorna Immagine solo se cambia (per evitare sfarfallii caricamento)
+                const imgEl = document.getElementById(`active-icon-${mapKey}`);
+                if (imgEl.src !== evDef.icon) {
+                    imgEl.src = evDef.icon;
+                    imgEl.style.display = 'block';
+                }
+                
+                document.getElementById(`active-title-${mapKey}`).innerText = evDef.displayName;
+                document.getElementById(`active-timer-${mapKey}`).innerText = timeLeftStr;
+            } else {
+                activeRow.classList.add('hidden');
+                noSignal.classList.remove('hidden');
+            }
+
+            // 3. Aggiorna Next Section
+            const nextSec = document.getElementById(`next-section-${mapKey}`);
+            if (nextEvent) {
+                nextSec.classList.remove('hidden');
+                const nextDef = mapData.eventTypes[nextEvent.id];
+                const timeUntil = formatTimeUntil(nextEvent.hoursAway, currentMins);
+
+                document.getElementById(`next-title-${mapKey}`).innerText = nextDef.displayName;
+                document.getElementById(`next-timer-${mapKey}`).innerText = timeUntil;
+            } else {
+                nextSec.classList.add('hidden');
+            }
+        });
+    }
+
+    // AVVIO
+    initMap(); // Crea il DOM
+    updateMapState(); // Primo aggiornamento dati
+    updateClock();
+
+    // LOOP (Aggiorna solo dati e clock)
+    setInterval(() => {
+        updateClock();
+        updateMapState();
+    }, 1000);
+
+</script>
+</body>
+</html>
