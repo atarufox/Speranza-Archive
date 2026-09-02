@@ -240,7 +240,6 @@
         .btn-system.active { background: var(--arc-yellow); color: #000; border-color: var(--arc-yellow); font-weight: 700; }
         .btn-system.bp-filter-owned { background: var(--arc-teal); color: #000; border-color: var(--arc-teal); }
         .btn-system.bp-filter-missing { background: var(--arc-red); color: #000; border-color: var(--arc-red); }
-        body.section-progetti #btnWishlist { display: none !important; }
         .btn-icon { width: var(--btn-sys-h); height: var(--btn-sys-h); padding: 0; border-radius: 50%; }
 
         select option { background-color: #111; color: #fff; }
@@ -256,36 +255,11 @@
         aside::-webkit-scrollbar { width: 0; }
         body.db-loaded aside { display: flex; }
         
-        /* Hide sidebar only for Map. Progetti uses the same sidebar layout as Inventario. */
+        /* FIX: Hide sidebar for Map only (Progetti now has sidebar) */
         body.section-map aside { display: none !important; width: 0 !important; pointer-events: none; }
-        body.section-progetti aside { display: flex !important; width: var(--sb-w) !important; pointer-events: auto; }
         
-        @keyframes slideInLeft { from { transform: translateX(-20px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-        
-        .filter-circle {
-            width: var(--sb-icon-size); height: var(--sb-icon-size); border-radius: 50%;
-            background-color: var(--sb-inactive-bg); display: flex; justify-content: center; align-items: center;
-            cursor: pointer; transition: all 0.2s; flex-shrink: 0; border: 2px solid transparent; position: relative;
-        }
-        .filter-circle:hover { transform: scale(1.05); border-color: #555; }
-        .filter-circle.active { background-color: var(--sb-active-bg); border-color: var(--sb-active-bg); box-shadow: 0 0 15px rgba(242, 232, 213, 0.2); }
-        .filter-circle svg { width: 55%; height: 55%; fill: var(--sb-inactive-icon); transition: fill 0.2s; }
-        .filter-circle:hover svg { fill: #fff; }
-        .filter-circle.active svg { fill: var(--sb-active-icon); }
-        .filter-circle img { width: 100%; height: 100%; pointer-events: none; border-radius: 50%; }
-        .filter-circle .icon-active { display: none; }
-        .filter-circle .icon-inactive { display: block; }
-        .filter-circle.active .icon-active { display: block; }
-        .filter-circle.active .icon-inactive { display: none; }
-        .filter-circle.has-image { background-color: transparent; border: none; }
-        .sidebar-sep { width: 30px; height: 1px; background: rgba(255,255,255,0.1); margin: 2px 0; flex-shrink: 0; }
-
-        /* --- CONTENT AREA --- */
-        .content-area { flex: 1; padding: 20px 40px 40px 40px; overflow-y: auto; transition: padding-left 0.3s ease; }
-        body.db-loaded .content-area { padding-left: var(--content-pad-left); }
-        
-        /* FIX: Center Layout for Progetti */
-        body.section-progetti .content-area { padding-left: 0 !important; }
+        /* FIX: Center Layout for Progetti (with sidebar) */
+        body.section-progetti .content-area { padding-left: var(--content-pad-left) !important; }
         body.section-progetti .stash-grid {
              max-width: 1400px;
              margin: 0 auto;
@@ -337,6 +311,68 @@
 
         /* --- SIDEBAR TOOLTIP (CUSTOM) --- */
         #sidebar-tooltip { position: fixed; display: none; background: rgba(10, 10, 10, 0.95); color: var(--arc-yellow); border: 1px solid var(--arc-yellow); padding: 5px 12px; font-family: var(--font-ui); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; z-index: 12000; pointer-events: none; border-radius: 0 8px 8px 8px; white-space: nowrap; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        
+        /* --- SIDEBAR FILTERS --- */
+        .filter-circle {
+            width: var(--sb-icon-size);
+            height: var(--sb-icon-size);
+            border-radius: 50%;
+            background: var(--sb-inactive-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .filter-circle:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+        .filter-circle.active {
+            background: var(--sb-active-bg);
+        }
+        .filter-circle.has-image img {
+            width: 60%;
+            height: 60%;
+            object-fit: contain;
+        }
+        .filter-circle.has-image .icon-inactive { display: block; }
+        .filter-circle.has-image .icon-active { display: none; }
+        .filter-circle.active.has-image .icon-inactive { display: none; }
+        .filter-circle.active.has-image .icon-active { display: block; }
+        .filter-circle svg {
+            width: 60%;
+            height: 60%;
+            fill: var(--sb-inactive-icon);
+        }
+        .filter-circle.active svg {
+            fill: var(--sb-active-icon);
+        }
+        .sidebar-sep {
+            width: 60%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 4px 0;
+        }
+        .filter-count {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background: var(--arc-yellow);
+            color: #000;
+            font-size: 10px;
+            font-weight: 700;
+            min-width: 16px;
+            height: 16px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 3px;
+            pointer-events: none;
+        }
 
         .tt-header { display: flex; height: 26px; background: transparent; }
         .tt-tag { padding: 0 10px; font-family: var(--font-head); font-weight: 600; font-size: 1.1rem; color: white; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; justify-content: center; gap: 5px; height: 100%; }
@@ -631,7 +667,7 @@
     let scheduleData = null; // New container for map-events.json
     let wishlist = new Map();
     let ownedBlueprints = new Set();
-    let currentFilter = 'ALL', viewMode = 'STASH', currentLang = 'ITA';
+    let currentFilter = 'ALL', viewMode = 'STASH', currentLang = 'it';
     let isWishlistView = false; 
     let currentSection = 'INVENTARIO';
     let bpViewMode = 0; 
@@ -829,11 +865,11 @@
         if(typeof obj === 'string') return obj; 
         
         // Log missing translation if object exists but current lang key is missing
-        if (obj['ENG'] && !obj[currentLang] && currentLang !== 'ENG') {
+        if (obj['en'] && !obj[currentLang] && currentLang !== 'en') {
              // Suppress item logs to avoid extreme spam, or use a Set like below
         }
         
-        return obj[currentLang] || obj['ENG'] || ""; 
+        return obj[currentLang] || obj['en'] || ""; 
     }
     
     function getLocLocation(locId) {
@@ -865,10 +901,10 @@
             { id: 'MATERIALS', img: 'crafting_materials', type: 'img', labelKey: 'FILT_MATERIALS' }, 
             { id: 'MISC', img: 'misc', type: 'img', labelKey: 'FILT_MISC' } 
         ],
-        'PROGETTI': [
-            { id: 'BP_ALL', img: 'projects_all', type: 'img', bpMode: 0, labelKey: 'FILT_ALL' },
-            { id: 'BP_MISSING', img: 'projects_missing', type: 'img', bpMode: 2, labelKey: 'FILT_MISSING' },
-            { id: 'BP_OWNED', img: 'projects_owned', type: 'img', bpMode: 1, labelKey: 'FILT_HAVE' }
+        'PROGETTI': [ 
+            { id: 'ALL', img: 'blueprints_all', type: 'img', labelKey: 'FILT_ALL' }, 
+            { id: 'OWNED', img: 'blueprints_owned', type: 'img', labelKey: 'FILT_OWNED' }, 
+            { id: 'MISSING', img: 'blueprints_missing', type: 'img', labelKey: 'FILT_MISSING' }
         ],
         'OFFICINA': [ 
             { id: 'ALL', img: 'all', type: 'img', labelKey: 'FILT_ALL' }, 
@@ -938,8 +974,9 @@
 
         if(sectionName === 'PROGETTI') {
             document.body.classList.add('section-progetti');
-            document.body.classList.remove('sidebar-empty');
-            bpViewMode = 0;
+            // Sidebar is NOT empty for PROGETTI anymore - it has filters
+            if(SIDEBAR_CONFIG[sectionName] && SIDEBAR_CONFIG[sectionName].length > 0) document.body.classList.remove('sidebar-empty');
+            else document.body.classList.add('sidebar-empty');
         } else {
             document.body.classList.remove('section-progetti');
             if(SIDEBAR_CONFIG[sectionName] && SIDEBAR_CONFIG[sectionName].length > 0) document.body.classList.remove('sidebar-empty');
@@ -1127,6 +1164,18 @@
         config.forEach(item => {
             if(item.sep) { dom.sidebar.appendChild(Object.assign(document.createElement('div'), {className:'sidebar-sep'})); return; }
             let displayTitle = "";
+            let countDisplay = "";
+            
+            // Calculate counts for PROGETTI filters
+            if (currentSection === 'PROGETTI') {
+                if (item.id === 'OWNED') {
+                    countDisplay = `<span class="filter-count">${ownedBlueprints.size}</span>`;
+                } else if (item.id === 'MISSING') {
+                    const totalBlueprints = itemsDB.filter(x => (x.type || "") === "Blueprint").length;
+                    countDisplay = `<span class="filter-count">${totalBlueprints - ownedBlueprints.size}</span>`;
+                }
+            }
+            
             if (currentSection === 'OFFICINA' && item.targetId) {
                 const realItem = hideoutDB.find(x => x.id === item.targetId);
                 displayTitle = realItem ? getLoc(realItem.name) : item.targetId;
@@ -1138,33 +1187,21 @@
             div.onmouseleave = hideSidebarTooltip;
 
             let isActive = false;
-            if (currentSection === 'PROGETTI') {
-                isActive = item.bpMode === bpViewMode;
-            } else if (currentSection === 'OFFICINA') {
-                if ((item.id === 'ALL' && currentFilter === 'ALL') || (item.targetId && currentFilter === item.targetId)) isActive = true;
-            } else {
-                if (item.id === currentFilter) isActive = true;
-            }
+            if (currentSection === 'OFFICINA') { if ((item.id === 'ALL' && currentFilter === 'ALL') || (item.targetId && currentFilter === item.targetId)) isActive = true; }
+            else { if (item.id === currentFilter) isActive = true; }
             if(isActive) div.classList.add('active');
 
-            if (currentSection === 'PROGETTI') {
-                div.onclick = () => {
-                    bpViewMode = item.bpMode;
-                    currentFilter = 'ALL';
-                    renderSidebar();
-                    render();
-                };
+            div.onclick = () => setFilter(item.targetId || item.id);
+            if(item.type === 'svg') div.innerHTML = `<svg><use href="#${item.icon}"></use></svg>`;
+            else {
                 div.classList.add('has-image');
-                div.innerHTML = `<img src="${GITHUB_RAW_BASE_URL}images/menu/${item.img}.png" alt="${displayTitle}" onerror="this.style.display='none'">`;
-            } else {
-                div.onclick = () => setFilter(item.targetId || item.id);
-                if(item.type === 'svg') div.innerHTML = `<svg><use href="#${item.icon}"></use></svg>`;
-                else {
-                    div.classList.add('has-image');
-                    let imgName = (currentSection === 'OFFICINA' && item.targetId) ? item.targetId : item.img;
-                    div.innerHTML = `<img class="icon-inactive" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_inactive.png" onerror="this.style.display='none'"><img class="icon-active" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_active.png" onerror="this.style.display='none'">`;
-                }
+                let imgName = (currentSection === 'OFFICINA' && item.targetId) ? item.targetId : item.img;
+                // Check if it's a blueprint icon (uses .svg) or regular menu icon (uses .png)
+                let fileExt = imgName.startsWith('blueprints_') ? '.svg' : '.png';
+                div.innerHTML = `<img class="icon-inactive" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_inactive${fileExt}" onerror="this.style.display='none'"><img class="icon-active" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_active${fileExt}" onerror="this.style.display='none'">`;
             }
+            // Add count badge if exists
+            if (countDisplay) div.innerHTML += countDisplay;
             dom.sidebar.appendChild(div);
         });
     }
@@ -1180,14 +1217,22 @@
     function hideSidebarTooltip() { dom.sbTooltip.style.display = 'none'; }
 
     function setFilter(f) { currentFilter = f; viewMode = (f === 'HIDEOUT') ? 'HIDEOUT' : 'STASH'; if(currentSection !== 'PROGETTI') { isWishlistView = false; dom.btnWishlist.classList.remove('active'); } renderSidebar(); render(); }
-    function handleTopRightButton() { toggleWishlistView(); }
+    function handleTopRightButton() { if(currentSection !== 'PROGETTI') { toggleWishlistView(); } }
     function toggleWishlistView() { isWishlistView = !isWishlistView; if(isWishlistView) { dom.btnWishlist.classList.add('active'); viewMode = 'WISHLIST'; } else { dom.btnWishlist.classList.remove('active'); setFilter('ALL'); } render(); }
 
     function updateUI() {
-        document.getElementById('iconWishlist').style.display = 'block';
-        dom.btnWishlistText.innerText = getUI('what_i_need');
-        dom.btnWishlist.classList.remove('bp-filter-owned', 'bp-filter-missing');
-        updateWishlistCounter();
+        if (currentSection === 'PROGETTI') {
+             document.getElementById('iconWishlist').style.display = 'none'; 
+             dom.btnWishlist.style.display = 'none';
+             // Update sidebar labels with counts
+             renderSidebar();
+        } else {
+             document.getElementById('iconWishlist').style.display = 'block'; 
+             dom.btnWishlist.style.display = 'flex';
+             dom.btnWishlistText.innerText = getUI('what_i_need'); 
+             dom.btnWishlist.classList.remove('bp-filter-owned', 'bp-filter-missing'); 
+             updateWishlistCounter();
+        }
     }
 
     function normalizeHideoutData(sourceData, sourceRepo) {
@@ -1274,8 +1319,8 @@
 
                 if(currentSection === 'PROGETTI') {
                     if(!isBP) return false;
-                    if(bpViewMode === 1 && !ownedBlueprints.has(item.id)) return false; 
-                    if(bpViewMode === 2 && ownedBlueprints.has(item.id)) return false;  
+                    if (currentFilter === 'OWNED' && !ownedBlueprints.has(item.id)) return false;
+                    if (currentFilter === 'MISSING' && ownedBlueprints.has(item.id)) return false;
                     if (currentFilter === 'ALL') return true;
                     // UPDATED FILTER LOGIC TO MATCH NEW IDs
                     if (currentFilter === 'WEAPONS') return t.includes('hand cannon') || t.includes('assault rifle') || t.includes('smg') || t.includes('pistol') || t.includes('lmg') || t.includes('battle rifle') || t.includes('shotgun') || t.includes('sniper rifle') || t.includes('special');
@@ -1304,17 +1349,6 @@
                 if (currentFilter === 'MISC') return t.includes('trinket') || t.includes('misc') || t.includes('junk') || t.includes('valuable');
                 return false;
             });
-        }
-
-        if(currentSection === 'PROGETTI') {
-            const allBlueprints = itemsDB.map(x => getItem(x.id)).filter(item => item && isBlueprint(item));
-            const visibleCount = allBlueprints.length;
-            const ownedCount = allBlueprints.filter(i => ownedBlueprints.has(i.id)).length;
-            const header = document.createElement('div');
-            header.className = 'section-header-bp';
-            header.style.gridColumn = '1/-1';
-            header.innerHTML = `<div class="sh-title">PROGETTI</div><div class="sh-subtitle">TROVATO: <span style="color:var(--arc-white)">${ownedCount}</span> / <span style="color:#666">${visibleCount}</span></div>`;
-            grid.appendChild(header);
         }
 
         source.forEach(data => {
@@ -1385,9 +1419,7 @@
         const desc = getLoc(data.description);
         const rarity = (data.rarity || 'common').toUpperCase();
         const weight = (data.weightKg || 0).toString().replace('.', ',');
-        const localeMap = {'ITA': 'it-IT', 'ENG': 'en-US', 'ESP': 'es-ES', 'FRA': 'fr-FR', 'DEU': 'de-DE'};
-        const locale = localeMap[currentLang] || 'en-US';
-        const val = (data.value || 0).toLocaleString(locale);
+        const val = (data.value || 0).toLocaleString(currentLang);
         const stack = `${data.stackSize || 1}/${data.stackSize || 1}`;
         let ecoHtml = "";
         
