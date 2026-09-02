@@ -356,6 +356,23 @@
             background: rgba(255, 255, 255, 0.1);
             margin: 4px 0;
         }
+        .filter-count {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background: var(--arc-yellow);
+            color: #000;
+            font-size: 10px;
+            font-weight: 700;
+            min-width: 16px;
+            height: 16px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 3px;
+            pointer-events: none;
+        }
 
         .tt-header { display: flex; height: 26px; background: transparent; }
         .tt-tag { padding: 0 10px; font-family: var(--font-head); font-weight: 600; font-size: 1.1rem; color: white; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; justify-content: center; gap: 5px; height: 100%; }
@@ -887,17 +904,7 @@
         'PROGETTI': [ 
             { id: 'ALL', img: 'blueprints_all', type: 'img', labelKey: 'FILT_ALL' }, 
             { id: 'OWNED', img: 'blueprints_owned', type: 'img', labelKey: 'FILT_OWNED' }, 
-            { id: 'MISSING', img: 'blueprints_missing', type: 'img', labelKey: 'FILT_MISSING' },
-            { sep: true },
-            { id: 'AUGMENTS', img: 'augments', type: 'img', labelKey: 'FILT_AUGMENTS' }, 
-            { id: 'SHIELDS', img: 'shields', type: 'img', labelKey: 'FILT_SHIELDS' }, 
-            { id: 'WEAPONS', img: 'weapons', type: 'img', labelKey: 'FILT_WEAPONS' }, 
-            { id: 'AMMO', img: 'ammunitions', type: 'img', labelKey: 'FILT_AMMO' }, 
-            { id: 'MODS', img: 'weapon_mods', type: 'img', labelKey: 'FILT_MODS' }, 
-            { id: 'QUICK_USE', img: 'quick_use', type: 'img', labelKey: 'FILT_QUICK_USE' }, 
-            { id: 'KEYS', img: 'keys', type: 'img', labelKey: 'FILT_KEYS' }, 
-            { id: 'MATERIALS', img: 'crafting_materials', type: 'img', labelKey: 'FILT_MATERIALS' }, 
-            { id: 'MISC', img: 'misc', type: 'img', labelKey: 'FILT_MISC' } 
+            { id: 'MISSING', img: 'blueprints_missing', type: 'img', labelKey: 'FILT_MISSING' }
         ],
         'OFFICINA': [ 
             { id: 'ALL', img: 'all', type: 'img', labelKey: 'FILT_ALL' }, 
@@ -1157,6 +1164,18 @@
         config.forEach(item => {
             if(item.sep) { dom.sidebar.appendChild(Object.assign(document.createElement('div'), {className:'sidebar-sep'})); return; }
             let displayTitle = "";
+            let countDisplay = "";
+            
+            // Calculate counts for PROGETTI filters
+            if (currentSection === 'PROGETTI') {
+                if (item.id === 'OWNED') {
+                    countDisplay = `<span class="filter-count">${ownedBlueprints.size}</span>`;
+                } else if (item.id === 'MISSING') {
+                    const totalBlueprints = itemsDB.filter(x => (x.type || "") === "Blueprint").length;
+                    countDisplay = `<span class="filter-count">${totalBlueprints - ownedBlueprints.size}</span>`;
+                }
+            }
+            
             if (currentSection === 'OFFICINA' && item.targetId) {
                 const realItem = hideoutDB.find(x => x.id === item.targetId);
                 displayTitle = realItem ? getLoc(realItem.name) : item.targetId;
@@ -1181,6 +1200,8 @@
                 let fileExt = imgName.startsWith('blueprints_') ? '.svg' : '.png';
                 div.innerHTML = `<img class="icon-inactive" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_inactive${fileExt}" onerror="this.style.display='none'"><img class="icon-active" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_active${fileExt}" onerror="this.style.display='none'">`;
             }
+            // Add count badge if exists
+            if (countDisplay) div.innerHTML += countDisplay;
             dom.sidebar.appendChild(div);
         });
     }
@@ -1201,9 +1222,16 @@
 
     function updateUI() {
         if (currentSection === 'PROGETTI') {
-             document.getElementById('iconWishlist').style.display = 'none'; dom.wlCounter.style.display = 'none';
+             document.getElementById('iconWishlist').style.display = 'none'; 
+             dom.btnWishlist.style.display = 'none';
+             // Update sidebar labels with counts
+             renderSidebar();
         } else {
-             document.getElementById('iconWishlist').style.display = 'block'; dom.btnWishlistText.innerText = getUI('what_i_need'); dom.btnWishlist.classList.remove('bp-filter-owned', 'bp-filter-missing'); updateWishlistCounter();
+             document.getElementById('iconWishlist').style.display = 'block'; 
+             dom.btnWishlist.style.display = 'flex';
+             dom.btnWishlistText.innerText = getUI('what_i_need'); 
+             dom.btnWishlist.classList.remove('bp-filter-owned', 'bp-filter-missing'); 
+             updateWishlistCounter();
         }
     }
 
