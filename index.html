@@ -865,7 +865,10 @@
             { id: 'MISC', img: 'misc', type: 'img', labelKey: 'FILT_MISC' } 
         ],
         'PROGETTI': [ 
-            { id: 'ALL', img: 'all', type: 'img', labelKey: 'FILT_ALL' }, 
+            { id: 'ALL', img: 'blueprints_all', type: 'img', labelKey: 'FILT_ALL' }, 
+            { id: 'OWNED', img: 'blueprints_owned', type: 'img', labelKey: 'FILT_OWNED' }, 
+            { id: 'MISSING', img: 'blueprints_missing', type: 'img', labelKey: 'FILT_MISSING' },
+            { sep: true },
             { id: 'AUGMENTS', img: 'augments', type: 'img', labelKey: 'FILT_AUGMENTS' }, 
             { id: 'SHIELDS', img: 'shields', type: 'img', labelKey: 'FILT_SHIELDS' }, 
             { id: 'WEAPONS', img: 'weapons', type: 'img', labelKey: 'FILT_WEAPONS' }, 
@@ -1169,16 +1172,12 @@
     function hideSidebarTooltip() { dom.sbTooltip.style.display = 'none'; }
 
     function setFilter(f) { currentFilter = f; viewMode = (f === 'HIDEOUT') ? 'HIDEOUT' : 'STASH'; if(currentSection !== 'PROGETTI') { isWishlistView = false; dom.btnWishlist.classList.remove('active'); } renderSidebar(); render(); }
-    function handleTopRightButton() { if(currentSection === 'PROGETTI') { bpViewMode = (bpViewMode + 1) % 3; updateUI(); render(); } else { toggleWishlistView(); } }
+    function handleTopRightButton() { if(currentSection !== 'PROGETTI') { toggleWishlistView(); } }
     function toggleWishlistView() { isWishlistView = !isWishlistView; if(isWishlistView) { dom.btnWishlist.classList.add('active'); viewMode = 'WISHLIST'; } else { dom.btnWishlist.classList.remove('active'); setFilter('ALL'); } render(); }
 
     function updateUI() {
         if (currentSection === 'PROGETTI') {
-             dom.btnWishlist.classList.remove('active', 'bp-filter-owned', 'bp-filter-missing');
              document.getElementById('iconWishlist').style.display = 'none'; dom.wlCounter.style.display = 'none';
-             if(bpViewMode === 0) dom.btnWishlistText.innerText = getUI('all');
-             else if(bpViewMode === 1) { dom.btnWishlistText.innerText = getUI('have'); dom.btnWishlist.classList.add('bp-filter-owned'); }
-             else if(bpViewMode === 2) { dom.btnWishlistText.innerText = getUI('missing'); dom.btnWishlist.classList.add('bp-filter-missing'); }
         } else {
              document.getElementById('iconWishlist').style.display = 'block'; dom.btnWishlistText.innerText = getUI('what_i_need'); dom.btnWishlist.classList.remove('bp-filter-owned', 'bp-filter-missing'); updateWishlistCounter();
         }
@@ -1268,8 +1267,8 @@
 
                 if(currentSection === 'PROGETTI') {
                     if(!isBP) return false;
-                    if(bpViewMode === 1 && !ownedBlueprints.has(item.id)) return false; 
-                    if(bpViewMode === 2 && ownedBlueprints.has(item.id)) return false;  
+                    if (currentFilter === 'OWNED' && !ownedBlueprints.has(item.id)) return false;
+                    if (currentFilter === 'MISSING' && ownedBlueprints.has(item.id)) return false;
                     if (currentFilter === 'ALL') return true;
                     // UPDATED FILTER LOGIC TO MATCH NEW IDs
                     if (currentFilter === 'WEAPONS') return t.includes('hand cannon') || t.includes('assault rifle') || t.includes('smg') || t.includes('pistol') || t.includes('lmg') || t.includes('battle rifle') || t.includes('shotgun') || t.includes('sniper rifle') || t.includes('special');

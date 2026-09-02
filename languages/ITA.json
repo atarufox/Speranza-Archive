@@ -2922,7 +2922,9 @@
     "FILT_KEYS": "Chiavi",
     "FILT_MISC": "Varie",
     "FILT_AUGMENTS": "Potenziamenti",
-    "FILT_SHIELDS": "Scudi"
+    "FILT_SHIELDS": "Scudi",
+    "FILT_OWNED": "Posseduti",
+    "FILT_MISSING": "Mancanti"
   },
   "LeaderboardsPage": {
     "toggleMenu": "Apri Menu",

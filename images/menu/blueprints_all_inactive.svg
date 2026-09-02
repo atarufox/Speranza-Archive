@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="45" fill="#2b2f3b"/>
+  <rect x="25" y="30" width="50" height="40" rx="3" fill="#7f838d"/>
+  <rect x="30" y="35" width="40" height="30" rx="2" fill="#2b2f3b"/>
+  <text x="50" y="62" font-family="Arial" font-size="12" fill="#7f838d" text-anchor="middle">ALL</text>
+</svg>
