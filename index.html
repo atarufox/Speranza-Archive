@@ -865,11 +865,16 @@
             { id: 'MISC', img: 'misc', type: 'img', labelKey: 'FILT_MISC' } 
         ],
         'PROGETTI': [ 
-            { id: 'ALL', icon: 'icon-all', type: 'svg', labelKey: 'FILT_ALL' }, 
+            { id: 'ALL', img: 'all', type: 'img', labelKey: 'FILT_ALL' }, 
+            { id: 'AUGMENTS', img: 'augments', type: 'img', labelKey: 'FILT_AUGMENTS' }, 
+            { id: 'SHIELDS', img: 'shields', type: 'img', labelKey: 'FILT_SHIELDS' }, 
             { id: 'WEAPONS', img: 'weapons', type: 'img', labelKey: 'FILT_WEAPONS' }, 
+            { id: 'AMMO', img: 'ammunitions', type: 'img', labelKey: 'FILT_AMMO' }, 
             { id: 'MODS', img: 'weapon_mods', type: 'img', labelKey: 'FILT_MODS' }, 
             { id: 'QUICK_USE', img: 'quick_use', type: 'img', labelKey: 'FILT_QUICK_USE' }, 
-            { id: 'MATERIALS', img: 'crafting_materials', type: 'img', labelKey: 'FILT_MATERIALS' } 
+            { id: 'KEYS', img: 'keys', type: 'img', labelKey: 'FILT_KEYS' }, 
+            { id: 'MATERIALS', img: 'crafting_materials', type: 'img', labelKey: 'FILT_MATERIALS' }, 
+            { id: 'MISC', img: 'misc', type: 'img', labelKey: 'FILT_MISC' } 
         ],
         'OFFICINA': [ 
             { id: 'ALL', img: 'all', type: 'img', labelKey: 'FILT_ALL' }, 
@@ -1293,16 +1298,6 @@
                 if (currentFilter === 'MISC') return t.includes('trinket') || t.includes('misc') || t.includes('junk') || t.includes('valuable');
                 return false;
             });
-        }
-
-        if(currentSection === 'PROGETTI') {
-            const visibleCount = source.length; 
-            const ownedCount = source.filter(i => ownedBlueprints.has(i.id)).length;
-            const header = document.createElement('div');
-            header.className = 'section-header-bp';
-            header.style.gridColumn = '1/-1';
-            header.innerHTML = `<div class="sh-title">PROGETTI</div><div class="sh-subtitle">TROVATO: <span style="color:var(--arc-white)">${ownedCount}</span> / <span style="color:#666">${visibleCount}</span></div>`;
-            grid.appendChild(header);
         }
 
         source.forEach(data => {
