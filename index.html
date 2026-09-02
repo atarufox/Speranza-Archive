@@ -255,36 +255,11 @@
         aside::-webkit-scrollbar { width: 0; }
         body.db-loaded aside { display: flex; }
         
-        /* FIX: Hide sidebar for Progetti and Map */
-        body.section-progetti aside { display: none !important; width: 0 !important; pointer-events: none; }
+        /* FIX: Hide sidebar for Map only (Progetti now has sidebar) */
         body.section-map aside { display: none !important; width: 0 !important; pointer-events: none; }
         
-        @keyframes slideInLeft { from { transform: translateX(-20px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-        
-        .filter-circle {
-            width: var(--sb-icon-size); height: var(--sb-icon-size); border-radius: 50%;
-            background-color: var(--sb-inactive-bg); display: flex; justify-content: center; align-items: center;
-            cursor: pointer; transition: all 0.2s; flex-shrink: 0; border: 2px solid transparent; position: relative;
-        }
-        .filter-circle:hover { transform: scale(1.05); border-color: #555; }
-        .filter-circle.active { background-color: var(--sb-active-bg); border-color: var(--sb-active-bg); box-shadow: 0 0 15px rgba(242, 232, 213, 0.2); }
-        .filter-circle svg { width: 55%; height: 55%; fill: var(--sb-inactive-icon); transition: fill 0.2s; }
-        .filter-circle:hover svg { fill: #fff; }
-        .filter-circle.active svg { fill: var(--sb-active-icon); }
-        .filter-circle img { width: 100%; height: 100%; pointer-events: none; border-radius: 50%; }
-        .filter-circle .icon-active { display: none; }
-        .filter-circle .icon-inactive { display: block; }
-        .filter-circle.active .icon-active { display: block; }
-        .filter-circle.active .icon-inactive { display: none; }
-        .filter-circle.has-image { background-color: transparent; border: none; }
-        .sidebar-sep { width: 30px; height: 1px; background: rgba(255,255,255,0.1); margin: 2px 0; flex-shrink: 0; }
-
-        /* --- CONTENT AREA --- */
-        .content-area { flex: 1; padding: 20px 40px 40px 40px; overflow-y: auto; transition: padding-left 0.3s ease; }
-        body.db-loaded .content-area { padding-left: var(--content-pad-left); }
-        
-        /* FIX: Center Layout for Progetti */
-        body.section-progetti .content-area { padding-left: 0 !important; }
+        /* FIX: Center Layout for Progetti (with sidebar) */
+        body.section-progetti .content-area { padding-left: var(--content-pad-left) !important; }
         body.section-progetti .stash-grid {
              max-width: 1400px;
              margin: 0 auto;
@@ -947,7 +922,9 @@
 
         if(sectionName === 'PROGETTI') {
             document.body.classList.add('section-progetti');
-            document.body.classList.add('sidebar-empty');
+            // Sidebar is NOT empty for PROGETTI anymore - it has filters
+            if(SIDEBAR_CONFIG[sectionName] && SIDEBAR_CONFIG[sectionName].length > 0) document.body.classList.remove('sidebar-empty');
+            else document.body.classList.add('sidebar-empty');
         } else {
             document.body.classList.remove('section-progetti');
             if(SIDEBAR_CONFIG[sectionName] && SIDEBAR_CONFIG[sectionName].length > 0) document.body.classList.remove('sidebar-empty');
@@ -1155,7 +1132,9 @@
             else {
                 div.classList.add('has-image');
                 let imgName = (currentSection === 'OFFICINA' && item.targetId) ? item.targetId : item.img;
-                div.innerHTML = `<img class="icon-inactive" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_inactive.png" onerror="this.style.display='none'"><img class="icon-active" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_active.png" onerror="this.style.display='none'">`;
+                // Check if it's a blueprint icon (uses .svg) or regular menu icon (uses .png)
+                let fileExt = imgName.startsWith('blueprints_') ? '.svg' : '.png';
+                div.innerHTML = `<img class="icon-inactive" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_inactive${fileExt}" onerror="this.style.display='none'"><img class="icon-active" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_active${fileExt}" onerror="this.style.display='none'">`;
             }
             dom.sidebar.appendChild(div);
         });
