@@ -1,11 +1,11 @@
-<!-- START OF FILE index.html -->
-<!-- VERSION v1.17.27-QAI -->
+<!-- START OF FILE arc_database_v1.17.26-QAI.html -->
+<!-- VERSION v1.17.26-QAI -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARC RAIDERS // MISSION CONTROL v1.17.27-QAI</title>
+    <title>ARC RAIDERS // MISSION CONTROL v1.17.26-QAI</title>
     <style>
         /* FONTS */
         @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Teko:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap');
@@ -240,6 +240,7 @@
         .btn-system.active { background: var(--arc-yellow); color: #000; border-color: var(--arc-yellow); font-weight: 700; }
         .btn-system.bp-filter-owned { background: var(--arc-teal); color: #000; border-color: var(--arc-teal); }
         .btn-system.bp-filter-missing { background: var(--arc-red); color: #000; border-color: var(--arc-red); }
+        body.section-progetti #btnWishlist { display: none !important; }
         .btn-icon { width: var(--btn-sys-h); height: var(--btn-sys-h); padding: 0; border-radius: 50%; }
 
         select option { background-color: #111; color: #fff; }
@@ -255,7 +256,9 @@
         aside::-webkit-scrollbar { width: 0; }
         body.db-loaded aside { display: flex; }
         
+        /* Hide sidebar only for Map. Progetti uses the same sidebar layout as Inventario. */
         body.section-map aside { display: none !important; width: 0 !important; pointer-events: none; }
+        body.section-progetti aside { display: flex !important; width: var(--sb-w) !important; pointer-events: auto; }
         
         @keyframes slideInLeft { from { transform: translateX(-20px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
         
@@ -269,33 +272,37 @@
         .filter-circle svg { width: 55%; height: 55%; fill: var(--sb-inactive-icon); transition: fill 0.2s; }
         .filter-circle:hover svg { fill: #fff; }
         .filter-circle.active svg { fill: var(--sb-active-icon); }
-        
-        /* 192x192 ICON HANDLING */
-        .filter-circle img {
-            width: 192px; height: 192px;
-            max-width: 100%; max-height: 100%;
-            object-fit: contain; pointer-events: none; border-radius: 50%;
-        }
+        .filter-circle img { width: 100%; height: 100%; pointer-events: none; border-radius: 50%; }
         .filter-circle .icon-active { display: none; }
         .filter-circle .icon-inactive { display: block; }
         .filter-circle.active .icon-active { display: block; }
         .filter-circle.active .icon-inactive { display: none; }
         .filter-circle.has-image { background-color: transparent; border: none; }
-        
-        /* NUMERO IN BASSO A SINISTRA */
-        .sidebar-count {
-            position: absolute; left: -3px; bottom: -3px; min-width: 18px; height: 18px;
-            padding: 0 4px; border-radius: 9px; background: #111; border: 1px solid #666;
-            color: #fff; font-family: var(--font-mono); font-size: 0.68rem; line-height: 16px;
-            text-align: center; font-weight: 700; pointer-events: none; z-index: 5;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.8);
-        }
-        .filter-circle.active .sidebar-count { background: var(--arc-yellow); border-color: var(--arc-yellow); color: #000; }
         .sidebar-sep { width: 30px; height: 1px; background: rgba(255,255,255,0.1); margin: 2px 0; flex-shrink: 0; }
 
         /* --- CONTENT AREA --- */
         .content-area { flex: 1; padding: 20px 40px 40px 40px; overflow-y: auto; transition: padding-left 0.3s ease; }
         body.db-loaded .content-area { padding-left: var(--content-pad-left); }
+        
+        /* PROGETTI: same layout/centering as Inventario and Rifugio */
+        body.section-progetti .content-area {
+             padding-left: var(--content-pad-left) !important;
+        }
+        body.section-progetti .stash-grid {
+             max-width: none;
+             margin: 0;
+             padding: 0 20px 100px 0;
+             grid-template-columns: repeat(auto-fill, 100px);
+             justify-content: center;
+        }
+
+        /* Project menu icons are prepared as 192x192 PNG assets.
+           The sidebar keeps its normal circular button size. */
+        body.section-progetti .filter-circle img {
+             width: 100%;
+             height: 100%;
+             object-fit: contain;
+        }
         
         body.section-map .content-area { padding: 0 !important; overflow: hidden; }
         
@@ -313,14 +320,7 @@
             transition: 0.2s; overflow: hidden;
         }
         .slot:hover { border-color: #fff; background-color: rgba(40, 40, 45, 0.8); box-shadow: 0 0 15px rgba(255,255,255,0.1); transform: scale(1.02); z-index: 2; cursor: pointer;}
-        
-        /* 192x192 GRID ICONS */
-        .slot img {
-            width: 192px; height: 192px;
-            max-width: 80%; max-height: 80%;
-            object-fit: contain; pointer-events: none;
-            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.8));
-        }
+        .slot img { max-width: 80%; max-height: 80%; object-fit: contain; pointer-events: none; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.8)); }
         .slot-fallback { width: 30px; height: 30px; fill: #444; pointer-events: none; }
         .slot .fallback-text { position:absolute; bottom:5px; font-size:0.65rem; color:#888; text-align:center; width:90%; pointer-events: none; font-weight: 600; text-transform: uppercase;}
         .slot::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; opacity:0.8; pointer-events:none; }
@@ -413,7 +413,7 @@
         .btn-track:hover { border-color: var(--arc-yellow); color: var(--arc-yellow); }
         .btn-track.added { background: var(--arc-yellow); color: #000; border-color: var(--arc-yellow); }
 
-        /* --- MAPPA SECTION - DASHBOARD --- */
+        /* --- MAPPA SECTION - DASHBOARD v1.17.24 --- */
         #map-container { 
             position: absolute; top:0; left:0; width:100%; height:100%; 
             background-color: #050505;
@@ -578,7 +578,7 @@
                 <div class="app-logo">
                     <img src="https://raw.githubusercontent.com/atarufox/Speranza-Archive/main/images/menu/logo.png" alt="ARC Raiders">
                 </div>
-                <span class="version-badge">v1.17.27-QAI</span>
+                <span class="version-badge">v1.17.26-QAI ivan</span>
             </div>
 
             <div class="nav-links">
@@ -639,7 +639,7 @@
 
 <script>
     let itemsDB = [], hideoutDB = [], questsDB = [];
-    let scheduleData = null; 
+    let scheduleData = null; // New container for map-events.json
     let wishlist = new Map();
     let ownedBlueprints = new Set();
     let currentFilter = 'ALL', viewMode = 'STASH', currentLang = 'ITA';
@@ -647,18 +647,10 @@
     let currentSection = 'INVENTARIO';
     let bpViewMode = 0; 
     let isModalOpen = false; 
-    let currentOpenedItem = null; 
+    let currentOpenedItem = null; // Track opened item for live translation
     let activeTranslation = {}; 
     let mapTicker = null;
     
-    // CARICAMENTO PERSISTENZA UTENTE
-    try {
-        const savedWl = localStorage.getItem('arc_wishlist');
-        if (savedWl) wishlist = new Map(JSON.parse(savedWl));
-        const savedBp = localStorage.getItem('arc_blueprints');
-        if (savedBp) ownedBlueprints = new Set(JSON.parse(savedBp));
-    } catch(e) { console.warn("Errore caricamento LocalStorage", e); }
-
     // LOGGING SYSTEM
     const missingKeysLog = new Set();
     function logMissing(category, key) {
@@ -673,7 +665,6 @@
 
     async function initApp() {
         try {
-            updateWishlistCounter();
             const availableLangs = ['ITA', 'ENG', 'ESP', 'FRA', 'DEU'];
             const langLabels = { 'ITA': 'Italiano', 'ENG': 'English', 'ESP': 'Español', 'FRA': 'Français', 'DEU': 'Deutsch' };
             dom.langSelect.innerHTML = '<option value="">LANG</option>'; 
@@ -714,13 +705,14 @@
             
             activeTranslation = await response.json();
             currentLang = lang;
-            missingKeysLog.clear(); 
+            missingKeysLog.clear(); // Reset warnings on lang change
             
             updateStaticText();
             if(document.body.classList.contains('db-loaded')) {
                 renderSidebar();
                 updateUI();
                 render();
+                // LIVE MODAL UPDATE
                 if(isModalOpen && currentOpenedItem) {
                     openInfoModal(currentOpenedItem);
                 }
@@ -742,7 +734,7 @@
             const repo = 'atarufox/Speranza-Archive';
             const ts = new Date().getTime(); 
             
-            // 1. ITEMS
+            // 1. ITEMS (Inventory + Blueprints + Cosmetics)
             dom.loaderText.textContent = "INDEXING INVENTORY, BLUEPRINTS & COSMETICS...";
             const paths = ['items/inventory', 'items/blueprints', 'items/cosmetics'];
             for (const p of paths) {
@@ -820,6 +812,7 @@
     }
 
     function getNav(key) { 
+        // Map data-nav keys to actual translation keys
         const navMap = {
             'NAV_INVENTORY': 'items',
             'NAV_WORKSHOP': 'hideout',
@@ -837,6 +830,7 @@
 
     function getFilter(key) { 
         if(activeTranslation?.filters?.[key]) return activeTranslation.filters[key];
+        // Standardize fallback: if missing, return key itself (e.g. FILT_WEAPONS)
         logMissing('filters', key);
         return key; 
     }
@@ -844,15 +838,27 @@
     function getLoc(obj) { 
         if(!obj) return ""; 
         if(typeof obj === 'string') return obj; 
+        
+        // Log missing translation if object exists but current lang key is missing
+        if (obj['ENG'] && !obj[currentLang] && currentLang !== 'ENG') {
+             // Suppress item logs to avoid extreme spam, or use a Set like below
+        }
+        
         return obj[currentLang] || obj['ENG'] || ""; 
     }
     
     function getLocLocation(locId) {
         if(!locId) return "Unknown";
+        
+        // Construct the standardized key first
         const key = `MAP_LOC_${locId.toUpperCase().replace(/[-\s]/g, '_')}`;
+        
+        // Look up the constructed key
         if (activeTranslation && activeTranslation.locations && activeTranslation.locations[key]) {
             return activeTranslation.locations[key];
         }
+
+        // Fallback: return the constructed key (placeholder)
         logMissing('locations', key);
         return key;
     }
@@ -870,7 +876,7 @@
             { id: 'MATERIALS', img: 'crafting_materials', type: 'img', labelKey: 'FILT_MATERIALS' }, 
             { id: 'MISC', img: 'misc', type: 'img', labelKey: 'FILT_MISC' } 
         ],
-        'PROGETTI': [ 
+        'PROGETTI': [
             { id: 'BP_ALL', img: 'projects_all', type: 'img', bpMode: 0, labelKey: 'FILT_ALL' },
             { id: 'BP_MISSING', img: 'projects_missing', type: 'img', bpMode: 2, labelKey: 'FILT_MISSING' },
             { id: 'BP_OWNED', img: 'projects_owned', type: 'img', bpMode: 1, labelKey: 'FILT_HAVE' }
@@ -915,7 +921,7 @@
         const ph = getUI('search');
         dom.search.placeholder = ph;
         if(dom.btnConnectBig) dom.btnConnectBig.innerText = getUI('connect_btn');
-        if(dom.btnWishlistText && !isWishlistView) dom.btnWishlistText.innerText = getUI('what_i_need');
+        if(dom.btnWishlistText && !isWishlistView && currentSection !== 'PROGETTI') dom.btnWishlistText.innerText = getUI('what_i_need');
         document.querySelectorAll('.nav-item').forEach(el => { const key = el.getAttribute('data-nav'); el.innerText = getNav(key); });
     }
 
@@ -925,12 +931,14 @@
     // --- NAVIGATION LOGIC ---
     function setSection(sectionName) {
         currentSection = sectionName;
+        // Use data-section for active class toggle instead of data-nav
         document.querySelectorAll('.nav-item').forEach(el => el.classList.toggle('active', el.getAttribute('data-section') === sectionName));
         
+        // Handle Map View
         if(sectionName === 'MAPPA') {
             document.body.classList.add('section-map');
             dom.grid.style.display = 'none';
-            dom.mapContainer.style.display = 'flex';
+            dom.mapContainer.style.display = 'flex'; // Changed to flex for centering
             renderMap();
         } else {
             document.body.classList.remove('section-map');
@@ -956,12 +964,14 @@
         }
     }
 
-    // --- MAP LOGIC ---
+    // --- MAP LOGIC (ARC RAIDERS DASHBOARD) ---
     function renderMap() {
         dom.mapContainer.innerHTML = '';
+        
         const dashboard = document.createElement('div');
         dashboard.className = 'mission-control';
         dashboard.id = 'missionControl';
+        
         dom.mapContainer.appendChild(dashboard);
         startMapTicker();
     }
@@ -999,6 +1009,7 @@
             Object.keys(schedule).forEach(mapId => {
                 const mapSchedule = schedule[mapId];
                 Object.keys(mapSchedule).forEach(cat => {
+                    // cat is usually "Standard" or something similar. Let's use it for Major detection.
                     const hoursObj = mapSchedule[cat]; 
                     Object.entries(hoursObj).forEach(([hourStr, eventTypeId]) => {
                         const evtDef = types[eventTypeId];
@@ -1023,6 +1034,8 @@
         function processInstance(start, end, mapId, eventTypeId, evtDef, cat) {
             const startMs = start.getTime();
             const endMs = end.getTime();
+            
+            // EXTRACT ICON
             const icon = evtDef.icon || null; 
 
             if (nowTs >= startMs && nowTs < endMs) {
@@ -1035,9 +1048,13 @@
 
         upcomingEvents.sort((a,b) => a.timeLeft - b.timeLeft);
 
+        // --- RENDER ---
         let html = '';
+        
+        // CLOCK PANEL
         html += `<div class="mc-clock-panel"><span>MISSION TIMER // UTC: <strong>${utcStr}</strong></span><span>LOCAL: <strong>${locStr}</strong></span></div>`;
 
+        // ACTIVE PANEL
         if(activeEvents.length > 0) {
             html += `<div class="mc-panel"><div class="mc-header"><span class="mc-header-icon"></span>ACTIVE DEPLOYMENTS<div class="mc-header-sub">LIVE</div></div><div class="mc-scroll-area">`;
             activeEvents.forEach(e => {
@@ -1045,6 +1062,7 @@
                 let s = Math.floor(e.timeLeft % 60);
                 let timer = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
                 
+                // Determine Major/Standard
                 const isMajor = e.cat.toLowerCase().includes('major') || e.cat.toLowerCase().includes('high') || e.cat.toLowerCase().includes('pro');
                 const cardClass = isMajor ? 'ev-card active major' : 'ev-card active';
                 const tagText = isMajor ? 'HIGH VALUE' : 'LIVE';
@@ -1053,9 +1071,10 @@
                 let eventIconImg = '';
                 if(e.icon) {
                     const src = e.icon.startsWith('http') ? e.icon : (e.icon.includes('/') ? GITHUB_RAW_BASE_URL + e.icon : GITHUB_RAW_BASE_URL + 'images/menu/' + e.icon);
-                    eventIconImg = `<img src="${src}" style="width:192px; height:192px; max-height:28px; max-width:28px; margin-right:8px; vertical-align:middle; object-fit:contain; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));">`;
+                    eventIconImg = `<img src="${src}" style="height:28px; width:auto; margin-right:8px; vertical-align:middle; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));">`;
                 }
 
+                // FIX: Status Line BELOW title to prevent overlapping tag
                 html += `
                 <div class="${cardClass}">
                     <div class="ev-tag">${tagText}</div>
@@ -1071,6 +1090,7 @@
             html += `</div></div>`;
         }
 
+        // UPCOMING PANEL
         if(upcomingEvents.length > 0) {
             html += `<div class="mc-panel"><div class="mc-header"><span class="mc-header-icon" style="background:var(--arc-teal)"></span>UPCOMING WINDOWS<div class="mc-header-sub">T-MINUS 4H</div></div><div class="mc-scroll-area">`;
             upcomingEvents.forEach(e => {
@@ -1087,9 +1107,10 @@
                 let eventIconImg = '';
                 if(e.icon) {
                     const src = e.icon.startsWith('http') ? e.icon : (e.icon.includes('/') ? GITHUB_RAW_BASE_URL + e.icon : GITHUB_RAW_BASE_URL + 'images/menu/' + e.icon);
-                    eventIconImg = `<img src="${src}" style="width:192px; height:192px; max-height:28px; max-width:28px; margin-right:8px; vertical-align:middle; object-fit:contain; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));">`;
+                    eventIconImg = `<img src="${src}" style="height:28px; width:auto; margin-right:8px; vertical-align:middle; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));">`;
                 }
 
+                // FIX: Status Line BELOW title
                 html += `
                 <div class="${cardClass}">
                     <div class="ev-tag">${tagText}</div>
@@ -1110,7 +1131,7 @@
         dashboard.innerHTML = html;
     }
 
-    // --- SIDEBAR & CORE FUNCTIONS ---
+    // --- OTHER CORE FUNCTIONS ---
     function renderSidebar() {
         const config = SIDEBAR_CONFIG[currentSection] || [];
         dom.sidebar.innerHTML = "";
@@ -1141,39 +1162,19 @@
                 div.onclick = () => {
                     bpViewMode = item.bpMode;
                     currentFilter = 'ALL';
-                    viewMode = 'STASH';
-                    isWishlistView = false;
-                    dom.btnWishlist.classList.remove('active');
                     renderSidebar();
-                    updateUI();
                     render();
                 };
+                div.classList.add('has-image');
+                div.innerHTML = `<img src="${GITHUB_RAW_BASE_URL}images/menu/${item.img}.png" alt="${displayTitle}" onerror="this.style.display='none'">`;
             } else {
                 div.onclick = () => setFilter(item.targetId || item.id);
-            }
-
-            if(item.type === 'svg') div.innerHTML = `<svg><use href="#${item.icon}"></use></svg>`;
-            else {
-                div.classList.add('has-image');
-                let imgName = (currentSection === 'OFFICINA' && item.targetId) ? item.targetId : item.img;
-                div.innerHTML = `<img class="icon-inactive" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_inactive.png" width="192" height="192" onerror="this.style.display='none'"><img class="icon-active" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_active.png" width="192" height="192" onerror="this.style.display='none'">`;
-            }
-
-            if (currentSection === 'PROGETTI') {
-                const total = itemsDB.reduce((n, x) => n + (isBlueprint(x) ? 1 : 0), 0);
-                const owned = itemsDB.reduce((n, x) => n + (isBlueprint(x) && ownedBlueprints.has(x.id) ? 1 : 0), 0);
-                const missing = Math.max(0, total - owned);
-
-                const value = item.bpMode === 0
-                    ? total
-                    : item.bpMode === 1
-                        ? owned
-                        : missing;
-
-                const countEl = document.createElement('span');
-                countEl.className = 'sidebar-count';
-                countEl.textContent = value;
-                div.appendChild(countEl);
+                if(item.type === 'svg') div.innerHTML = `<svg><use href="#${item.icon}"></use></svg>`;
+                else {
+                    div.classList.add('has-image');
+                    let imgName = (currentSection === 'OFFICINA' && item.targetId) ? item.targetId : item.img;
+                    div.innerHTML = `<img class="icon-inactive" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_inactive.png" onerror="this.style.display='none'"><img class="icon-active" src="${GITHUB_RAW_BASE_URL}images/menu/${imgName}_active.png" onerror="this.style.display='none'">`;
+                }
             }
             dom.sidebar.appendChild(div);
         });
@@ -1232,8 +1233,9 @@
     function saveUserData() { localStorage.setItem('arc_wishlist', JSON.stringify(Array.from(wishlist.entries()))); localStorage.setItem('arc_blueprints', JSON.stringify(Array.from(ownedBlueprints))); updateWishlistCounter(); }
     window.addReqsToWishlist = function(reqsJson, btn) { if(!reqsJson) return; try { const reqs = JSON.parse(decodeURIComponent(reqsJson)); reqs.forEach(r => { const current = wishlist.get(r.item) || 0; wishlist.set(r.item, current + r.count); }); saveUserData(); btn.classList.add('added'); btn.innerText = getUI('added'); } catch(e) { console.error(e); } };
     
+    // RESTORED EXPORT/IMPORT
     function exportUserData() { const data = { wishlist: Array.from(wishlist.entries()), blueprints: Array.from(ownedBlueprints) }; const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data)); const anchor = document.createElement('a'); anchor.setAttribute("href", dataStr); anchor.setAttribute("download", "arc_user_data.json"); document.body.appendChild(anchor); anchor.click(); anchor.remove(); }
-    function importUserData(e) { const file = e.target.files[0]; if(!file) return; const r = new FileReader(); r.onload = (ev) => { try { const data = JSON.parse(ev.target.result); if(data.wishlist) wishlist = new Map(data.wishlist); if(data.blueprints) ownedBlueprints = new Set(data.blueprints); saveUserData(); renderSidebar(); updateWishlistCounter(); render(); alert("DATA RESTORED SUCCESS"); } catch(ex) { alert("FILE ERROR"); } }; r.readAsText(file); }
+    function importUserData(e) { const file = e.target.files[0]; if(!file) return; const r = new FileReader(); r.onload = (ev) => { try { const data = JSON.parse(ev.target.result); if(data.wishlist) wishlist = new Map(data.wishlist); if(data.blueprints) ownedBlueprints = new Set(data.blueprints); saveUserData(); updateWishlistCounter(); render(); alert("DATA RESTORED SUCCESS"); } catch(ex) { alert("FILE ERROR"); } }; r.readAsText(file); }
 
     function render() {
         const grid = dom.grid; grid.innerHTML = "";
@@ -1267,6 +1269,7 @@
         } else if (currentSection === 'OFFICINA') {
             source = hideoutDB.filter(x => {
                 if(search && !(getLoc(x.name)||x.id).toLowerCase().includes(search)) return false;
+                const id = x.id.toUpperCase();
                 if (x.id === 'stash') return false;
                 if(currentFilter === 'ALL') return true;
                 if(currentFilter === x.id) return true;
@@ -1285,6 +1288,7 @@
                     if(bpViewMode === 1 && !ownedBlueprints.has(item.id)) return false; 
                     if(bpViewMode === 2 && ownedBlueprints.has(item.id)) return false;  
                     if (currentFilter === 'ALL') return true;
+                    // UPDATED FILTER LOGIC TO MATCH NEW IDs
                     if (currentFilter === 'WEAPONS') return t.includes('hand cannon') || t.includes('assault rifle') || t.includes('smg') || t.includes('pistol') || t.includes('lmg') || t.includes('battle rifle') || t.includes('shotgun') || t.includes('sniper rifle') || t.includes('special');
                     if (currentFilter === 'MODS') return t.includes('modification') || t.includes('gadget');
                     if (currentFilter === 'QUICK_USE') return t.includes('quick use');
@@ -1299,6 +1303,7 @@
                 }
                 
                 if (currentFilter === 'COSMETICS') return isCosm;
+                // UPDATED FILTER LOGIC TO MATCH NEW IDs
                 if (currentFilter === 'AUGMENTS') return t.includes('augment');
                 if (currentFilter === 'SHIELDS') return t.includes('shield');
                 if (currentFilter === 'WEAPONS') return t.includes('hand cannon') || t.includes('assault rifle') || t.includes('smg') || t.includes('pistol') || t.includes('lmg') || t.includes('battle rifle') || t.includes('shotgun') || t.includes('sniper rifle') || t.includes('special');
@@ -1310,6 +1315,17 @@
                 if (currentFilter === 'MISC') return t.includes('trinket') || t.includes('misc') || t.includes('junk') || t.includes('valuable');
                 return false;
             });
+        }
+
+        if(currentSection === 'PROGETTI') {
+            const allBlueprints = itemsDB.map(x => getItem(x.id)).filter(item => item && isBlueprint(item));
+            const visibleCount = allBlueprints.length;
+            const ownedCount = allBlueprints.filter(i => ownedBlueprints.has(i.id)).length;
+            const header = document.createElement('div');
+            header.className = 'section-header-bp';
+            header.style.gridColumn = '1/-1';
+            header.innerHTML = `<div class="sh-title">PROGETTI</div><div class="sh-subtitle">TROVATO: <span style="color:var(--arc-white)">${ownedCount}</span> / <span style="color:#666">${visibleCount}</span></div>`;
+            grid.appendChild(header);
         }
 
         source.forEach(data => {
@@ -1332,7 +1348,7 @@
 
             let inner = "";
             if(imgUrl) {
-                inner = `<img src="${imgUrl}" width="192" height="192" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                inner = `<img src="${imgUrl}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                          <div class="slot-fallback-container" style="display:none; flex-direction:column; align-items:center; text-align:center; width:100%; height:100%; justify-content:center;">
                             <svg class="slot-fallback" viewBox="0 0 24 24"><path d="M12 2l-10 6 10 6 10-6-10-6zm0 14l-10-6v8l10 6 10-6v-8l-10 6z"/></svg>
                             <div class="fallback-text">${getLoc(data.name).substr(0,10)}</div>
@@ -1372,17 +1388,7 @@
         });
     }
 
-    // TOGGLE PROGETTO CON AGGIORNAMENTO SIDEBAR REAL-TIME
-    function toggleBlueprint(id, e) { 
-        if(e) e.stopPropagation(); 
-        if (ownedBlueprints.has(id)) ownedBlueprints.delete(id); 
-        else ownedBlueprints.add(id); 
-        saveUserData(); 
-        renderSidebar(); // Aggiorna i contatori in basso a sinistra
-        updateUI(); 
-        render(); 
-    }
-
+    function toggleBlueprint(id, e) { if(e) e.stopPropagation(); if (ownedBlueprints.has(id)) ownedBlueprints.delete(id); else ownedBlueprints.add(id); saveUserData(); updateUI(); render(); }
     function modWishlist(id, delta, e) { e.stopPropagation(); let currentVal = parseInt(wishlist.get(id) || 0); let newVal = currentVal + delta; if (newVal <= 0) wishlist.delete(id); else wishlist.set(id, newVal); saveUserData(); if (isWishlistView) render(); else { const slot = e.target.closest('.slot'); let badge = slot.querySelector('.wishlist-badge'); if (newVal > 0) { if (!badge) { badge = document.createElement('div'); badge.className = 'wishlist-badge'; slot.appendChild(badge); } badge.innerText = newVal; } else if (badge) { badge.remove(); } } }
     
     function generateCardHTML(data) {
@@ -1401,7 +1407,9 @@
             ecoHtml += `<div class="tt-found"><div class="tt-found-label">${labelClean} :</div><div class="tt-found-val"><svg><use href="#icon-arc"></use></svg> ${getLoc(data.foundIn)}</div></div>`;
         }
         
+        // RECYCLING YIELD IN TOOLTIP
         let recYield = normalizeReqs(data.recyclesInto);
+
         if (recYield && recYield.length > 0) {
             let recHtml = recYield.map(r => {
                 const ing = getItem(r.item);
@@ -1410,31 +1418,34 @@
                 if (ing) {
                     const imgSrc = getImg(ing);
                     if (imgSrc) {
-                        imgHtml = `<img src="${imgSrc}" width="192" height="192" style="width:32px; height:32px; object-fit:contain; border-radius:4px; background:rgba(0,0,0,0.1); border:1px solid rgba(0,0,0,0.2);">`;
+                        imgHtml = `<img src="${imgSrc}" style="width:32px; height:32px; object-fit:contain; border-radius:4px; background:rgba(0,0,0,0.1); border:1px solid rgba(0,0,0,0.2);">`;
                     }
                 }
                 return `<div style="display:flex; align-items:center; gap:6px; margin-right:12px; margin-bottom:6px; font-size:0.9rem; line-height:1;">${imgHtml}<span style="color:var(--col-recycle); font-weight:700;">x${r.count}</span> <span>${ingName}</span></div>`;
             }).join('');
             
             let recLabel = getUI('recycles_into');
+            
             ecoHtml += `<div class="tt-found" style="border-top:1px solid #c0b49b; margin-top:8px; padding-top:8px;"><div class="tt-found-label">${recLabel} :</div><div class="tt-found-val" style="display:flex; flex-wrap:wrap; gap:0;">${recHtml}</div></div>`;
         }
 
-        return `<div style="background:var(--card-bg); color:var(--card-text);"><div class="tt-header"><div class="tt-tag" style="background:var(--col-${rarity.toLowerCase()})">${rarity}</div></div><div class="tt-body"><div class="tt-title">${name}</div><div class="tt-desc">${desc}</div>${ecoHtml}</div><div class="tt-footer"><div class="tt-foot-item"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" fill="#1a1a1a"></path></svg> ${stack}</div><div class="tt-foot-item"><img src="${GITHUB_RAW_BASE_URL}images/menu/weight.png" width="192" height="192" style="height:22px; width:auto; object-fit:contain;"> ${weight}</div><div class="tt-foot-item"><img src="${GITHUB_RAW_BASE_URL}images/menu/coins.png" width="192" height="192" style="height:22px; width:auto; object-fit:contain;"> ${val}</div></div></div>`;
+        return `<div style="background:var(--card-bg); color:var(--card-text);"><div class="tt-header"><div class="tt-tag" style="background:var(--col-${rarity.toLowerCase()})">${rarity}</div></div><div class="tt-body"><div class="tt-title">${name}</div><div class="tt-desc">${desc}</div>${ecoHtml}</div><div class="tt-footer"><div class="tt-foot-item"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" fill="#1a1a1a"></path></svg> ${stack}</div><div class="tt-foot-item"><img src="${GITHUB_RAW_BASE_URL}images/menu/weight.png" style="height:22px;"> ${weight}</div><div class="tt-foot-item"><img src="${GITHUB_RAW_BASE_URL}images/menu/coins.png" style="height:22px;"> ${val}</div></div></div>`;
     }
     function showTooltip(data, isItem, e) { if(isModalOpen) return; dom.tt.innerHTML = generateCardHTML(data); dom.tt.style.display = 'block'; moveTooltip(e); }
     function hideTooltip() { dom.tt.style.display = 'none'; }
     function moveTooltip(e) { if(isModalOpen) return; const t = dom.tt; let l = e.clientX + 20, tp = e.clientY + 20; if(l + 370 > window.innerWidth) l = e.clientX - 380; if(tp + t.offsetHeight > window.innerHeight) tp = e.clientY - t.offsetHeight; t.style.left = l + 'px'; t.style.top = tp + 'px'; }
     
+    // --- RESTORED OPEN INFO MODAL ---
     function openInfoModal(data) {
         if(!data) return;
         hideTooltip();
         isModalOpen = true;
-        currentOpenedItem = data;
+        currentOpenedItem = data; // Set tracked item
         const modal = dom.infoModal;
         
         let contentHtml = '';
         
+        // IS HIDEOUT MODULE?
         if (data.levels && Array.isArray(data.levels)) {
             contentHtml += `<div class="info-section"><div class="info-title">${getUI('upgrades')}</div>`;
             data.levels.sort((a,b) => a.level - b.level).forEach(lvl => {
@@ -1442,7 +1453,7 @@
                 let rows = reqs.map(r => {
                     const ing = getItem(r.item);
                     const name = ing ? getLoc(ing.name) : r.item;
-                    let imgHtml = ing ? `<img src="${getImg(ing)}" width="192" height="192" class="mini-icon" onerror="this.style.display='none'">` : '';
+                    let imgHtml = ing ? `<img src="${getImg(ing)}" class="mini-icon" onerror="this.style.display='none'">` : '';
                     let clickAttr = ing ? `onclick="openInfoModal(getItem('${r.item}'))"` : '';
                     let rowClass = ing ? 'clickable-row' : '';
                     
@@ -1453,6 +1464,9 @@
             });
             contentHtml += `</div>`;
         } else {
+            // IS ITEM
+            
+            // 1. CRAFTING
             let craftList = normalizeReqs(data.recipe);
             if (craftList.length > 0 || data.craftBench) {
                 contentHtml += `<div class="info-section"><div class="info-title">${getUI('crafting')}</div>`;
@@ -1461,7 +1475,7 @@
                     let rows = craftList.map(r => {
                         const ing = getItem(r.item);
                         const name = ing ? getLoc(ing.name) : r.item;
-                        let imgHtml = ing ? `<img src="${getImg(ing)}" width="192" height="192" class="mini-icon" onerror="this.style.display='none'">` : '';
+                        let imgHtml = ing ? `<img src="${getImg(ing)}" class="mini-icon" onerror="this.style.display='none'">` : '';
                         let clickAttr = ing ? `onclick="openInfoModal(getItem('${r.item}'))"` : '';
                         let rowClass = ing ? 'clickable-row' : '';
                         return `<div class="${rowClass}" ${clickAttr} style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222; padding:4px 0;"><div style="display:flex; align-items:center; font-size:0.9rem; color:#ccc;">${imgHtml}${name}</div><div style="color:var(--arc-yellow); font-weight:700;">x${r.count}</div></div>`;
@@ -1471,13 +1485,14 @@
                 contentHtml += `</div>`;
             }
 
+            // 2. RECYCLES INTO
             let recYield = normalizeReqs(data.recyclesInto);
             if (recYield && recYield.length > 0) {
                 contentHtml += `<div class="info-section"><div class="info-title">${getUI('recycles_into')}</div>`;
                 let rows = recYield.map(r => {
                     const ing = getItem(r.item);
                     const name = ing ? getLoc(ing.name) : r.item;
-                    let imgHtml = ing ? `<img src="${getImg(ing)}" width="192" height="192" class="mini-icon" onerror="this.style.display='none'">` : '';
+                    let imgHtml = ing ? `<img src="${getImg(ing)}" class="mini-icon" onerror="this.style.display='none'">` : '';
                     let clickAttr = ing ? `onclick="openInfoModal(getItem('${r.item}'))"` : '';
                     let rowClass = ing ? 'clickable-row' : '';
                     return `<div class="${rowClass}" ${clickAttr} style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222; padding:4px 0;"><div style="display:flex; align-items:center; font-size:0.9rem; color:#ccc;">${imgHtml}${name}</div><div style="color:var(--arc-green); font-weight:700;">x${r.count}</div></div>`;
@@ -1485,6 +1500,7 @@
                 contentHtml += `<div style="padding:5px;">${rows}</div></div>`;
             }
 
+            // 3. USED FOR
             let usages = [];
             itemsDB.forEach(i => { if(i.recipe) { let recipe = normalizeReqs(i.recipe); if(recipe.find(req => req.item === data.id)) usages.push({ parent: i, type: 'CRAFT' }); } });
             hideoutDB.forEach(h => { if (h.levels) { h.levels.forEach(lvl => { if(normalizeReqs(lvl.requirements).find(req => req.item === data.id)) usages.push({ parent: h, type: `HIDEOUT LVL ${lvl.level}` }); }); } });
@@ -1494,7 +1510,8 @@
                 let uniqueUsages = [...new Map(usages.map(item => [item.parent.id, item])).values()];
                 let rows = uniqueUsages.map(u => {
                     const pImg = getImg(u.parent) || (currentSection==='OFFICINA' ? `${GITHUB_RAW_BASE_URL}images/menu/${u.parent.id.toLowerCase()}.png` : '');
-                    let imgHtml = pImg ? `<img src="${pImg}" width="192" height="192" class="mini-icon" onerror="this.style.display='none'">` : '';
+                    let imgHtml = pImg ? `<img src="${pImg}" class="mini-icon" onerror="this.style.display='none'">` : '';
+                    // Clickable parent
                     return `<div class="clickable-row" style="padding:5px 0; border-bottom:1px solid #222; display:flex; align-items:center;" onclick="closeInfoModal(); setTimeout(()=>openInfoModal(getItem('${u.parent.id}')), 50)">${imgHtml} ${getLoc(u.parent.name)} <span style="font-size:0.7rem; color:#666; margin-left:10px;">${u.type}</span></div>`;
                 }).join('');
                 contentHtml += `<div style="padding:5px;">${rows}</div>`;
@@ -1514,4 +1531,4 @@
 </script>
 </body>
 </html>
-<!-- END OF FILE index.html -->
+<!-- VERSION v1.17.24 -->
