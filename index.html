@@ -311,6 +311,51 @@
 
         /* --- SIDEBAR TOOLTIP (CUSTOM) --- */
         #sidebar-tooltip { position: fixed; display: none; background: rgba(10, 10, 10, 0.95); color: var(--arc-yellow); border: 1px solid var(--arc-yellow); padding: 5px 12px; font-family: var(--font-ui); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; z-index: 12000; pointer-events: none; border-radius: 0 8px 8px 8px; white-space: nowrap; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        
+        /* --- SIDEBAR FILTERS --- */
+        .filter-circle {
+            width: var(--sb-icon-size);
+            height: var(--sb-icon-size);
+            border-radius: 50%;
+            background: var(--sb-inactive-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .filter-circle:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+        .filter-circle.active {
+            background: var(--sb-active-bg);
+        }
+        .filter-circle.has-image img {
+            width: 60%;
+            height: 60%;
+            object-fit: contain;
+        }
+        .filter-circle.has-image .icon-inactive { display: block; }
+        .filter-circle.has-image .icon-active { display: none; }
+        .filter-circle.active.has-image .icon-inactive { display: none; }
+        .filter-circle.active.has-image .icon-active { display: block; }
+        .filter-circle svg {
+            width: 60%;
+            height: 60%;
+            fill: var(--sb-inactive-icon);
+        }
+        .filter-circle.active svg {
+            fill: var(--sb-active-icon);
+        }
+        .sidebar-sep {
+            width: 60%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 4px 0;
+        }
 
         .tt-header { display: flex; height: 26px; background: transparent; }
         .tt-tag { padding: 0 10px; font-family: var(--font-head); font-weight: 600; font-size: 1.1rem; color: white; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; justify-content: center; gap: 5px; height: 100%; }
